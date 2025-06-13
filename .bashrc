@@ -115,7 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
 
 # internet_wizard's custom aliases
 # alias cat='bat'
@@ -131,6 +130,3 @@ lg() {
 # export variables
 export EDITOR='nvim'
 # export MANPAGER="nvim +Man!"
-export JAVA_HOME=/opt/android-studio/jbr
-export ANDROID_HOME="$HOME/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
