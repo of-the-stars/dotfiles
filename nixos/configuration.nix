@@ -118,6 +118,9 @@
     xwayland.enable = true;
   };
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -127,6 +130,12 @@
     rustup
     vim
     python3
+    waybar
+    dunst
+    libnotify
+    swww
+    kitty
+    rofi-wayland
   # wget
   ];
 
