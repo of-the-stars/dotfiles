@@ -148,7 +148,7 @@
 
   hardware = {
     # OpenGL
-    opengl.enable = true;
+    hardware.graphics.enable = true;
     # Most wayland compositors need this
     nvidia.modesetting.enable = true;
   };
