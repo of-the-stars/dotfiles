@@ -154,7 +154,7 @@
     slurp
     wl-clipboard
     alejandra
-    pkgs.spotify-tui
+    ncspot
     # wget
   ];
 
