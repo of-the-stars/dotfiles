@@ -155,6 +155,7 @@
     wl-clipboard
     alejandra
     ncspot
+    wev
     # wget
   ];
 
