@@ -135,9 +135,9 @@
     vim
     python3
     waybar
+    hyprpaper
     dunst
     libnotify
-    swww
     kitty
     wofi
     kdePackages.dolphin
