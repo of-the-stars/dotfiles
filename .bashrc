@@ -129,4 +129,8 @@ lg() {
 
 # export variables
 export EDITOR='nvim'
+
 # export MANPAGER="nvim +Man!"
+
+# enable starship
+eval "$(starship init bash)"

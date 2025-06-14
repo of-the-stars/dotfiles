@@ -128,6 +128,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable starship
+  programs.starship.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -141,6 +144,7 @@
     kitty
     wofi
     kdePackages.dolphin
+    starship
   # wget
   ];
 
