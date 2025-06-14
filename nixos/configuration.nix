@@ -95,6 +95,7 @@
        unzip
        obsidian
        discord
+       ripgrep
     ];
   };
 
@@ -138,7 +139,8 @@
     libnotify
     swww
     kitty
-    rofi-wayland
+    wofi
+    dolphin
   # wget
   ];
 
