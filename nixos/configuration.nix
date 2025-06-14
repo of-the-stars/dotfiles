@@ -154,7 +154,7 @@
     slurp
     wl-clipboard
     alejandra
-    nixos.spotify-tui
+    spotify-tui
     # wget
   ];
 
