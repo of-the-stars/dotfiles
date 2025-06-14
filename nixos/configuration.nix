@@ -98,7 +98,6 @@
       discord
       ripgrep
       bat
-      spotify-tui
     ];
   };
 
@@ -155,6 +154,7 @@
     slurp
     wl-clipboard
     alejandra
+    spotify-tui
     # wget
   ];
 
