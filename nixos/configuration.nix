@@ -1,14 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,17 +86,19 @@
   users.users.internet_wizard = {
     isNormalUser = true;
     description = "Stell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
-       stow
-       gcc
-       git
-       fastfetch
-       unzip
-       obsidian
-       discord
-       ripgrep
+      #  thunderbird
+      stow
+      gcc
+      git
+      fastfetch
+      unzip
+      obsidian
+      discord
+      ripgrep
+      bat
+      spotify-tui
     ];
   };
 
@@ -106,7 +109,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  
+
   # Install neovim and set as default editor
   programs.neovim = {
     enable = true;
@@ -123,7 +126,7 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -132,8 +135,6 @@
   programs.starship = {
     enable = true;
   };
-
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -154,7 +155,7 @@
     slurp
     wl-clipboard
     alejandra
-  # wget
+    # wget
   ];
 
   environment.sessionVariables = {
@@ -197,5 +198,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
