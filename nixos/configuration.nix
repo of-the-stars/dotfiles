@@ -129,7 +129,11 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable starship
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+  };
+
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -145,6 +149,10 @@
     wofi
     kdePackages.dolphin
     starship
+    nwg-look
+    grim
+    slurp
+    wl-clipboard
   # wget
   ];
 
@@ -152,7 +160,7 @@
     # If your cursor becomes invisible
     # WLR_NO_HARDWARE_CURSORS = "1";
     # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = 1;
   };
 
   hardware = {
