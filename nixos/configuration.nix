@@ -153,6 +153,7 @@
     grim
     slurp
     wl-clipboard
+    alejandra
   # wget
   ];
 
