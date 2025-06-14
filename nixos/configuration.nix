@@ -140,7 +140,7 @@
     swww
     kitty
     wofi
-    dolphin
+    kdePackages.dolphin
   # wget
   ];
 
