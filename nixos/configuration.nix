@@ -93,6 +93,8 @@
        git
        fastfetch
        unzip
+       obsidian
+       discord
     ];
   };
 
