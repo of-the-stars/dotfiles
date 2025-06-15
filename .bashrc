@@ -118,8 +118,8 @@ fi
 
 # internet_wizard's custom aliases
 # alias cat='bat'
-alias gcloud-ssh='gcloud compute ssh --zone us-south1-c shahed_shumanthomas@vm-50 --project unt-sql-448520'
 alias :q='exit'
+alias icat="kitten icat"
 
 # internet_wizard's custom functions
 lg() {
