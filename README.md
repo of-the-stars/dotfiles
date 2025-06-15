@@ -1,6 +1,6 @@
 # dotfiles
 
-![[./fastfetch-latest]]
+![[fastfetch-latest]]
 
 My personal dotfiles! My main machine is a Thinkpad T14 Gen 5, currently running NixOS with Hyprland.
 
