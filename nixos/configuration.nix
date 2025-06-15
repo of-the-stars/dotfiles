@@ -159,6 +159,7 @@
     wireplumber
     networkmanagerapplet
     htop-vim
+    emacsPackages.ansilove
     kdePackages.dolphin
     kdePackages.xwaylandvideobridge
     # wget
