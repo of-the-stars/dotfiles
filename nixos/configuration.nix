@@ -11,6 +11,23 @@
     ./hardware-configuration.nix
   ];
 
+  # Catppuccin
+  let
+    sources = import ./npins;
+  in
+  {
+    imports = [
+      (sources.catppuccin + "/modules/nixos")
+    ];
+
+    # if you use home-manager
+    # home-manager.users.pepperjack = {
+    #   imports = [
+    #     (sources.catppuccin + "/modules/home-manager")
+    #   ];
+    };
+  }
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
