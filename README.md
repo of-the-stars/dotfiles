@@ -1,6 +1,6 @@
 # dotfiles
 
-![[fastfetch-latest.png]]
+![fastfetch results](https://github.com/internetwiz4rd/dotfiles/blob/master/fastfetch-latest.png)
 
 My personal dotfiles! My main machine is a Thinkpad T14 Gen 5, currently running NixOS with Hyprland.
 
