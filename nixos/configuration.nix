@@ -98,6 +98,8 @@
       discord
       ripgrep
       bat
+      signal-desktop
+      signal-export
     ];
   };
 
