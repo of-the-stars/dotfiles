@@ -3,10 +3,10 @@
     font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
     transition: background-color .3s ease-out;
-}
+
 
 window#waybar {
-    background: $surface0;
+    background: #313244;
     color: #c0caf5;
     font-family: 
         SpaceMono Nerd Font,
@@ -18,7 +18,7 @@ window#waybar {
 .modules-center,
 .modules-right
 {
-    background: $base;
+    background: #1e1e2e;
     margin: 5px 10px;
     padding: 0 5px;
     border-radius: 15px;
@@ -70,7 +70,7 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-    background: $blue;
+    background: #89b4fa;
 }
 
 
@@ -87,11 +87,11 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: #mantleAlpha; 
+    background: #181825; 
 }
 
 #workspaces button:hover {
-  background: #$crustAlpha;
+  background: #11111b;
   color: #cdd6f4;
   box-shadow: none;
 }
@@ -103,5 +103,5 @@ window#waybar {
     transition: color .5s;
 }
 #custom-arch:hover {
-    color: #$blueAlpha;
+    color: #89b4fa;
 }
