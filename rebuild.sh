@@ -10,8 +10,8 @@ git diff -U0 configuration.nix
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 gen=$(nixos-rebuild list-generations | rg current)
-git commit -a -m "$gen"
 fastfetch --logo none &>./../fastfetch-latest
 ansilove -s -m transparent ./../fastfetch-latest -o ./../fastfetch-latest.png
+git commit -a -m "$gen"
 popd
 
