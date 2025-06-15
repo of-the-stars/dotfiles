@@ -158,6 +158,7 @@
     pipewire
     wireplumber
     networkmanagerapplet
+    htop
     kdePackages.dolphin
     kdePackages.xwaylandvideobridge
     # wget
