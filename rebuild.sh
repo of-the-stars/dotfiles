@@ -12,6 +12,6 @@ sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | rg --col
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
 fastfetch --logo none &>./../fastfetch-latest
-ansilove -m transparent ./../fastfetch-latest -o ./../fastfetch-latest.png
+ansilove -s -m transparent ./../fastfetch-latest -o ./../fastfetch-latest.png
 popd
 
