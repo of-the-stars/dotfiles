@@ -1,13 +1,14 @@
+@import "./mocha.css";
 * {
     /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
     font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
     transition: background-color .3s ease-out;
-
+}
 
 window#waybar {
-    background: #313244;
-    color: #c0caf5;
+    background: alpha(@surface0, 0.75);
+    color: @text;
     font-family: 
         SpaceMono Nerd Font,
         feather;
@@ -18,7 +19,7 @@ window#waybar {
 .modules-center,
 .modules-right
 {
-    background: #1e1e2e;
+    background: alpha(@base, 0.7);
     margin: 5px 10px;
     padding: 0 5px;
     border-radius: 15px;
@@ -70,7 +71,7 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-    background: #89b4fa;
+    background: alpha(blue, 0.9);
 }
 
 
@@ -81,17 +82,17 @@ window#waybar {
     feather;
   font-weight: 900;
   font-size: 13pt;
-  color: #c0caf5;
+  color: @text;
   border:none;
   border-radius: 15px;
 }
 
 #workspaces button.active {
-    background: #181825; 
+    background: @mantleAlpha; 
 }
 
 #workspaces button:hover {
-  background: #11111b;
+  background: @crustAlpha;
   color: #cdd6f4;
   box-shadow: none;
 }
@@ -103,5 +104,5 @@ window#waybar {
     transition: color .5s;
 }
 #custom-arch:hover {
-    color: #89b4fa;
+    color: @blueAlpha;
 }
