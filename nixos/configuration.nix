@@ -127,8 +127,17 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # Configure nixpkgs
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      packageOverrides = pkgs: {
+        unstable = import <nixos-unstable> {
+          config = config.nixpkgs.config;
+        };
+      };
+    };
+  };
 
   # Enable starship
   programs.starship = {
@@ -159,9 +168,9 @@
     wireplumber
     networkmanagerapplet
     htop-vim
-    emacsPackages.ansilove
     kdePackages.dolphin
     kdePackages.xwaylandvideobridge
+    unstable.ansilove
     # wget
   ];
 
