@@ -160,9 +160,9 @@
   };
 
   # Fonts
-  # fonts.packages with pkgs; [
-  #   nerd-fonts.RobotoMono
-  # ]
+  fonts.packages = with pkgs; [
+    nerd-fonts.roboto-mono
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
