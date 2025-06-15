@@ -9,24 +9,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    <catppuccin/modules/nixos>
   ];
 
-  # Catppuccin
-  let
-    sources = import ./npins;
-  in
-  {
-    imports = [
-      (sources.catppuccin + "/modules/nixos")
-    ];
-
-    # if you use home-manager
-    # home-manager.users.pepperjack = {
-    #   imports = [
-    #     (sources.catppuccin + "/modules/home-manager")
-    #   ];
-    };
-  }
+  catppuccin.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
