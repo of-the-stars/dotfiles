@@ -147,7 +147,6 @@
     libnotify
     kitty
     wofi
-    kdePackages.dolphin
     starship
     nwg-look
     grim
@@ -159,6 +158,8 @@
     pipewire
     wireplumber
     networkmanagerapplet
+    kdePackages.dolphin
+    kdePackages.xwaylandvideobridge
     # wget
   ];
 
