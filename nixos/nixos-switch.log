@@ -1,66 +1,8 @@
 building Nix...
 building the system configuration...
-building '/nix/store/idgj4wzr71v21j0qxi0cx49s3n5fnszk-catppuccin-install-hook.drv'...
-building '/nix/store/lh4xkz94mijvk5mb31gnnmgy5gk7drql-source.drv'...
-
-trying https://github.com/catppuccin/palette/archive/0df7db6fe201b437d91e7288fa22807bb0e44701.tar.gz
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 42822    0 42822    0     0  88760      0 --:--:-- --:--:-- --:--:--  194k
-unpacking source archive /build/download.tar.gz
-building '/nix/store/vzignk6l9izycs26qnpffbbns9lvrr7v-catppuccin-palette-0.drv'...
-Running phase: unpackPhase
-unpacking source archive /nix/store/s4rc7msrkwa22c730rkphg7hrnnfgyw4-source
-source root is source
-Running phase: patchPhase
-Running phase: updateAutotoolsGnuConfigScriptsPhase
-Running phase: configurePhase
-no configure script, doing nothing
-Running phase: buildPhase
-no Makefile or custom buildPhase, doing nothing
-Running phase: installPhase
-install targets: README.md palette.json
-Running phase: fixupPhase
-shrinking RPATHs of ELF executables and libraries in /nix/store/fjm5mwfbp4s7w9wrxcq79514sa1hzzph-catppuccin-palette-0
-checking for references to /build/ in /nix/store/fjm5mwfbp4s7w9wrxcq79514sa1hzzph-catppuccin-palette-0...
-patching script interpreter paths in /nix/store/fjm5mwfbp4s7w9wrxcq79514sa1hzzph-catppuccin-palette-0
-these 10 derivations will be built:
-  /nix/store/605gjy7wmbih6v69vkgbl2bv0b746pcp-source.drv
-  /nix/store/f23kg4nqkjqsz16iscr1h3sjwpfn86xn-10-catppuccin-gitea-theme.conf.drv
-  /nix/store/nnvqm708fgcx0a9sim6is5rhvs5qiakj-10-catppuccin-forgejo-theme.conf.drv
-  /nix/store/lsafkj24zynjm0nr3r0kbf46cdi65ab7-tmpfiles.d.drv
-  /nix/store/bl45jgakh670xq08rwihw0b72x2l7j2v-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
-  /nix/store/95dc6m63m6hmpqbv1r9n9nwb1gkvi5l4-unit-systemd-tmpfiles-resetup.service.drv
-  /nix/store/c0z77nla6n9dk81s16kmlw8b24wsgwpk-system-units.drv
-  /nix/store/46a1chb1ybkg56mdvwm3j6qwyiabmwk1-etc.drv
-  /nix/store/frpczry8lg8m45db2r6s4gbffi0zsaww-boot.json.drv
-  /nix/store/y481lhf0j1dxh8a657gjfiz08vcqcngy-nixos-system-han-tyumi-25.05.803882.fd4871834379.drv
-this path will be fetched (0.23 MiB download, 2.92 MiB unpacked):
-  /nix/store/3wpm36m19xf3p1997290y9f0ha28iipl-glibc-locales-2.40-66
-building '/nix/store/frpczry8lg8m45db2r6s4gbffi0zsaww-boot.json.drv'...
-copying path '/nix/store/3wpm36m19xf3p1997290y9f0ha28iipl-glibc-locales-2.40-66' from 'https://cache.nixos.org'...
-building '/nix/store/605gjy7wmbih6v69vkgbl2bv0b746pcp-source.drv'...
-
-trying https://github.com/catppuccin/gitea/releases/download/v1.0.2/catppuccin-gitea.tar.gz
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  133k  100  133k    0     0   443k      0 --:--:-- --:--:-- --:--:-- 25.9M
-unpacking source archive /build/catppuccin-gitea.tar.gz
-building '/nix/store/nnvqm708fgcx0a9sim6is5rhvs5qiakj-10-catppuccin-forgejo-theme.conf.drv'...
-building '/nix/store/f23kg4nqkjqsz16iscr1h3sjwpfn86xn-10-catppuccin-gitea-theme.conf.drv'...
-building '/nix/store/lsafkj24zynjm0nr3r0kbf46cdi65ab7-tmpfiles.d.drv'...
-building '/nix/store/bl45jgakh670xq08rwihw0b72x2l7j2v-X-Restart-Triggers-systemd-tmpfiles-resetup.drv'...
-building '/nix/store/95dc6m63m6hmpqbv1r9n9nwb1gkvi5l4-unit-systemd-tmpfiles-resetup.service.drv'...
-building '/nix/store/c0z77nla6n9dk81s16kmlw8b24wsgwpk-system-units.drv'...
-building '/nix/store/46a1chb1ybkg56mdvwm3j6qwyiabmwk1-etc.drv'...
-building '/nix/store/y481lhf0j1dxh8a657gjfiz08vcqcngy-nixos-system-han-tyumi-25.05.803882.fd4871834379.drv'...
-stopping the following units: systemd-tmpfiles-resetup.service
 activating the configuration...
 setting up /etc...
 reloading user units for internet_wizard...
 restarting sysinit-reactivation.target
-starting the following units: systemd-tmpfiles-resetup.service
 the following new units were started: NetworkManager-dispatcher.service
 Done. The new configuration is /nix/store/6fmkciijvs0v74sy2jakdki9ydv7dzzs-nixos-system-han-tyumi-25.05.803882.fd4871834379
