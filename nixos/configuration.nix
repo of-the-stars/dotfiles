@@ -156,6 +156,9 @@
     alejandra
     ncspot
     wev
+    pipewire
+    wireplumber
+    networkmanagerapplet
     # wget
   ];
 
