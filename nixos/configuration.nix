@@ -190,6 +190,7 @@
     wireplumber
     networkmanagerapplet
     htop-vim
+    brightnessctl
     kdePackages.dolphin
     kdePackages.xwaylandvideobridge
     unstable.ansilove
