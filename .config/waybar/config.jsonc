@@ -8,7 +8,8 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/arch",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "tray"
     ],
     "modules-center": [
         "hyprland/window"
@@ -23,7 +24,6 @@
         // "hyprland/language",
         "battery",
         "battery#bat2",
-        "tray",
         "clock"
     ],
     //Modules configuration
