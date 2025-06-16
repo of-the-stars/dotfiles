@@ -113,6 +113,7 @@
       bat
       signal-desktop
       signal-export
+      halloy
     ];
   };
 
