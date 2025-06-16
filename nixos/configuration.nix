@@ -173,6 +173,7 @@
     python3
     waybar
     hyprpaper
+    hyprlock
     dunst
     libnotify
     kitty
