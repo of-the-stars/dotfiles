@@ -214,6 +214,7 @@
     bind
     whois
     nodejs_24
+    vlc
     # wget
   ];
 
