@@ -1,239 +1,45 @@
 building Nix...
 building the system configuration...
-these 24 derivations will be built:
-  /nix/store/2q8bxjiavlh50jh5w8bx5wrpp3rbsa8d-obs-studio-plugins.drv
-  /nix/store/k0yjv1x7j41cri9cpkxi6amfqncdd39q-wrapped-obs-studio-31.0.3.drv
-  /nix/store/dnvvc2767hgkfb4fpiky5bi35s2irwxx-system-path.drv
-  /nix/store/0nrd3ydx66r3awxaq980z5z40cv35269-X-Restart-Triggers-polkit.drv
-  /nix/store/jmnj67p2c9ghbz8228hd7jfh7l4b2hhf-dbus-1.drv
-  /nix/store/lhshy4k4yjfhbqnv3h0ailprzd3nchpd-X-Restart-Triggers-dbus.drv
-  /nix/store/3zssk290rpli1z5jqy2zf164ir44ybcc-unit-dbus.service.drv
-  /nix/store/dch3iyf6r18nrw178vsnwc82rxjhiw85-unit-accounts-daemon.service.drv
-  /nix/store/xkwapkfdmpvpbhqlk0kj0idj9qmf91ck-nixos.conf.drv
-  /nix/store/mgjyqf4kxs7wcv7f4f288r619gzvq1c4-X-Restart-Triggers-systemd-modules-load.drv
-  /nix/store/hhg91pp02wadk6v250pmi0inbmfwrny6-unit-systemd-modules-load.service.drv
-  /nix/store/hnwl8q71y9kzmja691zkv47cc0xjdf02-unit-polkit.service.drv
-  /nix/store/0wn99i35az7qvb40cfdwcv5ivn73kpwb-system-units.drv
-  /nix/store/pilm9s152blzcmsw4pqhldknx686rm8d-unit-dbus.service.drv
-  /nix/store/3kqikkm9xfqhnj9rr8jmx4bfy0rfqary-user-units.drv
-  /nix/store/fv48izk73xjzl7l9fz132gczdn7da0q0-linux-6.12.33-modules.drv
-  /nix/store/7bjfiqx2bm19rg6i1hsc5d460hhkij53-linux-6.12.33-modules-shrunk.drv
-  /nix/store/lpzy1gqyyyk3q8y3sa89dc07ny97d283-etc-modprobe.d-nixos.conf.drv
-  /nix/store/5klg6ybxx1fp9a6ywyhpnccy10r1c16n-closure-info.drv
-  /nix/store/qnjhh8126vwsa4ybfv22bglrkkdn2kcb-user-environment.drv
-  /nix/store/6i9rgpynacgdxngh2dbf5xjiflv8278h-etc.drv
-  /nix/store/axz49113wzilldrj48fx7qn1rxic5xzl-initrd-linux-6.12.33.drv
-  /nix/store/vzgfygrhma6cj1g4kpdw6pn0w4qgpkd4-boot.json.drv
-  /nix/store/y8f0fmy6912hc6vj9kyalgpz0s71jbq1-nixos-system-han-tyumi-25.05.804002.5f4f306bea96.drv
-these 4 paths will be fetched (0.28 MiB download, 0.50 MiB unpacked):
-  /nix/store/ijl5d3wxmxbz3m7zvp5pzijs28wnhyp1-droidcam-2.1.3
-  /nix/store/il69n1vb0ljg0s0i4n68wx6gm7qjvxfa-droidcam-obs-2.3.4
-  /nix/store/d69x38x7pbmk0vcsin15h160r9gw40hq-v4l2loopback-0.15.0-6.12.33
-  /nix/store/kwmvbqk23iqr7kbw0nd1pjp2krq6ql0x-v4l2loopback-0.15.0-6.12.33-bin
-building '/nix/store/lpzy1gqyyyk3q8y3sa89dc07ny97d283-etc-modprobe.d-nixos.conf.drv'...
-building '/nix/store/xkwapkfdmpvpbhqlk0kj0idj9qmf91ck-nixos.conf.drv'...
-copying path '/nix/store/kwmvbqk23iqr7kbw0nd1pjp2krq6ql0x-v4l2loopback-0.15.0-6.12.33-bin' from 'https://cache.nixos.org'...
-copying path '/nix/store/il69n1vb0ljg0s0i4n68wx6gm7qjvxfa-droidcam-obs-2.3.4' from 'https://cache.nixos.org'...
-copying path '/nix/store/ijl5d3wxmxbz3m7zvp5pzijs28wnhyp1-droidcam-2.1.3' from 'https://cache.nixos.org'...
-copying path '/nix/store/d69x38x7pbmk0vcsin15h160r9gw40hq-v4l2loopback-0.15.0-6.12.33' from 'https://cache.nixos.org'...
-building '/nix/store/mgjyqf4kxs7wcv7f4f288r619gzvq1c4-X-Restart-Triggers-systemd-modules-load.drv'...
-building '/nix/store/fv48izk73xjzl7l9fz132gczdn7da0q0-linux-6.12.33-modules.drv'...
-building '/nix/store/2q8bxjiavlh50jh5w8bx5wrpp3rbsa8d-obs-studio-plugins.drv'...
-building '/nix/store/qnjhh8126vwsa4ybfv22bglrkkdn2kcb-user-environment.drv'...
-created 17 symlinks in user environment
-kernel version is 6.12.33
-building '/nix/store/hhg91pp02wadk6v250pmi0inbmfwrny6-unit-systemd-modules-load.service.drv'...
-building '/nix/store/k0yjv1x7j41cri9cpkxi6amfqncdd39q-wrapped-obs-studio-31.0.3.drv'...
-created 304 symlinks in user environment
-gtk-update-icon-cache: Cache file created successfully.
-building '/nix/store/dnvvc2767hgkfb4fpiky5bi35s2irwxx-system-path.drv'...
+these 12 derivations will be built:
+  /nix/store/rwz9q7capz8pd45rswpqzanr7pp88033-system-path.drv
+  /nix/store/rhxmzk7b2ha6ajc1np7551byyyqp8wx2-dbus-1.drv
+  /nix/store/2brck9cqp6f8v0fh2splvw90pkm779j4-X-Restart-Triggers-dbus.drv
+  /nix/store/3cppg0g1bf1m8kmni2naimvkxx6wn5xm-unit-accounts-daemon.service.drv
+  /nix/store/zflz4fkwbkqm15rlfj5a6z9pviyswgjx-X-Restart-Triggers-polkit.drv
+  /nix/store/n1lqkrg3cf3giwjxh80xlc70px8v9qk0-unit-polkit.service.drv
+  /nix/store/pmv7gy9zicjk4nrp9fd323fl4p1s6s6m-unit-dbus.service.drv
+  /nix/store/2knzskd4h33l014jbfaj8sfnjilb0kgh-system-units.drv
+  /nix/store/my50fmh4m4ihs4vs9lfv7fqkzfk6hc2y-unit-dbus.service.drv
+  /nix/store/x449kkzz884bikzwhacqqxl8cliziffb-user-units.drv
+  /nix/store/nn3mnma5dbzgwarj7al0k7p0drkbsf0w-etc.drv
+  /nix/store/y4bmw06q0wvjasc9vkwkdb1bcl98gd07-nixos-system-han-tyumi-25.05.804113.6c64dabd3aa8.drv
+this path will be fetched (0.04 MiB download, 0.12 MiB unpacked):
+  /nix/store/m3g600ng1ah6i5ab63fdq6pdwxpwnx9v-traceroute-2.1.6
+copying path '/nix/store/m3g600ng1ah6i5ab63fdq6pdwxpwnx9v-traceroute-2.1.6' from 'https://cache.nixos.org'...
+building '/nix/store/rwz9q7capz8pd45rswpqzanr7pp88033-system-path.drv'...
 warning: collision between `/nix/store/5y1rwldj01dljhpzzyrprvrw530xrl44-xwayland-24.1.6/share/man/man1/Xserver.1.gz' and `/nix/store/pl2mapfil2bi7bdsypqyi6xa7b7asmjm-xorg-server-21.1.16/share/man/man1/Xserver.1.gz'
 warning: collision between `/nix/store/5y1rwldj01dljhpzzyrprvrw530xrl44-xwayland-24.1.6/lib/xorg/protocol.txt' and `/nix/store/pl2mapfil2bi7bdsypqyi6xa7b7asmjm-xorg-server-21.1.16/lib/xorg/protocol.txt'
-created 9302 symlinks in user environment
+created 9305 symlinks in user environment
 gtk-update-icon-cache: Cache file created successfully.
 gtk-update-icon-cache: Cache file created successfully.
-building '/nix/store/0nrd3ydx66r3awxaq980z5z40cv35269-X-Restart-Triggers-polkit.drv'...
-building '/nix/store/jmnj67p2c9ghbz8228hd7jfh7l4b2hhf-dbus-1.drv'...
-building '/nix/store/dch3iyf6r18nrw178vsnwc82rxjhiw85-unit-accounts-daemon.service.drv'...
-building '/nix/store/lhshy4k4yjfhbqnv3h0ailprzd3nchpd-X-Restart-Triggers-dbus.drv'...
-building '/nix/store/hnwl8q71y9kzmja691zkv47cc0xjdf02-unit-polkit.service.drv'...
-building '/nix/store/3zssk290rpli1z5jqy2zf164ir44ybcc-unit-dbus.service.drv'...
-building '/nix/store/pilm9s152blzcmsw4pqhldknx686rm8d-unit-dbus.service.drv'...
-building '/nix/store/0wn99i35az7qvb40cfdwcv5ivn73kpwb-system-units.drv'...
-building '/nix/store/3kqikkm9xfqhnj9rr8jmx4bfy0rfqary-user-units.drv'...
-building '/nix/store/7bjfiqx2bm19rg6i1hsc5d460hhkij53-linux-6.12.33-modules-shrunk.drv'...
-kernel version is 6.12.33
-root module: nvme
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/nvme/common/nvme-auth.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/nvme/host/nvme-core.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/nvme/host/nvme.ko.xz
-root module: xhci_pci
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/xhci-hcd.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/xhci-pci.ko.xz
-root module: thunderbolt
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/thunderbolt/thunderbolt.ko.xz
-root module: usbhid
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/usbhid/usbhid.ko.xz
-root module: usb_storage
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/storage/usb-storage.ko.xz
-root module: sd_mod
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/sd_mod.ko.xz
-root module: ext2
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/fs/mbcache.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/fs/ext2/ext2.ko.xz
-root module: ext4
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/fs/jbd2/jbd2.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/fs/mbcache.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/lib/crc16.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/arch/x86/crypto/crc32c-intel.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/crypto/crc32c_generic.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/fs/ext4/ext4.ko.xz
-root module: ahci
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-building '/nix/store/6i9rgpynacgdxngh2dbf5xjiflv8278h-etc.drv'...
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libahci.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/ahci.ko.xz
-root module: sata_nv
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/sata_nv.ko.xz
-root module: sata_via
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/sata_via.ko.xz
-root module: sata_sis
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/pata_sis.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/sata_sis.ko.xz
-root module: sata_uli
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/sata_uli.ko.xz
-root module: ata_piix
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/ata_piix.ko.xz
-root module: pata_marvell
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/libata.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/ata/pata_marvell.ko.xz
-root module: nvme
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/nvme/common/nvme-auth.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/nvme/host/nvme-core.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/nvme/host/nvme.ko.xz
-root module: sd_mod
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/sd_mod.ko.xz
-root module: sr_mod
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/cdrom/cdrom.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_common.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/scsi_mod.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/scsi/sr_mod.ko.xz
-root module: mmc_block
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/mmc/core/mmc_core.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/misc/rpmb-core.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/mmc/core/mmc_block.ko.xz
-root module: uhci_hcd
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-hcd.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-pci.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/uhci-hcd.ko.xz
-root module: ehci_hcd
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-hcd.ko.xz
-root module: ehci_pci
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-hcd.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-pci.ko.xz
-root module: ohci_hcd
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ohci-hcd.ko.xz
-root module: ohci_pci
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ohci-hcd.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-hcd.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ehci-pci.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/ohci-pci.ko.xz
-root module: xhci_hcd
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/xhci-hcd.ko.xz
-root module: xhci_pci
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/xhci-hcd.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/usb/host/xhci-pci.ko.xz
-root module: usbhid
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/usbhid/usbhid.ko.xz
-root module: hid_generic
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-generic.ko.xz
-root module: hid_lenovo
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/leds/led-class.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-lenovo.ko.xz
-root module: hid_apple
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/leds/led-class.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-apple.ko.xz
-root module: hid_roccat
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-roccat.ko.xz
-root module: hid_logitech_hidpp
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/usbhid/usbhid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-logitech-hidpp.ko.xz
-root module: hid_logitech_dj
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/usbhid/usbhid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-logitech-dj.ko.xz
-root module: hid_microsoft
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/ff-memless.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-microsoft.ko.xz
-root module: hid_cherry
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-cherry.ko.xz
-root module: hid_corsair
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/leds/led-class.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/usbhid/usbhid.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/hid/hid-corsair.ko.xz
-root module: pcips2
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/serio/serio.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/serio/pcips2.ko.xz
-root module: atkbd
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/vivaldi-fmap.ko.xz
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/serio/serio.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/serio/libps2.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/keyboard/atkbd.ko.xz
-root module: i8042
-  dependency already copied: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/serio/serio.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/input/serio/i8042.ko.xz
-root module: dm_mod
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/dax/dax.ko.xz
-  copying dependency: /nix/store/2dmbf6m021vvm9hp6r09gdgdavdjzk8n-linux-6.12.33-modules/lib/modules/6.12.33/kernel/drivers/md/dm-mod.ko.xz
-lib/firmware/edid not found, skipping.
-depmod: WARNING: could not open modules.builtin.modinfo at /nix/store/na1jwp1ly8gm0kifxrzbjwfqxp3vj2gr-linux-6.12.33-modules-shrunk/lib/modules/6.12.33: No such file or directory
-building '/nix/store/5klg6ybxx1fp9a6ywyhpnccy10r1c16n-closure-info.drv'...
-structuredAttrs is enabled
-building '/nix/store/axz49113wzilldrj48fx7qn1rxic5xzl-initrd-linux-6.12.33.drv'...
-building '/nix/store/vzgfygrhma6cj1g4kpdw6pn0w4qgpkd4-boot.json.drv'...
-building '/nix/store/y8f0fmy6912hc6vj9kyalgpz0s71jbq1-nixos-system-han-tyumi-25.05.804002.5f4f306bea96.drv'...
-stopping the following units: accounts-daemon.service, systemd-modules-load.service
+building '/nix/store/zflz4fkwbkqm15rlfj5a6z9pviyswgjx-X-Restart-Triggers-polkit.drv'...
+building '/nix/store/rhxmzk7b2ha6ajc1np7551byyyqp8wx2-dbus-1.drv'...
+building '/nix/store/3cppg0g1bf1m8kmni2naimvkxx6wn5xm-unit-accounts-daemon.service.drv'...
+building '/nix/store/2brck9cqp6f8v0fh2splvw90pkm779j4-X-Restart-Triggers-dbus.drv'...
+building '/nix/store/n1lqkrg3cf3giwjxh80xlc70px8v9qk0-unit-polkit.service.drv'...
+building '/nix/store/my50fmh4m4ihs4vs9lfv7fqkzfk6hc2y-unit-dbus.service.drv'...
+building '/nix/store/pmv7gy9zicjk4nrp9fd323fl4p1s6s6m-unit-dbus.service.drv'...
+building '/nix/store/x449kkzz884bikzwhacqqxl8cliziffb-user-units.drv'...
+building '/nix/store/2knzskd4h33l014jbfaj8sfnjilb0kgh-system-units.drv'...
+building '/nix/store/nn3mnma5dbzgwarj7al0k7p0drkbsf0w-etc.drv'...
+building '/nix/store/y4bmw06q0wvjasc9vkwkdb1bcl98gd07-nixos-system-han-tyumi-25.05.804113.6c64dabd3aa8.drv'...
+stopping the following units: accounts-daemon.service
 activating the configuration...
 setting up /etc...
 reloading user units for internet_wizard...
 restarting sysinit-reactivation.target
 reloading the following units: dbus.service
 restarting the following units: polkit.service
-starting the following units: accounts-daemon.service, systemd-modules-load.service
-the following new units were started: NetworkManager-dispatcher.service
-Done. The new configuration is /nix/store/91jkfk1cpvic5id4l9blr46z7bwdbhm0-nixos-system-han-tyumi-25.05.804002.5f4f306bea96
+starting the following units: accounts-daemon.service
+the following new units were started: NetworkManager-dispatcher.service, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
+Done. The new configuration is /nix/store/5jjcahyi73dsjj5irjl0hxy76bvdpkc4-nixos-system-han-tyumi-25.05.804113.6c64dabd3aa8

@@ -210,6 +210,7 @@
     kdePackages.dolphin
     kdePackages.xwaylandvideobridge
     unstable.ansilove
+    traceroute
     # wget
   ];
 
