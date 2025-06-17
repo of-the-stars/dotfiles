@@ -211,6 +211,7 @@
     kdePackages.xwaylandvideobridge
     unstable.ansilove
     traceroute
+    bind
     # wget
   ];
 
