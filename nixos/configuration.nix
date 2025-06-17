@@ -213,6 +213,7 @@
     traceroute
     bind
     whois
+    nodejs_24
     # wget
   ];
 
