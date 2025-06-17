@@ -212,6 +212,7 @@
     unstable.ansilove
     traceroute
     bind
+    whois
     # wget
   ];
 
