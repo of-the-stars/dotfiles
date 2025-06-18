@@ -186,6 +186,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     rustup
+    cargo-make
+    cargo-info
+    trunk-ng
     vim
     python3
     waybar
