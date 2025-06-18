@@ -218,6 +218,7 @@
     whois
     nodejs_24
     vlc
+    docker
     # wget
   ];
 
