@@ -219,6 +219,7 @@
     nodejs_24
     vlc
     docker
+    gnumake
     # wget
   ];
 
