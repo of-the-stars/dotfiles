@@ -115,6 +115,7 @@
       signal-export
       halloy
       droidcam
+      audacity
     ];
   };
 
