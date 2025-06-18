@@ -209,6 +209,7 @@
     networkmanagerapplet
     htop-vim
     brightnessctl
+    kdePackages.kdenlive
     kdePackages.dolphin
     kdePackages.xwaylandvideobridge
     unstable.ansilove
