@@ -197,6 +197,7 @@
     wofi
     starship
     nwg-look
+    wine
     grim
     slurp
     wl-clipboard
