@@ -111,6 +111,7 @@
       discord
       ripgrep
       bat
+      prismlauncher
       signal-desktop
       signal-export
       halloy
