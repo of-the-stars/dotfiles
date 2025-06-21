@@ -102,7 +102,7 @@
   users.users.internet_wizard = {
     isNormalUser = true;
     description = "Stell";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "dialout"];
     packages = with pkgs; [
       #  thunderbird
       stow
