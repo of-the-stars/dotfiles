@@ -226,6 +226,9 @@
     vlc
     docker
     gnumake
+    pkgsCross.avr.buildPackages.gcc
+    pkgsCross.avr.buildPackages.binutils
+    avrdude
     # wget
   ];
 
