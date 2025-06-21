@@ -193,6 +193,7 @@
   environment.systemPackages = with pkgs; [
     rustup
     cargo-make
+    cargo-generate
     cargo-info
     trunk-ng
     vim
