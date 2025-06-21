@@ -232,6 +232,7 @@
     pkgsCross.avr.buildPackages.gcc
     pkgsCross.avr.buildPackages.binutils
     avrdude
+    ravedude
     # avrlibc
     # wget
   ];
