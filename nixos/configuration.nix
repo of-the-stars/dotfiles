@@ -118,6 +118,7 @@
       droidcam
       audacity
       yt-dlp
+      mdbook
     ];
   };
 
