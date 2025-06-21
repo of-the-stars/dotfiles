@@ -143,6 +143,10 @@
     defaultEditor = true;
   };
 
+  environment.variables = {
+    EDITOR = "nvim";
+  };
+
   programs.steam = {
     enable = true;
   };
