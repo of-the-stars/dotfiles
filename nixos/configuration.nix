@@ -196,6 +196,7 @@
     cargo-generate
     cargo-info
     trunk-ng
+    openssl
     vim
     python3
     waybar
