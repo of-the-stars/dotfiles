@@ -143,6 +143,15 @@
     defaultEditor = true;
   };
 
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "kitty.desktop"
+      ];
+    };
+  };
+
   environment.variables = {
     EDITOR = "nvim";
     TERM = "kitty";
