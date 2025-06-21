@@ -1,0 +1,11 @@
+# Halloy config.
+#
+# For a complete list of available options,
+# please visit https://halloy.squidowl.org/configuration/index.html
+
+theme = "catppuccin-mocha"
+
+[servers.liberachat]
+nickname = "internet_wizard"
+server = "irc.libera.chat"
+channels = ["#halloy"]
