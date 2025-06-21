@@ -126,6 +126,7 @@
       audacity
       yt-dlp
       mdbook
+      tiny
     ];
   };
 
