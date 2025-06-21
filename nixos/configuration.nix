@@ -108,7 +108,9 @@
       stow
       tio
       screen
-      gcc
+      gimp
+      krita
+      inkscape
       git
       fastfetch
       unzip
@@ -194,6 +196,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     rustup
+    gcc
     cargo-make
     cargo-generate
     cargo-info
