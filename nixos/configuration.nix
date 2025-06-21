@@ -48,6 +48,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # Allow unsupported systems
+  # nixpkgs.config.allowUnsupportedSystem = true;
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -229,6 +232,7 @@
     pkgsCross.avr.buildPackages.gcc
     pkgsCross.avr.buildPackages.binutils
     avrdude
+    # avrlibc
     # wget
   ];
 
