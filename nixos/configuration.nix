@@ -117,6 +117,7 @@
       halloy
       droidcam
       audacity
+      yt-dlp
     ];
   };
 
