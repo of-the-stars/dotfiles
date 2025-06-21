@@ -106,6 +106,8 @@
     packages = with pkgs; [
       #  thunderbird
       stow
+      tio
+      screen
       gcc
       git
       fastfetch
