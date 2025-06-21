@@ -145,6 +145,7 @@
 
   environment.variables = {
     EDITOR = "nvim";
+    TERMINAL = "kitty";
   };
 
   programs.steam = {
