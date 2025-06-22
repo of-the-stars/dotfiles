@@ -211,6 +211,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     rustup
+    rust-analyzer
     gcc
     cargo-make
     cargo-generate
