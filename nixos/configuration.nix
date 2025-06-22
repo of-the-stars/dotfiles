@@ -157,6 +157,7 @@
     SUDO_EDITOR = "nvim";
     EDITOR = "nvim";
     VISUAL = "nvim";
+    SYSTEMD_EDITOR = "nvim";
     TERM = "kitty";
   };
 
