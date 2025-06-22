@@ -215,7 +215,7 @@
     cargo-make
     cargo-generate
     cargo-info
-    trunk-ng
+    trunk
     openssl
     vim
     python3
