@@ -3,7 +3,7 @@ internet_wizard@han-tyumi
 OS: NixOS 25.05 (Warbler) x86_64
 Host: 21MC003UUS (ThinkPad T14 Gen 5)
 Kernel: Linux 6.12.34
-Uptime: 27 mins
+Uptime: 1 hour, 25 mins
 Packages: 1694 (nix-system)
 Shell: bash 5.2.37
 Display (TMA2018): 1920x1200 @ 60 Hz (as 1280x800) in 15" [Built-in]
@@ -12,11 +12,11 @@ Terminal: kitty 0.42.1
 Terminal Font: DejaVuSansMono (11pt)
 CPU: AMD Ryzen 7 PRO 8840U (16) @ 5.13 GHz
 GPU: AMD Phoenix3 [Integrated]
-Memory: 2.76 GiB / 30.01 GiB (9%)
+Memory: 4.47 GiB / 30.01 GiB (15%)
 Swap: Disabled
-Disk (/): 108.66 GiB / 936.83 GiB (12%) - ext4
-Local IP (wlp2s0): 10.255.208.97/22
-Battery (5B11H56418): 88% [Charging, AC Connected]
+Disk (/): 110.08 GiB / 936.83 GiB (12%) - ext4
+Local IP (wlp2s0): 10.102.180.205/17
+Battery (5B11H56418): 65% [Discharging]
 Locale: en_US.UTF-8
 
 [40m   [41m   [42m   [43m   [44m   [45m   [46m   [47m   [m
