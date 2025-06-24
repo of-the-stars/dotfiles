@@ -159,6 +159,7 @@
     VISUAL = "nvim";
     SYSTEMD_EDITOR = "nvim";
     TERM = "kitty";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 
   programs.steam = {
