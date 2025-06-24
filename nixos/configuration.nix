@@ -119,7 +119,7 @@
       ripgrep
       bat
       prismlauncher
-      signal-desktop
+      unstable.signal-desktop
       signal-export
       halloy
       droidcam
@@ -209,6 +209,9 @@
   fonts.packages = with pkgs; [
     nerd-fonts.roboto-mono
   ];
+
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
