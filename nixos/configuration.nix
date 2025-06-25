@@ -64,7 +64,7 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
@@ -143,6 +143,11 @@
     enable = true;
     defaultEditor = true;
   };
+
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["internet_wizard"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   xdg.terminal-exec = {
     enable = true;
