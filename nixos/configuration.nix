@@ -130,6 +130,9 @@
     ];
   };
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["internet_wizard"];
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add missing dynamic libraries for unpackaged programs here
