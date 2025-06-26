@@ -127,6 +127,7 @@
       yt-dlp
       mdbook
       tiny
+      qbittorrent
     ];
   };
 
