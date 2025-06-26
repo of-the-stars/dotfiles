@@ -128,6 +128,7 @@
       mdbook
       tiny
       qbittorrent
+      neocities
     ];
   };
 
