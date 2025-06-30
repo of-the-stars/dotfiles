@@ -140,6 +140,7 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add missing dynamic libraries for unpackaged programs here
+    stdenv.cc.cc
   ];
 
   # Install firefox.
