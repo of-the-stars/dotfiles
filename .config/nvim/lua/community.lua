@@ -13,7 +13,7 @@ return {
   --  { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.cpp" },
+  -- { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
   { import = "astrocommunity.syntax.vim-easy-align" },
