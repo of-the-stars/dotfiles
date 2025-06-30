@@ -116,6 +116,7 @@
       unzip
       obsidian
       discord
+      dvgrab
       ripgrep
       bat
       prismlauncher
