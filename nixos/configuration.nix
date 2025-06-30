@@ -105,6 +105,7 @@
     extraGroups = ["networkmanager" "wheel" "dialout" "video"];
     packages = with pkgs; [
       #  thunderbird
+      v4l-utils
       stow
       tio
       screen
