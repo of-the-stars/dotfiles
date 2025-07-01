@@ -128,6 +128,7 @@
       audacity
       yt-dlp
       mdbook
+      handbrake
       tiny
       qbittorrent
       neocities
