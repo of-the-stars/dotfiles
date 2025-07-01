@@ -304,6 +304,7 @@
     graphics.enable = true;
     # Most wayland compositors need this
     nvidia.modesetting.enable = true;
+    opentabletdriver.enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
