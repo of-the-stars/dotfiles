@@ -221,6 +221,23 @@
     enable = true;
   };
 
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/path/to/music";
+    extraConfig = ''
+      audio_output {
+        type "pulse"
+        name "PulseAudio"
+      }
+      # must specify one or more outputs in order to play audio!
+      # (e.g. ALSA, PulseAudio, PipeWire), see next sections
+    '';
+
+    # Optional:
+    network.listenAddress = "any"; # if you want to allow non-localhost connections
+    # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  };
+
   # Fonts
   fonts.packages = with pkgs; [
     nerd-fonts.roboto-mono
