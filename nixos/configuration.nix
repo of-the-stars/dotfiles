@@ -100,6 +100,8 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+
   services.mpd = {
     enable = true;
     musicDirectory = "/home/internet_wizard/Music";
@@ -107,9 +109,8 @@
       audio_output {
         type "pulse"
         name "PulseAudio"
+        server "127.0.0.1" # add this line - MPD must connect to the local sound server
       }
-      # must specify one or more outputs in order to play audio!
-      # (e.g. ALSA, PulseAudio, PipeWire), see next sections
     '';
 
     # Optional:
