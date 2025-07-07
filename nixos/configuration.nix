@@ -102,7 +102,7 @@
 
   services.mpd = {
     enable = true;
-    musicDirectory = "/path/to/music";
+    musicDirectory = "/home/internet_wizard/Music/";
     extraConfig = ''
       audio_output {
         type "pulse"
