@@ -98,6 +98,25 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/path/to/music";
+    extraConfig = ''
+      audio_output {
+        type "pulse"
+        name "PulseAudio"
+      }
+      # must specify one or more outputs in order to play audio!
+      # (e.g. ALSA, PulseAudio, PipeWire), see next sections
+    '';
+
+    # Optional:
+    network.listenAddress = "any"; # if you want to allow non-localhost connections
+    # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.internet_wizard = {
     isNormalUser = true;
@@ -219,23 +238,6 @@
   # Enable starship
   programs.starship = {
     enable = true;
-  };
-
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/path/to/music";
-    extraConfig = ''
-      audio_output {
-        type "pulse"
-        name "PulseAudio"
-      }
-      # must specify one or more outputs in order to play audio!
-      # (e.g. ALSA, PulseAudio, PipeWire), see next sections
-    '';
-
-    # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
-    # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
   };
 
   # Fonts
