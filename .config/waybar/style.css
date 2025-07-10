@@ -1,34 +1,33 @@
 @import "./mocha.css";
 * {
-    /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    transition: background-color .3s ease-out;
+  /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
+  font-family: "RobotoMono Nerd Font", sans-serif;
+  font-size: 15px;
+  transition: background-color 0.3s ease-out;
 }
 
 window#waybar {
-    background: alpha(@surface0, 0.75);
-    color: @text;
-    font-family: 
-        SpaceMono Nerd Font,
-        feather;
-    transition: background-color .5s;
+  background: alpha(@surface0, 0.75);
+  color: @text;
+  font-family:
+    RobtoMono Nerd Font,
+    feather;
+  transition: background-color 0.5s;
 }
 
 .modules-left,
 .modules-center,
-.modules-right
-{
-    background: alpha(@base, 0.7);
-    margin: 5px 10px;
-    padding: 0 5px;
-    border-radius: 15px;
+.modules-right {
+  background: alpha(@base, 0.7);
+  margin: 5px 10px;
+  padding: 0 5px;
+  border-radius: 15px;
 }
 .modules-left {
-    padding: 0;
+  padding: 0;
 }
 .modules-center {
-    padding: 0 10px;
+  padding: 0 10px;
 }
 
 #clock,
@@ -49,8 +48,8 @@ window#waybar {
 #power-profiles-daemon,
 #language,
 #mpd {
-    padding: 0 10px;
-    border-radius: 15px;
+  padding: 0 10px;
+  border-radius: 15px;
 }
 
 #clock:hover,
@@ -71,24 +70,23 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-    background: alpha(blue, 0.9);
+  background: alpha(blue, 0.9);
 }
-
 
 #workspaces button {
   background: transparent;
   font-family:
-    SpaceMono Nerd Font,
+    RobotoMono Nerd Font,
     feather;
   font-weight: 900;
   font-size: 13pt;
   color: @text;
-  border:none;
+  border: none;
   border-radius: 15px;
 }
 
 #workspaces button.active {
-    background: @mantleAlpha; 
+  background: @mantleAlpha;
 }
 
 #workspaces button:hover {
@@ -98,11 +96,11 @@ window#waybar {
 }
 
 #custom-arch {
-    margin-left: 5px;
-    padding: 0 10px;
-    font-size: 25px;
-    transition: color .5s;
+  margin-left: 5px;
+  padding: 0 10px;
+  font-size: 25px;
+  transition: color 0.5s;
 }
 #custom-arch:hover {
-    color: @blueAlpha;
+  color: @blueAlpha;
 }
