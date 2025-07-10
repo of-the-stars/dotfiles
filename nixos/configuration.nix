@@ -161,6 +161,7 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add missing dynamic libraries for unpackaged programs here
+    icu
     stdenv.cc.cc
   ];
 
@@ -254,7 +255,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    icu
     rmpc
     spotify
     ffmpeg
