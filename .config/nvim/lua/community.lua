@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.remote-development.remote-sshfs-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.note-taking.obsidian-nvim" },
   --  { import = "astrocommunity.pack.sql" },
   -- { import = "astrocommunity.pack.cpp" },
   -- { import = "astrocommunity.git.octo-nvim" },

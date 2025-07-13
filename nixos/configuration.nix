@@ -152,6 +152,7 @@
       tiny
       qbittorrent
       neocities
+      zoxide
     ];
   };
 
