@@ -100,7 +100,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+  services.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
 
   services.mpd = {
     enable = true;
@@ -256,6 +256,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    alejandra
     lazygit
     rmpc
     spotify

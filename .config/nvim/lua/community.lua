@@ -10,7 +10,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.python" },
+  -- { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
   { import = "astrocommunity.syntax.vim-easy-align" },

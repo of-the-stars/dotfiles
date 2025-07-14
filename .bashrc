@@ -127,6 +127,15 @@ lg() {
     ls | rg $1
 }
 
+# yazi alias
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 panasonic() {
     # pulls video and splits recordings into .avi files from my Panasonic camcorder
     dvgrab -V -input $1 --timestamp --size 0 --showstatus --autosplit --format dv2 dv-
@@ -142,3 +151,6 @@ eval "$(starship init bash)"
 
 # enable direnv
 eval "$(direnv hook bash)"
+
+# enable zoxide
+eval "$(zoxide init bash)"
