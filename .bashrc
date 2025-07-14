@@ -118,8 +118,8 @@ fi
 
 # internet_wizard's custom aliases
 # alias cat='bat'
-alias :q='exit'
 alias icat="kitten icat"
+# alias cd="zoxide add"
 
 # internet_wizard's custom functions
 lg() {
