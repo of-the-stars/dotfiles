@@ -7,6 +7,10 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- require("mason").setup {
+--   PATH = "append",
+-- }
+
 -- validate that lazy is available
 if not pcall(require, "lazy") then
   -- stylua: ignore

@@ -4,6 +4,6 @@
 
 nix-channel --update
 nix-env -u --always
-rm /nix/var/nix/gcroots/auto/*
+sudo rm /nix/var/nix/gcroots/auto/*
 sudo nix-collect-garbage -d
-nixos-rebuild switch
+sudo nixos-rebuild switch
