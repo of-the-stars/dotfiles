@@ -76,6 +76,12 @@
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    withUWSM = true;
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -131,34 +137,6 @@
     extraGroups = ["networkmanager" "wheel" "dialout" "video"];
     packages = with pkgs; [
       #  thunderbird
-      v4l-utils
-      stow
-      tio
-      screen
-      gimp
-      krita
-      inkscape
-      git
-      fastfetch
-      unzip
-      obsidian
-      discord
-      dvgrab
-      ripgrep
-      bat
-      prismlauncher
-      unstable.signal-desktop
-      signal-export
-      halloy
-      droidcam
-      audacity
-      yt-dlp
-      mdbook
-      handbrake
-      tiny
-      qbittorrent
-      neocities
-      zoxide
     ];
   };
 
@@ -206,12 +184,6 @@
 
   programs.steam = {
     enable = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
   };
 
   xdg.portal.enable = true;

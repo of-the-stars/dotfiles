@@ -1,0 +1,101 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    v4l-utils
+    stow
+    tio
+    screen
+    gimp
+    krita
+    inkscape
+    git
+    fastfetch
+    unzip
+    obsidian
+    discord
+    dvgrab
+    ripgrep
+    bat
+    prismlauncher
+    unstable.signal-desktop
+    signal-export
+    halloy
+    droidcam
+    audacity
+    yt-dlp
+    mdbook
+    tiny
+    qbittorrent
+    neocities
+    zoxide
+    handbrake
+    bluez
+    nil
+    alejandra
+    lazygit
+    rmpc
+    spotify
+    ffmpeg
+    clang
+    clang-tools
+    usbutils
+    fzf
+    yazi
+    rustup
+    rust-analyzer
+    gcc
+    cargo-make
+    cargo-generate
+    cargo-info
+    trunk
+    openssl
+    vim
+    python3
+    waybar
+    hyprpaper
+    hyprlock
+    dunst
+    libnotify
+    kitty
+    wofi
+    starship
+    nwg-look
+    wine
+    grim
+    slurp
+    wl-clipboard
+    alejandra
+    ncspot
+    wev
+    pipewire
+    wireplumber
+    networkmanagerapplet
+    htop-vim
+    brightnessctl
+    kdePackages.kdenlive
+    kdePackages.dolphin
+    kdePackages.xwaylandvideobridge
+    unstable.ansilove
+    traceroute
+    bind
+    whois
+    nodejs_24
+    vlc
+    docker
+    gnumake
+    pkgsCross.avr.buildPackages.gcc
+    pkgsCross.avr.buildPackages.binutils
+    avrdude
+    ravedude
+    direnv
+    # avrlibc
+    # wget
+  ];
+
+
+}
