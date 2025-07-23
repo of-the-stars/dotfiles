@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     <catppuccin/modules/nixos>
+    ./systempackages-configuration.nix
   ];
   # gtk = {
   #     enable = true;
@@ -257,73 +258,6 @@
   services.udisks2.enable = true;
 
   environment.variables.PATH = "${pkgs.clang-tools}/bin:$PATH";
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    handbrake
-    bluez
-    nil
-    alejandra
-    lazygit
-    rmpc
-    spotify
-    ffmpeg
-    clang
-    clang-tools
-    usbutils
-    fzf
-    yazi
-    rustup
-    rust-analyzer
-    gcc
-    cargo-make
-    cargo-generate
-    cargo-info
-    trunk
-    openssl
-    vim
-    python3
-    waybar
-    hyprpaper
-    hyprlock
-    dunst
-    libnotify
-    kitty
-    wofi
-    starship
-    nwg-look
-    wine
-    grim
-    slurp
-    wl-clipboard
-    alejandra
-    ncspot
-    wev
-    pipewire
-    wireplumber
-    networkmanagerapplet
-    htop-vim
-    brightnessctl
-    kdePackages.kdenlive
-    kdePackages.dolphin
-    kdePackages.xwaylandvideobridge
-    unstable.ansilove
-    traceroute
-    bind
-    whois
-    nodejs_24
-    vlc
-    docker
-    gnumake
-    pkgsCross.avr.buildPackages.gcc
-    pkgsCross.avr.buildPackages.binutils
-    avrdude
-    ravedude
-    direnv
-    # avrlibc
-    # wget
-  ];
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
