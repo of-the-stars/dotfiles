@@ -146,6 +146,9 @@
     ];
   };
 
+home-manager.useUserPackages = true;
+home-manager.useGlobalPkgs = true;
+
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["internet_wizard"];
 
