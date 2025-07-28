@@ -4,9 +4,9 @@
 
 set -e
 pushd ~/dotfiles/nixos/
-nvim configuration.nix
+nvim 
 # alejandra . &>/dev/null
-git diff -U0 configuration.nix
+git diff -U0 *.nix
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 gen=$(nixos-rebuild list-generations | rg current)

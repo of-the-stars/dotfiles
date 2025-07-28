@@ -12,6 +12,7 @@
     <catppuccin/modules/nixos>
     ./systempackages-configuration.nix
   ];
+
   # gtk = {
   #     enable = true;
   #     catppuccin = {
@@ -23,6 +24,8 @@
   #     };
   # };
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   catppuccin.enable = true;
 
   # Bootloader.
@@ -32,6 +35,8 @@
   # Enables auto upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+
+  environment.localBinInPath = true;
 
   networking.hostName = "han-tyumi"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -110,7 +115,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   services.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
 
