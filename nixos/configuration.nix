@@ -9,8 +9,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    <catppuccin/modules/nixos>
     ./systempackages-configuration.nix
+    <catppuccin/modules/nixos>
+    <home-manager/nixos>
   ];
 
   # gtk = {
