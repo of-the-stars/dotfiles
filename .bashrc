@@ -119,7 +119,7 @@ fi
 # internet_wizard's custom aliases
 # alias cat='bat'
 alias icat="kitten icat"
-# alias cd="zoxide add"
+alias cd="z"
 
 # internet_wizard's custom functions
 lg() {

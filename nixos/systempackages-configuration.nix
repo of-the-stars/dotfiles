@@ -7,6 +7,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     element-desktop
+    protonvpn-gui
     lua-language-server
     v4l-utils
     stow
