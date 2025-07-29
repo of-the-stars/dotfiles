@@ -150,7 +150,7 @@ home-manager.useUserPackages = true;
 home-manager.useGlobalPkgs = true;
 
 home-manager.users.internet_wizard = { pkgs, ... }: {
-  home.packages = with pkgs; [  ];
+  home.packages = with pkgs; [ atool ];
   # programs.bash.enable = true;
 
   # This value determines the Home Manager release that your configuration is 
