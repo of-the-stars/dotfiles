@@ -261,7 +261,7 @@ home-manager.users.internet_wizard = { pkgs, ... }: {
     # Hint electron apps to use wayland
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
     WAYLAND_DISPLAY = "1";
-    NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL =1;
   };
 
   hardware = {
