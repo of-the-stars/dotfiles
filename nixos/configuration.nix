@@ -127,7 +127,7 @@
       audio_output {
         type "pulse"
         name "PulseAudio"
-        server "127.0.0.1" # add this line - MPD must connect to the local sound server
+        server "127.0.0.1:6600" # add this line - MPD must connect to the local sound server
       }
     '';
 
