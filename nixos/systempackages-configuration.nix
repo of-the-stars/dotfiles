@@ -53,6 +53,7 @@
     rustup
     rust-analyzer
     gcc
+    cargo
     cargo-make
     cargo-generate
     cargo-info
