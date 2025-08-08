@@ -117,23 +117,27 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
-  services.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-
   services.mpd = {
     enable = true;
     musicDirectory = "/home/internet_wizard/Music";
     extraConfig = ''
       audio_output {
-        type "pulse"
-        name "PulseAudio"
-        server "127.0.0.1:6600" # add this line - MPD must connect to the local sound server
+        type "pipewire"
+        name "PipeWire"
       }
     '';
 
+    network.port = 6600;
+  
     # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
+    # network.listenAddress = "any"; # if you want to allow non-localhost connections
     # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+    user = "internet_wizard";
+  };
+
+  systemd.services.mpd.environment = {
+    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.internet_wizard.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
