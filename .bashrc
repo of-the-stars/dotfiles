@@ -149,6 +149,12 @@ panasonic-rename() {
     rename -v 's/dv-19([0-9]{2}).([0-9]{2}).([0-9]{2})_([0-9]{2})-([0-9]{2})-([0-9]{2})/20$1$2$3T$4$5$6/' *
 }
 
+# unzip-all
+
+unzip-all() {
+    for a in *.zip; do unzip "$a" -d "${a%.zip}"; done
+}
+
 # export variables
 export EDITOR='nvim'
 

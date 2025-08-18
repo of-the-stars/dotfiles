@@ -6,6 +6,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    tree-sitter
+    luajitPackages.luarocks
+    ruby
     element-desktop
     rename
     protonvpn-gui
