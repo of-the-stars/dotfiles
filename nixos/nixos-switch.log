@@ -1,29 +1,354 @@
 building Nix...
 building the system configuration...
-these 11 derivations will be built:
-  /nix/store/maz1dxzm7vzry8rr0nxnfaknjkssxggf-system-path.drv
-  /nix/store/abs4paw13h5fzd0dx76abnl2j9xq4k8i-dbus-1.drv
-  /nix/store/s853iv9sh2dacrjrb8fwc4q1zxfn5z34-X-Restart-Triggers-dbus-broker.drv
-  /nix/store/m4bdm0nsnznygind3ml8m3rbri78qf8f-unit-dbus-broker.service.drv
-  /nix/store/3z78wwyvdjxl91cx7nimnmwg0cqgwfpd-user-units.drv
-  /nix/store/q7hrwilc4sjs6smkcb43dskcn190jhbj-X-Restart-Triggers-polkit.drv
-  /nix/store/aby4k5szd200ra9pmn978s9jj23bgac1-unit-polkit.service.drv
-  /nix/store/n1xapszdnpm0bln04sx3xabd64zfpbpl-unit-dbus-broker.service.drv
-  /nix/store/ybn0kmq1rd1fhdm62y8kkgyamflnw0i6-system-units.drv
-  /nix/store/0xcf06781ng7saif4j8v3145i0356g25-etc.drv
-  /nix/store/yl780z4k6gn69f401s0dj76mcbsm6qh2-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv
-these 5 paths will be fetched (0.44 MiB download, 2.23 MiB unpacked):
-  /nix/store/vqwzhxnmvy2az5lbdij7jj0i045r31im-luajit2.1-luarocks-3.11.1-1
-  /nix/store/971swsk9hm23xd16xp9rqgfaygxjal6g-luarocks-luarocks-config.lua
-  /nix/store/glkj001c67vxm3az1nq9n7684hyqm6dz-luarocks_bootstrap-3.11.1
-  /nix/store/2bwh77wcyzs5jmj751d1r2mqcrlhsv23-wrap-lua-hook
-  /nix/store/dfhl9sx20s74jsyjmz0hskfwd26rwr6f-zip-3.0
-copying path '/nix/store/dfhl9sx20s74jsyjmz0hskfwd26rwr6f-zip-3.0' from 'https://cache.nixos.org'...
-copying path '/nix/store/2bwh77wcyzs5jmj751d1r2mqcrlhsv23-wrap-lua-hook' from 'https://cache.nixos.org'...
-copying path '/nix/store/glkj001c67vxm3az1nq9n7684hyqm6dz-luarocks_bootstrap-3.11.1' from 'https://cache.nixos.org'...
-copying path '/nix/store/971swsk9hm23xd16xp9rqgfaygxjal6g-luarocks-luarocks-config.lua' from 'https://cache.nixos.org'...
-copying path '/nix/store/vqwzhxnmvy2az5lbdij7jj0i045r31im-luajit2.1-luarocks-3.11.1-1' from 'https://cache.nixos.org'...
-building '/nix/store/maz1dxzm7vzry8rr0nxnfaknjkssxggf-system-path.drv'...
+these 31 derivations will be built:
+  /nix/store/vh09cgg5d4ahyz9w52brw55s6fxwgmgb-tlp-1.8.0.drv
+  /nix/store/ln9p6jxrmmafvl82b9xkivkmy29asllj-system-path.drv
+  /nix/store/145hvjb2s5gqzq8g83n1gdwfk7a3782q-X-Restart-Triggers-polkit.drv
+  /nix/store/2fdbp880g1gn9bc7bayfyjvh7165g07i-users-groups.json.drv
+  /nix/store/j3ib83yvm87crzfddqxl0k7fw1h4dycn-dbus-1.drv
+  /nix/store/9qgc7gashpvx9n80mrgxlq8zkl53jk06-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/hfjhqh4zn47mcbjqvkhgj12kzavpbs49-unit-dbus-broker.service.drv
+  /nix/store/2j8z6rwmf7kfg73j53ni7rzj1jfripwr-user-units.drv
+  /nix/store/5dnqm2v92wjs0c08dgz1svx1cpvgql9r-nixos.conf.drv
+  /nix/store/2y9yly6mhbwnvqc47wiwb3gj0x5i68v0-X-Restart-Triggers-systemd-modules-load.drv
+  /nix/store/2yy030f52xp1sdfni1cv1fc7cy6yr8kp-etc-tlp.conf.drv
+  /nix/store/3jdfldg6f06zvmd3avkqvv825wqmiijg-X-Restart-Triggers-tlp.drv
+  /nix/store/42ml26f9h13s4a070b0csndyv987vbg3-unit-systemd-modules-load.service.drv
+  /nix/store/mfc9nz0x63cf4kkghajdcah6zvfgnjh4-extra-udev-rules.drv
+  /nix/store/4ga02zb4q80widl6fdz3da8rpngh27r0-udev-rules.drv
+  /nix/store/5gnkxkskq91xpnzbx8if8a7aplcrs43j-X-Restart-Triggers-systemd-udevd.drv
+  /nix/store/72nfj7670wy3c1i5zz1b6v0mqfyj4ihi-unit-systemd-udevd.service.drv
+  /nix/store/94la073rkv35l98pnjzd4klz70rmyqis-system-generators.drv
+  /nix/store/c8d7jqmg7aymb23g00ajgb9zy0i0bg6l-hwdb.bin.drv
+  /nix/store/d20jyv1fqaqdgyp69winyw1b8z9xbf99-unit-cpufreq.service-disabled.drv
+  /nix/store/f7ghn6r7vym7bj5nwjisdnjq1avrnbr9-unit-polkit.service.drv
+  /nix/store/pc9k8ph71lgr6a0ynxcw4na7pwi6h3sm-unit-dbus-broker.service.drv
+  /nix/store/pm4kw8m0fay04abrxyql9im1niyh0f42-unit-tlp-sleep.service.drv
+  /nix/store/pqz04ambqp3pr5m6hnayxakcransfman-unit-systemd-rfkill.socket-disabled.drv
+  /nix/store/q0vc1mqdv851b5l2q0ywjk1bq7frk4jm-unit-tlp.service.drv
+  /nix/store/xzyxsv1g81lpaq6s5n3mg0fg3k4302xx-unit-systemd-rfkill.service-disabled.drv
+  /nix/store/fldhbiqqfxsyzj837ihza7nwnb2hzjg8-system-units.drv
+  /nix/store/k7l8gyawafd1cg5agry9pl7p15vz7pg7-system-shutdown.drv
+  /nix/store/m5gy56pkhl3vr1yfbhw4m5gjvn0iyd2k-user-generators.drv
+  /nix/store/jvciapjcxrkd5mj5i8ddbrbswg2frf38-etc.drv
+  /nix/store/i1qdqqa74rl6ymib32d0r0rlmjk8whxj-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv
+these 39 paths will be fetched (2.67 MiB download, 15.30 MiB unpacked):
+  /nix/store/jdfc7ijn7ad9pyf129l26j3l329qwjjd-checkbashisms-2.25.10
+  /nix/store/kgkvjrbi8pa5iyk4rallci8ggrmqpajd-hdparm-9.65
+  /nix/store/ys0xwgk0w82qdpfvw7d51jnr3qqhs1vj-iw-6.9
+  /nix/store/77giqzg63jh0mllwqhhx5z3vcgjz9grb-perl5.40.0-B-Keywords-1.27
+  /nix/store/9yzphxgsgrkjn040ff3z246ijxmg9gh4-perl5.40.0-Class-Data-Inheritable-0.09
+  /nix/store/25nws3ivqn2g6idqlhykx8985x7vxw2c-perl5.40.0-Class-Inspector-1.36
+  /nix/store/ap8hq00wswns1vplfxbb58znjnqmzjwc-perl5.40.0-Class-Tiny-1.008
+  /nix/store/vkhqz8cg05v80y7may22rikckimra7xf-perl5.40.0-Config-Tiny-2.29
+  /nix/store/a874rvpi2h8s8xlf2pbf0zd0fdgl4swr-perl5.40.0-Devel-StackTrace-2.04
+  /nix/store/x9jfcl6dbx26069wmj5023f8207vq5if-perl5.40.0-Exception-Class-1.45
+  /nix/store/l90rbbsdllkdzgbzai2znyxz27hwx8xr-perl5.40.0-File-ShareDir-1.118
+  /nix/store/qb3zsgfy0b7ypyahchflyhzf77phfhz8-perl5.40.0-File-ShareDir-Install-0.14
+  /nix/store/q003wphdgg7x5llcjbk365k3k6m3ndr5-perl5.40.0-File-Which-1.27
+  /nix/store/h4lspakbyddm1d177ag9fzp2p0fji24b-perl5.40.0-IO-String-1.08
+  /nix/store/02ihx9y88lb77sxkw2k1s7qwccq3f8vx-perl5.40.0-Lingua-EN-Inflect-1.905
+  /nix/store/qsndpy6r137xb4zy39cgzvx3i10rrmjp-perl5.40.0-List-SomeUtils-0.59
+  /nix/store/4f4z80wppgdrc98rhnypigqddvc452q2-perl5.40.0-Module-Build-0.4234
+  /nix/store/mhyrsc8kh8xiimrgq7kgawkxrrssmyfb-perl5.40.0-Module-Implementation-0.09
+  /nix/store/0wi1vl2kli6i6p66sn2nbq93asfzkgdn-perl5.40.0-Module-Pluggable-5.2
+  /nix/store/drmfs84hw7xjg04zij9qsq2m93y2sp38-perl5.40.0-Module-Runtime-0.016
+  /nix/store/m4wh6maphy9cq5lr5glfzhb5s86dwsi7-perl5.40.0-PPI-1.277
+  /nix/store/djw60jsra8ky4imz6ylq61qvmmsh423p-perl5.40.0-PPIx-QuoteLike-0.023
+  /nix/store/jwr94rxxlnxlcfg1bqbigzz2cbxf5l98-perl5.40.0-PPIx-Regexp-0.088
+  /nix/store/vjgszwigp5g9msafb24cpmc2fpk12sz6-perl5.40.0-PPIx-Utilities-1.001000
+  /nix/store/yj1iyjaqlk6ixf677kw3346lfagsiq8a-perl5.40.0-PPIx-Utils-0.003
+  /nix/store/5p7vl5h51s8h25qzs9z31v2c53rj8l7w-perl5.40.0-Params-Util-1.102
+  /nix/store/qp03bl14mmg68snimrrsl34hljcbdw8r-perl5.40.0-Path-Tiny-0.144
+  /nix/store/vgkb0g8mnmjygzpvjlvw0hzqlhxzi7hf-perl5.40.0-Perl-Critic-1.150
+  /nix/store/fh600s5qanqp6qgsbmhi6xcj9ax3dmf7-perl5.40.0-Perl-Tidy-20230912
+  /nix/store/l9pfvsj2lqfb7qsvh1isf9xxm20ppi31-perl5.40.0-Pod-Parser-1.66
+  /nix/store/k2a8lxmf6h6imq7l4xrj6fya490nx9la-perl5.40.0-Pod-Spell-1.26
+  /nix/store/lmd2r8276kzkpaf8g1r6f9q6rx2bfwhg-perl5.40.0-Readonly-2.05
+  /nix/store/kmmb16vac0xnrlgd4a0gwvsziz78j08y-perl5.40.0-String-Format-1.18
+  /nix/store/9b2lqnp1pssky01ap94dq2lhaf26jk4l-perl5.40.0-Task-Weaken-1.06
+  /nix/store/mv2zbw71r0lb1k8p7v2n4cpacqfz1d8m-perl5.40.0-Test-Deep-1.204
+  /nix/store/v9xcs1rz8zfj2lcws7ng5s6hx9nv3n5h-shellcheck-0.10.0
+  /nix/store/a19ymc4bw62d28444040jz33fi22j0aj-shellcheck-0.10.0-bin
+  /nix/store/xw1hqz8bwf42wz8lac4wq19z811nm26m-source
+  /nix/store/8v0shmpiq1rpscvz7jvrsif59jb2s8zi-x86_energy_perf_policy-6.12.42
+building '/nix/store/2fdbp880g1gn9bc7bayfyjvh7165g07i-users-groups.json.drv'...
+building '/nix/store/2yy030f52xp1sdfni1cv1fc7cy6yr8kp-etc-tlp.conf.drv'...
+building '/nix/store/5dnqm2v92wjs0c08dgz1svx1cpvgql9r-nixos.conf.drv'...
+copying path '/nix/store/xw1hqz8bwf42wz8lac4wq19z811nm26m-source' from 'https://cache.nixos.org'...
+building '/nix/store/mfc9nz0x63cf4kkghajdcah6zvfgnjh4-extra-udev-rules.drv'...
+building '/nix/store/d20jyv1fqaqdgyp69winyw1b8z9xbf99-unit-cpufreq.service-disabled.drv'...
+building '/nix/store/xzyxsv1g81lpaq6s5n3mg0fg3k4302xx-unit-systemd-rfkill.service-disabled.drv'...
+building '/nix/store/pqz04ambqp3pr5m6hnayxakcransfman-unit-systemd-rfkill.socket-disabled.drv'...
+building '/nix/store/pm4kw8m0fay04abrxyql9im1niyh0f42-unit-tlp-sleep.service.drv'...
+copying path '/nix/store/77giqzg63jh0mllwqhhx5z3vcgjz9grb-perl5.40.0-B-Keywords-1.27' from 'https://cache.nixos.org'...
+copying path '/nix/store/ap8hq00wswns1vplfxbb58znjnqmzjwc-perl5.40.0-Class-Tiny-1.008' from 'https://cache.nixos.org'...
+copying path '/nix/store/25nws3ivqn2g6idqlhykx8985x7vxw2c-perl5.40.0-Class-Inspector-1.36' from 'https://cache.nixos.org'...
+copying path '/nix/store/a874rvpi2h8s8xlf2pbf0zd0fdgl4swr-perl5.40.0-Devel-StackTrace-2.04' from 'https://cache.nixos.org'...
+copying path '/nix/store/vkhqz8cg05v80y7may22rikckimra7xf-perl5.40.0-Config-Tiny-2.29' from 'https://cache.nixos.org'...
+copying path '/nix/store/9yzphxgsgrkjn040ff3z246ijxmg9gh4-perl5.40.0-Class-Data-Inheritable-0.09' from 'https://cache.nixos.org'...
+copying path '/nix/store/0wi1vl2kli6i6p66sn2nbq93asfzkgdn-perl5.40.0-Module-Pluggable-5.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/qp03bl14mmg68snimrrsl34hljcbdw8r-perl5.40.0-Path-Tiny-0.144' from 'https://cache.nixos.org'...
+copying path '/nix/store/kmmb16vac0xnrlgd4a0gwvsziz78j08y-perl5.40.0-String-Format-1.18' from 'https://cache.nixos.org'...
+copying path '/nix/store/drmfs84hw7xjg04zij9qsq2m93y2sp38-perl5.40.0-Module-Runtime-0.016' from 'https://cache.nixos.org'...
+copying path '/nix/store/h4lspakbyddm1d177ag9fzp2p0fji24b-perl5.40.0-IO-String-1.08' from 'https://cache.nixos.org'...
+copying path '/nix/store/q003wphdgg7x5llcjbk365k3k6m3ndr5-perl5.40.0-File-Which-1.27' from 'https://cache.nixos.org'...
+copying path '/nix/store/lmd2r8276kzkpaf8g1r6f9q6rx2bfwhg-perl5.40.0-Readonly-2.05' from 'https://cache.nixos.org'...
+copying path '/nix/store/02ihx9y88lb77sxkw2k1s7qwccq3f8vx-perl5.40.0-Lingua-EN-Inflect-1.905' from 'https://cache.nixos.org'...
+copying path '/nix/store/9b2lqnp1pssky01ap94dq2lhaf26jk4l-perl5.40.0-Task-Weaken-1.06' from 'https://cache.nixos.org'...
+copying path '/nix/store/jdfc7ijn7ad9pyf129l26j3l329qwjjd-checkbashisms-2.25.10' from 'https://cache.nixos.org'...
+building '/nix/store/2y9yly6mhbwnvqc47wiwb3gj0x5i68v0-X-Restart-Triggers-systemd-modules-load.drv'...
+building '/nix/store/3jdfldg6f06zvmd3avkqvv825wqmiijg-X-Restart-Triggers-tlp.drv'...
+copying path '/nix/store/kgkvjrbi8pa5iyk4rallci8ggrmqpajd-hdparm-9.65' from 'https://cache.nixos.org'...
+copying path '/nix/store/ys0xwgk0w82qdpfvw7d51jnr3qqhs1vj-iw-6.9' from 'https://cache.nixos.org'...
+copying path '/nix/store/qb3zsgfy0b7ypyahchflyhzf77phfhz8-perl5.40.0-File-ShareDir-Install-0.14' from 'https://cache.nixos.org'...
+copying path '/nix/store/4f4z80wppgdrc98rhnypigqddvc452q2-perl5.40.0-Module-Build-0.4234' from 'https://cache.nixos.org'...
+copying path '/nix/store/5p7vl5h51s8h25qzs9z31v2c53rj8l7w-perl5.40.0-Params-Util-1.102' from 'https://cache.nixos.org'...
+copying path '/nix/store/fh600s5qanqp6qgsbmhi6xcj9ax3dmf7-perl5.40.0-Perl-Tidy-20230912' from 'https://cache.nixos.org'...
+copying path '/nix/store/mv2zbw71r0lb1k8p7v2n4cpacqfz1d8m-perl5.40.0-Test-Deep-1.204' from 'https://cache.nixos.org'...
+copying path '/nix/store/8v0shmpiq1rpscvz7jvrsif59jb2s8zi-x86_energy_perf_policy-6.12.42' from 'https://cache.nixos.org'...
+copying path '/nix/store/l9pfvsj2lqfb7qsvh1isf9xxm20ppi31-perl5.40.0-Pod-Parser-1.66' from 'https://cache.nixos.org'...
+copying path '/nix/store/a19ymc4bw62d28444040jz33fi22j0aj-shellcheck-0.10.0-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/x9jfcl6dbx26069wmj5023f8207vq5if-perl5.40.0-Exception-Class-1.45' from 'https://cache.nixos.org'...
+copying path '/nix/store/l90rbbsdllkdzgbzai2znyxz27hwx8xr-perl5.40.0-File-ShareDir-1.118' from 'https://cache.nixos.org'...
+copying path '/nix/store/mhyrsc8kh8xiimrgq7kgawkxrrssmyfb-perl5.40.0-Module-Implementation-0.09' from 'https://cache.nixos.org'...
+building '/nix/store/42ml26f9h13s4a070b0csndyv987vbg3-unit-systemd-modules-load.service.drv'...
+copying path '/nix/store/qsndpy6r137xb4zy39cgzvx3i10rrmjp-perl5.40.0-List-SomeUtils-0.59' from 'https://cache.nixos.org'...
+copying path '/nix/store/m4wh6maphy9cq5lr5glfzhb5s86dwsi7-perl5.40.0-PPI-1.277' from 'https://cache.nixos.org'...
+copying path '/nix/store/k2a8lxmf6h6imq7l4xrj6fya490nx9la-perl5.40.0-Pod-Spell-1.26' from 'https://cache.nixos.org'...
+copying path '/nix/store/v9xcs1rz8zfj2lcws7ng5s6hx9nv3n5h-shellcheck-0.10.0' from 'https://cache.nixos.org'...
+building '/nix/store/q0vc1mqdv851b5l2q0ywjk1bq7frk4jm-unit-tlp.service.drv'...
+copying path '/nix/store/djw60jsra8ky4imz6ylq61qvmmsh423p-perl5.40.0-PPIx-QuoteLike-0.023' from 'https://cache.nixos.org'...
+copying path '/nix/store/jwr94rxxlnxlcfg1bqbigzz2cbxf5l98-perl5.40.0-PPIx-Regexp-0.088' from 'https://cache.nixos.org'...
+copying path '/nix/store/yj1iyjaqlk6ixf677kw3346lfagsiq8a-perl5.40.0-PPIx-Utils-0.003' from 'https://cache.nixos.org'...
+copying path '/nix/store/vjgszwigp5g9msafb24cpmc2fpk12sz6-perl5.40.0-PPIx-Utilities-1.001000' from 'https://cache.nixos.org'...
+copying path '/nix/store/vgkb0g8mnmjygzpvjlvw0hzqlhxzi7hf-perl5.40.0-Perl-Critic-1.150' from 'https://cache.nixos.org'...
+building '/nix/store/vh09cgg5d4ahyz9w52brw55s6fxwgmgb-tlp-1.8.0.drv'...
+Running phase: unpackPhase
+unpacking source archive /nix/store/xw1hqz8bwf42wz8lac4wq19z811nm26m-source
+source root is source
+Running phase: patchPhase
+applying patch /nix/store/wcnb0yy6zr8knx4s8jbj47a3zpvivxn3-0001-makefile-correctly-sed-paths.patch
+patching file Makefile
+applying patch /nix/store/aadj05iya39cl14grm3v364ah2lldfa6-0002-reintroduce-tlp-sleep-service.patch
+patching file Makefile
+patching file tlp-sleep.service.in
+Running phase: updateAutotoolsGnuConfigScriptsPhase
+Running phase: configurePhase
+no configure script, doing nothing
+Running phase: buildPhase
+build flags: SHELL=/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/bash TLP_NO_INIT=1 TLP_WITH_ELOGIND=0 TLP_WITH_SYSTEMD=1 DESTDIR=/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp.in > tlp
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp.conf.in > tlp.conf
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-func-base.in > tlp-func-base
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-rdw-nm.in > tlp-rdw-nm
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-rdw.rules.in > tlp-rdw.rules
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-rdw-udev.in > tlp-rdw-udev
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-rdw.in > tlp-rdw
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-rf.in > tlp-rf
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp.rules.in > tlp.rules
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-readconfs.in > tlp-readconfs
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-run-on.in > tlp-run-on
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-sleep.service.in > tlp-sleep.service
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp.service.in > tlp.service
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-stat.in > tlp-stat
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp.upstart.in > tlp.upstart
+sed -e "s|@TLPVER@|1.8.0|g" -e "s|@TLP_SBIN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin|g" -e "s|@TLP_TLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp|g" -e "s|@TLP_FLIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d|g" -e "s|@TLP_ULIB@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev|g" -e "s|@TLP_BATD@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d|g" -e "s|@TLP_CONFUSR@|/etc/tlp.conf|g" -e "s|@TLP_CONFDIR@|/etc/tlp.d|g" -e "s|@TLP_CONFDEF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf|g" -e "s|@TLP_CONFREN@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf|g" -e "s|@TLP_CONFDPR@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf|g" -e "s|@TLP_CONF@|/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/default/tlp|g" -e "s|@TLP_RUN@|/run/tlp|g" -e "s|@TLP_VAR@|/var/lib/tlp|g" tlp-usb-udev.in > tlp-usb-udev
+Running phase: checkPhase
+check flags: SHELL=/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/bash TLP_NO_INIT=1 TLP_WITH_ELOGIND=0 TLP_WITH_SYSTEMD=1 DESTDIR=/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0 VERBOSE=y checkall
+*** checkbashisms ***************************************************************************
+*** shellcheck ******************************************************************************
+*** perlcritic ******************************************************************************
+tlp-pcilist source OK
+tlp-readconfs.in source OK
+tlp-usblist source OK
+*** checkdupconst ***************************************************************************
+*** checkbatdrv bat.d/05-thinkpad         ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/05-thinkpad~ are identical
+*** checkbatdrv bat.d/10-thinkpad-legacy  ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/10-thinkpad-legacy~ are identical
+*** checkbatdrv bat.d/15-lenovo           ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/15-lenovo~ are identical
+*** checkbatdrv bat.d/20-huawei           ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/20-huawei~ are identical
+*** checkbatdrv bat.d/25-msi              ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/25-msi~ are identical
+*** checkbatdrv bat.d/30-samsung          ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/30-samsung~ are identical
+*** checkbatdrv bat.d/35-lg               ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/35-lg~ are identical
+*** checkbatdrv bat.d/36-lg-legacy        ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/36-lg-legacy~ are identical
+*** checkbatdrv bat.d/40-sony             ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/40-sony~ are identical
+*** checkbatdrv bat.d/45-system76         ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/45-system76~ are identical
+*** checkbatdrv bat.d/50-toshiba          ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/50-toshiba~ are identical
+*** checkbatdrv bat.d/55-cros-ec          ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/55-cros-ec~ are identical
+*** checkbatdrv bat.d/56-framework        ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/56-framework~ are identical
+*** checkbatdrv bat.d/60-macbook          ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/60-macbook~ are identical
+*** checkbatdrv bat.d/65-dell             ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/65-dell~ are identical
+*** checkbatdrv bat.d/89-asus             ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/89-asus~ are identical
+*** checkbatdrv bat.d/90-generic          ***********************************************
+Files bat.d/TEMPLATE~ and bat.d/90-generic~ are identical
+rm -f bat.d/*~
+*** checkwip ********************************************************************************
+Running phase: installPhase
+install flags: SHELL=/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/bash TLP_NO_INIT=1 TLP_WITH_ELOGIND=0 TLP_WITH_SYSTEMD=1 DESTDIR=/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0 install-tlp install-man install-rdw install-man-rdw
+# Package tlp
+install -D -m 755 tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin/tlp
+install -D -m 755 tlp-rf /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/bluetooth
+ln -sf bluetooth /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/nfc
+ln -sf bluetooth /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/wifi
+ln -sf bluetooth /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/wwan
+install -m 755 tlp-run-on /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/run-on-ac
+ln -sf run-on-ac /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/run-on-bat
+install -m 755 tlp-stat /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/
+install -D -m 755 -t /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d func.d/*
+install -m 755 tlp-func-base /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/
+install -D -m 755 -t /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d bat.d/*
+install -m 755 tlp-pcilist /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/
+install -m 755 tlp-readconfs /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/
+install -m 755 tlp-usblist /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/
+install -D -m 755 tlp-usb-udev /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/tlp-usb-udev
+install -D -m 644 tlp.rules /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/rules.d/85-tlp.rules
+[ -f /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/tlp.conf ] || install -D -m 644 tlp.conf /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/tlp.conf
+install -d /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/tlp.d
+install -D -m 644 README.d /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/tlp.d/README
+install -D -m 644 00-template.conf /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/etc/tlp.d/00-template.conf
+install -D -m 644 defaults.conf /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/defaults.conf
+install -D -m 644 rename.conf /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/rename.conf
+install -D -m 644 deprecated.conf /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/deprecated.conf
+install -D -m 644 tlp.service /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/systemd/system/tlp.service
+install -D -m 644 tlp-sleep.service /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/systemd/system/tlp-sleep.service
+install -D -m 644 completion/bash/tlp.bash_completion /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/tlp
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/tlp-stat
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/bluetooth
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/nfc
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/wifi
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/wwan
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/run-on-ac
+ln -sf tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/run-on-bat
+install -D -m 644 completion/zsh/_tlp /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/zsh/site-functions/_tlp
+install -D -m 644 completion/zsh/_tlp-radio-device /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/zsh/site-functions/_tlp-radio-device
+install -D -m 644 completion/zsh/_tlp-run-on /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/zsh/site-functions/_tlp-run-on
+install -D -m 644 completion/zsh/_tlp-stat /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/zsh/site-functions/_tlp-stat
+install -D -m 644 completion/fish/tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/tlp.fish
+install -D -m 644 completion/fish/tlp-stat.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/tlp-stat.fish
+ln -sf tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/bluetooth.fish
+ln -sf tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/nfc.fish
+ln -sf tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/wifi.fish
+ln -sf tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/wwan.fish
+ln -sf tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/run-on-ac.fish
+ln -sf tlp.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/run-on-bat.fish
+install -D -m 644 de.linrunner.tlp.metainfo.xml /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/metainfo/de.linrunner.tlp.metainfo.xml
+install -d -m 755 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/var/lib/tlp
+# manpages
+install -d -m 755 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/man1
+cd man && install -m 644 bluetooth.1 nfc.1 run-on-ac.1 run-on-bat.1 wifi.1 wwan.1 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/man1/
+install -d -m 755 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/man8
+cd man && install -m 644 tlp.8 tlp-stat.8 tlp.service.8 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/man8/
+# manpages
+install -d -m 755 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/man8
+cd man-rdw && install -m 644 tlp-rdw.8 /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/man8/
+# Package tlp-rdw
+install -D -m 755 tlp-rdw /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/tlp-rdw
+install -D -m 644 tlp-rdw.rules /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/rules.d/85-tlp-rdw.rules
+install -D -m 755 tlp-rdw-udev /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/tlp-rdw-udev
+install -D -m 755 tlp-rdw-nm /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/NetworkManager/dispatcher.d/99tlp-rdw-nm
+install -D -m 644 completion/bash/tlp-rdw.bash_completion /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/bash-completion/completions/tlp-rdw
+install -D -m 644 completion/zsh/_tlp-rdw /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/zsh/site-functions/_tlp-rdw
+install -D -m 644 completion/fish/tlp-rdw.fish /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/fish/vendor_completions.d/tlp-rdw.fish
+make: 'install-man-rdw' is up to date.
+Running phase: fixupPhase
+shrinking RPATHs of ELF executables and libraries in /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
+checking for references to /build/ in /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0...
+gzipping man pages under /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/man/
+moving /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin/* to /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin
+patching script interpreter paths in /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/.tlp-pcilist-wrapped: interpreter directive changed from "#!/usr/bin/perl" to "/nix/store/nxw1xxfxkd6bm570nb6gv0g6pghp7i4c-perl-5.40.0/bin/perl"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/35-lg: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/55-cros-ec: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/40-sony: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/56-framework: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/60-macbook: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/TEMPLATE: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/36-lg-legacy: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/30-samsung: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/10-thinkpad-legacy: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/25-msi: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/20-huawei: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/65-dell: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/50-toshiba: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/05-thinkpad: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/89-asus: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/45-system76: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/90-generic: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/bat.d/15-lenovo: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/.tlp-usblist-wrapped: interpreter directive changed from "#!/usr/bin/perl" to "/nix/store/nxw1xxfxkd6bm570nb6gv0g6pghp7i4c-perl-5.40.0/bin/perl"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/tlp-func-base: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/.tlp-readconfs-wrapped: interpreter directive changed from "#!/usr/bin/perl" to "/nix/store/nxw1xxfxkd6bm570nb6gv0g6pghp7i4c-perl-5.40.0/bin/perl"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/20-tlp-func-usb: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/05-tlp-func-pm: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/10-tlp-func-cpu: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/15-tlp-func-disk: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/45-tlp-func-gpu: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/40-tlp-func-bay: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/tlp-func-stat: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/25-tlp-func-rf: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/30-tlp-func-rf-sw: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/share/tlp/func.d/35-tlp-func-batt: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/tlp-rdw: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/tlp-stat: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/tlp: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/nfc: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/run-on-ac: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/bluetooth: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/run-on-bat: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/wwan: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin/wifi: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/tlp-usb-udev: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/tlp-rdw-udev: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+/nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/NetworkManager/dispatcher.d/99tlp-rdw-nm: interpreter directive changed from "#!/bin/sh" to "/nix/store/cfqbabpc7xwg8akbcchqbq3cai6qq2vs-bash-5.2p37/bin/sh"
+stripping (with command strip and flags -S -p) in  /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/bin /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/sbin
+building '/nix/store/c8d7jqmg7aymb23g00ajgb9zy0i0bg6l-hwdb.bin.drv'...
+building '/nix/store/94la073rkv35l98pnjzd4klz70rmyqis-system-generators.drv'...
+building '/nix/store/ln9p6jxrmmafvl82b9xkivkmy29asllj-system-path.drv'...
+building '/nix/store/k7l8gyawafd1cg5agry9pl7p15vz7pg7-system-shutdown.drv'...
+building '/nix/store/4ga02zb4q80widl6fdz3da8rpngh27r0-udev-rules.drv'...
+building '/nix/store/m5gy56pkhl3vr1yfbhw4m5gjvn0iyd2k-user-generators.drv'...
+Adding hwdb files for package /nix/store/ksz6ygnl9f1l6jff3mwmjsmw7qyyxa59-systemd-257.7
+Adding hwdb files for package /nix/store/f040c9mhj9sm2mngzqpbsx6walbpqqnr-ipv6-privacy-extensions.rules
+Adding hwdb files for package /nix/store/xgnd6bkasz0hb6817dg9jhjqifkd9jcd-ipv6-privacy-extensions.rules
+Adding hwdb files for package /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31
+Adding hwdb files for package /nix/store/9v4lbzjmyiakal5anxxz1f9crb9jj6dz-bcache-tools-1.0.8
+Adding hwdb files for package /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1
+Adding hwdb files for package /nix/store/84xgh27n9jvcqbwwvnndnsqg60rsy5ab-NetworkManager-fortisslvpn-gnome-1.4.0
+Adding hwdb files for package /nix/store/ahys62y5jbn1yknxi5d3gg8z9dmwgr1q-NetworkManager-iodine-gnome-1.2.0-unstable-2024-11-02
+Adding hwdb files for package /nix/store/hn60fqvy9a9rarzis3skgn0wsl8yh0sf-NetworkManager-l2tp-gnome-1.20.20
+Adding hwdb files for package /nix/store/rvkwm6n0xcbkd8ax7vlg8xy1f6cqan60-NetworkManager-openconnect-1.2.10
+Adding hwdb files for package /nix/store/kviazvwppqnqx45m493nswsa93wvcill-NetworkManager-openvpn-1.12.0
+Adding hwdb files for package /nix/store/47w29zlm5c80khjqzkfmlqd9q9nhg4fh-NetworkManager-vpnc-1.4.0
+Adding hwdb files for package /nix/store/30ka641qgrjlxxsr9zg7bwaiv21azzqf-NetworkManager-sstp-gnome-1.3.2
+Adding hwdb files for package /nix/store/zykypmdzblyss1yk4hpdk7z461ywqdwj-wpa_supplicant-2.11
+Adding hwdb files for package /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0
+Adding hwdb files for package /nix/store/52ikaw4gd08qa6apm44kllvjxripnlml-udisks-2.10.1
+Adding hwdb files for package /nix/store/6lakmbgkblqr9ck3kvhmfbcwr0pr4zw1-extra-udev-rules
+Adding hwdb files for package /nix/store/cajxzhhk2xv3vvkklx2alik2zdh9kfrw-extra-hwdb-file
+Adding hwdb files for package /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
+Adding hwdb files for package /nix/store/k04aq5dbw7wfm0yf44bbl3cw5c3asysz-bluez-5.80
+Adding hwdb files for package /nix/store/vh9gp7pna8x50vpshd9c5m3094qfcp8n-pipewire-1.4.7
+Adding hwdb files for package /nix/store/48rmmd47dq2kvpqh6n9i8z7ns2n037jj-libmtp-1.1.22
+Adding hwdb files for package /nix/store/62y2pmg4grpvyr867m6fk9gjqwlqq2kl-steam-devices-udev-rules-1.0.0.61-unstable-2024-05-22
+Adding hwdb files for package /nix/store/62y6mxxp6slnp0s692b6xrdpxhl1hcsa-OpenTabletDriver-0.6.5.1
+Generating hwdb database...
+
 warning: collision between `/nix/store/3dly4nra7wf8a60rmw3nzd49bj2r6h0w-rust-analyzer-2025-05-12/bin/rust-analyzer' and `/nix/store/0d8ynqpm38hw003kikwhx5n98vv00bcg-rustup-1.27.1/bin/rust-analyzer'
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/strip' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/strip'
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/c++' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/c++'
@@ -33,6 +358,34 @@ warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrap
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/cpp' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/cpp'
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/ld.bfd' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/ld.bfd'
 warning: collision between `/nix/store/hjyjij6hgk4xn9k6i66c79a3h9cpcs0j-cargo-1.86.0/bin/cargo' and `/nix/store/0d8ynqpm38hw003kikwhx5n98vv00bcg-rustup-1.27.1/bin/cargo'
+Adding rules for package /nix/store/f040c9mhj9sm2mngzqpbsx6walbpqqnr-ipv6-privacy-extensions.rules
+Copying /nix/store/f040c9mhj9sm2mngzqpbsx6walbpqqnr-ipv6-privacy-extensions.rules/etc/udev/rules.d/98-ipv6-privacy-extensions.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/98-ipv6-privacy-extensions.rules
+Adding rules for package /nix/store/xgnd6bkasz0hb6817dg9jhjqifkd9jcd-ipv6-privacy-extensions.rules
+Copying /nix/store/xgnd6bkasz0hb6817dg9jhjqifkd9jcd-ipv6-privacy-extensions.rules/etc/udev/rules.d/99-ipv6-privacy-extensions.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/99-ipv6-privacy-extensions.rules
+Adding rules for package /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31
+Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/10-dm.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/10-dm.rules
+Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/11-dm-lvm.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/11-dm-lvm.rules
+Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/13-dm-disk.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/13-dm-disk.rules
+Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/69-dm-lvm.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/69-dm-lvm.rules
+Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/95-dm-notify.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/95-dm-notify.rules
+Adding rules for package /nix/store/9v4lbzjmyiakal5anxxz1f9crb9jj6dz-bcache-tools-1.0.8
+Copying /nix/store/9v4lbzjmyiakal5anxxz1f9crb9jj6dz-bcache-tools-1.0.8/lib/udev/rules.d/69-bcache.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/69-bcache.rules
+Adding rules for package /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1
+Copying /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1/lib/udev/rules.d/84-nm-drivers.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/84-nm-drivers.rules
+Copying /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1/lib/udev/rules.d/85-nm-unmanaged.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/85-nm-unmanaged.rules
+Copying /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1/lib/udev/rules.d/90-nm-thunderbolt.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/90-nm-thunderbolt.rules
+Adding rules for package /nix/store/84xgh27n9jvcqbwwvnndnsqg60rsy5ab-NetworkManager-fortisslvpn-gnome-1.4.0
+Adding rules for package /nix/store/ahys62y5jbn1yknxi5d3gg8z9dmwgr1q-NetworkManager-iodine-gnome-1.2.0-unstable-2024-11-02
+Adding rules for package /nix/store/hn60fqvy9a9rarzis3skgn0wsl8yh0sf-NetworkManager-l2tp-gnome-1.20.20
+Adding rules for package /nix/store/rvkwm6n0xcbkd8ax7vlg8xy1f6cqan60-NetworkManager-openconnect-1.2.10
+Adding rules for package /nix/store/kviazvwppqnqx45m493nswsa93wvcill-NetworkManager-openvpn-1.12.0
+Adding rules for package /nix/store/47w29zlm5c80khjqzkfmlqd9q9nhg4fh-NetworkManager-vpnc-1.4.0
+Adding rules for package /nix/store/30ka641qgrjlxxsr9zg7bwaiv21azzqf-NetworkManager-sstp-gnome-1.3.2
+Adding rules for package /nix/store/zykypmdzblyss1yk4hpdk7z461ywqdwj-wpa_supplicant-2.11
+Adding rules for package /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-broadmobi-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-broadmobi-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-cinterion-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-cinterion-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-dell-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-dell-port-types.rules
 warning: collision between `/nix/store/wvzx0h2zhhb6i0xynf5sfavygfiafb2f-avr-gcc-wrapper-14.3.0-man/share/man/man7/fsf-funding.7.gz' and `/nix/store/2v9vxil7vvgxkmiv3i00nva4nmyc9jlp-gcc-wrapper-14.3.0-man/share/man/man7/fsf-funding.7.gz'
 warning: collision between `/nix/store/wvzx0h2zhhb6i0xynf5sfavygfiafb2f-avr-gcc-wrapper-14.3.0-man/share/man/man7/gfdl.7.gz' and `/nix/store/2v9vxil7vvgxkmiv3i00nva4nmyc9jlp-gcc-wrapper-14.3.0-man/share/man/man7/gfdl.7.gz'
 warning: collision between `/nix/store/wvzx0h2zhhb6i0xynf5sfavygfiafb2f-avr-gcc-wrapper-14.3.0-man/share/man/man7/gpl.7.gz' and `/nix/store/2v9vxil7vvgxkmiv3i00nva4nmyc9jlp-gcc-wrapper-14.3.0-man/share/man/man7/gpl.7.gz'
@@ -41,22 +394,77 @@ warning: collision between `/nix/store/zvk1b25zv575naqwdpzgl8l4np1lqk6l-avr-gcc-
 warning: collision between `/nix/store/zvk1b25zv575naqwdpzgl8l4np1lqk6l-avr-gcc-wrapper-14.3.0-info/share/info/cpp.info' and `/nix/store/085rfiv3b5az7iyfqgd1d7f9h97hk7v3-gcc-wrapper-14.3.0-info/share/info/cpp.info'
 warning: collision between `/nix/store/zvk1b25zv575naqwdpzgl8l4np1lqk6l-avr-gcc-wrapper-14.3.0-info/share/info/gccint.info' and `/nix/store/085rfiv3b5az7iyfqgd1d7f9h97hk7v3-gcc-wrapper-14.3.0-info/share/info/gccint.info'
 warning: collision between `/nix/store/zvk1b25zv575naqwdpzgl8l4np1lqk6l-avr-gcc-wrapper-14.3.0-info/share/info/cppinternals.info' and `/nix/store/085rfiv3b5az7iyfqgd1d7f9h97hk7v3-gcc-wrapper-14.3.0-info/share/info/cppinternals.info'
-created 17841 symlinks in user environment
-building '/nix/store/q7hrwilc4sjs6smkcb43dskcn190jhbj-X-Restart-Triggers-polkit.drv'...
-building '/nix/store/abs4paw13h5fzd0dx76abnl2j9xq4k8i-dbus-1.drv'...
-building '/nix/store/aby4k5szd200ra9pmn978s9jj23bgac1-unit-polkit.service.drv'...
-building '/nix/store/s853iv9sh2dacrjrb8fwc4q1zxfn5z34-X-Restart-Triggers-dbus-broker.drv'...
-building '/nix/store/m4bdm0nsnznygind3ml8m3rbri78qf8f-unit-dbus-broker.service.drv'...
-building '/nix/store/n1xapszdnpm0bln04sx3xabd64zfpbpl-unit-dbus-broker.service.drv'...
-building '/nix/store/3z78wwyvdjxl91cx7nimnmwg0cqgwfpd-user-units.drv'...
-building '/nix/store/ybn0kmq1rd1fhdm62y8kkgyamflnw0i6-system-units.drv'...
-building '/nix/store/0xcf06781ng7saif4j8v3145i0356g25-etc.drv'...
-building '/nix/store/yl780z4k6gn69f401s0dj76mcbsm6qh2-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv'...
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-dlink-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-dlink-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-ericsson-mbm.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-ericsson-mbm.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-fibocom-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-fibocom-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-foxconn-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-foxconn-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-gosuncn-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-gosuncn-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-haier-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-haier-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-huawei-net-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-huawei-net-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-linktop-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-linktop-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-longcheer-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-longcheer-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-mtk-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-mtk-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-nokia-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-nokia-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-qcom-soc.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-qcom-soc.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-quectel-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-quectel-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-sierra.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-sierra.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-simtech-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-simtech-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-telit-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-telit-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-tplink-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-tplink-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-ublox-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-ublox-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-x22x-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-x22x-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-zte-port-types.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-zte-port-types.rules
+Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/80-mm-candidate.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/80-mm-candidate.rules
+Adding rules for package /nix/store/52ikaw4gd08qa6apm44kllvjxripnlml-udisks-2.10.1
+Copying /nix/store/52ikaw4gd08qa6apm44kllvjxripnlml-udisks-2.10.1/lib/udev/rules.d/80-udisks2.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/80-udisks2.rules
+Adding rules for package /nix/store/6lakmbgkblqr9ck3kvhmfbcwr0pr4zw1-extra-udev-rules
+Copying /nix/store/6lakmbgkblqr9ck3kvhmfbcwr0pr4zw1-extra-udev-rules/etc/udev/rules.d/99-local.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/99-local.rules
+Adding rules for package /nix/store/cajxzhhk2xv3vvkklx2alik2zdh9kfrw-extra-hwdb-file
+Adding rules for package /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
+Copying /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/rules.d/85-tlp-rdw.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/85-tlp-rdw.rules
+Copying /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/rules.d/85-tlp.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/85-tlp.rules
+Adding rules for package /nix/store/k04aq5dbw7wfm0yf44bbl3cw5c3asysz-bluez-5.80
+Copying /nix/store/k04aq5dbw7wfm0yf44bbl3cw5c3asysz-bluez-5.80/lib/udev/rules.d/97-hid2hci.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/97-hid2hci.rules
+Adding rules for package /nix/store/vh9gp7pna8x50vpshd9c5m3094qfcp8n-pipewire-1.4.7
+Copying /nix/store/vh9gp7pna8x50vpshd9c5m3094qfcp8n-pipewire-1.4.7/lib/udev/rules.d/90-pipewire-alsa.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/90-pipewire-alsa.rules
+Adding rules for package /nix/store/48rmmd47dq2kvpqh6n9i8z7ns2n037jj-libmtp-1.1.22
+Copying /nix/store/48rmmd47dq2kvpqh6n9i8z7ns2n037jj-libmtp-1.1.22/lib/udev/rules.d/69-libmtp.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/69-libmtp.rules
+Adding rules for package /nix/store/62y2pmg4grpvyr867m6fk9gjqwlqq2kl-steam-devices-udev-rules-1.0.0.61-unstable-2024-05-22
+Copying /nix/store/62y2pmg4grpvyr867m6fk9gjqwlqq2kl-steam-devices-udev-rules-1.0.0.61-unstable-2024-05-22/lib/udev/rules.d/60-steam-input.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/60-steam-input.rules
+Copying /nix/store/62y2pmg4grpvyr867m6fk9gjqwlqq2kl-steam-devices-udev-rules-1.0.0.61-unstable-2024-05-22/lib/udev/rules.d/60-steam-vr.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/60-steam-vr.rules
+Adding rules for package /nix/store/62y6mxxp6slnp0s692b6xrdpxhl1hcsa-OpenTabletDriver-0.6.5.1
+Copying /nix/store/62y6mxxp6slnp0s692b6xrdpxhl1hcsa-OpenTabletDriver-0.6.5.1/lib/udev/rules.d/70-opentabletdriver.rules to /nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/70-opentabletdriver.rules
+Checking that all programs called by relative paths in udev rules exist in /nix/store/ksz6ygnl9f1l6jff3mwmjsmw7qyyxa59-systemd-257.7/lib/udev... OK
+Checking that all programs called by absolute paths in udev rules exist... OK
+Verifying udev rules using udevadm verify...
+/nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/nix/store/n7bp78mvdngn243n686rr410vd3arbb7-udev-rules/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+
+46 udev rules files have been checked.
+  Success: 46
+  Fail:    0
+OK
+building '/nix/store/5gnkxkskq91xpnzbx8if8a7aplcrs43j-X-Restart-Triggers-systemd-udevd.drv'...
+building '/nix/store/72nfj7670wy3c1i5zz1b6v0mqfyj4ihi-unit-systemd-udevd.service.drv'...
+created 17881 symlinks in user environment
+building '/nix/store/145hvjb2s5gqzq8g83n1gdwfk7a3782q-X-Restart-Triggers-polkit.drv'...
+building '/nix/store/j3ib83yvm87crzfddqxl0k7fw1h4dycn-dbus-1.drv'...
+building '/nix/store/f7ghn6r7vym7bj5nwjisdnjq1avrnbr9-unit-polkit.service.drv'...
+building '/nix/store/9qgc7gashpvx9n80mrgxlq8zkl53jk06-X-Restart-Triggers-dbus-broker.drv'...
+building '/nix/store/hfjhqh4zn47mcbjqvkhgj12kzavpbs49-unit-dbus-broker.service.drv'...
+building '/nix/store/pc9k8ph71lgr6a0ynxcw4na7pwi6h3sm-unit-dbus-broker.service.drv'...
+building '/nix/store/2j8z6rwmf7kfg73j53ni7rzj1jfripwr-user-units.drv'...
+building '/nix/store/fldhbiqqfxsyzj837ihza7nwnb2hzjg8-system-units.drv'...
+building '/nix/store/jvciapjcxrkd5mj5i8ddbrbswg2frf38-etc.drv'...
+building '/nix/store/i1qdqqa74rl6ymib32d0r0rlmjk8whxj-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv'...
+stopping the following units: systemd-modules-load.service, systemd-rfkill.socket
 activating the configuration...
 setting up /etc...
+removing obsolete symlink ‘/etc/profiles/per-user/internet_wizard’...
 reloading user units for internet_wizard...
 restarting sysinit-reactivation.target
 reloading the following units: dbus-broker.service
-restarting the following units: polkit.service
-the following new units were started: libvirtd.service, NetworkManager-dispatcher.service, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
-Done. The new configuration is /nix/store/n7kryyaby6qgc0h1fl7s190jhk3pmv6w-nixos-system-han-tyumi-25.05.808437.48f4c982de68
+restarting the following units: polkit.service, systemd-udevd.service
+starting the following units: systemd-modules-load.service
+the following new units were started: libvirtd.service, NetworkManager-dispatcher.service, tlp.service
+Done. The new configuration is /nix/store/bvskzdc18k83hni2wirg84r4ghx7dxap-nixos-system-han-tyumi-25.05.808437.48f4c982de68

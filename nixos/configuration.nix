@@ -28,6 +28,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # Enables catppuccin color scheme
   catppuccin.enable = true;
 
   # Bootloader.
@@ -54,6 +55,30 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
+
+  # Enable system power management
+  powerManagement.enable = true;
+
+  # Enable tlp for laptop power management
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
+
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -83,6 +108,7 @@
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
 
+  # Enable the Hyprland window manager
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -117,6 +143,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable the music player damon
   services.mpd = {
     enable = true;
     musicDirectory = "/home/internet_wizard/Music";
@@ -146,14 +173,14 @@
     description = "Stell";
     extraGroups = ["networkmanager" "wheel" "dialout" "video"];
     packages = with pkgs; [
-      #  thunderbird
     ];
   };
 
 home-manager.useUserPackages = true;
 home-manager.useGlobalPkgs = true;
 
-home-manager.users.internet_wizard = { pkgs, ... }: {
+# Enable Home Manager
+/* home-manager.users.internet_wizard = { pkgs, ... }: {
   home.packages = with pkgs; [ atool ];
   # programs.bash.enable = true;
 
@@ -166,7 +193,7 @@ home-manager.users.internet_wizard = { pkgs, ... }: {
   # release notes. 
   home.stateVersion = "25.05"; # Please read the comment before changing. 
 
-};
+}; */
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["internet_wizard"];
