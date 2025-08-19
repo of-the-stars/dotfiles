@@ -1,158 +1,21 @@
 building Nix...
 building the system configuration...
-these 26 derivations will be built:
-  /nix/store/bjf05qql8gpcdfsvk918ap40pm8fjwby-steam-fhsenv-rootfs.drv
-  /nix/store/3y93blf7cs540k5gmicxcxfc1cdczrri-steam-bwrap.drv
-  /nix/store/kv7mp7ihswlzfpbwrc1nqr3a6i93wl93-steam.drv
-  /nix/store/2wnggcbyniv627i62gqf91l4wwc7n390-system-path.drv
-  /nix/store/bglpa9ks37z2hpd4rp3sd6ilrkmccp6z-dbus-1.drv
-  /nix/store/cwfkaiiwris2qvhzd61v8qpllqpply3m-X-Restart-Triggers-dbus-broker.drv
-  /nix/store/3mha6ddffd49qisw7ayxich7szl93qp0-unit-dbus-broker.service.drv
-  /nix/store/mrsnzrsjdwz4lbw4ak8x9an1083pdyka-udev-rules.drv
-  /nix/store/r4nm7lskfklj6nd13xm9jf447vyg8ic5-X-Restart-Triggers-systemd-udevd.drv
-  /nix/store/64db48zaf90b5n3nm7f7y31g413scrvq-unit-systemd-udevd.service.drv
-  /nix/store/lvpnrpyzm0vwjq38yjavyrppg6q0gafg-graphics-driver.conf.drv
-  /nix/store/3f3kj9sny9f5ki70wiziyvq5gzllw1pr-tmpfiles.d.drv
-  /nix/store/z6ijs5p22qi7bzrci2gyg0cbl6693gsx-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
-  /nix/store/c99gvixl0nbb6m3c3xap3p6xx7zkdshv-unit-systemd-tmpfiles-resetup.service.drv
-  /nix/store/hw3rjmc0dx883cml8yvh34zbwig69ss4-nixos.conf.drv
-  /nix/store/h5wkpmm161si0zhn2bw1l7lb7srnvfhh-X-Restart-Triggers-systemd-modules-load.drv
-  /nix/store/f8lc6qsrd0dri6fnkrywf2w2d857hchz-unit-systemd-modules-load.service.drv
-  /nix/store/bscpvqg29jwkigksayswv6bwgykd86m7-X-Restart-Triggers-polkit.drv
-  /nix/store/g8chxriv7z3a1zjj2q8vll080vl424gc-unit-polkit.service.drv
-  /nix/store/14h9vc91rqbifqxibyrks0x2x5nfp4sr-system-units.drv
-  /nix/store/fkmysjhb0x4bkmcgpv187s4cfd7j0wmd-hwdb.bin.drv
-  /nix/store/fnjqhffm6qyq4drldk4p20z498jvdgi5-unit-dbus-broker.service.drv
-  /nix/store/pdv4nlmb2b8vclkrjnclcxipqg86gf5g-user-units.drv
-  /nix/store/qnkcxcnz47gnfvljqga9s1dd820irfi0-etc-bashrc.drv
-  /nix/store/62lz07jwgqa8xzrsfdl830vmgxqmrdi7-etc.drv
-  /nix/store/b7nc4y8qkrgjk1kcgaclfp7pi3gqys2i-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv
-this path will be fetched (0.26 MiB download, 1.71 MiB unpacked):
-  /nix/store/q44bj66s30w5y850gb4mlq23qfnx6m9q-firefox-141.0.3
-copying path '/nix/store/q44bj66s30w5y850gb4mlq23qfnx6m9q-firefox-141.0.3' from 'https://cache.nixos.org'...
-building '/nix/store/qnkcxcnz47gnfvljqga9s1dd820irfi0-etc-bashrc.drv'...
-building '/nix/store/fkmysjhb0x4bkmcgpv187s4cfd7j0wmd-hwdb.bin.drv'...
-building '/nix/store/hw3rjmc0dx883cml8yvh34zbwig69ss4-nixos.conf.drv'...
-building '/nix/store/mrsnzrsjdwz4lbw4ak8x9an1083pdyka-udev-rules.drv'...
-building '/nix/store/lvpnrpyzm0vwjq38yjavyrppg6q0gafg-graphics-driver.conf.drv'...
-building '/nix/store/bjf05qql8gpcdfsvk918ap40pm8fjwby-steam-fhsenv-rootfs.drv'...
-Adding hwdb files for package /nix/store/ksz6ygnl9f1l6jff3mwmjsmw7qyyxa59-systemd-257.7
-Adding hwdb files for package /nix/store/f040c9mhj9sm2mngzqpbsx6walbpqqnr-ipv6-privacy-extensions.rules
-Adding hwdb files for package /nix/store/xgnd6bkasz0hb6817dg9jhjqifkd9jcd-ipv6-privacy-extensions.rules
-Adding hwdb files for package /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31
-Adding hwdb files for package /nix/store/9v4lbzjmyiakal5anxxz1f9crb9jj6dz-bcache-tools-1.0.8
-Adding hwdb files for package /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1
-Adding hwdb files for package /nix/store/84xgh27n9jvcqbwwvnndnsqg60rsy5ab-NetworkManager-fortisslvpn-gnome-1.4.0
-Adding hwdb files for package /nix/store/ahys62y5jbn1yknxi5d3gg8z9dmwgr1q-NetworkManager-iodine-gnome-1.2.0-unstable-2024-11-02
-Adding hwdb files for package /nix/store/hn60fqvy9a9rarzis3skgn0wsl8yh0sf-NetworkManager-l2tp-gnome-1.20.20
-Adding hwdb files for package /nix/store/rvkwm6n0xcbkd8ax7vlg8xy1f6cqan60-NetworkManager-openconnect-1.2.10
-Adding hwdb files for package /nix/store/kviazvwppqnqx45m493nswsa93wvcill-NetworkManager-openvpn-1.12.0
-Adding hwdb files for package /nix/store/47w29zlm5c80khjqzkfmlqd9q9nhg4fh-NetworkManager-vpnc-1.4.0
-Adding hwdb files for package /nix/store/30ka641qgrjlxxsr9zg7bwaiv21azzqf-NetworkManager-sstp-gnome-1.3.2
-Adding hwdb files for package /nix/store/zykypmdzblyss1yk4hpdk7z461ywqdwj-wpa_supplicant-2.11
-Adding hwdb files for package /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0
-Adding hwdb files for package /nix/store/52ikaw4gd08qa6apm44kllvjxripnlml-udisks-2.10.1
-Adding hwdb files for package /nix/store/6lakmbgkblqr9ck3kvhmfbcwr0pr4zw1-extra-udev-rules
-Adding hwdb files for package /nix/store/cajxzhhk2xv3vvkklx2alik2zdh9kfrw-extra-hwdb-file
-Adding hwdb files for package /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
-Adding hwdb files for package /nix/store/k04aq5dbw7wfm0yf44bbl3cw5c3asysz-bluez-5.80
-Adding hwdb files for package /nix/store/vh9gp7pna8x50vpshd9c5m3094qfcp8n-pipewire-1.4.7
-Adding hwdb files for package /nix/store/48rmmd47dq2kvpqh6n9i8z7ns2n037jj-libmtp-1.1.22
-Adding hwdb files for package /nix/store/62y6mxxp6slnp0s692b6xrdpxhl1hcsa-OpenTabletDriver-0.6.5.1
-Generating hwdb database...
-
-Adding rules for package /nix/store/f040c9mhj9sm2mngzqpbsx6walbpqqnr-ipv6-privacy-extensions.rules
-Copying /nix/store/f040c9mhj9sm2mngzqpbsx6walbpqqnr-ipv6-privacy-extensions.rules/etc/udev/rules.d/98-ipv6-privacy-extensions.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/98-ipv6-privacy-extensions.rules
-Adding rules for package /nix/store/xgnd6bkasz0hb6817dg9jhjqifkd9jcd-ipv6-privacy-extensions.rules
-Copying /nix/store/xgnd6bkasz0hb6817dg9jhjqifkd9jcd-ipv6-privacy-extensions.rules/etc/udev/rules.d/99-ipv6-privacy-extensions.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/99-ipv6-privacy-extensions.rules
-Adding rules for package /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31
-Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/10-dm.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/10-dm.rules
-Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/11-dm-lvm.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/11-dm-lvm.rules
-Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/13-dm-disk.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/13-dm-disk.rules
-Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/69-dm-lvm.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/69-dm-lvm.rules
-Copying /nix/store/xg9psxsapqf720y5d05m6a4fqall112p-lvm2-2.03.31/lib/udev/rules.d/95-dm-notify.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/95-dm-notify.rules
-Adding rules for package /nix/store/9v4lbzjmyiakal5anxxz1f9crb9jj6dz-bcache-tools-1.0.8
-Copying /nix/store/9v4lbzjmyiakal5anxxz1f9crb9jj6dz-bcache-tools-1.0.8/lib/udev/rules.d/69-bcache.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/69-bcache.rules
-Adding rules for package /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1
-Copying /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1/lib/udev/rules.d/84-nm-drivers.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/84-nm-drivers.rules
-Copying /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1/lib/udev/rules.d/85-nm-unmanaged.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/85-nm-unmanaged.rules
-Copying /nix/store/kak79wrar59cxam1v63f8ssiq3qnwr3r-networkmanager-1.52.1/lib/udev/rules.d/90-nm-thunderbolt.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/90-nm-thunderbolt.rules
-Adding rules for package /nix/store/84xgh27n9jvcqbwwvnndnsqg60rsy5ab-NetworkManager-fortisslvpn-gnome-1.4.0
-Adding rules for package /nix/store/ahys62y5jbn1yknxi5d3gg8z9dmwgr1q-NetworkManager-iodine-gnome-1.2.0-unstable-2024-11-02
-Adding rules for package /nix/store/hn60fqvy9a9rarzis3skgn0wsl8yh0sf-NetworkManager-l2tp-gnome-1.20.20
-Adding rules for package /nix/store/rvkwm6n0xcbkd8ax7vlg8xy1f6cqan60-NetworkManager-openconnect-1.2.10
-Adding rules for package /nix/store/kviazvwppqnqx45m493nswsa93wvcill-NetworkManager-openvpn-1.12.0
-Adding rules for package /nix/store/47w29zlm5c80khjqzkfmlqd9q9nhg4fh-NetworkManager-vpnc-1.4.0
-Adding rules for package /nix/store/30ka641qgrjlxxsr9zg7bwaiv21azzqf-NetworkManager-sstp-gnome-1.3.2
-Adding rules for package /nix/store/zykypmdzblyss1yk4hpdk7z461ywqdwj-wpa_supplicant-2.11
-Adding rules for package /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-broadmobi-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-broadmobi-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-cinterion-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-cinterion-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-dell-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-dell-port-types.rules
-building '/nix/store/h5wkpmm161si0zhn2bw1l7lb7srnvfhh-X-Restart-Triggers-systemd-modules-load.drv'...
-building '/nix/store/3f3kj9sny9f5ki70wiziyvq5gzllw1pr-tmpfiles.d.drv'...
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-dlink-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-dlink-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-ericsson-mbm.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-ericsson-mbm.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-fibocom-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-fibocom-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-foxconn-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-foxconn-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-gosuncn-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-gosuncn-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-haier-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-haier-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-huawei-net-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-huawei-net-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-linktop-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-linktop-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-longcheer-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-longcheer-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-mtk-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-mtk-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-nokia-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-nokia-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-qcom-soc.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-qcom-soc.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-quectel-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-quectel-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-sierra.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-sierra.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-simtech-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-simtech-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-telit-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-telit-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-tplink-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-tplink-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-ublox-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-ublox-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-x22x-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-x22x-port-types.rules
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/77-mm-zte-port-types.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-zte-port-types.rules
-structuredAttrs is enabled
-building '/nix/store/f8lc6qsrd0dri6fnkrywf2w2d857hchz-unit-systemd-modules-load.service.drv'...
-Copying /nix/store/ibviqf38m9h3r5p7mmbpj1ry3rw46rim-modemmanager-1.22.0/lib/udev/rules.d/80-mm-candidate.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/80-mm-candidate.rules
-Adding rules for package /nix/store/52ikaw4gd08qa6apm44kllvjxripnlml-udisks-2.10.1
-Copying /nix/store/52ikaw4gd08qa6apm44kllvjxripnlml-udisks-2.10.1/lib/udev/rules.d/80-udisks2.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/80-udisks2.rules
-Adding rules for package /nix/store/6lakmbgkblqr9ck3kvhmfbcwr0pr4zw1-extra-udev-rules
-Copying /nix/store/6lakmbgkblqr9ck3kvhmfbcwr0pr4zw1-extra-udev-rules/etc/udev/rules.d/99-local.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/99-local.rules
-Adding rules for package /nix/store/cajxzhhk2xv3vvkklx2alik2zdh9kfrw-extra-hwdb-file
-Adding rules for package /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0
-Copying /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/rules.d/85-tlp-rdw.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/85-tlp-rdw.rules
-Copying /nix/store/q8s8srpljan4y7g00khkzfnlbyhlvp9d-tlp-1.8.0/lib/udev/rules.d/85-tlp.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/85-tlp.rules
-Adding rules for package /nix/store/k04aq5dbw7wfm0yf44bbl3cw5c3asysz-bluez-5.80
-Copying /nix/store/k04aq5dbw7wfm0yf44bbl3cw5c3asysz-bluez-5.80/lib/udev/rules.d/97-hid2hci.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/97-hid2hci.rules
-Adding rules for package /nix/store/vh9gp7pna8x50vpshd9c5m3094qfcp8n-pipewire-1.4.7
-Copying /nix/store/vh9gp7pna8x50vpshd9c5m3094qfcp8n-pipewire-1.4.7/lib/udev/rules.d/90-pipewire-alsa.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/90-pipewire-alsa.rules
-Adding rules for package /nix/store/48rmmd47dq2kvpqh6n9i8z7ns2n037jj-libmtp-1.1.22
-Copying /nix/store/48rmmd47dq2kvpqh6n9i8z7ns2n037jj-libmtp-1.1.22/lib/udev/rules.d/69-libmtp.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/69-libmtp.rules
-Adding rules for package /nix/store/62y6mxxp6slnp0s692b6xrdpxhl1hcsa-OpenTabletDriver-0.6.5.1
-Copying /nix/store/62y6mxxp6slnp0s692b6xrdpxhl1hcsa-OpenTabletDriver-0.6.5.1/lib/udev/rules.d/70-opentabletdriver.rules to /nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/70-opentabletdriver.rules
-Checking that all programs called by relative paths in udev rules exist in /nix/store/ksz6ygnl9f1l6jff3mwmjsmw7qyyxa59-systemd-257.7/lib/udev... OK
-Checking that all programs called by absolute paths in udev rules exist... OK
-Verifying udev rules using udevadm verify...
-/nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
-/nix/store/yqy19gkrvcp95yi065v2ajxyjzv44q0h-udev-rules/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
-
-44 udev rules files have been checked.
-  Success: 44
-  Fail:    0
-OK
-building '/nix/store/z6ijs5p22qi7bzrci2gyg0cbl6693gsx-X-Restart-Triggers-systemd-tmpfiles-resetup.drv'...
-building '/nix/store/r4nm7lskfklj6nd13xm9jf447vyg8ic5-X-Restart-Triggers-systemd-udevd.drv'...
-building '/nix/store/c99gvixl0nbb6m3c3xap3p6xx7zkdshv-unit-systemd-tmpfiles-resetup.service.drv'...
-building '/nix/store/64db48zaf90b5n3nm7f7y31g413scrvq-unit-systemd-udevd.service.drv'...
-Warning: Schema ?org.gnome.system.locale? has path ?/system/locale/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.
-Warning: Schema ?org.gnome.system.proxy? has path ?/system/proxy/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.
-Warning: Schema ?org.gnome.system.proxy.http? has path ?/system/proxy/http/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.
-Warning: Schema ?org.gnome.system.proxy.https? has path ?/system/proxy/https/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.
-Warning: Schema ?org.gnome.system.proxy.ftp? has path ?/system/proxy/ftp/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.
-Warning: Schema ?org.gnome.system.proxy.socks? has path ?/system/proxy/socks/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.
-building '/nix/store/3y93blf7cs540k5gmicxcxfc1cdczrri-steam-bwrap.drv'...
-building '/nix/store/kv7mp7ihswlzfpbwrc1nqr3a6i93wl93-steam.drv'...
-building '/nix/store/2wnggcbyniv627i62gqf91l4wwc7n390-system-path.drv'...
+these 11 derivations will be built:
+  /nix/store/zyqvbryf772ay9wmpyf9psq164wsfalw-system-path.drv
+  /nix/store/0m5jn63z8bdcmc21wdjyl6jk99yzxvmk-dbus-1.drv
+  /nix/store/piv51yywyrh98lc3xn5h1snxzjhx8r40-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/28y4i6h9x0wsap33pl8lgbdkqgsadndq-unit-dbus-broker.service.drv
+  /nix/store/c8xysbq7wxy44x6l52x05x6ss05vhivb-X-Restart-Triggers-polkit.drv
+  /nix/store/inq8pij3kwkmkx01mv28jqf01709jv90-unit-polkit.service.drv
+  /nix/store/bh3l01lqyv81jn131p1hl25ssrjqwid9-system-units.drv
+  /nix/store/ams68r75lzg491jwh9ampx71ylnhysrv-unit-dbus-broker.service.drv
+  /nix/store/vj3cvmvmc0rl4smknbycvlmnxzd3f1f6-user-units.drv
+  /nix/store/w3pjpki0by36vbni17d80v9xaig6vkb6-etc.drv
+  /nix/store/1yxf5jh5ycn8cmrvjfr5jm2h16zrywfz-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv
+this path will be fetched (0.04 MiB download, 0.09 MiB unpacked):
+  /nix/store/afrca7kkf6z87v6vmpcxak8qji12y1y7-tree-2.2.1
+copying path '/nix/store/afrca7kkf6z87v6vmpcxak8qji12y1y7-tree-2.2.1' from 'https://cache.nixos.org'...
+building '/nix/store/zyqvbryf772ay9wmpyf9psq164wsfalw-system-path.drv'...
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/strip' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/strip'
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/c++' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/c++'
 warning: collision between `/nix/store/kaj8d1zcn149m40s9h0xi0khakibiphz-gcc-wrapper-14.3.0/bin/ld.gold' and `/nix/store/4kb26qqjpf23gmi26ddbp86g0cfj3l6p-clang-wrapper-19.1.7/bin/ld.gold'
@@ -170,25 +33,22 @@ warning: collision between `/nix/store/zvk1b25zv575naqwdpzgl8l4np1lqk6l-avr-gcc-
 warning: collision between `/nix/store/zvk1b25zv575naqwdpzgl8l4np1lqk6l-avr-gcc-wrapper-14.3.0-info/share/info/cppinternals.info' and `/nix/store/085rfiv3b5az7iyfqgd1d7f9h97hk7v3-gcc-wrapper-14.3.0-info/share/info/cppinternals.info'
 warning: collision between `/nix/store/0d8ynqpm38hw003kikwhx5n98vv00bcg-rustup-1.27.1/bin/rust-analyzer' and `/nix/store/3dly4nra7wf8a60rmw3nzd49bj2r6h0w-rust-analyzer-2025-05-12/bin/rust-analyzer'
 warning: collision between `/nix/store/0d8ynqpm38hw003kikwhx5n98vv00bcg-rustup-1.27.1/bin/cargo' and `/nix/store/hjyjij6hgk4xn9k6i66c79a3h9cpcs0j-cargo-1.86.0/bin/cargo'
-created 17880 symlinks in user environment
-building '/nix/store/bscpvqg29jwkigksayswv6bwgykd86m7-X-Restart-Triggers-polkit.drv'...
-building '/nix/store/bglpa9ks37z2hpd4rp3sd6ilrkmccp6z-dbus-1.drv'...
-building '/nix/store/g8chxriv7z3a1zjj2q8vll080vl424gc-unit-polkit.service.drv'...
-building '/nix/store/cwfkaiiwris2qvhzd61v8qpllqpply3m-X-Restart-Triggers-dbus-broker.drv'...
-building '/nix/store/3mha6ddffd49qisw7ayxich7szl93qp0-unit-dbus-broker.service.drv'...
-building '/nix/store/fnjqhffm6qyq4drldk4p20z498jvdgi5-unit-dbus-broker.service.drv'...
-building '/nix/store/14h9vc91rqbifqxibyrks0x2x5nfp4sr-system-units.drv'...
-building '/nix/store/pdv4nlmb2b8vclkrjnclcxipqg86gf5g-user-units.drv'...
-building '/nix/store/62lz07jwgqa8xzrsfdl830vmgxqmrdi7-etc.drv'...
-building '/nix/store/b7nc4y8qkrgjk1kcgaclfp7pi3gqys2i-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv'...
-stopping the following units: systemd-modules-load.service, systemd-tmpfiles-resetup.service
+created 17882 symlinks in user environment
+building '/nix/store/c8xysbq7wxy44x6l52x05x6ss05vhivb-X-Restart-Triggers-polkit.drv'...
+building '/nix/store/0m5jn63z8bdcmc21wdjyl6jk99yzxvmk-dbus-1.drv'...
+building '/nix/store/inq8pij3kwkmkx01mv28jqf01709jv90-unit-polkit.service.drv'...
+building '/nix/store/piv51yywyrh98lc3xn5h1snxzjhx8r40-X-Restart-Triggers-dbus-broker.drv'...
+building '/nix/store/28y4i6h9x0wsap33pl8lgbdkqgsadndq-unit-dbus-broker.service.drv'...
+building '/nix/store/ams68r75lzg491jwh9ampx71ylnhysrv-unit-dbus-broker.service.drv'...
+building '/nix/store/bh3l01lqyv81jn131p1hl25ssrjqwid9-system-units.drv'...
+building '/nix/store/vj3cvmvmc0rl4smknbycvlmnxzd3f1f6-user-units.drv'...
+building '/nix/store/w3pjpki0by36vbni17d80v9xaig6vkb6-etc.drv'...
+building '/nix/store/1yxf5jh5ycn8cmrvjfr5jm2h16zrywfz-nixos-system-han-tyumi-25.05.808437.48f4c982de68.drv'...
 activating the configuration...
 setting up /etc...
-removing obsolete symlink ‘/etc/firefox/policies/policies.json’...
 reloading user units for internet_wizard...
 restarting sysinit-reactivation.target
 reloading the following units: dbus-broker.service
-restarting the following units: polkit.service, systemd-udevd.service
-starting the following units: systemd-modules-load.service, systemd-tmpfiles-resetup.service
+restarting the following units: polkit.service
 the following new units were started: libvirtd.service, NetworkManager-dispatcher.service
-Done. The new configuration is /nix/store/01yjcyr0qxs5sdibfiy40b0sqnr97fhz-nixos-system-han-tyumi-25.05.808437.48f4c982de68
+Done. The new configuration is /nix/store/y9iv4k3krbw9khh2w3x4vjhz5pl07bng-nixos-system-han-tyumi-25.05.808437.48f4c982de68

@@ -120,6 +120,7 @@ fi
 # alias cat='bat'
 alias icat="kitten icat"
 alias cd="z"
+alias c="clear"
 
 # internet_wizard's custom functions
 lg() {
