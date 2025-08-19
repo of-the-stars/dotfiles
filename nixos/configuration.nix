@@ -205,9 +205,6 @@ home-manager.useGlobalPkgs = true;
     stdenv.cc.cc
   ];
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Install neovim and set as default editor
   programs.neovim = {
     enable = true;
@@ -235,10 +232,6 @@ home-manager.useGlobalPkgs = true;
     SYSTEMD_EDITOR = "nvim";
     TERM = "kitty";
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-  };
-
-  programs.steam = {
-    enable = true;
   };
 
   xdg.portal.enable = true;
@@ -269,11 +262,6 @@ home-manager.useGlobalPkgs = true;
       obs-vkcapture
       droidcam-obs
     ];
-  };
-
-  # Enable starship
-  programs.starship = {
-    enable = true;
   };
 
   # Fonts
