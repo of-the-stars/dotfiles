@@ -1,16 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+{ config, pkgs, lib, inputs, ... }:
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./systempackages-configuration.nix
+#    ./systempackages-configuration.nix
     <catppuccin/modules/nixos>
     <home-manager/nixos>
   ];
@@ -206,10 +202,10 @@ home-manager.useGlobalPkgs = true;
   ];
 
   # Install neovim and set as default editor
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
 
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["internet_wizard"];
@@ -317,4 +313,111 @@ home-manager.useGlobalPkgs = true;
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    # avrlibc
+    # inputs.nvim.packages.han-tyumi.nvim
+    # wget
+    alejandra
+    audacity
+    avrdude
+    bat
+    bind
+    bluez
+    brightnessctl
+    cargo
+    cargo-generate
+    cargo-info
+    cargo-make
+    clang
+    clang-tools
+    direnv
+    discord
+    docker
+    droidcam
+    dunst
+    dvgrab
+    element-desktop
+    fastfetch
+    ffmpeg
+    firefox
+    fzf
+    gcc
+    gimp
+    git
+    gnumake
+    grim
+    halloy
+    handbrake
+    htop-vim
+    hyprlock
+    hyprpaper
+    inkscape
+    kdePackages.dolphin
+    kdePackages.kdenlive
+    kdePackages.xwaylandvideobridge
+    kitty
+    krita
+    lazygit
+    libnotify
+    lua-language-server
+    luajitPackages.luarocks
+    mdbook
+    ncspot
+    neocities
+    networkmanagerapplet
+    nil
+    nodejs_24
+    nwg-look
+    obsidian
+    openssl
+    pipewire
+    pkgsCross.avr.buildPackages.binutils
+    pkgsCross.avr.buildPackages.gcc
+    prismlauncher
+    protonvpn-gui
+    python3
+    qbittorrent
+    ravedude
+    rename
+    ripgrep
+    rmpc
+    ruby
+    rust-analyzer
+    rustup
+    screen
+    signal-export
+    slurp
+    spotify
+    starship
+    starship
+    steam
+    stow
+    tiny
+    tio
+    traceroute
+    tree
+    tree-sitter
+    trunk
+    unstable.ansilove
+    unstable.signal-desktop
+    unzip
+    usbutils
+    v4l-utils
+    vim
+    vlc
+    waybar
+    wev
+    whois
+    wine
+    wireplumber
+    wl-clipboard
+    wofi
+    yazi
+    yt-dlp
+    zoxide
+  ];
 }
