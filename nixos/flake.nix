@@ -1,22 +1,21 @@
 {
-  description = "A very basic flake";
+  description = "System flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nvim.url = "path:~/.config/kickstart-nixcats"
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-    nixosConfigurations.my-nixos = nixpkgs.lib.nixosSystem {
-    	system = "x86_64-linux";
-	modules = [
-		./configuration.nix
-	];
+    nixosConfigurations.han-tyumi = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./configuration.nix
+      ];
     };
+
+    packages.han-tyumi.nvim = derivation;
 
   };
 }
