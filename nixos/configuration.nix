@@ -6,6 +6,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    <home-manager/nixos>
     <catppuccin/modules/nixos>
   ];
 
@@ -146,26 +147,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable the music player damon
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/home/internet_wizard/Music";
-    extraConfig = ''
-      audio_output {
-        type "pulse"
-        name "my pipewire"
-        server "127.0.0.1"
-      }
-    '';
-
-    network.port = 6600;
-  
-    # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
-    # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-    user = "internet_wizard";
-  };
-
   systemd.services.mpd.environment = {
     # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
     XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.internet_wizard.uid}"; # User-id must match the user running MPD. MPD will look inside this directory for the PipeWire socket.
@@ -180,24 +161,43 @@
     ];
   };
 
-# home-manager.useUserPackages = true;
-# home-manager.useGlobalPkgs = true;
-
-# Enable Home Manager
-/* home-manager.users.internet_wizard = { pkgs, ... }: {
-  home.packages = with pkgs; [ atool ];
-  # programs.bash.enable = true;
-
-  # This value determines the Home Manager release that your configuration is 
-  # compatible with. This helps avoid breakage when a new Home Manager release 
-  # introduces backwards incompatible changes. 
-  #
-  # You should not change this value, even if you update Home Manager. If you do 
-  # want to update the value, then make sure to first check the Home Manager 
-  # release notes. 
-  home.stateVersion = "25.05"; # Please read the comment before changing. 
-
-}; */
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  
+  # Enable Home Manager
+  home-manager.users.internet_wizard = { pkgs, ... }: {
+    home.packages = with pkgs; [ ];
+    # programs.bash.enable = true;
+  
+    # This value determines the Home Manager release that your configuration is 
+    # compatible with. This helps avoid breakage when a new Home Manager release 
+    # introduces backwards incompatible changes. 
+    #
+    # You should not change this value, even if you update Home Manager. If you do 
+    # want to update the value, then make sure to first check the Home Manager 
+    # release notes. 
+    home.stateVersion = "25.05"; # Please read the comment before changing. 
+  
+    # Enable the music player damon
+    services.mpd = {
+      enable = true;
+      musicDirectory = "/home/internet_wizard/Music";
+      # extraConfig = ''
+      #   audio_output {
+      #     type "pipewire"
+      #     name "my pipewire"
+      #   }
+      # '';
+  
+      network.port = 6600;
+    
+      # Optional:
+      network.listenAddress = "any"; # if you want to allow non-localhost connections
+      # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+      # user = "internet_wizard";
+    };
+  
+  }; 
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["internet_wizard"];
