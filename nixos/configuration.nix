@@ -1,14 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nvim, unstable, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-#    ./systempackages-configuration.nix
     <catppuccin/modules/nixos>
-    <home-manager/nixos>
   ];
 
   # gtk = {
@@ -145,8 +143,8 @@
     musicDirectory = "/home/internet_wizard/Music";
     extraConfig = ''
       audio_output {
-        type "pipewire"
-        name "PipeWire"
+        type "alsa"
+        name "my alsa"
       }
     '';
 
@@ -172,8 +170,8 @@
     ];
   };
 
-home-manager.useUserPackages = true;
-home-manager.useGlobalPkgs = true;
+# home-manager.useUserPackages = true;
+# home-manager.useGlobalPkgs = true;
 
 # Enable Home Manager
 /* home-manager.users.internet_wizard = { pkgs, ... }: {
@@ -321,7 +319,7 @@ home-manager.useGlobalPkgs = true;
   environment.systemPackages = with pkgs; [
     # avrlibc
 
-    # inputs.nvim.packages."${system}".nvim
+    # nvim.defaultPackage.${pkgs.system}
     # wget
     alejandra
     audacity
@@ -404,8 +402,8 @@ home-manager.useGlobalPkgs = true;
     tree
     tree-sitter
     trunk
-    unstable.ansilove
-    unstable.signal-desktop
+    # unstable.ansilove
+    # unstable.signal-desktop
     unzip
     usbutils
     v4l-utils
