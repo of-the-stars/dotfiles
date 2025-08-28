@@ -154,6 +154,7 @@
       audio_output {
         type "pipewire"
         name "my pipewire"
+        server "127.0.0.1"
       }
     '';
 
