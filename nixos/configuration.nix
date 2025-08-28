@@ -119,7 +119,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  # services.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -132,6 +132,15 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+  };
+
+  services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
+    "monitor.bluez.properties" = {
+        "bluez5.enable-sbc-xq" = true;
+        "bluez5.enable-msbc" = true;
+        "bluez5.enable-hw-volume" = true;
+        "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -158,14 +167,14 @@
 
   systemd.services.mpd.environment = {
     # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.internet_wizard.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.internet_wizard.uid}"; # User-id must match the user running MPD. MPD will look inside this directory for the PipeWire socket.
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.internet_wizard = {
     isNormalUser = true;
     description = "Stell";
-    extraGroups = ["networkmanager" "wheel" "dialout" "video"];
+    extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
     packages = with pkgs; [
     ];
   };
