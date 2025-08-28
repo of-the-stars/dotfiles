@@ -143,8 +143,8 @@
     musicDirectory = "/home/internet_wizard/Music";
     extraConfig = ''
       audio_output {
-        type "alsa"
-        name "my alsa"
+        type "pipewire"
+        name "my pipewire"
       }
     '';
 
