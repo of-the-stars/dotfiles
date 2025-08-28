@@ -152,7 +152,7 @@
     musicDirectory = "/home/internet_wizard/Music";
     extraConfig = ''
       audio_output {
-        type "pipewire"
+        type "pulse"
         name "my pipewire"
         server "127.0.0.1"
       }
