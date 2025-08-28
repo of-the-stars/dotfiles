@@ -152,8 +152,8 @@
     musicDirectory = "/home/internet_wizard/Music";
     extraConfig = ''
       audio_output {
-        type "pulse"
-        name "my pulse"
+        type "pipewire"
+        name "my pipewire"
       }
     '';
 
