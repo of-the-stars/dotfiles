@@ -366,6 +366,7 @@
     hyprlock
     hyprpaper
     inkscape
+    kdePackages.k3b
     kdePackages.dolphin
     kdePackages.kdenlive
     kdePackages.xwaylandvideobridge
