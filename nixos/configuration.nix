@@ -369,6 +369,7 @@
     kdePackages.k3b
     kdePackages.dolphin
     kdePackages.kdenlive
+    kdePackages.okular
     kdePackages.xwaylandvideobridge
     kitty
     krita
