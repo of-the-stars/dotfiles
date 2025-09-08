@@ -43,6 +43,17 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  services.create_ap = {
+    enable = true;
+    settings = {
+      INTERNET_IFACE = "eth0";
+      WIFI_IFACE = "wlan0";
+      SSID = "han-tyumi";
+      PASSPHRASE = "vomitverse";
+    };
+  };
+
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -278,6 +289,10 @@
 
   environment.variables.PATH = "${pkgs.clang-tools}/bin:$PATH";
 
+  programs.starship = {
+    enable = true;
+  };
+
   environment.sessionVariables = {
     # If your cursor becomes invisible
     # WLR_NO_HARDWARE_CURSORS = "1";
@@ -353,6 +368,7 @@
     element-desktop
     fastfetch
     ffmpeg
+    starship
     firefox
     fzf
     gcc
@@ -404,8 +420,6 @@
     signal-export
     slurp
     spotify
-    starship
-    starship
     steam
     stow
     tiny
