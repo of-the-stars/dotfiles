@@ -46,8 +46,8 @@
   services.create_ap = {
     enable = true;
     settings = {
-      INTERNET_IFACE = "eth0";
-      WIFI_IFACE = "wlan0";
+      INTERNET_IFACE = "wlp2s0";
+      WIFI_IFACE = "wlp2s0";
       SSID = "han-tyumi";
       PASSPHRASE = "vomitverse";
     };
