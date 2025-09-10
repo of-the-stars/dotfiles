@@ -8,6 +8,18 @@ case $- in
       *) return;;
 esac
 
+# enable starship
+eval "$(starship init bash)"
+
+# enable direnv
+eval "$(direnv hook bash)"
+
+# enable zoxide
+eval "$(zoxide init bash)"
+
+# Home Manager
+. "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -43,7 +55,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -76,7 +88,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
+    alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
@@ -85,7 +97,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -161,14 +173,3 @@ export EDITOR='nvim'
 
 # export MANPAGER="nvim +Man!"
 
-# enable starship
-eval "$(starship init bash)"
-
-# enable direnv
-eval "$(direnv hook bash)"
-
-# enable zoxide
-eval "$(zoxide init bash)"
-
-# Home Manager
-. "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
