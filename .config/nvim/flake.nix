@@ -101,6 +101,7 @@
           lua-language-server
           nixd
           stylua
+          rust-analyzer
         ];
         kickstart-debug = [
           delve
