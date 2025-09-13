@@ -346,6 +346,7 @@
 
     # nvim.defaultPackage.${pkgs.system}
     # wget
+    qimgv
     alejandra
     audacity
     avrdude

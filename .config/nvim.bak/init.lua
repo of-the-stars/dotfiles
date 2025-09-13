@@ -39,7 +39,7 @@ vim.keymap.set({ "n", "v" }, "H", "g^") -- Sets 'H' to go to the beginning of th
 
 vim.keymap.set({ "n", "v" }, "L", "g$") -- Sets 'L' to go to the end of the visual line
 
-vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true }) -- Lets you use <Esc> to return back to normal mode from the terminal
+vim.keymap.set("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true }) -- Lets you use <Esc> to return back to normal mode from the terminal
 
 vim.g.rustaceanvim = {
   -- Plugin configuration
