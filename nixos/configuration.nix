@@ -346,6 +346,7 @@
 
     # nvim.defaultPackage.${pkgs.system}
     # wget
+    qgis
     organicmaps
     qimgv
     alejandra
