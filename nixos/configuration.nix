@@ -385,6 +385,7 @@
     hyprlock
     hyprpaper
     inkscape
+    kdePackages.marble
     kdePackages.k3b
     kdePackages.dolphin
     kdePackages.kdenlive
