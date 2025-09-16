@@ -343,17 +343,17 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # avrlibc
-
     # nvim.defaultPackage.${pkgs.system}
+    # unstable.ansilove
+    # unstable.signal-desktop
     # wget
-    qgis
-    organicmaps
-    qimgv
     alejandra
     audacity
     avrdude
     bat
     bind
+    bitwarden-desktop
+    bitwarden-cli
     bluez
     brightnessctl
     cargo
@@ -371,7 +371,6 @@
     element-desktop
     fastfetch
     ffmpeg
-    starship
     firefox
     fzf
     gcc
@@ -385,10 +384,12 @@
     hyprlock
     hyprpaper
     inkscape
-    kdePackages.marble
-    kdePackages.k3b
     kdePackages.dolphin
+    # kdePackages.itinerary
+    kdePackages.k3b
+    kdePackages.kdeconnect-kde
     kdePackages.kdenlive
+    kdePackages.marble
     kdePackages.okular
     kdePackages.xwaylandvideobridge
     kitty
@@ -406,6 +407,7 @@
     nwg-look
     obsidian
     openssl
+    organicmaps
     pipewire
     pkgsCross.avr.buildPackages.binutils
     pkgsCross.avr.buildPackages.gcc
@@ -413,6 +415,8 @@
     protonvpn-gui
     python3
     qbittorrent
+    qgis
+    qimgv
     ravedude
     rename
     ripgrep
@@ -424,7 +428,9 @@
     signal-export
     slurp
     spotify
+    starship
     steam
+    stellarium
     stow
     tiny
     tio
@@ -432,8 +438,6 @@
     tree
     tree-sitter
     trunk
-    # unstable.ansilove
-    # unstable.signal-desktop
     unzip
     usbutils
     v4l-utils
