@@ -388,7 +388,7 @@
     # kdePackages.itinerary
     kdePackages.k3b
     nix-search-cli
-    # kdePackages.kid3
+    kid3
     kdePackages.kdeconnect-kde
     kdePackages.kdenlive
     kdePackages.marble
