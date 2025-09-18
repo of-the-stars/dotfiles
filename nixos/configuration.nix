@@ -388,6 +388,7 @@
     # kdePackages.itinerary
     kdePackages.k3b
     nix-search-cli
+    openconnect
     kid3
     kdePackages.kdeconnect-kde
     kdePackages.kdenlive
