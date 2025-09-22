@@ -13,7 +13,7 @@
     wrap_navigation: false,
     enable_mouse: true,
     status_update_interval_ms: 1000,
-    select_current_song_on_change: false,
+    select_current_song_on_change: true,
     album_art: (
         method: Auto,
         max_size_px: (width: 1200, height: 1200),
@@ -30,12 +30,12 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "2":       SwitchToTab("Albums"),
+            "3":       SwitchToTab("Search"),
+            "4":       SwitchToTab("Playlists"),
+            "5":       SwitchToTab("Artists"),
+            "6":       SwitchToTab("Album Artists"),
+            "7":       SwitchToTab("Directories"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -120,8 +120,16 @@
             ),
         ),
         (
-            name: "Directories",
-            pane: Pane(Directories),
+            name: "Albums",
+            pane: Pane(Albums),
+        ),
+        (
+            name: "Search",
+            pane: Pane(Search),
+        ),
+        (
+            name: "Playlists",
+            pane: Pane(Playlists),
         ),
         (
             name: "Artists",
@@ -132,16 +140,8 @@
             pane: Pane(AlbumArtists),
         ),
         (
-            name: "Albums",
-            pane: Pane(Albums),
-        ),
-        (
-            name: "Playlists",
-            pane: Pane(Playlists),
-        ),
-        (
-            name: "Search",
-            pane: Pane(Search),
+            name: "Directories",
+            pane: Pane(Directories),
         ),
     ],
 )

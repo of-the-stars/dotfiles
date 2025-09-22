@@ -349,6 +349,7 @@
     # unstable.ansilove
     # unstable.signal-desktop
     # wget
+    mpdscribble
     alejandra
     audacity
     avrdude

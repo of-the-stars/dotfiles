@@ -4,7 +4,7 @@
 
 set -e
 pushd ~/dotfiles/nixos/
-vim 
+vim configuration.nix
 # alejandra . &>/dev/null
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
