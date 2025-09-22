@@ -216,6 +216,7 @@
         username = "internet_wizard";
         passwordFile = "./../.secrets/lastfm_password";
       };
+      journalInterval = 30;
     }; 
   }; 
 
