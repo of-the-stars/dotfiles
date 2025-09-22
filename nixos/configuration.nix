@@ -210,8 +210,13 @@
       # user = "internet_wizard";
     };
 
-    services.mpdscribble.enable = true;
-  
+    services.mpdscribble = {
+      enable = true;
+      endpoints."last.fm" = {
+        username = "internet_wizard";
+        passwordFile = "~/.secrets/lastfm_password";
+      };
+    }; 
   }; 
 
   virtualisation.virtualbox.host.enable = true;
