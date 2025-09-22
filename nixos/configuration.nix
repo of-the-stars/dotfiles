@@ -198,6 +198,7 @@
             type "pipewire"
             name "my pipewire"
             mixer_device "default"
+            mixer_control "PCM"
           }
         '';
   
