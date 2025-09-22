@@ -214,7 +214,7 @@
       enable = true;
       endpoints."last.fm" = {
         username = "internet_wizard";
-        passwordFile = "~/.secrets/lastfm_password";
+        passwordFile = "./../.secrets/lastfm_password";
       };
     }; 
   }; 
