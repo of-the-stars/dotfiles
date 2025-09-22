@@ -209,6 +209,8 @@
       # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
       # user = "internet_wizard";
     };
+
+    services.mpdscribble.enable = true;
   
   }; 
 
@@ -349,7 +351,6 @@
     # unstable.ansilove
     # unstable.signal-desktop
     # wget
-    mpdscribble
     alejandra
     audacity
     avrdude
