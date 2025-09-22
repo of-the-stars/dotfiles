@@ -193,12 +193,13 @@
     services.mpd = {
       enable = true;
       musicDirectory = "/home/internet_wizard/Music";
-      # extraConfig = ''
-      #   audio_output {
-      #     type "pipewire"
-      #     name "my pipewire"
-      #   }
-      # '';
+        extraConfig = ''
+          audio_output {
+            type "pipewire"
+            name "my pipewire"
+            mixer_device "default"
+          }
+        '';
   
       network.port = 6600;
     
