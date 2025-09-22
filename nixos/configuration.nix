@@ -44,7 +44,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   services.create_ap = {
-    enable = true;
+    # enable = true;
     settings = {
       INTERNET_IFACE = "wlp2s0";
       WIFI_IFACE = "wlp2s0";
