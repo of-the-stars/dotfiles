@@ -11,11 +11,11 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { self, nixpkgs, nvim, home-manager, nixpkgs-unstable, ... }@inputs: {
+  outputs = { self, nixpkgs, nvim, home-manager, nixpkgs-unstable, catppuccin, ... }@inputs: {
 
     nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs nvim nixpkgs-unstable home-manager ; };
+      specialArgs = { inherit inputs nvim nixpkgs-unstable home-manager catppuccin ; };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
@@ -24,7 +24,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.internet_wizard = import ./home.nix;
         }
-        # catpuccin.nixosModules.catppuccin
+        catppuccin.nixosModules.catppuccin
       ];
     };
   };
