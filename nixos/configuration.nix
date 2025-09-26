@@ -357,6 +357,7 @@
     # unstable.ansilove
     # unstable.signal-desktop
     # wget
+    cava
     alejandra
     audacity
     avrdude
