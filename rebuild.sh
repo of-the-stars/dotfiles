@@ -8,6 +8,7 @@ nvim configuration.nix
 # alejandra . &>/dev/null
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
+sudo nix flake update nvim
 sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
