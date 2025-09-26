@@ -111,6 +111,21 @@
         album_display_mode: SplitByDate,
         album_sort_by: Date,
     ),
+    cava: (
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 44100,
+            channels: 2,
+            sample_bits: 16,
+        )
+        smoothing: (
+            noise_reduction: 77, // default 77
+            monstercat: false, // default false
+            waves: false, // default false
+        ),
+        eq: [],
+    ),
     tabs: [
         /* (
             name: "Queue",

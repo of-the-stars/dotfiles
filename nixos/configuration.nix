@@ -218,6 +218,16 @@
       };
       journalInterval = 10;
     }; 
+
+    programs.cava = {
+      enable = true;
+      settings = {
+        general.framerate = 60;
+        input.method = "pipewire";
+        input.source = "auto";
+        smoothing.noise_reduction = 88;
+      };
+    };
   }; 
 
   virtualisation.virtualbox.host.enable = true;
@@ -357,7 +367,6 @@
     # unstable.ansilove
     # unstable.signal-desktop
     # wget
-    cava
     alejandra
     audacity
     avrdude
