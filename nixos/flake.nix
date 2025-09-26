@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs";
     # custom neovim configuration flake
     nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs"; # Ensure Home Manager uses the same Nixpkgs as the system
     catppuccin.url = "github:catppuccin/nix";
   };
