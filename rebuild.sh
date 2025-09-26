@@ -14,4 +14,3 @@ gen=$(nixos-rebuild list-generations | rg current)
 fastfetch 
 git commit -a -m "$gen"
 popd
-
