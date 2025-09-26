@@ -9,8 +9,8 @@ nvim configuration.nix
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
-
 gen=$(nixos-rebuild list-generations | rg current)
-fastfetch 
 git commit -a -m "$gen"
+clear
+fastfetch 
 popd
