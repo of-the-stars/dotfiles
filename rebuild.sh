@@ -11,5 +11,4 @@ echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
-clear
 popd
