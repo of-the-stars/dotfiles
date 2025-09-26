@@ -1,9 +1,12 @@
 warning: Git tree '/home/internet_wizard/dotfiles' is dirty
 building the system configuration...
 warning: Git tree '/home/internet_wizard/dotfiles' is dirty
-activating the configuration...
-setting up /etc...
-reloading user units for internet_wizard...
-restarting sysinit-reactivation.target
-the following new units were started: libvirtd.service, NetworkManager-dispatcher.service
-Done. The new configuration is /nix/store/azdc79wqyizg96b761cq9j759wxxga2w-nixos-system-han-tyumi-25.05.20250925.25e53aa
+these 6 derivations will be built:
+  /nix/store/7mz32i2jq6ll92z5bcjvv99gpx414bqw-home-manager-files.drv
+  /nix/store/c1b9yzf7ji026lmjk0v7yqcq4gfalgyy-home-manager-generation.drv
+  /nix/store/pdp1545xajapla4qhh9hyjd3w21i935s-unit-home-manager-internet_wizard.service.drv
+  /nix/store/ki6v60f7s9p0igdb4b5q3xglr1flqdcm-system-units.drv
+  /nix/store/2s82ix3q6rswyibvwxp3aii6r9hz7ihw-etc.drv
+  /nix/store/766kp372d5ffggqra876g0y4cark7l8c-nixos-system-han-tyumi-25.05.20250925.25e53aa.drv
+building '/nix/store/7mz32i2jq6ll92z5bcjvv99gpx414bqw-home-manager-files.drv'...
+error: interrupted by the user

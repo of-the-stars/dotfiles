@@ -445,7 +445,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>ff', builtin.find_files { hidden = true }, { desc = '[F]ind [F]iles' })
       -- vim.keymap.set('n', '<leader>fF', builtin.find_files { hidden = true }, { desc = '[F]ind [F]iles (including hidden files)' })
       vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind in current [W]ord' })
