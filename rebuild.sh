@@ -12,5 +12,4 @@ sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log 
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
 clear
-fastfetch 
 popd

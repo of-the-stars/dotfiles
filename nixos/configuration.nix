@@ -54,7 +54,6 @@ in
     };
   };
 
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -94,7 +93,7 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Allow unsupported systems
-  # nixpkgs.config.allowUnsupportedSystem = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -108,24 +107,17 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   # Enable the Hyprland window manager
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
     withUWSM = true;
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -156,14 +148,6 @@ in
     };
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  /* systemd.services.mpd.environment = {
-    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.internet_wizard.uid}"; # User-id must match the user running MPD. MPD will look inside this directory for the PipeWire socket.
-  }; */
-
   catppuccin.enable = true;
 
   # Fonts
@@ -178,22 +162,12 @@ in
     extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["internet_wizard"];
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add missing dynamic libraries for unpackaged programs here
     icu
     stdenv.cc.cc
   ];
-
-  # Configure nixpkgs
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
 
   xdg.terminal-exec = {
     enable = true;
@@ -202,6 +176,10 @@ in
         "kitty.desktop"
       ];
     };
+  };
+
+  programs.starship = {
+    enable = true;
   };
 
   environment.variables = {
@@ -229,7 +207,6 @@ in
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  
   programs.obs-studio = {
     enable = true;
     enableVirtualCamera = true;
@@ -248,9 +225,8 @@ in
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  programs.starship = {
-    enable = true;
-  };
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["internet_wizard"];
 
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["internet_wizard"];
@@ -276,15 +252,7 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
-
-  # builtins.trace (builtins.attrNames inputs) "Debug message";
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -404,4 +372,13 @@ in
     yt-dlp
     zoxide
   ];
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "25.05"; # Did you read the comment?
+
 }
