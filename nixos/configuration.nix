@@ -1,7 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, inputs, nvim, unstable, ... }:
+{ config, pkgs, inputs, nvim,  ... }:
+let
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -214,11 +220,6 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      packageOverrides = pkgs: {
-        unstable = import inputs.unstable {
-          config = config.nixpkgs.config;
-        };
-      };
     };
   };
 
@@ -302,7 +303,7 @@
   environment.systemPackages = with pkgs; [
     # avrlibc
     inputs.nvim.packages.${system}.nvim
-    # unstable.ansilove
+    pkgsUnstable.ansilove
     signal-desktop
     # wget
     alejandra
