@@ -303,7 +303,7 @@
     # avrlibc
     inputs.nvim.packages.${system}.nvim
     # unstable.ansilove
-    # unstable.signal-desktop
+    signal-desktop
     # wget
     alejandra
     audacity
