@@ -6,8 +6,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # <home-manager/nixos>
-    # <catppuccin/modules/nixos>
   ];
 
   # gtk = {
@@ -168,8 +166,6 @@
     isNormalUser = true;
     description = "Stell";
     extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
-    packages = with pkgs; [
-    ];
   };
 
   virtualisation.virtualbox.host.enable = true;
@@ -219,7 +215,7 @@
     config = {
       allowUnfree = true;
       packageOverrides = pkgs: {
-        unstable = import <nixos-unstable> {
+        unstable = import inputs.unstable {
           config = config.nixpkgs.config;
         };
       };
