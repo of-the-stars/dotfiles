@@ -14,20 +14,7 @@ in
     ./hardware-configuration.nix
   ];
 
-  # gtk = {
-  #     enable = true;
-  #     catppuccin = {
-  #       enable = true;
-  #       flavor = "mocha";
-  #       accent = "pink";
-  #       size = "standard";
-  #       tweaks = [ "normal" ];
-  #     };
-  # };
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  catppuccin.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -41,8 +28,6 @@ in
     allowReboot = true;
     rebootWindow = { lower = "01:00"; upper = "05:00"; };
   };
-
-  environment.localBinInPath = true;
 
   hardware = {
     # OpenGL
@@ -174,10 +159,17 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  systemd.services.mpd.environment = {
+  /* systemd.services.mpd.environment = {
     # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
     XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.internet_wizard.uid}"; # User-id must match the user running MPD. MPD will look inside this directory for the PipeWire socket.
-  };
+  }; */
+
+  catppuccin.enable = true;
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.roboto-mono
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.internet_wizard = {
@@ -196,16 +188,12 @@ in
     stdenv.cc.cc
   ];
 
-  # Install neovim and set as default editor
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  # };
-
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["internet_wizard"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
+  # Configure nixpkgs
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   xdg.terminal-exec = {
     enable = true;
@@ -234,16 +222,14 @@ in
     NIXOS_OZONE_WL =1;
   };
 
+  environment.localBinInPath = true;
+
+  environment.variables.PATH = "${pkgs.clang-tools}/bin:$PATH";
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  # Configure nixpkgs
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
+  
   programs.obs-studio = {
     enable = true;
     enableVirtualCamera = true;
@@ -259,19 +245,17 @@ in
     ];
   };
 
-  # Fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.roboto-mono
-  ];
-
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-
-  environment.variables.PATH = "${pkgs.clang-tools}/bin:$PATH";
 
   programs.starship = {
     enable = true;
   };
+
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["internet_wizard"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
