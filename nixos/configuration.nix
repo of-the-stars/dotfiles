@@ -265,7 +265,6 @@ in
     alejandra
     audacity
     avrdude
-    bat
     bind
     bitwarden-desktop
     bitwarden-cli

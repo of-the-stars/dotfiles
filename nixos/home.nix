@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, catppuccin, ... }:
 {
   home.username = "internet_wizard";
   home.homeDirectory = "/home/internet_wizard";
@@ -28,6 +28,14 @@
     "cleanup.sh".source = ./../cleanup.sh;
     "rebuild.sh".source = ./../rebuild.sh;
   };
+
+  catppuccin.bat.enable = true;
+
+  programs.bat = {
+    enable = true;
+  };
+
+  programs.vivid.enable = true;
 
   # Enable the music player damon
   services.mpd = {
