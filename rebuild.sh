@@ -8,11 +8,10 @@ nvim configuration.nix
 # alejandra . &>/dev/null
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
-sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
+sudo nixos-rebuild switch --flake . --out-link /nix/var/nix/profiles/system &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 
 gen=$(nixos-rebuild list-generations | rg current)
-# fastfetch --logo none &>./../fastfetch-latest
-# ansilove -s -m transparent ./../fastfetch-latest -o ./../fastfetch-latest.png
+fastfetch 
 git commit -a -m "$gen"
 popd
 
