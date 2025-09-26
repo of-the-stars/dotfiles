@@ -8,7 +8,8 @@ vim configuration.nix
 # alejandra . &>/dev/null
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
-sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
+sudo nixos-rebuild switch --flake ./flake.nix#han-tyumi &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
+
 gen=$(nixos-rebuild list-generations | rg current)
 # fastfetch --logo none &>./../fastfetch-latest
 # ansilove -s -m transparent ./../fastfetch-latest -o ./../fastfetch-latest.png

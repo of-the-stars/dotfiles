@@ -6,8 +6,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    <home-manager/nixos>
-    <catppuccin/modules/nixos>
+    # <home-manager/nixos>
+    # <catppuccin/modules/nixos>
   ];
 
   # gtk = {
@@ -24,7 +24,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enables catppuccin color scheme
-  catppuccin.enable = true;
+  # catppuccin.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -367,6 +367,7 @@
     # unstable.ansilove
     # unstable.signal-desktop
     # wget
+    inputs.nvim.defaultPackage.${pkgs.system}
     alejandra
     audacity
     avrdude

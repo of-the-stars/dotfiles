@@ -6,7 +6,7 @@
     password: None,
     theme: None, // "catppuccin",
     cache_dir: None,
-    lyrics_dir: Some("/home/internet_wizard/Music/.lyrics/")
+    lyrics_dir: Some("/home/internet_wizard/.lyrics"),
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,

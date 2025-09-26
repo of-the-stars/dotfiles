@@ -1,33 +1,27 @@
-building Nix...
-building the system configuration...
-these 10 derivations will be built:
-  /nix/store/f8pny1alps29mmg6ykhfw3mwnaqkxyga-home-manager-path.drv
-  /nix/store/41690ckfl46wpkbjfnjdd3h156qgmw1y-user-environment.drv
-  /nix/store/lzlyr4rg933yblg9k97k9sr8kkmqvd45-hm_fontconfigconf.d10hmfonts.conf.drv
-  /nix/store/nav5pdr8xmf2kzaxdlbv56ivah0v8v2n-hm_cavaconfig.drv
-  /nix/store/mrzq12ibkxy4hx14jnx737p7zdjsphh3-home-manager-files.drv
-  /nix/store/vl9r252ggpn4a1ngi8gq183kzbcwbbv6-home-manager-generation.drv
-  /nix/store/44c1bdkam0awzyyxn75s8mkgl38pilcq-unit-home-manager-internet_wizard.service.drv
-  /nix/store/7zjdqgz9gfymw7j11j8cp90vpmcc43k8-system-units.drv
-  /nix/store/6ksxq25ndnsd7lprgdssj0paprmf1isq-etc.drv
-  /nix/store/zpcasd1srh705z9w2a641yq3v3q4bxvg-nixos-system-han-tyumi-25.05.810175.b2a3852bd078.drv
-building '/nix/store/f8pny1alps29mmg6ykhfw3mwnaqkxyga-home-manager-path.drv'...
-building '/nix/store/nav5pdr8xmf2kzaxdlbv56ivah0v8v2n-hm_cavaconfig.drv'...
-created 192 symlinks in user environment
-building '/nix/store/lzlyr4rg933yblg9k97k9sr8kkmqvd45-hm_fontconfigconf.d10hmfonts.conf.drv'...
-building '/nix/store/41690ckfl46wpkbjfnjdd3h156qgmw1y-user-environment.drv'...
-building '/nix/store/mrzq12ibkxy4hx14jnx737p7zdjsphh3-home-manager-files.drv'...
-created 47 symlinks in user environment
-building '/nix/store/vl9r252ggpn4a1ngi8gq183kzbcwbbv6-home-manager-generation.drv'...
-building '/nix/store/44c1bdkam0awzyyxn75s8mkgl38pilcq-unit-home-manager-internet_wizard.service.drv'...
-building '/nix/store/7zjdqgz9gfymw7j11j8cp90vpmcc43k8-system-units.drv'...
-building '/nix/store/6ksxq25ndnsd7lprgdssj0paprmf1isq-etc.drv'...
-building '/nix/store/zpcasd1srh705z9w2a641yq3v3q4bxvg-nixos-system-han-tyumi-25.05.810175.b2a3852bd078.drv'...
-activating the configuration...
-setting up /etc...
-reloading user units for internet_wizard...
-restarting sysinit-reactivation.target
-reloading the following units: dbus-broker.service
-restarting the following units: polkit.service
-the following new units were started: libvirtd.service, NetworkManager-dispatcher.service
-Done. The new configuration is /nix/store/wx6wan7kpbi1g6s7ij7h62azn0mysym6-nixos-system-han-tyumi-25.05.810175.b2a3852bd078
+warning: Path '/home/internet_wizard/dotfiles/nixos/flake.nix' should point at the directory containing the 'flake.nix' file, not the file itself. Pretending that you meant '/home/internet_wizard/dotfiles/nixos'
+warning: Git tree '/home/internet_wizard/dotfiles' is dirty
+unpacking 'github:nix-community/home-manager/c1a47eae05fb93788d3e3a7f1e63d7fc34d60c63' into the Git cache...
+warning: updating lock file '"/home/internet_wizard/dotfiles/nixos/flake.lock"':
+• Added input 'home-manager':
+    'github:nix-community/home-manager/c1a47eae05fb93788d3e3a7f1e63d7fc34d60c63?narHash=sha256-Gzrt0dOF9oQvQLTi3bke9HKY7Fv8ZGrjAvgEN58KKgU%3D' (2025-09-26)
+• Added input 'home-manager/nixpkgs':
+    follows 'nixpkgs'
+warning: Git tree '/home/internet_wizard/dotfiles' is dirty
+error:
+       … while calling the 'seq' builtin
+         at /nix/store/8f82n9hqi52fk1i2fvznh4qd85a4g595-source/lib/modules.nix:359:18:
+          358|         options = checked options;
+          359|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          360|         _module = checked (config._module);
+
+       … while evaluating a branch condition
+         at /nix/store/8f82n9hqi52fk1i2fvznh4qd85a4g595-source/lib/modules.nix:295:9:
+          294|       checkUnmatched =
+          295|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |         ^
+          296|           let
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: cannot look up '<catppuccin/modules/nixos>' in pure evaluation mode (use '--impure' to override)
