@@ -27,18 +27,28 @@ in
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Enables catppuccin color scheme
-  # catppuccin.enable = true;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enables auto upgrades
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade = {
+    enable = true;
+    flake = "path:/home/internet_wizard/dotfiles/nixos/flake.nix";
+    dates = "weekly";
+    allowReboot = true;
+    rebootWindow = { lower = "01:00"; upper = "05:00"; };
+  };
 
   environment.localBinInPath = true;
+
+  hardware = {
+    # OpenGL
+    graphics.enable = true;
+    # Most wayland compositors need this
+    nvidia.modesetting.enable = true;
+    opentabletdriver.enable = true;
+  };
 
   networking.hostName = "han-tyumi"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -213,6 +223,15 @@ in
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 
+  environment.sessionVariables = {
+    # If your cursor becomes invisible
+    # WLR_NO_HARDWARE_CURSORS = "1";
+    # Hint electron apps to use wayland
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    WAYLAND_DISPLAY = "1";
+    NIXOS_OZONE_WL =1;
+  };
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
@@ -250,23 +269,6 @@ in
 
   programs.starship = {
     enable = true;
-  };
-
-  environment.sessionVariables = {
-    # If your cursor becomes invisible
-    # WLR_NO_HARDWARE_CURSORS = "1";
-    # Hint electron apps to use wayland
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    WAYLAND_DISPLAY = "1";
-    NIXOS_OZONE_WL =1;
-  };
-
-  hardware = {
-    # OpenGL
-    graphics.enable = true;
-    # Most wayland compositors need this
-    nvidia.modesetting.enable = true;
-    opentabletdriver.enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
