@@ -6,6 +6,7 @@
     password: None,
     theme: None, // "catppuccin",
     cache_dir: None,
+    lyrics_dir: Some("/home/internet_wizard/Music/.lyrics/")
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
@@ -113,18 +114,15 @@
     ),
     cava: (
         input: (
-            method: Fifo,
-            source: "/tmp/mpd.fifo",
-            sample_rate: 44100,
-            channels: 2,
-            sample_bits: 16,
-        )
-        smoothing: (
+            method: Pipewire,
+            source: "auto",
+        ),
+        /* smoothing: (
             noise_reduction: 77, // default 77
             monstercat: false, // default false
             waves: false, // default false
-        ),
-        eq: [],
+        ), */
+        eq: []
     ),
     tabs: [
         /* (
@@ -143,8 +141,8 @@
                     (size: "60%", pane: Split(
                         direction: Vertical, 
                         panes: [
-                            (size: "60%", pane: Pane(Queue)),
-                            // (size: "40%", pane: Pane(Cava)),
+                            (size: "50%", pane: Pane(Queue)),
+                            (size: "50%", pane: Pane(Lyrics)),
                             ],
                         ),
                     ),
