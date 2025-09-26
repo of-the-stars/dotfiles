@@ -8,14 +8,14 @@
   xdg.configFile = {
     "hypr".source = ./../.config/hypr;
     "nvim".source = ./../.config/nvim;
-    # "rmpc".source = ./../.config/rmpc;
+    "rmpc".source = ./../.config/rmpc;
     # "dunst".source = ./../.config/dunst;
     # "halloy".source = ./../.config/halloy;
-    # "kitty".source = ./../.config/kitty;
+    "kitty".source = ./../.config/kitty;
     # "ncspot".source = ./../.config/ncspot;
     # "tiny".source = ./../.config/tiny;
-    # "waybar".source = ./../.config/waybar;
-    # "wofi".source = ./../.config/wofi;
+    "waybar".source = ./../.config/waybar;
+    "wofi".source = ./../.config/wofi;
   };
 
   home.file = {
