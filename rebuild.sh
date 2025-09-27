@@ -5,9 +5,13 @@
 set -e
 pushd ~/dotfiles/nixos/
 
+pushd ~/dotfiles/
+
 nvim
 # alejandra . &>/dev/null
-#
+
+popd
+
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
 
