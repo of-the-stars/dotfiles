@@ -86,6 +86,10 @@ in
       };
   };
 
+  programs.steam = {
+    enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -346,7 +350,6 @@ in
     slurp
     spotify
     starship
-    steam
     stellarium
     stow
     tiny
