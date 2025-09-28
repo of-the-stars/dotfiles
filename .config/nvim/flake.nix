@@ -122,7 +122,7 @@
           comment-nvim
           conform-nvim
           fidget-nvim
-          fzf-lua
+          fzf-vim
           gitsigns-nvim
           lazy-nvim
           lazydev-nvim

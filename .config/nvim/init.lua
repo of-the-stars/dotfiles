@@ -838,10 +838,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     'nanotee/zoxide.vim',
     dependencies = {
       {
-        'ibhagwan/fzf-lua',
+        'junegunn/fzf.vim',
+        --[[ 'ibhagwan/fzf-lua',
         dependencies = {
           { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-        },
+        }, ]]
       },
     },
   },
