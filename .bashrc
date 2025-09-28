@@ -17,6 +17,10 @@ eval "$(direnv hook bash)"
 # enable zoxide
 eval "$(zoxide init bash)"
 
+# enable fzf
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
 # Home Manager
 . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
 
