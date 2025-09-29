@@ -975,9 +975,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
   {
     'heirline.nvim',
-    config = function()
-      require('heirline').setup()
-    end,
   },
 
   { -- Highlight, edit, and navigate code
