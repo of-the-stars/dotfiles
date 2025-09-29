@@ -121,10 +121,13 @@
           cmp_luasnip
           comment-nvim
           conform-nvim
+          flatten-nvim
+          markview-nvim
           fidget-nvim
           fzfWrapper
           fzf-vim
           gitsigns-nvim
+          heirline-nvim
           lazy-nvim
           lazydev-nvim
           luasnip
@@ -138,6 +141,7 @@
           telescope-nvim
           telescope-ui-select-nvim
           todo-comments-nvim
+          toggleterm-nvim
           vim-sleuth
           which-key-nvim
           zoxide-vim
@@ -267,7 +271,7 @@
           # this kickstart extra didnt require any extra plugins
           # so it doesnt have a category above.
           # but we can still send the info from nix to lua that we want it!
-          kickstart-gitsigns = true;
+          kickstart-gitsigns = false;
 
           # we can pass whatever we want actually.
           # have_nerd_font = false;
