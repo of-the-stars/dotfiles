@@ -235,7 +235,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       },
     },
 
-    {
+    -- {
       --[[ on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
