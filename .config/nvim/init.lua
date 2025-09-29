@@ -837,17 +837,12 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   {
     'nanotee/zoxide.vim',
     dependencies = {
-      {
-        {
-          'junegunn/fzf',
-          'junegunn/fzf.vim',
-        },
-        --[[ 'ibhagwan/fzf-lua',
-        dependencies = {
-          { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-        }, ]]
-      },
+      'junegunn/fzf',
+      'junegunn/fzf.vim',
     },
+    config = function()
+      vim.keymap.set('n', '<leader>z', '<cmd>Tzi<cr>', { desc = '[F]ind [H]elp' })
+    end,
   },
 
   { -- Collection of various small independent plugins/modules
