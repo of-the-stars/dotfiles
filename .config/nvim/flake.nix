@@ -122,6 +122,7 @@
           comment-nvim
           conform-nvim
           fidget-nvim
+          fzfWrapper
           fzf-vim
           gitsigns-nvim
           lazy-nvim

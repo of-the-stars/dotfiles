@@ -20,7 +20,6 @@ echo "NixOS Rebuilding..."
     pushd ~/dotfiles/.config/nvim/
 
     if git diff --cached --name-only . | rg -q "."; then
-        git commit -a 
         sudo nix flake update nvim
     fi
 

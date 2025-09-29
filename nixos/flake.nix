@@ -18,6 +18,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs nixpkgs-unstable home-manager home-manager-unstable nvim catppuccin ; };
       modules = [
+        ./hardware-configuration.nix
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
