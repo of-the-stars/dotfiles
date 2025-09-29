@@ -236,7 +236,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     },
 
     -- {
-      --[[ on_attach = function(bufnr)
+    --[[ on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
         local function map(mode, l, r, opts)
@@ -454,12 +454,12 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
-      vim.keymap.set('n', '<leader>s/', function()
+      vim.keymap.set('n', '<leader>f/', function()
         builtin.live_grep {
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
         }
-      end, { desc = '[S]earch [/] in Open Files' })
+      end, { desc = '[F]ind [/] in Open Files' })
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>fn', function()
@@ -916,12 +916,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     config = function()
       vim.keymap.set('n', '<leader>z', '<cmd>Tzi<cr>', { desc = '[Z]oxide' })
     end,
-  },
-
-  {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    config = true,
   },
 
   {

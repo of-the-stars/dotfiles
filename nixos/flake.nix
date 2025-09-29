@@ -4,12 +4,15 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs";
-    # custom neovim configuration flake
-    nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
+
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs"; # Ensure Home Manager uses the same Nixpkgs as the system
     home-manager-unstable.url = "github:nix-community/home-manager";
+
     catppuccin.url = "github:catppuccin/nix";
+
+    # custom neovim configuration flake
+    nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, nvim, catppuccin, ... }@inputs: {
@@ -28,12 +31,14 @@
             imports = [
               ./home.nix
               catppuccin.homeModules.catppuccin
-              (inputs.home-manager-unstable + "/modules/programs/vivid.nix")
+              (home-manager-unstable + "/modules/programs/vivid.nix")
             ];
           };
         }
         catppuccin.nixosModules.catppuccin
       ];
     };
+
+    nixosConfigurations.cybogie = inputs.nixpkgs.lib.nixosSystem {};
   };
 }

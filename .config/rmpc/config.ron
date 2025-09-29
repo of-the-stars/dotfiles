@@ -141,8 +141,8 @@
                     (size: "60%", pane: Split(
                         direction: Vertical, 
                         panes: [
-                            (size: "50%", pane: Pane(Queue)),
-                            (size: "50%", pane: Pane(Lyrics)),
+                            (size: "70%", pane: Pane(Queue)),
+                            (size: "30%", pane: Pane(Lyrics)),
                             ],
                         ),
                     ),
