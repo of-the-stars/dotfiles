@@ -236,7 +236,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     },
 
     {
-      on_attach = function(bufnr)
+      --[[ on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
         local function map(mode, l, r, opts)
@@ -301,7 +301,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         -- Text object
         map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
       end,
-    },
+    }, ]]
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
