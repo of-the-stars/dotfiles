@@ -16,5 +16,5 @@ using a single pull and script.
 
 First, clone the repo into your home directory.
 
-Second, navigate into the directory and run `./rebuild.sh`. Thiss will build up the
+Second, navigate into the directory and run `./rebuild.sh`. This will build up the
 whole configuration 100% automatically and on its own.

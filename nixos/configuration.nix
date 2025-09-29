@@ -336,7 +336,6 @@ in
     ravedude
     rename
     ripgrep
-    rmpc
     ruby
     rust-analyzer
     rustup

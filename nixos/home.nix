@@ -1,5 +1,9 @@
 { config, pkgs, inputs, catppuccin, ... }:
 {
+  imports = [
+    ./home-modules/music.nix
+  ];
+
   home.username = "internet_wizard";
   home.homeDirectory = "/home/internet_wizard";
 
@@ -8,7 +12,6 @@
   xdg.configFile = {
     "hypr".source = ./../.config/hypr;
     "nvim".source = ./../.config/nvim;
-    "rmpc".source = ./../.config/rmpc;
     "dunst".source = ./../.config/dunst;
     "halloy".source = ./../.config/halloy;
     "ncspot".source = ./../.config/ncspot;
@@ -19,7 +22,6 @@
   };
 
   home.file = {
-    ".lyrics".source = ./../.lyrics;
     ".secrets".source = ./../.secrets;
     ".gitconfig".source = ./../.gitconfig;
     ".bashrc".source = ./../.bashrc;
@@ -27,43 +29,6 @@
 
     "cleanup.sh".source = ./../cleanup.sh;
     "rebuild.sh".source = ./../rebuild.sh;
-  };
-
-  programs.hyprpanel = {
-    enable = true;
-    
-    settings = {
-      layout = {
-        bar.layouts = {
-          "0" = {
-            left = [ "dashboard" "workspaces" ];
-            middle = [ "media" ];
-            right = [ "volume" "systray" "notifications" ];
-          };
-        };
-      };
-
-      bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
-
-      menus.clock = {
-        time = {
-          military = true;
-          hideSeconds = true;
-        };
-        weather.unit = "metric";
-      };
-
-      menus.dashboard.directories.enabled = false;
-      menus.dashboard.stats.enable_gpu = true;
-
-      theme.bar.transparent = true;
-
-      theme.font = {
-        name = "CaskaydiaCove NF";
-        size = "16px";
-      };
-    };
   };
 
   catppuccin.bat.enable = true;
@@ -74,45 +39,7 @@
 
   programs.vivid.enable = true;
 
-  # Enable the music player damon
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/home/internet_wizard/Music";
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "my pipewire"
-          mixer_device "default"
-          mixer_control "PCM"
-        }
-      '';
-
-    network.port = 6600;
-  
-    # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
-    # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-    # user = "internet_wizard";
-  };
-
-  services.mpdscribble = {
-    enable = true;
-    endpoints."last.fm" = {
-      username = "internet_wizard";
-      passwordFile = "/home/internet_wizard/.secrets/lastfm_password";
-    };
-    journalInterval = 10;
-  }; 
-
-  programs.cava = {
-    enable = true;
-    settings = {
-      general.framerate = 60;
-      input.method = "pipewire";
-      input.source = "auto";
-      smoothing.noise_reduction = 88;
-    };
-  };
+  music.enable = true;
 
   # This value determines the Home Manager release that your configuration is 
   # compatible with. This helps avoid breakage when a new Home Manager release 
