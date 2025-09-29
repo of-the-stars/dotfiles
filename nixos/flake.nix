@@ -21,8 +21,8 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs nixpkgs-unstable home-manager home-manager-unstable nvim catppuccin ; };
       modules = [
-        ./hardware-configuration.nix
-        ./configuration.nix
+        ./han-tyumi/configuration.nix
+        ./han-tyumi/hardware-configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
