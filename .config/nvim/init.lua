@@ -956,7 +956,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
       -- local statusline = require 'mini.statusline'
-      local statusline = require 'heirline.nvim'
+      --[[ local statusline = require 'heirline.nvim'
       -- set use_icons to true if you have a Nerd Font
       statusline.setup { use_icons = vim.g.have_nerd_font }
 
@@ -966,10 +966,17 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
-      end
+      end ]]
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+    end,
+  },
+
+  {
+    'heirline.nvim',
+    config = function()
+      require('heirline').setup()
     end,
   },
 
