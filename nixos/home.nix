@@ -19,6 +19,7 @@
     "kitty".source = ./../.config/kitty;
     "waybar".source = ./../.config/waybar;
     "wofi".source = ./../.config/wofi;
+    # "kdeglobals".source = ./../.config/kdeglobals;
   };
 
   home.file = {

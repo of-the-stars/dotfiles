@@ -9,6 +9,12 @@ let
   };
 in
 {
+  imports = [
+    ./../nixos-modules/terminal.nix
+  ];
+
+  terminal.enable = true;
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
@@ -176,28 +182,6 @@ in
     stdenv.cc.cc
   ];
 
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = [
-        "kitty.desktop"
-      ];
-    };
-  };
-
-  programs.starship = {
-    enable = true;
-  };
-
-  environment.variables = {
-    SUDO_EDITOR = "nvim";
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    SYSTEMD_EDITOR = "nvim";
-    TERM = "kitty";
-    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-  };
-
   environment.sessionVariables = {
     # If your cursor becomes invisible
     # WLR_NO_HARDWARE_CURSORS = "1";
@@ -274,51 +258,32 @@ in
     avrdude
     bind
     bitwarden-desktop
-    bitwarden-cli
     bluez
     brightnessctl
-    cargo
-    cargo-generate
-    cargo-info
-    cargo-make
-    clang
-    clang-tools
-    direnv
     discord
-    docker
     droidcam
     dunst
     dvgrab
     element-desktop
-    fastfetch
     ffmpeg
     firefox
-    fzf
-    gcc
     gimp
-    git
-    gnumake
     grim
     halloy
     handbrake
-    htop-vim
     hyprlock
     hyprpaper
     inkscape
     kdePackages.dolphin
     # kdePackages.itinerary
     kdePackages.k3b
-    nix-search-cli
-    openconnect
     kid3
     kdePackages.kdeconnect-kde
     kdePackages.kdenlive
     kdePackages.marble
     kdePackages.okular
     kdePackages.xwaylandvideobridge
-    kitty
     krita
-    lazygit
     libnotify
     lua-language-server
     luajitPackages.luarocks
@@ -337,44 +302,31 @@ in
     pkgsCross.avr.buildPackages.gcc
     prismlauncher
     protonvpn-gui
-    python3
     qbittorrent
     qgis
     qimgv
     ravedude
-    rename
-    ripgrep
     ruby
     rust-analyzer
-    rustup
-    screen
     signal-export
     slurp
     spotify
     starship
     stellarium
-    stow
-    tiny
     tio
     traceroute
     tree
     tree-sitter
     trunk
-    unzip
     usbutils
     v4l-utils
-    vim
     vlc
     waybar
     wev
-    whois
     wine
     wireplumber
-    wl-clipboard
     wofi
-    yazi
     yt-dlp
-    zoxide
   ];
 
   # This value determines the NixOS release from which the default
