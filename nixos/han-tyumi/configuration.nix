@@ -24,6 +24,14 @@ in
     rebootWindow = { lower = "01:00"; upper = "05:00"; };
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
+  nix.settings.auto-optimise-store = true;
+
   hardware = {
     # OpenGL
     graphics.enable = true;
