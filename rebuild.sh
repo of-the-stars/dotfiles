@@ -21,7 +21,7 @@ if git diff --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
 fi
 
-sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
+sudo nixos-rebuild switch --flake .#han-tyumi &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
 
