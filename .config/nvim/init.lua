@@ -920,10 +920,28 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
   {
     'willothy/flatten.nvim',
-    config = true,
+    -- config = true,
     -- or pass configuration with
     -- opts = {  }
     -- Ensure that it runs first to minimize delay when opening file from terminal
+
+    opts = {
+      block_for = {
+        gitcommit = true,
+        gitrebase = true,
+      },
+      disable_cmd_passthrough = false,
+      nest_if_no_args = true,
+      nest_if_cmds = true,
+      window = {
+        open = 'current',
+        diff = 'tab_vsplit',
+        focus = 'first',
+      },
+      integrations = {
+        kitty = true,
+      },
+    },
     lazy = false,
     priority = 1001,
   },

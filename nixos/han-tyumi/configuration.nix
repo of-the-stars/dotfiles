@@ -245,7 +245,6 @@ in
     gimp
     halloy
     handbrake
-    hyprlock
     inkscape
     # kdePackages.itinerary
     kdePackages.k3b

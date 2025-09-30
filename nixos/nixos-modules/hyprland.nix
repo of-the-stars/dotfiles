@@ -44,6 +44,7 @@
     environment.systemPackages = with pkgs; [
       dunst
       grim
+      hyprlock
       hyprpaper
       kdePackages.dolphin
       networkmanagerapplet
