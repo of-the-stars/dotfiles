@@ -52,6 +52,7 @@
       slurp
       starship
       waybar
+      wev
       wireplumber
       wl-clipboard
       wofi

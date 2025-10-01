@@ -12,10 +12,15 @@ in
   imports = [
     ./../nixos-modules/terminal.nix
     ./../nixos-modules/hyprland.nix
+    ./../nixos-modules/media-tools.nix
+    ./../nixos-modules/virtual-machines.nix
   ];
 
   terminal.enable = true;
   hyprland.enable = true;
+  media-tools.enable = true;
+
+  virtual-machines.enable = false;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -174,31 +179,9 @@ in
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  programs.obs-studio = {
-    enable = true;
-    enableVirtualCamera = true;
-
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      obs-vaapi
-      obs-gstreamer
-      obs-vkcapture
-      droidcam-obs
-    ];
-  };
-
+  # File system management
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["internet_wizard"];
-
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["internet_wizard"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -227,8 +210,9 @@ in
     # avrlibc
     inputs.nvim.packages.${system}.nvim
     pkgsUnstable.ansilove
+
+
     signal-desktop
-    # wget
     alejandra
     audacity
     avrdude
@@ -237,32 +221,21 @@ in
     bluez
     brightnessctl
     discord
-    droidcam
-    dvgrab
     element-desktop
-    ffmpeg
     firefox
-    gimp
     halloy
-    handbrake
-    inkscape
     # kdePackages.itinerary
-    kdePackages.k3b
     kid3
     kdePackages.kdeconnect-kde
-    kdePackages.kdenlive
     kdePackages.marble
     kdePackages.okular
     kdePackages.xwaylandvideobridge
-    krita
     libnotify
     lua-language-server
     luajitPackages.luarocks
     mdbook
-    ncspot
     neocities
     nil
-    nodejs_24
     nwg-look
     obsidian
     openssl
@@ -281,17 +254,12 @@ in
     signal-export
     spotify
     stellarium
-    tio
     traceroute
     tree
     tree-sitter
     trunk
     usbutils
-    v4l-utils
-    vlc
-    wev
     wine
-    yt-dlp
   ];
 
   # This value determines the NixOS release from which the default
