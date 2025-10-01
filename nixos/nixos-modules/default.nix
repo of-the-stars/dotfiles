@@ -3,6 +3,10 @@
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
+    ./terminal.nix
+    ./hyprland.nix
+    ./media-tools.nix
+    ./virtual-machines.nix
   ];
 
   options = {
@@ -17,5 +21,12 @@
     # Usually these depend on whether a user of this module chose to "enable" it
     # using the "option" above. 
     # Options for modules imported in "imports" can be set here.
+
+    terminal.enable = lib.mkDefault true;
+    hyprland.enable = lib.mkDefault true;
+    media-tools.enable = lib.mkDefault true;
+
+    virtual-machines.enable = lib.mkDefault false;
+
   };
 }

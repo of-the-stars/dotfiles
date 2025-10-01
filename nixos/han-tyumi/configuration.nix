@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, inputs, nvim,  ... }:
+{ config, pkgs, inputs, lib,  ... }:
 let
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
@@ -10,17 +10,8 @@ let
 in
 {
   imports = [
-    ./../nixos-modules/terminal.nix
-    ./../nixos-modules/hyprland.nix
-    ./../nixos-modules/media-tools.nix
-    ./../nixos-modules/virtual-machines.nix
+    ./../nixos-modules
   ];
-
-  terminal.enable = true;
-  hyprland.enable = true;
-  media-tools.enable = true;
-
-  virtual-machines.enable = false;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
