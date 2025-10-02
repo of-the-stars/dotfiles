@@ -109,6 +109,7 @@
           delve
         ];
         kickstart-lint = [
+          alejandra
           markdownlint-cli
         ];
       };

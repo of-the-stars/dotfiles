@@ -234,74 +234,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         changedelete = { text = '~' },
       },
     },
-
-    -- {
-    --[[ on_attach = function(bufnr)
-        local gitsigns = require 'gitsigns'
-
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
-        end
-
-        -- Navigation
-        map('n', ']c', function()
-          if vim.wo.diff then
-            vim.cmd.normal { ']c', bang = true }
-          else
-            gitsigns.nav_hunk 'next'
-          end
-        end)
-
-        map('n', '[c', function()
-          if vim.wo.diff then
-            vim.cmd.normal { '[c', bang = true }
-          else
-            gitsigns.nav_hunk 'prev'
-          end
-        end)
-
-        -- Actions
-        map('n', '<leader>gs', gitsigns.stage_hunk, '[S]tage hunk')
-        map('n', '<leader>gr', gitsigns.reset_hunk, '[R]eset hunk')
-
-        map('v', '<leader>gs', function()
-          gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end)
-
-        map('v', '<leader>gr', function()
-          gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end)
-
-        map('n', '<leader>gS', gitsigns.stage_buffer, '[S]tage buffer')
-        map('n', '<leader>gR', gitsigns.reset_buffer, '[R]eset buffer')
-        map('n', '<leader>gp', gitsigns.preview_hunk, '[P]review hunk')
-        map('n', '<leader>gi', gitsigns.preview_hunk_inline, 'Preview hunk [I]nline')
-
-        map('n', '<leader>gb', function()
-          gitsigns.blame_line { full = true }
-        end)
-
-        map('n', '<leader>gd', gitsigns.diffthis)
-
-        map('n', '<leader>gD', function()
-          gitsigns.diffthis '~'
-        end)
-
-        map('n', '<leader>gQ', function()
-          gitsigns.setqflist 'all'
-        end)
-        map('n', '<leader>gq', gitsigns.setqflist)
-
-        -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
-        map('n', '<leader>tw', gitsigns.toggle_word_diff)
-
-        -- Text object
-        map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
-      end,
-    }, ]]
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -1052,7 +984,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
     keys = {
-      { '<leader>g', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+      { '<leader>l', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
 
@@ -1073,7 +1005,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
