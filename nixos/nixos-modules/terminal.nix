@@ -34,6 +34,7 @@
       fzf
       gcc
       git
+      gitleaks
       gnumake
       htop-vim
       kitty 

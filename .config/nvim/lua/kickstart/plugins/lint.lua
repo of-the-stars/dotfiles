@@ -6,6 +6,10 @@ return {
     enabled = require('nixCatsUtils').enableForCategory 'kickstart-lint',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
+      require('lint').linters.alejandra = {
+        cmd = 'alejandra',
+      }
+
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
