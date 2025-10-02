@@ -1,14 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, inputs, lib,  ... }:
-let
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: let
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
-in
-{
+in {
   imports = [
     ./../nixos-modules
   ];
@@ -25,7 +29,10 @@ in
     flake = "path:./../flake.nix";
     dates = "weekly";
     allowReboot = true;
-    rebootWindow = { lower = "01:00"; upper = "05:00"; };
+    rebootWindow = {
+      lower = "01:00";
+      upper = "05:00";
+    };
   };
 
   nix.gc = {
@@ -65,22 +72,22 @@ in
   # Enable tlp for laptop power management
   services.tlp = {
     enable = true;
-      settings = {
-    #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    #
-    #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-    #   CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
-    #
-    #   CPU_MIN_PERF_ON_AC = 0;
-    #   CPU_MAX_PERF_ON_AC = 100;
-    #   CPU_MIN_PERF_ON_BAT = 0;
-    #   CPU_MAX_PERF_ON_BAT = 20;
-    #
-    #   #Optional helps save long term battery health
-        START_CHARGE_THRESH_BAT0 = 80; # and below it starts to charge
-        STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
-      };
+    settings = {
+      #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      #
+      #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      #   CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
+      #
+      #   CPU_MIN_PERF_ON_AC = 0;
+      #   CPU_MAX_PERF_ON_AC = 100;
+      #   CPU_MIN_PERF_ON_BAT = 0;
+      #   CPU_MAX_PERF_ON_BAT = 20;
+      #
+      #   #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 80; # and below it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
+    };
   };
 
   programs.steam = {
@@ -135,10 +142,10 @@ in
 
   services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
     "monitor.bluez.properties" = {
-        "bluez5.enable-sbc-xq" = true;
-        "bluez5.enable-msbc" = true;
-        "bluez5.enable-hw-volume" = true;
-        "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+      "bluez5.enable-sbc-xq" = true;
+      "bluez5.enable-msbc" = true;
+      "bluez5.enable-hw-volume" = true;
+      "bluez5.roles" = ["hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag"];
     };
   };
 
@@ -202,15 +209,10 @@ in
     inputs.nvim.packages.${system}.nvim
     pkgsUnstable.ansilove
 
-
     signal-desktop
-    alejandra
     audacity
-    avrdude
     bind
     bitwarden-desktop
-    bluez
-    brightnessctl
     discord
     element-desktop
     firefox
@@ -221,34 +223,21 @@ in
     kdePackages.marble
     kdePackages.okular
     kdePackages.xwaylandvideobridge
-    libnotify
-    lua-language-server
-    luajitPackages.luarocks
-    mdbook
-    neocities
-    nil
     nwg-look
     obsidian
     openssl
     organicmaps
     pipewire
-    pkgsCross.avr.buildPackages.binutils
-    pkgsCross.avr.buildPackages.gcc
     prismlauncher
     protonvpn-gui
     qbittorrent
     qgis
     qimgv
-    ravedude
-    ruby
-    rust-analyzer
     signal-export
     spotify
     stellarium
     traceroute
     tree
-    tree-sitter
-    trunk
     usbutils
     wine
   ];
@@ -260,5 +249,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

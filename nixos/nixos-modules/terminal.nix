@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ...}:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -9,7 +13,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    terminal.enable = 
+    terminal.enable =
       lib.mkEnableOption "Enables terminal";
   };
 
@@ -17,27 +21,38 @@
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
-    # using the "option" above. 
+    # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    environment.systemPackages = with pkgs; [ 
+    environment.systemPackages = with pkgs; [
+      # cargo
+      # cargo-generate
+      # cargo-info
+      # cargo-make
+      # gnumake
+      # clang-tools
+      # avrdude
+      # lua-language-server
+      # luajitPackages.luarocks
+      # nil
+      # mdbook
+      # pkgsCross.avr.buildPackages.binutils
+      # pkgsCross.avr.buildPackages.gcc
+      # ravedude
+      # rust-analyzer
+      # ruby
+      # tree-sitter
+
       bitwarden-cli
-      cargo
-      cargo-generate
-      cargo-info
-      cargo-make
       clang
-      clang-tools
       direnv
       docker
       fastfetch
       fzf
-      gcc
       git
       gitleaks
-      gnumake
       htop-vim
-      kitty 
+      kitty
       lazygit
       nix-search-cli
       openconnect
@@ -77,6 +92,5 @@
       TERM = "kitty";
       PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     };
-
   };
 }

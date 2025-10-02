@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ...}:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -9,7 +13,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    hyprland.enable = 
+    hyprland.enable =
       lib.mkEnableOption "Enables the hyprland window manager";
   };
 
@@ -17,7 +21,7 @@
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
-    # using the "option" above. 
+    # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
     # Enable the Hyprland window manager
@@ -33,7 +37,7 @@
       # Hint electron apps to use wayland
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       WAYLAND_DISPLAY = "1";
-      NIXOS_OZONE_WL =1;
+      NIXOS_OZONE_WL = 1;
     };
 
     # Fonts
@@ -56,6 +60,9 @@
       wireplumber
       wl-clipboard
       wofi
+      bluez
+      brightnessctl
+      libnotify
     ];
   };
 }
