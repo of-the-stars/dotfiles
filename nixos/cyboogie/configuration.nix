@@ -17,8 +17,8 @@ in {
     ./../nixos-modules
   ];
 
-  hyprland.enable = lib.mkOverride false;
-  media-tools.enable = lib.mkOverride false;
+  hyprland-config.enable = false;
+  media-tools.enable = false;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
