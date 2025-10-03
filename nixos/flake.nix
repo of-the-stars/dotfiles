@@ -49,7 +49,7 @@
 
     nixosConfigurations.cyboogie = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs nixpkgs-unstable modulesPath;};
+      specialArgs = {inherit inputs nixpkgs nixpkgs-unstable modulesPath;};
       modules = [
         ./cyboogie/configuration.nix
         ./han-tyumi/hardware-configuration.nix
@@ -69,7 +69,7 @@
 
         inputs.catppuccin.nixosModules.catppuccin
 
-        (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
+        "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
       ];
     };
   };
