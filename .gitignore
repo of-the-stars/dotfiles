@@ -1,3 +1,2 @@
-./nixos/hardware-configuration.nix
-./nixos/result
-./.config/kickstart-nixcats/result/
+nixos/hardware-configuration.nix
+nixos/result
