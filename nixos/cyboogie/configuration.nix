@@ -58,13 +58,16 @@ in {
   };
 
   services.displayManager = {
-    cosmic-greeter.enable = true;
     autoLogin = {
       enable = true;
       user = "internet_wizard";
     };
   };
-  services.desktopManager.cosmic.enable = true;
+
+  # Pre 25.11
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Allow unsupported systems
   nixpkgs.config.allowUnsupportedSystem = true;
