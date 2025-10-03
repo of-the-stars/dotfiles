@@ -8,7 +8,7 @@
     # Paths to other modules.
     # Compose this module out of smaller ones.
     ./terminal.nix
-    ./hyprland.nix
+    ./hyprland-config.nix
     ./media-tools.nix
     ./networking-tools.nix
     ./virtual-machines.nix
@@ -28,7 +28,7 @@
     # Options for modules imported in "imports" can be set here.
 
     terminal.enable = lib.mkDefault true;
-    hyprland.enable = lib.mkDefault true;
+    hyprland-config.enable = lib.mkDefault true;
     media-tools.enable = lib.mkDefault true;
     networking-tools.enable = lib.mkDefault true;
 
