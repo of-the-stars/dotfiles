@@ -81,6 +81,8 @@ in {
     extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     inputs.nvim.packages.${system}.nvim
 
