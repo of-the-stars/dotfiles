@@ -30,6 +30,12 @@ in {
 
   networking.hostName = "cyboogie";
 
+  # Enable networking
+  networking.networkmanager.enable = false;
+
+  # Enable system power management
+  powerManagement.enable = false;
+
   # Enable tlp for laptop power management
   services.tlp = {
     enable = false;
