@@ -57,13 +57,6 @@ in {
     };
   };
 
-  services.displayManager = {
-    autoLogin = {
-      enable = true;
-      user = "internet_wizard";
-    };
-  };
-
   # Pre 25.11
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
@@ -89,6 +82,7 @@ in {
     isNormalUser = true;
     description = "Stell";
     extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
+    initialHashedPassword = "";
   };
 
   nixpkgs.config.allowUnfree = true;
