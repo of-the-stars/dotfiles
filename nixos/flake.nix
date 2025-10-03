@@ -41,6 +41,7 @@
             ];
           };
         }
+
         inputs.catppuccin.nixosModules.catppuccin
       ];
     };
@@ -48,7 +49,25 @@
     nixosConfigurations.cybogie = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
-      modules = [];
+      modules = [
+        ./cyboogie/configuration.nix
+        ./han-tyumi/hardware-configuration.nix
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.internet_wizard = {
+            imports = [
+              ./home.nix
+              inputs.catppuccin.homeModules.catppuccin
+              (home-manager-unstable + "/modules/programs/vivid.nix")
+            ];
+          };
+        }
+
+        inputs.catppuccin.nixosModules.catppuccin
+      ];
     };
   };
 }

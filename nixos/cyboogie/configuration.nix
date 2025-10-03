@@ -18,6 +18,7 @@ in {
   ];
 
   hyprland.enable = lib.mkOverride false;
+  media-tools.enable = lib.mkOverride false;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -56,6 +57,8 @@ in {
     };
   };
 
+  services.desktopManager.cosmic.enable = true;
+
   # Allow unsupported systems
   nixpkgs.config.allowUnsupportedSystem = true;
 
@@ -70,4 +73,23 @@ in {
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.internet_wizard = {
+    isNormalUser = true;
+    description = "Stell";
+    extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
+  };
+
+  environment.systemPackages = with pkgs; [
+    inputs.nvim.packages.${system}.nvim
+
+    firefox
+    qbittorrent
+    obsidian
+    protonvpn-gui
+    signal-desktop
+    stellarium
+    usbutils
+  ];
 }

@@ -25,26 +25,27 @@
     # Options for modules imported in "imports" can be set here.
 
     environment.systemPackages = with pkgs; [
+      # avrdude
+      # avrlibc
       # cargo
       # cargo-generate
       # cargo-info
       # cargo-make
-      # gnumake
+      # clang
       # clang-tools
-      # avrdude
+      # gnumake
       # lua-language-server
       # luajitPackages.luarocks
-      # nil
       # mdbook
+      # nil
       # pkgsCross.avr.buildPackages.binutils
       # pkgsCross.avr.buildPackages.gcc
       # ravedude
-      # rust-analyzer
       # ruby
+      # rust-analyzer
       # tree-sitter
 
       bitwarden-cli
-      clang
       direnv
       docker
       fastfetch

@@ -7,11 +7,7 @@
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
-    ./terminal.nix
-    ./hyprland.nix
-    ./media-tools.nix
-    ./networking-tools.nix
-    ./virtual-machines.nix
+    ./music.nix
   ];
 
   options = {
@@ -27,11 +23,6 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    terminal.enable = lib.mkDefault true;
-    hyprland.enable = lib.mkDefault true;
-    media-tools.enable = lib.mkDefault true;
-    networking-tools.enable = lib.mkDefault true;
-
-    virtual-machines.enable = lib.mkDefault false;
+    music.enable = lib.mkDefault true;
   };
 }

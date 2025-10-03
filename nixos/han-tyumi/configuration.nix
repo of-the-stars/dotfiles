@@ -205,7 +205,6 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # avrlibc
     inputs.nvim.packages.${system}.nvim
     pkgsUnstable.ansilove
 
@@ -218,7 +217,6 @@ in {
     firefox
     halloy
     # kdePackages.itinerary
-    kid3
     kdePackages.kdeconnect-kde
     kdePackages.marble
     kdePackages.okular
@@ -227,16 +225,11 @@ in {
     obsidian
     openssl
     organicmaps
-    pipewire
     prismlauncher
-    protonvpn-gui
-    qbittorrent
     qgis
     qimgv
     signal-export
-    spotify
     stellarium
-    traceroute
     tree
     usbutils
     wine
