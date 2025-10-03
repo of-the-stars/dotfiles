@@ -15,11 +15,17 @@
     nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, nvim, catppuccin, ... }@inputs: {
-
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    home-manager-unstable,
+    ...
+  } @ inputs: {
     nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs nixpkgs-unstable home-manager home-manager-unstable nvim catppuccin ; };
+      specialArgs = {inherit inputs nixpkgs-unstable home-manager home-manager-unstable;};
       modules = [
         ./han-tyumi/configuration.nix
         ./han-tyumi/hardware-configuration.nix
@@ -30,18 +36,18 @@
           home-manager.users.internet_wizard = {
             imports = [
               ./home.nix
-              catppuccin.homeModules.catppuccin
+              inputs.catppuccin.homeModules.catppuccin
               (home-manager-unstable + "/modules/programs/vivid.nix")
             ];
           };
         }
-        catppuccin.nixosModules.catppuccin
+        inputs.catppuccin.nixosModules.catppuccin
       ];
     };
 
     nixosConfigurations.cybogie = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs ; };
+      specialArgs = {inherit inputs;};
       modules = [];
     };
   };
