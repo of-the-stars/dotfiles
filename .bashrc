@@ -8,19 +8,6 @@ case $- in
       *) return;;
 esac
 
-# enable starship
-eval "$(starship init bash)"
-
-# enable direnv
-eval "$(direnv hook bash)"
-
-# enable zoxide
-eval "$(zoxide init bash)"
-
-# enable fzf
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
-
 # Home Manager
 . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
 
@@ -100,6 +87,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# export variables
+export EDITOR='nvim'
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -172,8 +162,17 @@ unzip-all() {
     for a in *.zip; do unzip "$a" -d "${a%.zip}"; done
 }
 
-# export variables
-export EDITOR='nvim'
-
 # export MANPAGER="nvim +Man!"
 
+# enable starship
+eval "$(starship init bash)"
+
+# enable zoxide
+eval "$(zoxide init bash)"
+
+# enable fzf
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+# enable direnv
+eval "$(direnv hook bash)"
