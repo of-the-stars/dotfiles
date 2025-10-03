@@ -54,7 +54,6 @@
       networkmanagerapplet
       playerctl
       slurp
-      starship
       waybar
       wev
       wireplumber

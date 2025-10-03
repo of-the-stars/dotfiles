@@ -24,6 +24,28 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
+    xdg.terminal-exec = {
+      enable = true;
+      settings = {
+        default = [
+          "kitty.desktop"
+        ];
+      };
+    };
+
+    programs.starship = {
+      enable = true;
+    };
+
+    environment.variables = {
+      SUDO_EDITOR = "nvim";
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      SYSTEMD_EDITOR = "nvim";
+      TERM = "kitty";
+      PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    };
+
     environment.systemPackages = with pkgs; [
       # avrdude
       # avrlibc
@@ -62,6 +84,7 @@
       ripgrep
       rustup
       screen
+      starship
       stow
       tiny
       unzip
@@ -71,27 +94,5 @@
       yazi
       zoxide
     ];
-
-    xdg.terminal-exec = {
-      enable = true;
-      settings = {
-        default = [
-          "kitty.desktop"
-        ];
-      };
-    };
-
-    programs.starship = {
-      enable = true;
-    };
-
-    environment.variables = {
-      SUDO_EDITOR = "nvim";
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-      SYSTEMD_EDITOR = "nvim";
-      TERM = "kitty";
-      PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-    };
   };
 }
