@@ -57,6 +57,13 @@ in {
     };
   };
 
+  services.displayManager = {
+    cosmic-greeter.enable = true;
+    autoLogin = {
+      enable = true;
+      user = "internet_wizard";
+    };
+  };
   services.desktopManager.cosmic.enable = true;
 
   # Allow unsupported systems
