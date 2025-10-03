@@ -21,7 +21,6 @@
     nixpkgs-unstable,
     home-manager,
     home-manager-unstable,
-    modulesPath,
     ...
   } @ inputs: {
     nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
@@ -49,7 +48,7 @@
 
     nixosConfigurations.cyboogie = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs nixpkgs nixpkgs-unstable modulesPath;};
+      specialArgs = {inherit inputs nixpkgs nixpkgs-unstable;};
       modules = [
         ./cyboogie/configuration.nix
         ./han-tyumi/hardware-configuration.nix

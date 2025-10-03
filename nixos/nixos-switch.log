@@ -1,7 +1,9 @@
 warning: Git tree '/home/internet_wizard/dotfiles' is dirty
-error:
-       … while updating the lock file of flake 'git+file:///home/internet_wizard/dotfiles?dir=nixos'
-
-       … while updating the flake input 'modulesPath'
-
-       error: cannot find flake 'flake:modulesPath' in the flake registries
+building the system configuration...
+warning: Git tree '/home/internet_wizard/dotfiles' is dirty
+activating the configuration...
+setting up /etc...
+reloading user units for internet_wizard...
+restarting sysinit-reactivation.target
+the following new units were started: NetworkManager-dispatcher.service
+Done. The new configuration is /nix/store/rj87743pl1m5f5p875n8v9l2d1kqr95n-nixos-system-han-tyumi-25.05.20250925.25e53aa
