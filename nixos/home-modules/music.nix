@@ -29,7 +29,7 @@
     services.mpd-discord-rpc = {
       enable = true;
       settings = {
-        id = 547587958736420892;
+        id = 755546997242462280;
         hosts = ["localhost:6600"];
 
         format = {
