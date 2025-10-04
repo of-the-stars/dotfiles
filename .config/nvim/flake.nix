@@ -117,6 +117,8 @@
           nixd
           ripgrep
           rust-analyzer
+          rustfmt
+          stylelint
           stdenv.cc.cc
           stylua
           universal-ctags

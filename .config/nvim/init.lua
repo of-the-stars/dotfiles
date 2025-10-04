@@ -693,6 +693,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       formatters_by_ft = {
         lua = { 'stylua' },
         nix = { 'alejandra' },
+        rust = { 'rustfmt' },
+        css = { 'stylelint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
