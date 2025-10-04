@@ -32,7 +32,8 @@
 
     services.mpd-discord-rpc = {
       enable = false;
-      settings = {
+      /*
+         settings = {
         id = 677226551607033903;
         hosts = ["localhost:6600"];
 
@@ -47,11 +48,12 @@
           display_type = "name";
         };
       };
+      */
     };
 
     xdg.configFile = {
       "rmpc".source = ./../../.config/rmpc;
-      "discord-rpc".source = ./../../.config/discord-rpc;
+      # "discord-rpc".source = ./../../.config/discord-rpc;
     };
 
     home.file = {
