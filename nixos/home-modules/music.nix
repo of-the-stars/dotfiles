@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ...}:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -10,7 +13,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    music.enable = 
+    music.enable =
       lib.mkEnableOption "Enables music";
   };
 
@@ -18,13 +21,15 @@
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
-    # using the "option" above. 
+    # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
     programs.rmpc.enable = true;
+    services.mpd-discord-rpc.enable = true;
 
     xdg.configFile = {
       "rmpc".source = ./../../.config/rmpc;
+      "discord-rpc".source = ./../../.config/discord-rpc;
     };
 
     home.file = {
@@ -35,17 +40,18 @@
     services.mpd = {
       enable = true;
       musicDirectory = "/home/internet_wizard/Music";
-        extraConfig = ''
-          audio_output {
-            type "pipewire"
-            name "my pipewire"
-            mixer_device "default"
-            mixer_control "PCM"
-          }
-        '';
+      playlistDirectory = "/home/internet_wizard/Music/.playlists";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "my pipewire"
+          mixer_device "default"
+          mixer_control "PCM"
+        }
+      '';
 
       network.port = 6600;
-    
+
       # Optional:
       network.listenAddress = "any"; # if you want to allow non-localhost connections
       # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
@@ -59,7 +65,7 @@
         passwordFile = "/home/internet_wizard/.secrets/lastfm_password";
       };
       journalInterval = 10;
-    }; 
+    };
 
     programs.cava = {
       enable = true;
@@ -70,7 +76,5 @@
         smoothing.noise_reduction = 88;
       };
     };
-
-
   };
 }
