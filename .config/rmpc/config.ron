@@ -47,7 +47,7 @@
             "c":       ToggleConsume,
             "v":       ToggleSingle,
             "b":       SeekBack,
-            "~":       ShowHelp,
+            "?":       ShowHelp,
             "I":       ShowCurrentSongInfo,
             "O":       ShowOutputs,
             "P":       ShowDecoders,
