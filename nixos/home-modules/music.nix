@@ -25,7 +25,25 @@
     # Options for modules imported in "imports" can be set here.
 
     programs.rmpc.enable = true;
-    services.mpd-discord-rpc.enable = true;
+
+    services.mpd-discord-rpc = {
+      enable = true;
+      settings = {
+        id = 547587958736420892;
+        hosts = ["localhost:6600"];
+
+        format = {
+          details = "$title";
+          state = "$artist / $album / $disc";
+          timestamp = "both";
+          large_image = "notes";
+          small_image = "notes";
+          large_text = "";
+          small_text = "";
+          display_type = "name";
+        };
+      };
+    };
 
     xdg.configFile = {
       "rmpc".source = ./../../.config/rmpc;
