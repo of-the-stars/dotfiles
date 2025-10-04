@@ -26,10 +26,14 @@
 
     programs.rmpc.enable = true;
 
+    home.packages = with pkgs; [
+      mpd-discord-rpc
+    ];
+
     services.mpd-discord-rpc = {
-      enable = true;
+      enable = false;
       settings = {
-        id = 755546997242462280;
+        id = 677226551607033903;
         hosts = ["localhost:6600"];
 
         format = {
