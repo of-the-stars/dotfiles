@@ -70,19 +70,26 @@
       bitwarden-cli
       direnv
       docker
+      dust
+      eza
       fastfetch
+      fselect
       fzf
       git
       gitleaks
       htop-vim
       kitty
       lazygit
+      mprocs
       nix-search-cli
       openconnect
+      presenterm
       python3
       rename
       ripgrep
+      ripgrep-all
       rustup
+      rusty-man
       screen
       starship
       stow

@@ -15,6 +15,16 @@
     bat
   ];
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+    };
+  };
+
   xdg.configFile = {
     "hypr".source = ./../.config/hypr;
     "nvim".source = ./../.config/nvim;
@@ -39,8 +49,6 @@
   };
 
   programs.vivid.enable = true;
-
-  music.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

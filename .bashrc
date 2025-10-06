@@ -127,6 +127,7 @@ fi
 alias icat="kitten icat"
 alias cd="z"
 alias c="clear"
+alias ls="eza"
 
 # internet_wizard's custom functions
 lg() {

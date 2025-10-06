@@ -24,6 +24,11 @@
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
 
+    bacon-ls = {
+      url = "github:crisidev/bacon-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -110,6 +115,8 @@
       lspsAndRuntimeDeps = with pkgs; {
         general = [
           alejandra
+          bacon
+          # bacon-ls
           fd
           fzf
           lua-language-server
@@ -295,7 +302,7 @@
           # this kickstart extra didnt require any extra plugins
           # so it doesnt have a category above.
           # but we can still send the info from nix to lua that we want it!
-          kickstart-gitsigns = false;
+          kickstart-gitsigns = true;
 
           # we can pass whatever we want actually.
           # have_nerd_font = false;
