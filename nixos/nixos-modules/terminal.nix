@@ -67,6 +67,7 @@
       # rust-analyzer
       # tree-sitter
 
+      bash-completion
       bitwarden-cli
       direnv
       docker

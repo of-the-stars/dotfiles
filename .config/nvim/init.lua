@@ -592,7 +592,15 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- servers.clangd = {},
       -- servers.gopls = {},
       -- servers.pyright = {},
-      -- servers.rust_analyzer = {},
+      servers.rust_analyzer = {}
+      servers.bashls = {}
+      servers.markdown_oxide = {}
+      servers.marksman = {}
+      servers.matlab_ls = {}
+      servers.ltex = {}
+      servers.sqls = {}
+      servers.yamlls = {}
+
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
       -- Some languages (like typescript) have entire language plugins that can be useful:

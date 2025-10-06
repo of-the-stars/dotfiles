@@ -116,10 +116,15 @@
         general = [
           alejandra
           bacon
-          # bacon-ls
+          bash-language-server
           fd
           fzf
           lua-language-server
+          markdown-oxide
+          marksman
+          matlab-language-server
+          ltex-ls
+          sqls
           nix-doc
           nixd
           ripgrep
@@ -129,6 +134,7 @@
           stdenv.cc.cc
           stylua
           universal-ctags
+          yaml-language-server
         ];
         kickstart-debug = [
           delve
