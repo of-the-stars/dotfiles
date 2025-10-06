@@ -43,7 +43,7 @@
     ".gitconfig".source = ./../.gitconfig;
 
     ".bashrc".source = ./../.bashrc;
-    ".zshrc".source = ./../.zshrc;
+    # ".zshrc".source = ./../.zshrc;
     ".bash_aliases".source = ./../.bash_aliases;
 
     ".stow-global-ignora".source = ./../.stow-global-ignore;
