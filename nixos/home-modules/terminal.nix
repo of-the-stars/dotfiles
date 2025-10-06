@@ -41,6 +41,8 @@
       initContent = ''
         bindkey -v
 
+        export MANPAGER="nvim +Man!"
+
         # panasonic camcorder helper functions
 
         panasonic-grab() {
