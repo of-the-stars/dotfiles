@@ -15,25 +15,6 @@
     bat
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-    };
-  };
-
-  programs.fzf.enableZshIntegration = true;
-  programs.eza.enableZshIntegration = true;
-  programs.direnv.enableZshIntegration = true;
-  programs.starship.enableZshIntegration = true;
-  programs.yazi.enableZshIntegration = true;
-  programs.zoxide.enableZshIntegration = true;
-
-  programs.kitty.shellIntegration.enableZshIntegration = true;
-
   xdg.configFile = {
     "hypr".source = ./../.config/hypr;
     "nvim".source = ./../.config/nvim;

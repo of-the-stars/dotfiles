@@ -8,6 +8,7 @@
     # Paths to other modules.
     # Compose this module out of smaller ones.
     ./music.nix
+    ./terminal.nix
   ];
 
   options = {
@@ -24,5 +25,6 @@
     # Options for modules imported in "imports" can be set here.
 
     music.enable = lib.mkDefault true;
+    terminal.enable = lib.mkDefault true;
   };
 }

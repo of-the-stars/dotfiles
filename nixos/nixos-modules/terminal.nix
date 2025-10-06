@@ -67,19 +67,14 @@
       # rust-analyzer
       # tree-sitter
 
-      bash-completion
       bitwarden-cli
-      direnv
       docker
       dust
-      eza
       fastfetch
       fselect
-      fzf
       git
       gitleaks
       htop-vim
-      kitty
       lazygit
       mprocs
       nix-search-cli
@@ -99,8 +94,6 @@
       vim
       whois
       wl-clipboard
-      yazi
-      zoxide
     ];
   };
 }
