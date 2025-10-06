@@ -32,6 +32,58 @@
 
       shellAliases = {
       };
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "minimal";
+      };
+
+      initContent = ''
+        # panasonic camcorder helper functions
+
+        panasonic-grab() {
+            # pulls video and splits recordings into .avi files from my Panasonic camcorder
+            dvgrab -V -input $1 --timestamp --size 0 --showstatus --autosplit --format dv2 dv-
+            panasonic-rename
+        }
+
+        panasonic-rename() {
+            # renames the videos grabbed by the panasonic-grab() function into ISO compliant filenames with the date and time
+            rename -v 's/dv-19([0-9]{2}).([0-9]{2}).([0-9]{2})_([0-9]{2})-([0-9]{2})-([0-9]{2})/20$1$2$3T$4$5$6/' *
+        }
+
+        # unzip-all
+
+        unzip-all() {
+            for a in *.zip; do unzip "$a" -d "''${a%.zip}"; done
+        }
+      '';
+    };
+
+    home.shell = {
+      enableZshIntegration = true;
+    };
+
+    home.shellAliases = {
+      ll = "ls -alF";
+      la = "ls -A";
+      l = "ls -CF";
+
+      # Add an "alert" alias for long running commands.  Use like so:
+      #   sleep 10; alert
+      alert = ''
+        notify-send --urgency=high -i "$([ $? = 0 ] && echo terminal || echo error)"
+      '';
+
+      # This was part of the above command, idk how to add it in again
+      # TODO: Fix this and incorporate it back into the previous command
+
+      # "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"
+
+      icat = "kitten icat";
+      cd = "z";
+      c = "clear";
+      ls = "eza";
     };
 
     programs.starship = {
@@ -42,6 +94,7 @@
     programs.yazi = {
       enable = true;
       enableZshIntegration = true;
+      shellWrapperName = "y";
     };
 
     programs.zoxide = {

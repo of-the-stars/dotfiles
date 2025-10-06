@@ -144,6 +144,9 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.wrap = true -- Sets text to wrap
 vim.opt.linebreak = true -- Sets text to wrap around whitespace
 
+-- Very magic regex
+-- vim.keymap.set('n', '<leader>r', '<cmd>smagic<cr>', { desc = { 'Search and replace' } })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
