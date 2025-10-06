@@ -131,6 +131,11 @@
     programs.kitty = {
       enable = true;
       shellIntegration.enableZshIntegration = true;
+      enableGitIntegration = true;
+
+      extraConfig = ''
+        shell zsh
+      '';
     };
   };
 }
