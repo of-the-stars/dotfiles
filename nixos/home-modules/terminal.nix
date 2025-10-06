@@ -133,9 +133,11 @@
       shellIntegration.enableZshIntegration = true;
       enableGitIntegration = true;
 
-      extraConfig = ''
+      /*
+         extraConfig = ''
         shell zsh
       '';
+      */
     };
   };
 }
