@@ -132,7 +132,7 @@
     programs.kitty = {
       enable = true;
       shellIntegration.enableZshIntegration = true;
-      enableGitIntegration = true;
+      enableGitIntegration = false;
 
       /*
          extraConfig = ''
