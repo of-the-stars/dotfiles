@@ -1,7 +1,7 @@
-autoload -U compinit promptinit
-
-promptinit
-compinit
+# autoload -U compinit promptinit
+#
+# promptinit
+# compinit
 
 # enable starship
 eval "$(starship init zsh)"
