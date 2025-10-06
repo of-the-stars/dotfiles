@@ -1,12 +1,7 @@
 autoload -U compinit promptinit
 
 promptinit
-prompt pure
-
 compinit
-
-# Home Manager
-source "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
 
 # enable starship
 eval "$(starship init zsh)"
