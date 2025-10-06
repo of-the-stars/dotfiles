@@ -35,10 +35,11 @@
 
       oh-my-zsh = {
         enable = true;
-        theme = "minimal";
       };
 
       initContent = ''
+        ZSH_THEME=""
+
         bindkey -v
 
         export MANPAGER="nvim +Man!"

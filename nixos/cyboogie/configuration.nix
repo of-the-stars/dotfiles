@@ -86,7 +86,6 @@ in {
     description = "Stell";
     extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
     initialHashedPassword = "";
-    shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;
