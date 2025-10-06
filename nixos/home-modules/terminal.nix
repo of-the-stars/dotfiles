@@ -39,6 +39,8 @@
       };
 
       initContent = ''
+        bindkey -v
+
         # panasonic camcorder helper functions
 
         panasonic-grab() {
