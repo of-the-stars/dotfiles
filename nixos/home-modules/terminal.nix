@@ -60,9 +60,11 @@
       '';
     };
 
-    home.shell = {
+    /*
+       home.shell = {
       enableZshIntegration = true;
     };
+    */
 
     home.shellAliases = {
       ll = "ls -alF";
