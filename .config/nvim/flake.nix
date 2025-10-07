@@ -156,7 +156,7 @@
           cmp_luasnip
           comment-nvim
           conform-nvim
-          dashboard-nvim
+          alpha-nvim
           fidget-nvim
           flatten-nvim
           friendly-snippets
