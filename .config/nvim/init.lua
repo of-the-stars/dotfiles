@@ -272,7 +272,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         { '<leader>r_', hidden = true },
         { '<leader>f', group = '[F]ind' },
         { '<leader>s_', hidden = true },
-        { '<leader>t', group = '[T]oggle' },
+        { '<leader>t', group = '[T]erminal' },
         { '<leader>t_', hidden = true },
         -- { '<leader>w', group = '[W]orkspace' },
         -- { '<leader>w_', hidden = true },
@@ -566,9 +566,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           --
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            map('<leader>th', function()
+            map('<leader>Ch', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end, '[T]oggle Inlay [H]ints')
+            end, 'Toggle Inlay [H]ints')
           end
         end,
       })
@@ -931,24 +931,15 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     -- Ensure that it runs first to minimize delay when opening file from terminal
 
     opts = {
-      block_for = {
-        gitcommit = true,
-        gitrebase = true,
-      },
-      disable_cmd_passthrough = false,
-      nest_if_no_args = true,
-      nest_if_cmds = true,
       window = {
-        open = 'current',
-        diff = 'tab_vsplit',
-        focus = 'first',
+        open = 'alternate',
       },
       integrations = {
         kitty = true,
       },
     },
     lazy = false,
-    priority = 1001,
+    priority = 99999,
   },
 
   { -- Collection of various small independent plugins/modules
@@ -1038,7 +1029,14 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   },
 
   -- Persist and manage multiple terminals in your nvim session
-  { 'akinsho/toggleterm.nvim', version = '*', config = true },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = function()
+      vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = { '[T]oggle [F]loating terminal' } })
+      vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = { '[T]oggle [V]ertical terminal' } })
+    end,
+  },
 
   {
     'kdheepak/lazygit.nvim',
