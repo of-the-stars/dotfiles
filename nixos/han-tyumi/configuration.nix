@@ -161,6 +161,7 @@ in {
     isNormalUser = true;
     description = "Stell";
     extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
+    # shell = pkgs.zsh;
   };
 
   programs.nix-ld.enable = true;
