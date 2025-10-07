@@ -1047,7 +1047,20 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      require('alpha').setup(require('alpha.themes.dashboard').config)
+      local alpha = require 'alpha'
+      local dashboard = require 'alpha.themes.dashboard'
+
+      dashboard.section.header.val = {
+        '       ^       ',
+        '      / \\     ',
+        '     /   \\    ',
+        '  -----------  ',
+        '   | -   - |   ',
+        '   |   w   |   ',
+        '   \\-------/   ',
+      }
+
+      alpha.setup(dashboard.opts)
     end,
   },
   --[[ {
