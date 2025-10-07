@@ -24,11 +24,6 @@
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
 
-    bacon-ls = {
-      url = "github:crisidev/bacon-ls";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
