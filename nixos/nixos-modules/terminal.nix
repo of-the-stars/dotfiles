@@ -94,6 +94,8 @@
       vim
       whois
       wl-clipboard
+      bsdgames
+      cowsay
     ];
   };
 }
