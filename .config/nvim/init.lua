@@ -886,7 +886,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- See the fuzzy documentation for more information
       fuzzy = { implementation = 'prefer_rust_with_warning' },
     },
-    opts_extend = { 'sources.default' },
+    opts_extend = { 'sources.enter' },
   },
 
   { -- You can easily change to a different colorscheme.
