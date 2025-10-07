@@ -181,6 +181,7 @@
         unbind-key j
         unbind-key l
         unbind-key h
+        unbind-key <Enter>
 
         bind k everywhere up
         bind j everywhere down
