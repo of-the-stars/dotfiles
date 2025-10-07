@@ -603,7 +603,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.markdown_oxide = {}
       servers.marksman = {}
       servers.matlab_ls = {}
-      servers.ltex = {}
+      -- servers.ltex = {}
       servers.sqls = {}
       servers.yamlls = {}
 
@@ -1060,7 +1060,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         '   -----------------   ',
         '    %&/ _     _ \\@&    ',
         '    o8|   ov    |8o    ',
-        '    Qo|      3   |9P    ',
+        '    Qo|     3   |9P    ',
         '    gB\\_________/cB    ',
         '    q%            P%    ',
         '                        ',
