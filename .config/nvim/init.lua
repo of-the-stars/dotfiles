@@ -1037,8 +1037,10 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     version = '*',
     opts = {
       open_mapping = [[<leader>t]],
+      insert_mappings = false,
       autochdir = true,
       direction = 'float',
+      close_on_exit = false,
     },
   },
 
@@ -1047,11 +1049,24 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      local startify = require 'alpha.themes.startify'
-      -- available: devicons, mini, default is mini
-      -- if provider not loaded and enabled is true, it will try to use another provider
-      startify.file_icons.provider = 'devicons'
-      require('alpha').setup(startify.config)
+      local alpha = require 'alpha'
+      local dashboard = require 'alpha.themes.dashboard'
+
+      dashboard.section.header.val = {
+        '           ^           ',
+        '          /☄\\         ',
+        '         /☼★☆\\        ',
+        '        /☆☼⚧★☽\\       ',
+        '   -----------------   ',
+        '    %&/ _     _ \\@&    ',
+        '    o8|   ov    |8o    ',
+        '    Qo|      3   |9P    ',
+        '    gB\\_________/cB    ',
+        '    q%            P%    ',
+        '                        ',
+      }
+
+      alpha.setup(dashboard.opts)
     end,
   },
   --[[ {
