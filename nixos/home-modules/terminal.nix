@@ -191,11 +191,11 @@
         color background          white   default
         color listnormal          white   default
         color listfocus           black   white   bold
-        color listnormal_unread   white   black   bold
+        color listnormal_unread   white   default bold
         color listfocus_unread    black   white   bold
         color title               black   white   bold
         color info                black   white   bold
-        color hint-key            black   white   bold
+        color hint-key            white   default bold
         color hint-keys-delimiter white   default
         color hint-separator      white   default bold
         color hint-description    white   default
