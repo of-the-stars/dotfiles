@@ -97,6 +97,7 @@
       bsdgames
       fortune-kind
       cowsay
+      toot
     ];
   };
 }

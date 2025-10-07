@@ -144,5 +144,37 @@
       '';
       */
     };
+
+    programs.newsboat = {
+      enable = true;
+      autoReload = true;
+      urls = [
+        {
+          url = "https://www.65daysofstatic.com/rss";
+          title = "65daysofstatic";
+          tags = ["music"];
+        }
+        {
+          url = "https://awesomekling.github.io/feed.xml";
+          title = "Andreas Kling";
+          tags = ["programming" "cpp"];
+        }
+        {
+          url = "https://scientificcomputing.rs/monthly/rss.xml";
+          title = "Scientific Computing in Rust";
+          tags = ["programming" "science" "rust"];
+        }
+        {
+          url = "https://cafkafk.dev/index.xml";
+          title = "cafkafk";
+          tags = ["programming" "rust" "nix"];
+        }
+        {
+          url = "https://git.lix.systems/lix-project.rss";
+          title = "Lix";
+          tags = ["programming" "nix"];
+        }
+      ];
+    };
   };
 }
