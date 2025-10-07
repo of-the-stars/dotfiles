@@ -1032,10 +1032,14 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    config = function()
-      vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = { '[T]oggle [F]loating terminal' } })
-      vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = { '[T]oggle [V]ertical terminal' } })
-    end,
+    opts = {},
+    config = true,
+
+    keys = {
+      { 'n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = '[T]oggle [F]loating terminal' }
+      { 'n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', desc = { '[T]oggle [V]ertical terminal' }
+    },
+
   },
 
   {
