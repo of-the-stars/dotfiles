@@ -30,4 +30,6 @@ fi
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
 
+hyprctl reload
+
 popd
