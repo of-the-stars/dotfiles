@@ -1051,13 +1051,15 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       local dashboard = require 'alpha.themes.dashboard'
 
       dashboard.section.header.val = {
-        '       ^       ',
-        '      / \\     ',
-        '     /   \\    ',
-        '  -----------  ',
-        '   | -   - |   ',
-        '   |   w   |   ',
-        '   \\-------/   ',
+        '           ^           ',
+        '          /☄\\         ',
+        '         /☼★☆\\        ',
+        '        /☆☼⚧★☽\\       ',
+        '   -----------------   ',
+        '      /  _   _  \\     ',
+        '      |         |      ',
+        '      |    V    |      ',
+        '      \\---------/      ',
       }
 
       alpha.setup(dashboard.opts)
