@@ -1034,12 +1034,17 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     version = '*',
     opts = {},
     config = true,
+  },
 
-    keys = {
-      -- { 'n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = '[T]oggle [F]loating terminal' }
-      -- { 'n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', desc =  '[T]oggle [V]ertical terminal' }
-    },
-
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
   },
 
   {

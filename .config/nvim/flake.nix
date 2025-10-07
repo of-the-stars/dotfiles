@@ -148,16 +148,18 @@
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = with pkgs.vimPlugins; {
         general = [
+          # nvim-cmp
           blink-cmp
-          friendly-snippets
           catppuccin-nvim
           cmp-nvim-lsp
           cmp-path
           cmp_luasnip
           comment-nvim
           conform-nvim
+          dashboard-nvim
           fidget-nvim
           flatten-nvim
+          friendly-snippets
           fzf-vim
           fzfWrapper
           gitsigns-nvim
@@ -167,7 +169,6 @@
           luasnip
           markview-nvim
           mini-nvim
-          # nvim-cmp
           nvim-lspconfig
           nvim-treesitter.withAllGrammars
           nvim-web-devicons
