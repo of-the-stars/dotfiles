@@ -1,3 +1,7 @@
 [user]
 	email = umex28@gmail.com
 	name = internet_wizard
+
+[merge]
+	ff = no
+	commit = no

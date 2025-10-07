@@ -135,7 +135,7 @@ vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<cr>', { desc = 'Split window vert
 vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>', { desc = 'Split window horizontally' })
 vim.keymap.set('n', '<leader>c', '<cmd>q<cr>', { desc = 'Close window' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
-vim.keymap.set('n', '<leader>bd', '<cmd>BufDelete<cr>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
 
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
