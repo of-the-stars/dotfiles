@@ -272,7 +272,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         { '<leader>r_', hidden = true },
         { '<leader>f', group = '[F]ind' },
         { '<leader>s_', hidden = true },
+
         { '<leader>t', group = '[T]erminal' },
+
         { '<leader>t_', hidden = true },
         -- { '<leader>w', group = '[W]orkspace' },
         -- { '<leader>w_', hidden = true },
@@ -1032,11 +1034,26 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    opts = {},
-    config = true,
+    opts = {
+      open_mapping = [[<leader>t]],
+      autochdir = true,
+      direction = 'float',
+    },
   },
 
   {
+    'goolord/alpha-nvim',
+    -- dependencies = { 'echasnovski/mini.icons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      local startify = require 'alpha.themes.startify'
+      -- available: devicons, mini, default is mini
+      -- if provider not loaded and enabled is true, it will try to use another provider
+      startify.file_icons.provider = 'devicons'
+      require('alpha').setup(startify.config)
+    end,
+  },
+  --[[ {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
     config = function()
@@ -1045,7 +1062,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       }
     end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-  },
+  }, ]]
 
   {
     'kdheepak/lazygit.nvim',
