@@ -179,14 +179,14 @@
       extraConfig = ''
         unbind-key k
         unbind-key j
-        unbind-key l
-        unbind-key h
-        unbind-key <Enter>
+        # unbind-key l
+        # unbind-key h
+        # unbind-key <Enter>
 
         bind k everywhere up
         bind j everywhere down
-        bind l open
-        bind h quit
+        # bind l open
+        # bind h quit
 
         color background          white   black
         color listnormal          white   black
