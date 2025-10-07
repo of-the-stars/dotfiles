@@ -1036,8 +1036,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     config = true,
 
     keys = {
-      { 'n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = '[T]oggle [F]loating terminal' }
-      { 'n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', desc =  '[T]oggle [V]ertical terminal' }
+      -- { 'n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = '[T]oggle [F]loating terminal' }
+      -- { 'n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', desc =  '[T]oggle [V]ertical terminal' }
     },
 
   },
