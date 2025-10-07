@@ -188,18 +188,18 @@
         # bind l open
         # bind h quit
 
-        color background          white   black
-        color listnormal          white   black
-        color listfocus           black   white  bold
-        color listnormal_unread   white   black  bold
-        color listfocus_unread    black   white  bold
-        color title               black   white  bold
-        color info                black   white  bold
-        color hint-key            black   white  bold
-        color hint-keys-delimiter white   black
-        color hint-separator      white   black  bold
-        color hint-description    white   black
-        color article             white   black
+        color background          white   default
+        color listnormal          white   default
+        color listfocus           black   white   bold
+        color listnormal_unread   white   black   bold
+        color listfocus_unread    black   white   bold
+        color title               black   white   bold
+        color info                black   white   bold
+        color hint-key            black   white   bold
+        color hint-keys-delimiter white   default
+        color hint-separator      white   default bold
+        color hint-description    white   default
+        color article             white   default
       '';
     };
   };
