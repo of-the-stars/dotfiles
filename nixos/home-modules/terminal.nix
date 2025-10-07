@@ -65,7 +65,7 @@
 
         # Some fun stuff :))
 
-        fortune | cowsay -f bong
+        fortune-kind | cowsay -s -f bong | tee cowsay.txt
       '';
     };
 

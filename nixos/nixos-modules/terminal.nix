@@ -95,6 +95,7 @@
       whois
       wl-clipboard
       bsdgames
+      fortune-kind
       cowsay
     ];
   };
