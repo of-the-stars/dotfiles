@@ -62,6 +62,10 @@
         unzip-all() {
             for a in *.zip; do unzip "$a" -d "''${a%.zip}"; done
         }
+
+        # Some fun stuff :))
+
+        fortune | cowsay -f bong
       '';
     };
 
