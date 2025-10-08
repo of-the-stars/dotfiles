@@ -207,6 +207,8 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     inputs.nvim.packages.${system}.nvim
+    # inputs.rmpc.packages.${system}.rmpc
+
     pkgsUnstable.ansilove
 
     signal-desktop

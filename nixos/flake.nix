@@ -13,6 +13,9 @@
 
     # custom neovim configuration flake
     nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
+
+    # rmpc wrapper with cava
+    rmpc.url = "path:/home/internet_wizard/dotfiles/.config/rmpc";
   };
 
   outputs = {
@@ -22,7 +25,8 @@
     home-manager,
     home-manager-unstable,
     ...
-  } @ inputs: {
+  } @ inputs: let
+  in {
     nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs nixpkgs-unstable home-manager home-manager-unstable;};

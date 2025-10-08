@@ -142,7 +142,7 @@
                         direction: Vertical, 
                         panes: [
                             (size: "70%", pane: Pane(Queue)),
-                            (size: "30%", pane: Pane(Lyrics)),
+                            (size: "30%", pane: Pane(Cava)),
                             ],
                         ),
                     ),

@@ -21,6 +21,10 @@ if git diff --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
 fi
 
+if git diff --cached --name-only ./../.config/rmpc/. | rg -q "."; then
+    sudo nix flake update rmpc
+fi
+
 if [[ -z "$1" ]]; then
     sudo nixos-rebuild switch --flake .#han-tyumi &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 else
