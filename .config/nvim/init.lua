@@ -94,8 +94,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>Ce', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>Cq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -133,9 +133,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Keybinds to make managing windows easier
 vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<cr>', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>', { desc = 'Split window horizontally' })
-vim.keymap.set('n', '<leader>c', '<cmd>q<cr>', { desc = 'Close window' })
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit window' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>e', '<cmd>e ', { desc = 'New file' })
+vim.keymap.set('n', '<leader>r', '<cmd>file ', { desc = 'Rename file' })
 
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
@@ -265,7 +267,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       -- Document existing key chains
       require('which-key').add {
-        { '<leader>C', group = '[C]ode' },
+        { '<leader>c', group = '[C]ode' },
         { '<leader>c_', hidden = true },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>d_', hidden = true },
@@ -497,35 +499,35 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('<leader>Cd', require('telescope.builtin').lsp_definitions, '[D]efinition')
+          map('<leader>cd', require('telescope.builtin').lsp_definitions, '[D]efinition')
 
           -- Find references for the word under your cursor.
-          map('<leader>Crf', require('telescope.builtin').lsp_references, '[R]e[f]erences')
+          map('<leader>crf', require('telescope.builtin').lsp_references, '[R]e[f]erences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('<leader>Ci', require('telescope.builtin').lsp_implementations, '[I]mplementation')
+          map('<leader>ci', require('telescope.builtin').lsp_implementations, '[I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('<leader>Ct', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          map('<leader>ct', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>Csw', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>csw', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>Csw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace [C]ode [S]ymbols')
+          map('<leader>csw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace [C]ode [S]ymbols')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>Crn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>crn', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('<leader>Ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.
@@ -533,7 +535,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
-          map('<leader>CD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          map('<leader>cD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -569,7 +571,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           --
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            map('<leader>Ch', function()
+            map('<leader>ch', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
             end, 'Toggle Inlay [H]ints')
           end
@@ -1052,6 +1054,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       local alpha = require 'alpha'
       local dashboard = require 'alpha.themes.dashboard'
 
+      vim.keymap.set('n', '<leader>h', '<cmd>Alpha<cr>')
+
       dashboard.section.header.val = {
         '           ^           ',
         '          /☄\\         ',
@@ -1066,19 +1070,23 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         '                        ',
       }
 
+      dashboard.section.buttons.val = {
+        dashboard.button('SPC e', '> New file'),
+        dashboard.button('SPC r', '> Rename file'),
+        dashboard.button('SPC f f', '> Find file'),
+        dashboard.button('SPC f g', '> Find word with ripgrep'),
+        dashboard.button('SPC z', '> Change directory with zoxide'),
+        dashboard.button('SPC t', '> Open terminal window with ToggleTerm'),
+        dashboard.button('SPC c', '> LSP diagnostic menu'),
+        dashboard.button('SPC g', '> Git menu'),
+        dashboard.button('SPC h', '> Open this window again'),
+        dashboard.button('SPC s', '> Window split menu'),
+        dashboard.button('SPC q', '> Quit window'),
+      }
+
       alpha.setup(dashboard.opts)
     end,
   },
-  --[[ {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-      }
-    end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-  }, ]]
 
   {
     'kdheepak/lazygit.nvim',
@@ -1097,7 +1105,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
     keys = {
-      { '<leader>l', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+      { '<leader>gl', '<cmd>LazyGit<cr>', desc = '[L]azyGit' },
     },
   },
 

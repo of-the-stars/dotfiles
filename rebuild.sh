@@ -32,4 +32,6 @@ git commit -a -m "$gen"
 
 hyprctl reload
 
+paplay ~/dotfiles/assets/User Initialisation Sequence Complete.ogg
+
 popd
