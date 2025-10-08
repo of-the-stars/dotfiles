@@ -136,8 +136,8 @@ vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>', { desc = 'Split window horiz
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit window' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
-vim.keymap.set('n', '<leader>e', '<cmd>e ', { desc = 'New file' })
-vim.keymap.set('n', '<leader>r', '<cmd>file ', { desc = 'Rename file' })
+vim.keymap.set('n', '<leader>e', '<cmd>ene <bar> startinsert <cr> ', { desc = 'New file' })
+vim.keymap.set('n', '<leader>r', '<cmd>file <bar> startinsert <cr>', { desc = 'Rename file' })
 
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
@@ -382,8 +382,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind in current [W]ord' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
-      vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
-      vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = '[F]ind in [T]reesitter' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
@@ -1072,15 +1071,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       dashboard.section.buttons.val = {
         dashboard.button('SPC e', '> New file'),
-        dashboard.button('SPC r', '> Rename file'),
         dashboard.button('SPC f f', '> Find file'),
+        dashboard.button('SPC f r', '> Find recent file'),
         dashboard.button('SPC f g', '> Find word with ripgrep'),
         dashboard.button('SPC z', '> Change directory with zoxide'),
-        dashboard.button('SPC t', '> Open terminal window with ToggleTerm'),
-        dashboard.button('SPC c', '> LSP diagnostic menu'),
-        dashboard.button('SPC g', '> Git menu'),
         dashboard.button('SPC h', '> Open this window again'),
-        dashboard.button('SPC s', '> Window split menu'),
         dashboard.button('SPC q', '> Quit window'),
       }
 
