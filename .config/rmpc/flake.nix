@@ -33,7 +33,7 @@
         # This will depend on your existing package's build system
         installPhase = ''
           mkdir -p $out/bin
-          cp -r ${pkgs.rmpc} $out/bin/
+          cp ${pkgs.rmpc} $out/bin/.
         '';
 
         # Define runtime dependencies that need to be in the final package environment
