@@ -233,7 +233,7 @@
           CATTESTVAR = "It worked!";
         };
 
-        XDG_CONFIG_HOME = "~/dotfiles/.config";
+        XDG_CONFIG_HOME = "$HOME/dotfiles/.config";
       };
 
       # If you know what these are, you can provide custom ones by category here.

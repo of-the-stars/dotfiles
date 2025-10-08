@@ -4,9 +4,9 @@
 
 set -e
 
-pushd ~/dotfiles/nixos/
+pushd $HOME/dotfiles/nixos/
 
-    pushd ~/dotfiles/
+    pushd $HOME/dotfiles/
 
     nvim
     # alejandra . &>/dev/null
@@ -32,6 +32,6 @@ git commit -a -m "$gen"
 
 hyprctl reload
 
-paplay ~/dotfiles/assets/User Initialisation Sequence Complete.ogg
+paplay "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" 
 
 popd
