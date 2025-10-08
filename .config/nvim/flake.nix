@@ -231,9 +231,8 @@
       environmentVariables = {
         test = {
           CATTESTVAR = "It worked!";
+          XDG_CONFIG_HOME = "/home/internet_wizard/dotfiles/.config";
         };
-
-        XDG_CONFIG_HOME = "$HOME/dotfiles/.config";
       };
 
       # If you know what these are, you can provide custom ones by category here.
