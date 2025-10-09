@@ -71,6 +71,7 @@
       docker
       dust
       fastfetch
+      fd
       fselect
       git
       gitleaks
