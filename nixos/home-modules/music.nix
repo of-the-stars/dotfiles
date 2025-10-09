@@ -24,6 +24,8 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
+    programs.rmpc.enable = true;
+
     home.packages = with pkgs; [
       mpd-discord-rpc
     ];
