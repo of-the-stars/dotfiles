@@ -288,6 +288,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           { '<leader>g', group = '[G]it' },
           { '<leader>g_', hidden = true },
         },
+
+        vim.keymap.set('n', '<leader>?', '<cmd>WhichKey<cr>', { desc = 'Show keybinds with WhichKey' }),
       }
     end,
   },
