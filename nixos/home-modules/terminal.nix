@@ -41,6 +41,7 @@
         ZSH_THEME=""
 
         bindkey -v
+        bindkey '^E' autosuggest-accept
 
         export MANPAGER="nvim +Man!"
 
