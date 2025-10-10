@@ -63,7 +63,7 @@
     # Enable the music player damon
     services.mpd = {
       enable = true;
-      musicDirectory = "192.168.1.156:8000"; # "/home/internet_wizard/Music";
+      musicDirectory = "/home/internet_wizard/Music";
       playlistDirectory = "/home/internet_wizard/Music/.playlists";
       extraConfig = ''
         audio_output {
@@ -71,11 +71,6 @@
           name "my pipewire"
           mixer_device "default"
           mixer_control "PCM"
-        }
-
-        database {
-          plugin "proxy"
-          host "192.168.1.156"
         }
       '';
 
