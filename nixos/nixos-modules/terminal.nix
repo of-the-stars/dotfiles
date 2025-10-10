@@ -49,9 +49,9 @@
     environment.systemPackages = with pkgs; [
       # avrdude
       # avrlibc
-      # cargo
-      # cargo-generate
-      # cargo-info
+      cargo
+      cargo-generate
+      cargo-info
       # cargo-make
       # clang
       # clang-tools
