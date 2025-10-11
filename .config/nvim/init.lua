@@ -598,7 +598,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       -- NOTE: nixCats: there is help in nixCats for lsps at `:h nixCats.LSPs` and also `:h nixCats.luaUtils`
       local servers = {}
-      -- servers.clangd = {},
       -- servers.gopls = {},
       -- servers.pyright = {},
       servers.rust_analyzer = {}
@@ -607,6 +606,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.marksman = {}
       servers.matlab_ls = {}
       -- servers.ltex = {}
+      servers.clangd = {}
       servers.sqls = {}
       servers.yamlls = {}
 
@@ -712,10 +712,14 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         }
       end,
       formatters_by_ft = {
+        cpp = { 'clang-format' },
+        css = { 'stylelint' },
+        just = { 'just' },
         lua = { 'stylua' },
         nix = { 'alejandra' },
-        rust = { 'rustfmt' },
-        css = { 'stylelint' },
+        rust = { 'rustfmt', 'leptosfmt' },
+        markdown = { 'mdformat' },
+        toml = { 'taplo' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

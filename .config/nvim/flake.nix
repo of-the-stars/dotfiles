@@ -112,22 +112,27 @@
           alejandra
           bacon
           bash-language-server
+          clang-tools
           fd
           fzf
+          leptosfmt
           lua-language-server
           markdown-oxide
           marksman
+          just-formatter
           matlab-language-server
-          ltex-ls
-          sqls
+          mdformat
           nix-doc
           nixd
           ripgrep
           rust-analyzer
           rustfmt
-          stylelint
+          sqls
           stdenv.cc.cc
+          stylelint
           stylua
+          taplo
+          tombi
           universal-ctags
           yaml-language-server
         ];
@@ -143,15 +148,15 @@
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = with pkgs.vimPlugins; {
         general = [
-          # nvim-cmp
+          alpha-nvim
           blink-cmp
           catppuccin-nvim
+          clangd_extensions-nvim
           cmp-nvim-lsp
           cmp-path
           cmp_luasnip
           comment-nvim
           conform-nvim
-          alpha-nvim
           fidget-nvim
           flatten-nvim
           friendly-snippets
