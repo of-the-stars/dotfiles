@@ -201,9 +201,6 @@
         kickstart-lint = [
           nvim-lint
         ];
-        kickstart-autopairs = [
-          nvim-autopairs
-        ];
         kickstart-neo-tree = [
           neo-tree-nvim
           nui-nvim
@@ -301,7 +298,6 @@
           customPlugins = true;
           test = true;
 
-          kickstart-autopairs = true;
           kickstart-neo-tree = true;
           kickstart-debug = true;
           kickstart-lint = true;
