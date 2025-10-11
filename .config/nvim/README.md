@@ -1,56 +1,43 @@
-# This is the help for the nixCats lazy wrapper
+# internet_wizard's neovim configuration!
 
-Or well, most of the help for it. There is also help for it at [:h nixCats.luaUtils](https://nixcats.org/nixCats_luaUtils.html)
+## Try it out!!
 
-It is the entirety of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with very few changes, but uses nixCats to download everything
+If you have nix installed, with the experimental flakes feature enabled, you can run my neovim config just by running
 
-enter a new directory then run:
-
-`nix flake init -t github:BirdeeHub/nixCats-nvim#kickstart-nvim`
-
-then to build, `nix build .`
-
-and the result will be found at `./result/bin/nvim`
-
-It also can work without any nix whatsoever.
-It has been adapted such that it works either way!
-
-All notes about the lazy wrapper are in comments that begin with the string: `NOTE: nixCats:` so to find all of the info, search for that.
-
-One other note.
-
-If you install your grammars via `lazy.nvim` rather than `nix`, you will need to add a c compiler to your `lspsAndRuntimeDeps` section in your `categoryDefinitions`
-
-If you install your grammars via nix, the only methods supported via the `lazy.nvim` wrapper are the following.
-
-Summary: as long as `pkgs.neovimUtils.grammarToPlugin` is called on it somehow, it will work.
-
-Any other ways will still work in nixCats, but not when using the lazy wrapper, because the lazy wrapper has to add them back to the runtimepath.
-
-```nix
-pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-# or
-pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
-  nix
-  lua
-  # etc...
-]);
-# or
-pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: pkgs.vimPlugins.nvim-treesitter.allGrammars)
-# or
-builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins
-# or
-pkgs.neovimUtils.grammarToPlugin pkgs.tree-sitter-grammars.somegrammar
+```shell
+nix run 'github:internetwiz4rd/dotfiles?dir=.config/nvim'
 ```
 
-### Disclaimer:
+## About
 
-`lazy.nvim` technically works fine on with nix, HOWEVER it will block any other plugin manager, including nix, from installing anything on its own without also making a lazy.nvim plugin spec and making sure the names match.
+About as close to a "ground up" neovim config. Before this I was using
+the AstroNvim distribution, which then broke on my NixOS machine.
 
-This is the reason for the lazy.nvim wrapper provided by the luaUtils optional template.
+My general (neo)vim journey has looked like:
 
-It simply tells lazy about the location of things from nix, and sets a few compatibility options before calling the normal lazy setup function.
+```mermaid
+  stateDiagram-v2
+    s1 : Raw Vi Improved, fresh from Ubuntu's repos on my school's servers
+    s2 : AstroNvim on my own personal laptop running Ubuntu
+    s3 : That same AstroNvim config on my NixOS machine, which then broke
+    s4 : This current neovim config, 100% reproducible and built with both Nix AND Lua!
 
-If you wish to download something from nix, the name lazy.nvim knows about and the name nix gave it must match. Otherwise, lazy.nvim will download it anyway.
+    s1 --> s2
+    s2 --> s3
+    s3 --> s4
+```
 
-For how to address that, see the main init.lua of this template. and search for `NOTE: nixCats:`
+I liked the idea of being able to declare my nvim config, and then run it with Nix. But I hated the idea of writing Lua, an already
+unfamiliar language to me, in Nix strings without any formatting or LSP help. The [nixCats](https://github.com/BirdeeHub/nixCats-nvim)
+project seemed like the answer to my prayers, but I was still learning flakes as a feature so it took me forever to be able to
+
+1. Get it up and running
+1. Actually adding it into my `configuration.nix` to run it and not have to enter an ephemral shell each time.
+
+Couldn't let go of lazy.nvim to manage my plugins, so I went ahead with the [kickstart.vim](https://github.com/nvim-lua/kickstart.nvim)
+template, which helped me better understand how to call plugin setups, write better lua for configs, and manage everything myself.
+It very much feels like starting up NixOS for the first time, although having the previous experience from an opinionated, well-liked
+distro like with Ubuntu or AstroNvim helped me figure out the workflow I wanted.
+
+I haven't really modified the template much beyond adding and removing plugins and keymaps, but I'm meaning to take better advantage
+of the eponymous categories of nixCats to modularize my config.

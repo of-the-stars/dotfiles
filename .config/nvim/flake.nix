@@ -118,6 +118,7 @@
           leptosfmt
           lua-language-server
           markdown-oxide
+          prettierd
           marksman
           just-formatter
           matlab-language-server
