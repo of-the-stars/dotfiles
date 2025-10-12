@@ -136,8 +136,8 @@ vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>', { desc = 'Split window horiz
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit window' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
-vim.keymap.set('n', '<leader>e', '<cmd>ene <bar> startinsert <cr> ', { desc = 'New file' })
-vim.keymap.set('n', '<leader>r', '<cmd>file <bar> startinsert <cr>', { desc = 'Rename file' })
+vim.keymap.set('n', '<leader>n', '<cmd>e<cr> ', { desc = 'New file' })
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree<cr> ', { desc = 'Open file explorer' })
 
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
@@ -905,9 +905,12 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         return '%2l:%-2v'
       end
 
-      require('mini.align').setup()
+      -- Fast little plugin for easy directory navigation.
+      local mini_files = require 'mini.files'
+      vim.keymap.set('n', '<leader>fe', '<cmd>lua MiniFiles.open()', { desc = 'Open Mini Files explorer' })
+      mini_files.setup()
 
-      require('mini.files').setup()
+      require('mini.align').setup()
 
       require('mini.tabline').setup()
 
@@ -1010,7 +1013,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       }
 
       dashboard.section.buttons.val = {
-        dashboard.button('SPC e', '> New file'),
+        dashboard.button('SPC n', '> New file'),
         dashboard.button('SPC f f', '> Find file'),
         dashboard.button('SPC f r', '> Find recent file'),
         dashboard.button('SPC f g', '> Find word with ripgrep'),
