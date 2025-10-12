@@ -907,7 +907,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       -- Fast little plugin for easy directory navigation.
       local mini_files = require 'mini.files'
-      vim.keymap.set('n', '<leader>fe', '<cmd>lua MiniFiles.open()', { desc = 'Open Mini Files explorer' })
+      vim.keymap.set('n', '<leader>fe', '<cmd>lua MiniFiles.open()<cr>', { desc = 'Open Mini Files explorer' })
       mini_files.setup()
 
       require('mini.align').setup()
