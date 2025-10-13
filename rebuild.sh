@@ -34,8 +34,8 @@ fi
 gen=$(nixos-rebuild list-generations | rg current)
 git commit -a -m "$gen"
 
-hyprctl reload
+popd
+
+hyprctl reload > /dev/null
 
 paplay "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
-
-popd

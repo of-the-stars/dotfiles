@@ -1019,8 +1019,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       dashboard.section.buttons.val = {
         dashboard.button('SPC n', '> New file'),
-        dashboard.button('SPC f f', '> Find file'),
-        dashboard.button('SPC f r', '> Find recent file'),
+        dashboard.button('SPC f e', '> Open file explorer'),
+        dashboard.button('SPC f f', '> Fuzzy find file'),
+        dashboard.button('SPC f r', '> Fuzzy find recent file'),
         dashboard.button('SPC f g', '> Find word with ripgrep'),
         dashboard.button('SPC z', '> Change directory with zoxide'),
         dashboard.button('SPC h', '> Open this window again'),
