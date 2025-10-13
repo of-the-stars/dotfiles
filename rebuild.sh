@@ -13,15 +13,15 @@ pushd $HOME/dotfiles/nixos/
 
     popd
 
-git diff -U0 *.nix
+git diff -P -U0 *.nix
 echo "NixOS Rebuilding..."
 
 # Checks if the nvim directory was changed, then updates the flake so that the changes are reflected
-if git diff --cached --name-only ./../.config/nvim/. | rg -q "."; then
+if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
 fi
 
-if git diff --cached --name-only ./../.config/rmpc/. | rg -q "."; then
+if git diff -P --cached --name-only ./../.config/rmpc/. | rg -q "."; then
     sudo nix flake update rmpc
 fi
 
@@ -36,6 +36,6 @@ git commit -a -m "$gen"
 
 hyprctl reload
 
-paplay "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" 
+paplay "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 
 popd

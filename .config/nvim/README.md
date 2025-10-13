@@ -2,7 +2,7 @@
 
 ## Try it out!!
 
-If you have nix installed, with the experimental flakes feature enabled, you can run my neovim config just by running
+If you have nix installed, with the experimental flakes feature enabled, you can try my neovim config just by running
 
 ```shell
 nix run 'github:internetwiz4rd/dotfiles?dir=.config/nvim'
@@ -40,4 +40,4 @@ It very much feels like starting up NixOS for the first time, although having th
 distro like with Ubuntu or AstroNvim helped me figure out the workflow I wanted.
 
 I haven't really modified the template much beyond adding and removing plugins and keymaps, but I'm meaning to take better advantage
-of the eponymous categories of nixCats to modularize my config.
+of nixCat's eponymous categories to modularize my config.
