@@ -613,7 +613,19 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       local servers = {}
       -- servers.gopls = {},
       -- servers.pyright = {},
-      servers.rust_analyzer = {}
+      servers.rust_analyzer = {
+        settings = {
+          ['rust-analyzer'] = {
+            procMacro = {
+              ignored = {
+                leptos_macro = {
+                  'server',
+                },
+              },
+            },
+          },
+        },
+      }
       servers.bashls = {}
       servers.markdown_oxide = {}
       servers.marksman = {}
