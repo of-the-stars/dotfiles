@@ -9,11 +9,14 @@ pushd $HOME/dotfiles/nixos/
     pushd $HOME/dotfiles/
 
     nvim
+     
     # alejandra . &>/dev/null
+    # The above command is good for formatting, but my neovim config already has configured to run on save :3
+
+    git -P diff -U0 .
 
     popd
 
-git -P diff -U0 *.nix
 echo "NixOS Rebuilding..."
 
 # Checks if the nvim directory was changed, then updates the flake so that the changes are reflected
