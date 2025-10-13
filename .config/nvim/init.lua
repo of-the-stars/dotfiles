@@ -937,7 +937,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       require('mini.pairs').setup()
 
-      require('mini.map').setup()
+      -- I don't really need the map actually
+      -- require('mini.map').setup()
 
       -- ... and there is more!
       --  Check out: https://github.com/nvim-mini/mini.nvim

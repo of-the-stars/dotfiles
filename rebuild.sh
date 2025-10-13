@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Based off of `0atman's` rebuild script, the script will let you configure NixOS, then rebuild and `git commit` for you
+# Based off of 0atman's rebuild script, the script will let you configure NixOS, then rebuild and `git commit` for you
+# If you update something that's pinned with a flake, you need to add logic to update that flake 
 
 set -e
 
