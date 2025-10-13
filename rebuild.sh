@@ -13,7 +13,7 @@ pushd $HOME/dotfiles/nixos/
 
     popd
 
-git diff -P -U0 *.nix
+git -P diff -U0 *.nix
 echo "NixOS Rebuilding..."
 
 # Checks if the nvim directory was changed, then updates the flake so that the changes are reflected
