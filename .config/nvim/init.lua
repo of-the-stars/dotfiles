@@ -134,6 +134,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<cr>', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>', { desc = 'Split window horizontally' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit window' })
+vim.keymap.set('n', '<leader>Q', '<cmd>q!<cr>', { desc = 'Quit window without saving' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>n', '<cmd>e<cr> ', { desc = 'New file' })
@@ -1000,9 +1001,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     opts = {
       open_mapping = [[<leader>t]],
       insert_mappings = false,
+      terminal_mappings = false,
       autochdir = true,
-      direction = 'float',
-      close_on_exit = false,
+      direction = 'horizontal',
+      close_on_exit = true,
+      shell = 'zsh',
     },
   },
 
