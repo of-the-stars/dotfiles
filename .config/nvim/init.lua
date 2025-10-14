@@ -739,7 +739,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       end,
       formatters_by_ft = {
         cpp = { 'clang-format' },
-        css = { 'stylelint' },
+        css = { 'prettierd' },
         -- just = { 'just' },
         lua = { 'stylua' },
         nix = { 'alejandra' },
