@@ -93,10 +93,11 @@ in {
   environment.systemPackages = with pkgs; [
     inputs.nvim.packages.${system}.nvim
 
+    element-desktop-wayland
     firefox
-    qbittorrent
     obsidian
     protonvpn-gui
+    qbittorrent
     signal-desktop
     stellarium
     usbutils
