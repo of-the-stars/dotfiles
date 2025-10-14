@@ -881,6 +881,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     opts = {
       window = {
         open = 'alternate',
+        focus = 'first',
       },
       integrations = {
         kitty = true,
@@ -1067,8 +1068,14 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     },
     -- optional for floating window border decoration
     dependencies = {
+      'nvim-telescope/telescope.nvim',
       'nvim-lua/plenary.nvim',
     },
+
+    config = function()
+      require('telescope').load_extension 'lazygit'
+    end,
+
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
     keys = {
