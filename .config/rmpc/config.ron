@@ -6,7 +6,7 @@
     password: None,
     theme: None, // "catppuccin",
     cache_dir: None,
-    // lyrics_dir: Some("~/.lyrics"),
+    lyrics_dir: Some("~/.lyrics"),
     on_song_change: Some(["~/.config/rmpc/notify.sh"]),
     volume_step: 5,
     max_fps: 30,

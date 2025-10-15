@@ -188,8 +188,8 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1760519182,
-        "narHash": "sha256-arvNXHv83ZcFIBmcNWdouTXLpL8ZJNweHlm0W5HC3eo=",
+        "lastModified": 1760519338,
+        "narHash": "sha256-G9a6dPfqNBrlv+MQHtHhboOr/hWpPn6j9L1IeAkd4R0=",
         "path": "/home/internet_wizard/dotfiles/.config/rmpc",
         "type": "path"
       },
