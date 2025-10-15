@@ -880,7 +880,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
     opts = {
       window = {
-        open = 'alternate',
+        open = 'current',
+        diff = 'vsplit',
         focus = 'first',
       },
       integrations = {
