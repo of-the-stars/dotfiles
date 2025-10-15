@@ -125,27 +125,20 @@
         eq: []
     ),
     tabs: [
-        /* (
-            name: "Queue",
-            pane: Split(
-                direction: Horizontal,
-                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
-            ),
-        ), */
         (
             name: "Queue",
             pane: Split(
-                direction: Horizontal,
+                direction: Vertical,
                 panes: [
-                    (size: "40%", pane: Split(
-                        direction: Vertical, 
+                    (size: "50%", pane: Split(
+                        direction: Horizontal, 
                         panes: [
-                            (size: "70%", pane: Pane(AlbumArt)),
-                            (size: "30%", pane: Pane(Lyrics)),
+                            (size: "60%", pane: Pane(AlbumArt)),
+                            (size: "40%", pane: Pane(Lyrics)),
                             ],
                         ),
                     ),
-                    (size: "60%", pane: Pane(Queue)),
+                    (size: "50%", pane: Pane(Queue)),
                 ],
             ),
         ),
