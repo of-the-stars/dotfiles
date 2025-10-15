@@ -1000,22 +1000,40 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    opts = {
-      size = function(term)
-        if term.direction == 'horizontal' then
-          return 15
-        elseif term.direction == 'vertical' then
-          return vim.o.columns * 0.4
-        end
-      end,
-      open_mapping = [[<leader>t]],
-      insert_mappings = false,
-      terminal_mappings = false,
-      autochdir = true,
-      direction = 'vertical',
-      close_on_exit = true,
-      shell = 'zsh',
-    },
+    config = function()
+      require('toggleterm').setup {
+        size = function(term)
+          if term.direction == 'horizontal' then
+            return 15
+          elseif term.direction == 'vertical' then
+            return vim.o.columns * 0.4
+          end
+        end,
+        open_mapping = [[<C-\>]],
+        insert_mappings = false,
+        terminal_mappings = false,
+        autochdir = true,
+        direction = 'horizontal',
+        close_on_exit = true,
+        shell = 'zsh',
+      }
+
+      vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float', { desc = 'Toggle terminal in floating window' })
+      vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical', { desc = 'Toggle terminal in vertical window' })
+
+      local Terminal = require('toggleterm.terminal').Terminal
+      local lazygit = Terminal:new {
+        cmd = 'lazygit',
+        direction = 'float',
+        hidden = true,
+      }
+
+      function _lazygit_toggle()
+        lazygit:toggle()
+      end
+
+      vim.keymap.set('n', '<leader>gl', '<cmd>lua _lazygit_toggle()<cr>', { noremap = true, silent = true, desc = 'Open LazyGit' })
+    end,
   },
 
   {
@@ -1057,32 +1075,32 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     end,
   },
 
-  {
-    'kdheepak/lazygit.nvim',
-    lazy = true,
-    cmd = {
-      'LazyGit',
-      'LazyGitConfig',
-      'LazyGitCurrentFile',
-      'LazyGitFilter',
-      'LazyGitFilterCurrentFile',
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-
-    config = function()
-      require('telescope').load_extension 'lazygit'
-    end,
-
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { '<leader>gl', '<cmd>LazyGit<cr>', desc = '[L]azyGit' },
-    },
-  },
+  -- {
+  --   'kdheepak/lazygit.nvim',
+  --   lazy = true,
+  --   cmd = {
+  --     'LazyGit',
+  --     'LazyGitConfig',
+  --     'LazyGitCurrentFile',
+  --     'LazyGitFilter',
+  --     'LazyGitFilterCurrentFile',
+  --   },
+  --   -- optional for floating window border decoration
+  --   dependencies = {
+  --     'nvim-telescope/telescope.nvim',
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  --
+  --   config = function()
+  --     require('telescope').load_extension 'lazygit'
+  --   end,
+  --
+  --   -- setting the keybinding for LazyGit with 'keys' is recommended in
+  --   -- order to load the plugin when the command is run for the first time
+  --   keys = {
+  --     { '<leader>gl', '<cmd>LazyGit<cr>', desc = '[L]azyGit' },
+  --   },
+  -- },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and

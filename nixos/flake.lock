@@ -173,8 +173,8 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1760489736,
-        "narHash": "sha256-/SXn24wnaZxt+oXgIfK64X2IveFGZPumdV8t05RgRhg=",
+        "lastModified": 1760515625,
+        "narHash": "sha256-i0DhwFVZWPTjrwaVIrmwbzkoxoK8Z7y898Lo1nk7crs=",
         "path": "/home/internet_wizard/dotfiles/.config/nvim/",
         "type": "path"
       },
