@@ -1018,8 +1018,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         shell = 'zsh',
       }
 
-      vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float', { desc = 'Toggle terminal in floating window' })
-      vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical', { desc = 'Toggle terminal in vertical window' })
+      vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = 'Toggle terminal in floating window' })
+      vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'Toggle terminal in vertical window' })
 
       local Terminal = require('toggleterm.terminal').Terminal
       local lazygit = Terminal:new {
