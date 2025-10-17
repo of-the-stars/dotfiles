@@ -42,4 +42,4 @@ popd
 
 hyprctl reload > /dev/null
 
-paplay "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
+pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
