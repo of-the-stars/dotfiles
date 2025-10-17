@@ -113,6 +113,7 @@
           bacon
           bash-language-server
           clang-tools
+          clippy
           fd
           fzf
           leptosfmt
