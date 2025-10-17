@@ -628,7 +628,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         -- },
       }
       servers.bashls = {}
-      servers.markdown_oxide = {}
+      -- servers.markdown_oxide = {}
       servers.marksman = {}
       servers.matlab_ls = {}
       -- servers.ltex = {}
@@ -744,7 +744,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         lua = { 'stylua' },
         nix = { 'alejandra' },
         rust = { 'rustfmt', 'leptosfmt' },
-        markdown = { 'prettierd', 'mdformat' },
+        markdown = { 'mdformat' },
         toml = { 'taplo' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
