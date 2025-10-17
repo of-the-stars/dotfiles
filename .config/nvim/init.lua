@@ -91,6 +91,8 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Diagnostics config
+
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -617,9 +619,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.rust_analyzer = {
         settings = {
           ['rust-analyzer'] = {
-            diagnostics = {
-              enable = true,
-            },
+            -- diagnostics = {
+            --   enable = true,
+            -- },
             -- checkOnSave = {
             --   command = 'clippy',
             --   extraArgs = {},
