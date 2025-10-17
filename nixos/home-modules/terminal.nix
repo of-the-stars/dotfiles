@@ -168,12 +168,27 @@
         {
           url = "https://cafkafk.dev/index.xml";
           title = "cafkafk";
-          tags = ["programming" "rust" "nix"];
+          tags = ["programming" "rust" "nix" "personal"];
         }
         {
           url = "https://git.lix.systems/lix-project.rss";
           title = "Lix";
           tags = ["programming" "nix"];
+        }
+        {
+          url = "http://www.aaronsw.com/weblog/index.xml";
+          title = "Raw Thought";
+          tags = ["programming" "activism"];
+        }
+        {
+          url = "https://lotsoflinks.substack.com//feed";
+          title = "Lots of Links";
+          tags = ["curios" "personal"];
+        }
+        {
+          url = "https://etymology.substack.com//feed";
+          title = "The Etymology Nerd";
+          tags = ["linguistics" "personal"];
         }
       ];
 
