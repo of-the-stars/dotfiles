@@ -617,13 +617,13 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.rust_analyzer = {
         settings = {
           ['rust-analyzer'] = {
-            checkOnSave = {
-              command = 'clippy',
-              extraArgs = {},
-            },
             diagnostics = {
               enable = true,
             },
+            -- checkOnSave = {
+            --   command = 'clippy',
+            --   extraArgs = {},
+            -- },
             -- procMacro = {
             --   ignored = {
             --     leptos_macro = {
