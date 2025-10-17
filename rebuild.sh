@@ -5,9 +5,9 @@
 
 set -e
 
-pushd $HOME/dotfiles/nixos/
+pushd "$HOME"/dotfiles/nixos/
 
-    pushd $HOME/dotfiles/
+    pushd "$HOME"/dotfiles/
 
     nvim
      
@@ -15,6 +15,7 @@ pushd $HOME/dotfiles/nixos/
     # The above command is good for formatting, but my neovim config already has configured to run on save :3
 
     git -P diff -U0 .
+    git add .
 
     popd
 
