@@ -585,11 +585,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            map('<leader>ch', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end, 'Toggle Inlay [H]ints')
-          end
+          -- if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+          -- end
+          map('<leader>ch', function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+          end, 'Toggle Inlay [H]ints')
         end,
       })
 
