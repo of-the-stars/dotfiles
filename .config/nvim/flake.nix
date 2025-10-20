@@ -128,6 +128,7 @@
           nixd
           ripgrep
           rust-analyzer
+          curl
           rustfmt
           sqls
           stdenv.cc.cc
@@ -175,6 +176,8 @@
           nvim-treesitter.withAllGrammars
           nvim-web-devicons
           plenary-nvim
+          remote-nvim-nvim
+          nui-nvim
           telescope-fzf-native-nvim
           telescope-nvim
           telescope-ui-select-nvim
