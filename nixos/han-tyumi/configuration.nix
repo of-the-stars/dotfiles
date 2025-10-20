@@ -194,6 +194,10 @@ in {
 
   # VR shit
   services.monado.enable = true;
+  programs.alvr = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
