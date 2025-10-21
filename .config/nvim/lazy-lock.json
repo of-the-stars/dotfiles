@@ -1,5 +1,4 @@
 {
-  "catppuccin": { "branch": "main", "commit": "9a9a875e979fe9d2b42423d056f944dd286d0280" },
-  "lazygit.nvim": { "branch": "main", "commit": "3c524ebec6072568064235c407195e9f9fd0cb8a" },
+  "catppuccin": { "branch": "main", "commit": "af58927c55c9f3272c940ff02b3cee94a1249f26" },
   "mini.icons": { "branch": "main", "commit": "284798619aed9f4c1ac1b9417b9a5e3b4b85ef3a" }
 }
