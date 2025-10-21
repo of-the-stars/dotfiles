@@ -880,7 +880,26 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { 'folke/zen-mode.nvim', opts = {} },
+  {
+    'folke/zen-mode.nvim',
+
+    config = function()
+      vim.keymap.set('n', '<leader>Z', '<cmd>ZenMode<cr>', { desc = 'Toggle [Z]en Mode' })
+
+      require('zen-mode.nvim').setup {
+
+        plugins = {
+          options = {
+            enabled = true,
+          },
+          kitty = {
+            enabled = true,
+            font = '+3',
+          },
+        },
+      }
+    end,
+  },
 
   -- Better directory navigation
   {
