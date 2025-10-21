@@ -90,9 +90,9 @@
     },
 
     "clock": {
-        "format": "{:%H:%M | %e %B} ",
+        "format": "{:%Y%m%dT%H%M}"
+        "format-alt": "{:%H:%M | %e %B} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y%m%dT%H%M}"
     }
 
 }
