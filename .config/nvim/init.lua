@@ -886,7 +886,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     config = function()
       vim.keymap.set('n', '<leader>Z', '<cmd>ZenMode<cr>', { desc = 'Toggle [Z]en Mode' })
 
-      require('zen-mode.nvim').setup {
+      require('zen-mode').setup {
 
         plugins = {
           options = {
