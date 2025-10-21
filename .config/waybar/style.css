@@ -95,7 +95,7 @@ window#waybar {
   box-shadow: none;
 }
 
-#custom-arch {
+#custom-nix {
   margin-left: 5px;
   padding: 0 10px;
   font-size: 25px;

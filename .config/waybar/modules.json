@@ -1,5 +1,5 @@
 {
-    "custom/arch": {
+    "custom/nix": {
         "format": "",
         "tooltip": true,
         "tooltip-format": "btw"
