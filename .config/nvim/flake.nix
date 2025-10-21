@@ -159,6 +159,7 @@
           cmp-path
           cmp_luasnip
           comment-nvim
+          zen-mode-nvim
           conform-nvim
           fidget-nvim
           flatten-nvim
