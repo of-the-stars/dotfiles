@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: alpha(@surface0, 0.75);
+  background: alpha(@crust, 0.75);
   color: @text;
   font-family:
     RobtoMono Nerd Font,
@@ -18,7 +18,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: alpha(@base, 0.7);
+  background: alpha(@mantle, 0.7);
   margin: 5px 10px;
   padding: 0 5px;
   border-radius: 15px;
@@ -101,6 +101,6 @@ window#waybar {
   font-size: 25px;
   transition: color 0.5s;
 }
-#custom-arch:hover {
-  color: @blueAlpha;
+#custom-nix:hover {
+  color: @sapphireAlpha;
 }
