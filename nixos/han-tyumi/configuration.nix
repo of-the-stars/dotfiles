@@ -240,6 +240,7 @@ in {
     qimgv
     signal-export
     stellarium
+    tor
     tree
     usbutils
     wine

@@ -68,10 +68,13 @@
       # tree-sitter
 
       bitwarden-cli
+      bsdgames
+      cowsay
       docker
       dust
       fastfetch
       fd
+      fortune-kind
       fselect
       git
       gitleaks
@@ -88,17 +91,15 @@
       rustup
       rusty-man
       screen
+      sl
       starship
       stow
       tiny
+      toot
       unzip
       vim
       whois
       wl-clipboard
-      bsdgames
-      fortune-kind
-      cowsay
-      toot
     ];
   };
 }
