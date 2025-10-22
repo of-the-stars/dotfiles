@@ -25,6 +25,7 @@
     "kitty".source = ./../.config/kitty;
     "waybar".source = ./../.config/waybar;
     "wofi".source = ./../.config/wofi;
+    "yazi".source = ./../.config/yazi;
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 
