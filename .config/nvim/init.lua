@@ -869,6 +869,10 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     opts = {
       flavour = 'mocha',
       transparent_background = true,
+      float = {
+        transparent = true,
+        solid = false,
+      },
     },
     init = function()
       -- Load the colorscheme here.
