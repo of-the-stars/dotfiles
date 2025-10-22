@@ -59,6 +59,8 @@
       wireplumber
       wl-clipboard
       wofi
+      rofi
+      rofi-obsidian
       bluez
       brightnessctl
       libnotify
