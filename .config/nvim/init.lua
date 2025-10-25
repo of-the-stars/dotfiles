@@ -638,7 +638,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       }
       servers.bashls = {}
       -- servers.markdown_oxide = {}
-      servers.marksman = {}
+      -- servers.marksman = {}
       servers.matlab_ls = {}
       -- servers.ltex = {}
       servers.clangd = {}
@@ -1002,7 +1002,17 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     'nvim-treesitter/nvim-treesitter',
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
     lazy = false,
-    dependencies = { 'OXY2DEV/markview.nvim' },
+    dependencies = {
+      {
+        'OXY2DEV/markview.nvim',
+        opts = {
+          preview = {
+            icon_provider = 'mini',
+            linewise_hybrid_mode = true,
+          },
+        },
+      },
+    },
     opts = {
       -- NOTE: nixCats: use lazyAdd to only set these 2 options if nix wasnt involved.
       -- because nix already ensured they were installed.
