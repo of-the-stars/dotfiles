@@ -42,6 +42,7 @@
 
         bindkey -v
         bindkey '^E' autosuggest-accept
+        bindkey -M vicmd ' ' edit-command-line
 
         export MANPAGER="nvim +Man!"
 
