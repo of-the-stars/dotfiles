@@ -96,6 +96,7 @@
       cd = "z";
       c = "clear";
       ls = "eza";
+      v = "nvim";
     };
 
     programs.starship = {
@@ -137,7 +138,7 @@
     programs.kitty = {
       enable = true;
       shellIntegration.enableZshIntegration = true;
-      enableGitIntegration = false;
+      enableGitIntegration = true;
 
       /*
          extraConfig = ''
