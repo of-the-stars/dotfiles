@@ -171,11 +171,6 @@
           tags = ["programming" "rust" "nix" "personal"];
         }
         {
-          url = "https://git.lix.systems/lix-project.rss";
-          title = "Lix";
-          tags = ["programming" "nix"];
-        }
-        {
           url = "http://www.aaronsw.com/weblog/index.xml";
           title = "Raw Thought";
           tags = ["programming" "activism"];
