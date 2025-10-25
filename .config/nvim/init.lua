@@ -1098,6 +1098,19 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     end,
   },
 
+  -- lazy.nvim
+  {
+    'folke/snacks.nvim',
+    ---@type snacks.Config
+    opts = {
+      image = {
+        -- your image configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      },
+    },
+  },
+
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-mini/mini.icons' },

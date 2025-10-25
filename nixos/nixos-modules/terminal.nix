@@ -83,6 +83,7 @@
       mprocs
       nix-search-cli
       openconnect
+      onefetch
       presenterm
       python3
       rename
