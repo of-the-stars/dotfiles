@@ -1009,6 +1009,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           preview = {
             icon_provider = 'mini',
             linewise_hybrid_mode = true,
+            modes = { 'i', 'n', 'no', 'c' },
+            hybrid_modes = { 'i' },
           },
         },
       },
