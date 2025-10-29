@@ -103,6 +103,8 @@
       wl-clipboard
       nmap
       exiftool
+      mat2
+      ffmpeg
     ];
   };
 }
