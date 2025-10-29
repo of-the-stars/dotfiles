@@ -101,6 +101,8 @@
       vim
       whois
       wl-clipboard
+      nmap
+      exiftool
     ];
   };
 }
