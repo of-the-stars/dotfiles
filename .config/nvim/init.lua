@@ -107,8 +107,7 @@ vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diag
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- /run/current-system/sw/bin/zsh
-vim.opt.shell = '/run/current-system/sw/bin/zsh'
+-- vim.opt.shell = '/run/current-system/sw/bin/zsh'
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
