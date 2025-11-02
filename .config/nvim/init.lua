@@ -767,6 +767,30 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
       },
+      formatters = {
+        clang_format = {
+          args = function()
+            -- Fetch indentation settings dynamically
+            local shiftwidth = vim.api.nvim_get_option_value('shiftwidth', {})
+            local expandtab = vim.api.nvim_get_option_value('expandtab', {})
+
+            -- Build args based on Vim settings
+            local args = { '--style={BasedOnStyle: llvm, ' }
+
+            -- Add tab width based on shiftwidth
+            table.insert(args, 'IndentWidth: ' .. shiftwidth)
+
+            -- Use tabs or keep spaces
+            if expandtab then
+              table.insert(args, ', TabWidth: ' .. shiftwidth)
+              table.insert(args, ', UseTabs: Always')
+            end
+
+            table.insert(args, ' }')
+            return args
+          end,
+        },
+      },
     },
   },
 
