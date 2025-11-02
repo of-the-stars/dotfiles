@@ -208,6 +208,7 @@ in {
     pkgsUnstable.ansilove
 
     signal-desktop
+    aseprite
     audacity
     bind
     bitwarden-desktop
