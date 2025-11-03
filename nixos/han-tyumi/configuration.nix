@@ -203,7 +203,7 @@ in {
   # $ nix-search wget
   environment.systemPackages = with pkgs; [
     inputs.nvim.packages.${system}.nvim
-    inputs.timr-tui.packages.${system}.timr
+    inputs.timr-tui.packages.${system}.default
     # inputs.rmpc.packages.${system}.rmpc
 
     pkgsUnstable.ansilove
