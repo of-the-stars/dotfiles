@@ -87,7 +87,7 @@
       '';
 
       pomodoro = ''
-        timr-tui -w '25:00' -p '5:00' -m pomodoro -n on --log
+        timr-tui --log -w '25:00' -p '5:00' -m pomodoro --blink on --notification on
       '';
 
       # This was part of the above command, idk how to add it in again
