@@ -78,9 +78,7 @@
     */
 
     home.shellAliases = {
-      ll = "eza -alF";
-      la = "eza -A";
-      l = "eza -A";
+      l = "eza -a --sort=type --group-directories-first";
 
       # Add an "alert" alias for long running commands.  Use like so:
       #   sleep 10; alert
