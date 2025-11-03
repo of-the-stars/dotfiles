@@ -59,7 +59,7 @@
       wireplumber
       wl-clipboard
       wofi
-      rofi
+      rofi-wayland
       rofi-obsidian
       bluez
       brightnessctl
