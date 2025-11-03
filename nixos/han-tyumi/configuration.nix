@@ -38,7 +38,7 @@ in {
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 14d";
   };
 
   nix.settings.auto-optimise-store = true;
@@ -83,9 +83,9 @@ in {
       #   CPU_MAX_PERF_ON_AC = 100;
       #   CPU_MIN_PERF_ON_BAT = 0;
       #   CPU_MAX_PERF_ON_BAT = 20;
-      #
-      #   #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 80; # and below it starts to charge
+
+      # Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 55; # and below it starts to charge
       STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
     };
   };
@@ -200,7 +200,7 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # $ nix-search wget
   environment.systemPackages = with pkgs; [
     inputs.nvim.packages.${system}.nvim
     # inputs.rmpc.packages.${system}.rmpc
@@ -216,7 +216,6 @@ in {
     element-desktop
     firefox
     halloy
-    # kdePackages.itinerary
     kdePackages.kdeconnect-kde
     kdePackages.marble
     kdePackages.okular
