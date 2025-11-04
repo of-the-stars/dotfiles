@@ -9,6 +9,7 @@
     "modules-left": [
         "custom/nix",
         "hyprland/workspaces",
+        "tray",
     ],
     "modules-center": [
         "hyprland/window"
