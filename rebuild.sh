@@ -31,9 +31,9 @@ if git diff -P --cached --name-only ./../.config/rmpc/. | rg -q "."; then
 fi
 
 if [[ -z "$1" ]]; then
-    sudo nixos-rebuild switch --flake .#han-tyumi &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
+    sudo nixos-rebuild switch --flake .#han-tyumi | tee nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 else
-    sudo nixos-rebuild switch --flake .#"$1" &>nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
+    sudo nixos-rebuild switch --flake .#"$1" | tee nixos-switch.log || (cat nixos-switch.log | rg --color=always error && false)
 fi
 
 gen=$(nixos-rebuild list-generations | rg current)

@@ -233,6 +233,7 @@ in {
     tor
     tree
     usbutils
+    vcv-rack
     wine
   ];
 
