@@ -136,8 +136,6 @@ in {
     jack.enable = true;
   };
 
-  services.jack.enable = true;
-
   # services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
   #   "monitor.bluez.properties" = {
   #     "bluez5.enable-sbc-xq" = true;
