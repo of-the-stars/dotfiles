@@ -1,30 +1,15 @@
-# Copyright (c) 2023 BirdeeHub
-# Licensed under the MIT license
-# This is an empty nixCats config.
-# you may import this template directly into your nvim folder
-# and then add plugins to categories here,
-# and call the plugins with their default functions
-# within your lua, rather than through the nvim package manager's method.
-# Use the help, and the example config github:BirdeeHub/nixCats-nvim?dir=templates/example
-# It allows for easy adoption of nix,
-# while still providing all the extra nix features immediately.
-# Configure in lua, check for a few categories, set a few settings,
-# output packages with combinations of those categories and settings.
-# All the same options you make here will be automatically exported in a form available
-# in home manager and in nixosModules, as well as from other flakes.
-# each section is tagged with its relevant help section.
 {
-  description = "A Lua-natic's neovim flake, with extra cats! nixCats!";
+  description = "of-the-star's custom neovim flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    tidal-cycles.url = "github:mitchmindtree/tidalcycles.nix";
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
 
-    # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
     # Then you should name it "plugins-something"
@@ -35,11 +20,11 @@
     # https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples
   };
 
-  # see :help nixCats.flake.outputs
   outputs = {
     self,
     nixpkgs,
     nixCats,
+    tidal-cycles,
     ...
   } @ inputs: let
     inherit (nixCats) utils;
@@ -47,44 +32,29 @@
       path = ./.;
       name = "nvim";
     };
-    # luaPath = ./.;
     forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
-    # the following extra_pkg_config contains any values
-    # which you want to pass to the config set of nixpkgs
+
     # import nixpkgs { config = extra_pkg_config; inherit system; }
-    # will not apply to module imports
+
     # as that will have your system values
     extra_pkg_config = {
       # allowUnfree = true;
     };
-    # management of the system variable is one of the harder parts of using flakes.
+    dependencyOverlays = [
+      # This overlay grabs all the inputs named in the format
+      # `plugins-<pluginName>`
+      # Once we add this overlay to our nixpkgs, we are able to
+      # use `pkgs.neovimPlugins`, which is a set of our plugins.
+      (utils.standardPluginOverlay inputs)
+      # add any other flake overlays here.
 
-    # so I have done it here in an interesting way to keep it out of the way.
-    # It gets resolved within the builder itself, and then passed to your
-    # categoryDefinitions and packageDefinitions.
-
-    # this allows you to use ${pkgs.system} whenever you want in those sections
-    # without fear.
-
-    dependencyOverlays =
-      /*
-      (import ./overlays inputs) ++
-      */
-      [
-        # This overlay grabs all the inputs named in the format
-        # `plugins-<pluginName>`
-        # Once we add this overlay to our nixpkgs, we are able to
-        # use `pkgs.neovimPlugins`, which is a set of our plugins.
-        (utils.standardPluginOverlay inputs)
-        # add any other flake overlays here.
-
-        # when other people mess up their overlays by wrapping them with system,
-        # you may instead call this function on their overlay.
-        # it will check if it has the system in the set, and if so return the desired overlay
-        # (utils.fixSystemizedOverlay inputs.codeium.overlays
-        #   (system: inputs.codeium.overlays.${system}.default)
-        # )
-      ];
+      # when other people mess up their overlays by wrapping them with system,
+      # you may instead call this function on their overlay.
+      # it will check if it has the system in the set, and if so return the desired overlay
+      # (utils.fixSystemizedOverlay inputs.codeium.overlays
+      #   (system: inputs.codeium.overlays.${system}.default)
+      # )
+    ];
 
     # see :help nixCats.flake.outputs.categories
     # and
@@ -146,6 +116,13 @@
           markdownlint-cli
           nix
         ];
+
+        tidal-cycles = [
+          tidal-cycles.tidal
+          tidal-cycles.superdirt-start
+          tidal-cycles.superdirt-install
+          tidal-cycles.tidal
+        ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -159,7 +136,6 @@
           cmp-path
           cmp_luasnip
           comment-nvim
-          # zen-mode-nvim
           conform-nvim
           fidget-nvim
           flatten-nvim
@@ -187,13 +163,6 @@
           vim-sleuth
           which-key-nvim
           zoxide-vim
-          # This is for if you only want some of the grammars
-          # (nvim-treesitter.withPlugins (
-          #   plugins: with plugins; [
-          #     nix
-          #     lua
-          #   ]
-          # ))
         ];
         kickstart-debug = [
           nvim-dap
@@ -210,20 +179,17 @@
         kickstart-neo-tree = [
           neo-tree-nvim
           nui-nvim
+
           # nixCats will filter out duplicate packages
           # so you can put dependencies with stuff even if they're
           # also somewhere else
           nvim-web-devicons
           plenary-nvim
         ];
+        tidal-cycles = [
+          tidal-cycles.vim-tidal
+        ];
       };
-
-      # not loaded automatically at startup.
-      # use with packadd and an autocommand in config to achieve lazy loading
-      # NOTE: this template is using lazy.nvim so, which list you put them in is irrelevant.
-      # startupPlugins or optionalPlugins, it doesnt matter, lazy.nvim does the loading.
-      # I just put them all in startupPlugins. I could have put them all in here instead.
-      optionalPlugins = {};
 
       # shared libraries to be added to LD_LIBRARY_PATH
       # variable available to nvim runtime
@@ -237,19 +203,12 @@
       # this section is for environmentVariables that should be available
       # at RUN TIME for plugins. Will be available to path within neovim terminal
       environmentVariables = {
-        test = {
-          CATTESTVAR = "It worked!";
-          XDG_CONFIG_HOME = "/home/internet_wizard/dotfiles/.config";
-        };
       };
 
       # If you know what these are, you can provide custom ones by category here.
       # If you dont, check this link out:
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/setup-hooks/make-wrapper.sh
       extraWrapperArgs = {
-        test = [
-          ''--set CATTESTVAR2 "It worked again!"''
-        ];
       };
 
       # lists of the functions you would have passed to
@@ -261,11 +220,9 @@
       # vim.g.python3_host_prog
       # or run from nvim terminal via :!<packagename>-python3
       python3.libraries = {
-        test = _: [];
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
-        test = [(_: [])];
       };
     };
 
@@ -300,9 +257,6 @@
         # (and other information to pass to lua)
         categories = {
           general = true;
-          gitPlugins = true;
-          customPlugins = true;
-          test = true;
 
           kickstart-neo-tree = true;
           kickstart-debug = true;
@@ -315,18 +269,6 @@
           kickstart-gitsigns = true;
 
           # we can pass whatever we want actually.
-          # have_nerd_font = false;
-
-          example = {
-            youCan = "add more than just booleans";
-            toThisSet = [
-              "and the contents of this categories set"
-              "will be accessible to your lua with"
-              "nixCats('path.to.value')"
-              "see :help nixCats"
-              "and type :NixCats to see the categories set in nvim"
-            ];
-          };
         };
       };
     };

@@ -234,7 +234,6 @@ in {
     tree
     usbutils
     vcv-rack
-    tidal-dl
     wine
   ];
 

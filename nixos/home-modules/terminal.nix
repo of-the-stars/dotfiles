@@ -189,6 +189,11 @@
           title = "The Etymology Nerd";
           tags = ["linguistics" "personal"];
         }
+        {
+          url = "https://matklad.github.io/feed.xml";
+          title = "matklad";
+          tags = ["rust" "nix"];
+        }
       ];
 
       extraConfig = ''
