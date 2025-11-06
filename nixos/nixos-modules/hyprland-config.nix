@@ -26,7 +26,7 @@
 
     # Enable the Hyprland window manager
     programs.hyprland = {
-      # enable = true;
+      enable = true;
       xwayland.enable = true;
       withUWSM = true;
     };
