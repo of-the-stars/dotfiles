@@ -238,6 +238,7 @@ in {
     tree
     usbutils
     pkgsUnstable.vcv-rack
+    qjackctl
     wine
   ];
 
