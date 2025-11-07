@@ -45,25 +45,25 @@
 
   programs.vivid.enable = false;
 
-  xdg.configFile."openvr/openvrpaths.vrpath".text = ''
-    {
-      "config" :
-      [
-        "~/.local/share/Steam/config"
-      ],
-      "external_drivers" : null,
-      "jsonid" : "vrpathreg",
-      "log" :
-      [
-        "~/.local/share/Steam/logs"
-      ],
-      "runtime" :
-      [
-        "${pkgs.opencomposite}/lib/opencomposite"
-      ],
-      "version" : 1
-    }
-  '';
+  # xdg.configFile."openvr/openvrpaths.vrpath".text = ''
+  #   {
+  #     "config" :
+  #     [
+  #       "~/.local/share/Steam/config"
+  #     ],
+  #     "external_drivers" : null,
+  #     "jsonid" : "vrpathreg",
+  #     "log" :
+  #     [
+  #       "~/.local/share/Steam/logs"
+  #     ],
+  #     "runtime" :
+  #     [
+  #       "${pkgs.opencomposite}/lib/opencomposite"
+  #     ],
+  #     "version" : 1
+  #   }
+  # '';
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

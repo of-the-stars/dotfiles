@@ -115,11 +115,11 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # # Configure keymap in X11
+  # services.xserver.xkb = {
+  #   layout = "us";
+  #   variant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -161,12 +161,12 @@ in {
     # shell = pkgs.zsh;
   };
 
-  # programs.nix-ld.enable = true;
+  programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [
   #   # Add missing dynamic libraries for unpackaged programs here
   # ];
 
-  environment.localBinInPath = true;
+  # environment.localBinInPath = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
