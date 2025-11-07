@@ -133,11 +133,8 @@ in {
       support32Bit = true;
     };
     pulse.enable = true;
-    # jack.enable = true;
-  };
-
-  services.jack = {
-    jackd.enable = true;
+    jack.enable = true;
+    socketActivation = true;
   };
 
   # services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
