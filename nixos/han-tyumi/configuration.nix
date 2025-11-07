@@ -136,6 +136,10 @@ in {
     jack.enable = true;
   };
 
+  services.jack = {
+    jackd.enable = true;
+  };
+
   # services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
   #   "monitor.bluez.properties" = {
   #     "bluez5.enable-sbc-xq" = true;
@@ -156,7 +160,7 @@ in {
   users.users.internet_wizard = {
     isNormalUser = true;
     description = "Stell";
-    extraGroups = ["networkmanager" "wheel" "dialout" "video" "audio"];
+    extraGroups = ["networkmanager" "wheel" "dialout" "video" "jackaudio" "audio"];
     # shell = pkgs.zsh;
   };
 
