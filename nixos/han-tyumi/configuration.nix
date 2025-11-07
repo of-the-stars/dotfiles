@@ -236,7 +236,7 @@ in {
     tor
     tree
     usbutils
-    vcv-rack
+    pkgsUnstable.vcv-rack
     wine
   ];
 
