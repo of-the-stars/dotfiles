@@ -26,6 +26,7 @@
     "waybar".source = ./../.config/waybar;
     "rofi".source = ./../.config/rofi;
     "yazi".source = ./../.config/yazi;
+    "sc-im".source = ./../.config/sc-im;
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 

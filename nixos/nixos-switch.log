@@ -1,2 +1,22 @@
 setting up /etc...
-/nix/store/0gz15hx4dzy50yq2y51xvhzs1xi3vpyh-nixos-system-han-tyumi-25.05.20251001.5b5be50
+× home-manager-internet_wizard.service - Home Manager environment for internet_wizard
+     Loaded: loaded (/etc/systemd/system/home-manager-internet_wizard.service; enabled; preset: ignored)
+     Active: failed (Result: exit-code) since Mon 2025-11-10 18:32:57 CST; 266ms ago
+ Invocation: b84fa05f1cce4a5c848396624b404453
+    Process: 30505 ExecStart=/nix/store/xrz52c09p9ba8hdlcbrl9fnfg87f0w6z-hm-setup-env /nix/store/zyy1kpkcpa5ixm0w5lljiixggrj8w651-home-manager-generation (code=exited, status=1/FAILURE)
+   Main PID: 30505 (code=exited, status=1/FAILURE)
+         IP: 0B in, 0B out
+         IO: 0B read, 0B written
+   Mem peak: 5.6M
+        CPU: 147ms
+
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]: Please do one of the following:
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]: - Move or remove the above files and try again.
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]: - In standalone mode, use 'home-manager switch -b backup' to back up
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]:   files automatically.
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]: - When used as a NixOS or nix-darwin module, set
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]:     'home-manager.backupFileExtension'
+Nov 10 18:32:57 han-tyumi hm-activate-internet_wizard[30600]:   to, for example, 'backup' and rebuild.
+Nov 10 18:32:57 han-tyumi systemd[1]: home-manager-internet_wizard.service: Main process exited, code=exited, status=1/FAILURE
+Nov 10 18:32:57 han-tyumi systemd[1]: home-manager-internet_wizard.service: Failed with result 'exit-code'.
+Nov 10 18:32:57 han-tyumi systemd[1]: Failed to start Home Manager environment for internet_wizard.
