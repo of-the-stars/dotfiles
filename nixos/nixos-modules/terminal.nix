@@ -72,18 +72,22 @@
       cowsay
       docker
       dust
+      exiftool
       fastfetch
       fd
+      ffmpeg
       fortune-kind
       fselect
       git
       gitleaks
       htop-vim
       lazygit
+      mat2
       mprocs
       nix-search-cli
-      openconnect
+      nmap
       onefetch
+      openconnect
       presenterm
       python3
       rename
@@ -91,6 +95,7 @@
       ripgrep-all
       rustup
       rusty-man
+      sc-im
       screen
       sl
       starship
@@ -101,10 +106,6 @@
       vim
       whois
       wl-clipboard
-      nmap
-      exiftool
-      mat2
-      ffmpeg
     ];
   };
 }
