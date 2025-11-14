@@ -79,7 +79,7 @@
       # this includes LSPs
       lspsAndRuntimeDeps = with pkgs; {
         general = [
-          alejandra
+          nixfmt
           bacon
           bash-language-server
           clang-tools
