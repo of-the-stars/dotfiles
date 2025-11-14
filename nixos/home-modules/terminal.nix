@@ -155,6 +155,11 @@
       autoReload = true;
       urls = [
         {
+          url = "https://kglw.net/feed";
+          title = "kglw.net";
+          tags = ["music" "writing"];
+        }
+        {
           url = "https://www.65daysofstatic.com/rss";
           title = "65daysofstatic";
           tags = ["music"];
