@@ -7,17 +7,22 @@
   inputs,
   lib,
   ...
-}: let
+}:
+let
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
-in {
+in
+{
   imports = [
     ./../nixos-modules
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -157,7 +162,14 @@ in {
   users.users.internet_wizard = {
     isNormalUser = true;
     description = "Stell";
-    extraGroups = ["networkmanager" "wheel" "dialout" "video" "jackaudio" "audio"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "video"
+      "jackaudio"
+      "audio"
+    ];
     # shell = pkgs.zsh;
   };
 
@@ -169,7 +181,7 @@ in {
   # environment.localBinInPath = true;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # File system management
   services.gvfs.enable = true;
@@ -225,6 +237,7 @@ in {
     kdePackages.marble
     kdePackages.okular
     kdePackages.xwaylandvideobridge
+    kdePackages.kdeconnect-kde
     nwg-look
     obsidian
     openssl
