@@ -1029,13 +1029,13 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     end,
   },
 
-  {
-    'neo451/feed.nvim',
-    cmd = 'feed',
-    ---@module 'feed'
-    ---@type feed.config
-    opts = {},
-  },
+  -- {
+  --   'neo451/feed.nvim',
+  --   cmd = 'feed',
+  --   ---@module 'feed'
+  --   ---@type feed.config
+  --   opts = {},
+  -- },
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
