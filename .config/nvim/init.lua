@@ -1029,6 +1029,14 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     end,
   },
 
+  {
+    'neo451/feed.nvim',
+    cmd = 'feed',
+    ---@module 'feed'
+    ---@type feed.config
+    opts = {},
+  },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
@@ -1179,33 +1187,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       alpha.setup(dashboard.opts)
     end,
   },
-
-  -- {
-  --   'kdheepak/lazygit.nvim',
-  --   lazy = true,
-  --   cmd = {
-  --     'LazyGit',
-  --     'LazyGitConfig',
-  --     'LazyGitCurrentFile',
-  --     'LazyGitFilter',
-  --     'LazyGitFilterCurrentFile',
-  --   },
-  --   -- optional for floating window border decoration
-  --   dependencies = {
-  --     'nvim-telescope/telescope.nvim',
-  --     'nvim-lua/plenary.nvim',
-  --   },
-  --
-  --   config = function()
-  --     require('telescope').load_extension 'lazygit'
-  --   end,
-  --
-  --   -- setting the keybinding for LazyGit with 'keys' is recommended in
-  --   -- order to load the plugin when the command is run for the first time
-  --   keys = {
-  --     { '<leader>gl', '<cmd>LazyGit<cr>', desc = '[L]azyGit' },
-  --   },
-  -- },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
