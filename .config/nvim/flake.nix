@@ -142,6 +142,7 @@
               cmp_luasnip
               comment-nvim
               conform-nvim
+              feed-nvim
               fidget-nvim
               flatten-nvim
               friendly-snippets
