@@ -222,11 +222,6 @@ in
     inputs.timr-tui.packages.${system}.default
     # inputs.rmpc.packages.${system}.rmpc
 
-    pkgsUnstable.ansilove
-
-    signal-desktop
-    aseprite
-    audacity
     bind
     bitwarden-desktop
     discord
@@ -234,10 +229,10 @@ in
     firefox
     halloy
     kdePackages.kdeconnect-kde
+    kdePackages.kdeconnect-kde
     kdePackages.marble
     kdePackages.okular
     kdePackages.xwaylandvideobridge
-    kdePackages.kdeconnect-kde
     nwg-look
     obsidian
     openssl
@@ -245,13 +240,13 @@ in
     prismlauncher
     qgis
     qimgv
+    qjackctl
+    signal-desktop
     signal-export
     stellarium
     tor
     tree
     usbutils
-    pkgsUnstable.vcv-rack
-    qjackctl
     wine
   ];
 

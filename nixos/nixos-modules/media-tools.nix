@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -13,8 +14,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    media-tools.enable =
-      lib.mkEnableOption "Enable media tools";
+    media-tools.enable = lib.mkEnableOption "Enable media tools";
   };
 
   config = lib.mkIf config.media-tools.enable {
@@ -40,7 +40,8 @@
     };
 
     environment.systemPackages = with pkgs; [
-      kid3
+      aseprite
+      audacity
       droidcam
       dvgrab
       ffmpeg
@@ -49,8 +50,10 @@
       inkscape
       kdePackages.k3b
       kdePackages.kdenlive
+      kid3
       krita
       v4l-utils
+      vcv-rack
       vlc
       yt-dlp
     ];

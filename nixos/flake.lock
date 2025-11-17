@@ -130,11 +130,11 @@
     },
     "nixCats": {
       "locked": {
-        "lastModified": 1755491370,
-        "narHash": "sha256-i1sI9zxcygXP7ExtjqEz06jAobk9FWiYgbeimwn5Owc=",
+        "lastModified": 1763330129,
+        "narHash": "sha256-KbOeWIF52SV53BOeETGO2C5ewaV2Ex9iaXH7G72gOr8=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "a526813d8026d7a2a8a40a5d89eb76cf89d63169",
+        "rev": "c81551ed87db2aefab30a12cf7425ff94dc0ad64",
         "type": "github"
       },
       "original": {
@@ -208,11 +208,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1755268003,
-        "narHash": "sha256-nNaeJjo861wFR0tjHDyCnHs1rbRtrMgxAKMoig9Sj/w=",
+        "lastModified": 1763312402,
+        "narHash": "sha256-3YJkOBrFpmcusnh7i8GXXEyh7qZG/8F5z5+717550Hk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "32f313e49e42f715491e1ea7b306a87c16fe0388",
+        "rev": "85a6c4a07faa12aaccd81b36ba9bfc2bec974fa1",
         "type": "github"
       },
       "original": {
@@ -277,8 +277,8 @@
         "tidal-cycles": "tidal-cycles"
       },
       "locked": {
-        "lastModified": 1763266578,
-        "narHash": "sha256-Xms0qVE+FptGE9tBLb6JlVm199F3CPApB5o508VqoiU=",
+        "lastModified": 1763399753,
+        "narHash": "sha256-aWJ00em9HzPqurK0LZtqmqGqxSCJrUYoMERhvChT4xU=",
         "path": "/home/internet_wizard/dotfiles/.config/nvim/",
         "type": "path"
       },
