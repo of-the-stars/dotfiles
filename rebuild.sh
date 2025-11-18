@@ -4,7 +4,6 @@
 # If you update something that's pinned with a flake, you need to add logic to update that flake 
 
 set -o pipefail
-
 set -e
 
 pushd "$HOME"/dotfiles/nixos/
@@ -13,9 +12,6 @@ pushd "$HOME"/dotfiles/nixos/
 
     nvim
      
-    # alejandra . &>/dev/null
-    # The above command is good for formatting, but my neovim config already has configured to run on save :3
-
     git -P diff -U0 .
     git add .
 
