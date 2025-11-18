@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -13,8 +14,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    terminal.enable =
-      lib.mkEnableOption "My terminal preferences";
+    terminal.enable = lib.mkEnableOption "My terminal preferences";
   };
 
   config = lib.mkIf config.terminal.enable {
@@ -23,6 +23,12 @@
     # Usually these depend on whether a user of this module chose to "enable" it
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
+
+    programs.tmux = {
+      enable = true;
+      shell = "${pkgs.zsh}/bin/zsh";
+      plugins = with pkgs; [ ];
+    };
 
     programs.zsh = {
       enable = true;
@@ -72,9 +78,9 @@
     };
 
     /*
-       home.shell = {
-      enableZshIntegration = true;
-    };
+         home.shell = {
+        enableZshIntegration = true;
+      };
     */
 
     home.shellAliases = {
@@ -144,9 +150,9 @@
       enableGitIntegration = true;
 
       /*
-         extraConfig = ''
-        shell zsh
-      '';
+           extraConfig = ''
+          shell zsh
+        '';
       */
     };
 
@@ -157,47 +163,74 @@
         {
           url = "https://kglw.net/feed";
           title = "kglw.net";
-          tags = ["music" "writing"];
+          tags = [
+            "music"
+            "writing"
+          ];
         }
         {
           url = "https://www.65daysofstatic.com/rss";
           title = "65daysofstatic";
-          tags = ["music"];
+          tags = [ "music" ];
         }
         {
           url = "https://awesomekling.github.io/feed.xml";
           title = "Andreas Kling";
-          tags = ["programming" "cpp"];
+          tags = [
+            "programming"
+            "cpp"
+          ];
         }
         {
           url = "https://scientificcomputing.rs/monthly/rss.xml";
           title = "Scientific Computing in Rust";
-          tags = ["programming" "science" "rust"];
+          tags = [
+            "programming"
+            "science"
+            "rust"
+          ];
         }
         {
           url = "https://cafkafk.dev/index.xml";
           title = "cafkafk";
-          tags = ["programming" "rust" "nix" "personal"];
+          tags = [
+            "programming"
+            "rust"
+            "nix"
+            "personal"
+          ];
         }
         {
           url = "http://www.aaronsw.com/weblog/index.xml";
           title = "Raw Thought";
-          tags = ["programming" "activism"];
+          tags = [
+            "programming"
+            "activism"
+          ];
         }
         {
           url = "https://lotsoflinks.substack.com//feed";
           title = "Lots of Links";
-          tags = ["curios" "personal"];
+          tags = [
+            "curios"
+            "personal"
+          ];
         }
         {
           url = "https://etymology.substack.com//feed";
           title = "The Etymology Nerd";
-          tags = ["linguistics" "personal"];
+          tags = [
+            "linguistics"
+            "personal"
+          ];
         }
         {
           url = "https://matklad.github.io/feed.xml";
           title = "matklad";
-          tags = ["rust" "nix"];
+          tags = [
+            "rust"
+            "nix"
+          ];
         }
       ];
 
