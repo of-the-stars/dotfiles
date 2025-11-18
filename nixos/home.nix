@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./home-modules
   ];
@@ -27,6 +28,7 @@
     "rofi".source = ./../.config/rofi;
     "yazi".source = ./../.config/yazi;
     "sc-im".source = ./../.config/sc-im;
+    "tmux".source = ./../.config/tmux;
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 
