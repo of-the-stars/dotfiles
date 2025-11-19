@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-    tidal-cycles.url = "github:mitchmindtree/tidalcycles.nix";
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
@@ -25,7 +24,6 @@
       self,
       nixpkgs,
       nixCats,
-      tidal-cycles,
       ...
     }@inputs:
     let
@@ -122,11 +120,8 @@
               nix
             ];
 
-            tidal-cycles = [
-              tidal-cycles.tidal
-              tidal-cycles.superdirt-start
-              tidal-cycles.superdirt-install
-              tidal-cycles.tidal
+            strudel = [
+              nodejs
             ];
           };
 
@@ -190,9 +185,6 @@
               # also somewhere else
               nvim-web-devicons
               plenary-nvim
-            ];
-            tidal-cycles = [
-              tidal-cycles.vim-tidal
             ];
           };
 
