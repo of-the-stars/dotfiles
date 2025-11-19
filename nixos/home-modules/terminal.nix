@@ -170,6 +170,15 @@
           ];
         }
         {
+          url = "https://snowytrees.dev/blog/rss.xml";
+          title = "Jordan Isaacs";
+          tags = [
+            "nix"
+            "neovim"
+            "programming"
+          ];
+        }
+        {
           url = "https://www.65daysofstatic.com/rss";
           title = "65daysofstatic";
           tags = [ "music" ];
@@ -213,7 +222,6 @@
           url = "https://lotsoflinks.substack.com//feed";
           title = "Lots of Links";
           tags = [
-            "curios"
             "personal"
           ];
         }
