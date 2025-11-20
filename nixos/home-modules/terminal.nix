@@ -179,6 +179,15 @@
           ];
         }
         {
+          url = "https://readunderwire.com/feed";
+        }
+        {
+          url = "https://blog.wesleyac.com/feed.xml";
+        }
+        {
+          url = "https://woile.dev/rss.xml";
+        }
+        {
           url = "https://www.65daysofstatic.com/rss";
           title = "65daysofstatic";
           tags = [ "music" ];
