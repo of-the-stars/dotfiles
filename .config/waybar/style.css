@@ -70,11 +70,11 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-  background: alpha(blue, 0.9);
+  background: alpha(@blue, 0.9);
 }
 
 #workspaces button {
-  background: transparent;
+  background: alpha(@mantle, 0.5);
   font-family:
     RobotoMono Nerd Font,
     feather;
@@ -86,7 +86,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: @surface0Alpha;
+  background: alpha(@surface0, 1);
 }
 
 #workspaces button:hover {
