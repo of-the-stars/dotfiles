@@ -87,7 +87,6 @@ window#waybar {
 
 #workspaces button.active {
   background: alpha(@overlay2, 0.5);
-  color: alpha(@mantle, 0.7);
 }
 
 #workspaces button:hover {
