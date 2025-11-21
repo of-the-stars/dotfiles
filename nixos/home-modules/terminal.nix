@@ -170,6 +170,9 @@
           ];
         }
         {
+          url = "https://rosenzweig.io/feed.xml";
+        }
+        {
           url = "https://snowytrees.dev/blog/rss.xml";
           title = "Jordan Isaacs";
           tags = [
