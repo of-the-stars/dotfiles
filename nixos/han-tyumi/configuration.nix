@@ -247,6 +247,7 @@ in
     tor
     tree
     usbutils
+    gnome-disk-utility
     wine
   ];
 
