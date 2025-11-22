@@ -95,7 +95,7 @@ in
       nmap
       onefetch
       openconnect
-      presenterm
+      pkgsUnstable.presenterm
       figlet
       asciinema
       python3
