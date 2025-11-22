@@ -39,6 +39,8 @@ fi
 # gen=$(nixos-rebuild list-generations | rg current) 
 # git commit -a -m "$gen"
 
+pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
+
 # Uncomment this line if you'd like to write the commit message yourself
 nixos-rebuild list-generations | rg current | git commit -aveF -
 
@@ -47,4 +49,3 @@ popd
 # Reloads hyprland
 hyprctl reload > /dev/null
 
-pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
