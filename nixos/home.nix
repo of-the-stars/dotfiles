@@ -29,6 +29,7 @@
     "yazi".source = ./../.config/yazi;
     "sc-im".source = ./../.config/sc-im;
     "tmux".source = ./../.config/tmux;
+    "presenterm".source = ./../.config/presenterm;
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 
