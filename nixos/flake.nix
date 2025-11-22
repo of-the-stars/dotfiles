@@ -78,7 +78,7 @@
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
-                (home-manager-unstable + "/modules/programs/vivid.nix")
+                (home-manager-unstable)
               ];
             };
           }

@@ -162,6 +162,9 @@
       autoReload = true;
       urls = [
         {
+          url = "https://www.0atman.com/feed.xml";
+        }
+        {
           url = "https://kglw.net/feed";
           title = "kglw.net";
           tags = [
