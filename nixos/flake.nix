@@ -20,63 +20,73 @@
     rmpc.url = "path:/home/internet_wizard/dotfiles/.config/rmpc";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    home-manager-unstable,
-    ...
-  } @ inputs: let
-  in {
-    nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs nixpkgs-unstable home-manager home-manager-unstable;};
-      modules = [
-        ./han-tyumi/configuration.nix
-        ./han-tyumi/hardware-configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.users.internet_wizard = {
-            imports = [
-              ./home.nix
-              inputs.catppuccin.homeModules.catppuccin
-              (home-manager-unstable + "/modules/programs/vivid.nix")
-            ];
-          };
-        }
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      home-manager-unstable,
+      ...
+    }@inputs:
+    let
+    in
+    {
+      nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit
+            inputs
+            nixpkgs-unstable
+            home-manager
+            home-manager-unstable
+            ;
+        };
+        modules = [
+          ./han-tyumi/configuration.nix
+          ./han-tyumi/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.internet_wizard = {
+              imports = [
+                ./home.nix
+                inputs.catppuccin.homeModules.catppuccin
+                (home-manager-unstable + "/modules/programs/vivid.nix")
+              ];
+            };
+          }
 
-        inputs.catppuccin.nixosModules.catppuccin
-      ];
+          inputs.catppuccin.nixosModules.catppuccin
+        ];
+      };
+
+      nixosConfigurations.cyboogie = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs nixpkgs nixpkgs-unstable; };
+        modules = [
+          ./cyboogie/configuration.nix
+          ./han-tyumi/hardware-configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.internet_wizard = {
+              imports = [
+                ./home.nix
+                inputs.catppuccin.homeModules.catppuccin
+                (home-manager-unstable + "/modules/programs/vivid.nix")
+              ];
+            };
+          }
+
+          inputs.catppuccin.nixosModules.catppuccin
+
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+        ];
+      };
     };
-
-    nixosConfigurations.cyboogie = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs nixpkgs nixpkgs-unstable;};
-      modules = [
-        ./cyboogie/configuration.nix
-        ./han-tyumi/hardware-configuration.nix
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.internet_wizard = {
-            imports = [
-              ./home.nix
-              inputs.catppuccin.homeModules.catppuccin
-              (home-manager-unstable + "/modules/programs/vivid.nix")
-            ];
-          };
-        }
-
-        inputs.catppuccin.nixosModules.catppuccin
-
-        "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-      ];
-    };
-  };
 }
