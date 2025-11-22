@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -13,8 +14,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    terminal.enable =
-      lib.mkEnableOption "Enables terminal";
+    terminal.enable = lib.mkEnableOption "Enables terminal";
   };
 
   config = lib.mkIf config.terminal.enable {
@@ -89,6 +89,8 @@
       onefetch
       openconnect
       presenterm
+      figlet
+      asciinema
       python3
       rename
       ripgrep
