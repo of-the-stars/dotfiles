@@ -53,6 +53,7 @@
 
         export MANPAGER="nvim +Man!"
 
+
         # panasonic camcorder helper functions
 
         panasonic-grab() {
