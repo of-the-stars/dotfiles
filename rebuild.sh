@@ -28,7 +28,7 @@ if git diff -P --cached --name-only ./../.config/rmpc/. | rg -q "."; then
 fi
 
 # Opens up a menu with each system that can be built and switches to that system
-system="$(nix flake show . --json | jq ".nixosConfigurations | keys[]" | fzf --tac)"
+system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf --tac)"
 (sudo nixos-rebuild switch --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
 pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &

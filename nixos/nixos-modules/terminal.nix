@@ -56,69 +56,58 @@ in
     environment.systemPackages = with pkgs; [
       # avrdude
       # avrlibc
-      # cargo-make
-      # clang
-      # clang-tools
-      # gnumake
-      # lua-language-server
-      # luajitPackages.luarocks
-      # mdbook
-      # nil
       # pkgsCross.avr.buildPackages.binutils
       # pkgsCross.avr.buildPackages.gcc
       # ravedude
-      # ruby
-      # rust-analyzer
-      # tree-sitter
 
       pkgsUnstable.presenterm
 
-      asciinema
+      asciinema # Record your terminal session
       bitwarden-cli
-      bsdgames
-      cargo
-      cargo-generate
-      cargo-info
-      cowsay
+      bsdgames # NetBSD games!
+      cargo # The Rust package manager
+      cargo-generate # Generate rust projects
+      cargo-info # Get info on crates
+      cowsay # Moo!
       docker
-      dust
+      dust # Modern `du`
       exiftool
-      fastfetch
-      fd
-      ffmpeg
-      figlet
-      fortune-kind
-      fselect
-      gcc
-      git
-      gitleaks
-      htop-vim
-      jq
-      lazygit
-      mat2
-      mprocs
-      nix-search-cli
-      nmap
-      onefetch
-      openconnect
-      python3
+      fastfetch # Fetch system details; `neofetch` replacement
+      fd # Modern `find`
+      ffmpeg # Video format transcription
+      figlet # Make ASCII art from text
+      fortune-kind # `fortune` but kinder
+      fselect # Find files with SQL-like syntax
+      gcc # GNU Compiler Collection
+      git # The distributed VCS
+      gitleaks # Look for secrets in a git repo
+      gping # `ping` but with a graph
+      htop-vim # Interactive process viewer with vim bindings
+      jq # Print and parse `.json`
+      lazygit # TUI for `git`
+      mat2 # Metadata removal tool
+      mprocs # Run multiple commands in parallel
+      nix-search-cli # Search nixpkgs
+      nmap # Map the network
+      onefetch # Git repo summary
+      openconnect # Connect to VPNs
+      procs # Modern `ps`
+      python3 # Python interpreter
       rename
-      ripgrep
+      ripgrep # Modern `grep`
       ripgrep-all
-      rustc
-      rustup
+      rustc # Rust compiler
       rusty-man
-      sc-im
-      screen
-      sl
-      starship
-      stow
-      tiny
-      toot
+      sc-im # Spreadsheet calculator, improved
+      screen # Terminal multiplexer, although I just use it for serial ports
+      sl # Steam locomotive
+      stow # Manage symlinks
+      tiny # TUI IRC client
+      tldr # Community-maintained manpage alternative with examples
+      tree
       unzip
-      vim
-      whois
-      wl-clipboard
+      whois # Domain registration lookup
+      wl-clipboard # Manage system clipboard from the command line
     ];
   };
 }

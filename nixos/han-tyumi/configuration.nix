@@ -245,7 +245,6 @@ in
     signal-export
     stellarium
     tor
-    tree
     usbutils
     gnome-disk-utility
     wine
