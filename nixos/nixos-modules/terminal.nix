@@ -56,9 +56,6 @@ in
     environment.systemPackages = with pkgs; [
       # avrdude
       # avrlibc
-      cargo
-      cargo-generate
-      cargo-info
       # cargo-make
       # clang
       # clang-tools
@@ -74,8 +71,14 @@ in
       # rust-analyzer
       # tree-sitter
 
+      pkgsUnstable.presenterm
+
+      asciinema
       bitwarden-cli
       bsdgames
+      cargo
+      cargo-generate
+      cargo-info
       cowsay
       docker
       dust
@@ -83,11 +86,14 @@ in
       fastfetch
       fd
       ffmpeg
+      figlet
       fortune-kind
       fselect
+      gcc
       git
       gitleaks
       htop-vim
+      jq
       lazygit
       mat2
       mprocs
@@ -95,13 +101,11 @@ in
       nmap
       onefetch
       openconnect
-      pkgsUnstable.presenterm
-      figlet
-      asciinema
       python3
       rename
       ripgrep
       ripgrep-all
+      rustc
       rustup
       rusty-man
       sc-im
