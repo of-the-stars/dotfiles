@@ -16,8 +16,6 @@
 
     # custom neovim configuration flake
     nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
-    # rmpc wrapper with cava
-    rmpc.url = "path:/home/internet_wizard/dotfiles/.config/rmpc";
   };
 
   outputs =

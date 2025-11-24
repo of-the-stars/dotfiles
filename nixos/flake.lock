@@ -208,22 +208,6 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1759733170,
-        "narHash": "sha256-TXnlsVb5Z8HXZ6mZoeOAIwxmvGHp1g4Dw89eLvIwKVI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "8913c168d1c56dc49a7718685968f38752171c3b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_6": {
-      "locked": {
         "lastModified": 1761907660,
         "narHash": "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=",
         "owner": "NixOS",
@@ -244,28 +228,13 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1763849339,
-        "narHash": "sha256-jPK2TW0BVtsKLoXO2yOz3NaSlXkZ67bXwMzhbxfa5Vw=",
+        "lastModified": 1764021067,
+        "narHash": "sha256-mATvQp24i9dD59tqK//v1qZYQ+cu9pXhUbMSYfmCJUU=",
         "path": "/home/internet_wizard/dotfiles/.config/nvim/",
         "type": "path"
       },
       "original": {
         "path": "/home/internet_wizard/dotfiles/.config/nvim/",
-        "type": "path"
-      }
-    },
-    "rmpc": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1760520592,
-        "narHash": "sha256-+L+2rPwYm1wn9pizIMQvLpd62V61Emmyv+I2ebxm67U=",
-        "path": "/home/internet_wizard/dotfiles/.config/rmpc",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/internet_wizard/dotfiles/.config/rmpc",
         "type": "path"
       }
     },
@@ -277,7 +246,6 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvim": "nvim",
-        "rmpc": "rmpc",
         "timr-tui": "timr-tui"
       }
     },
@@ -318,7 +286,7 @@
         "crane": "crane",
         "fenix": "fenix",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1762186986,
