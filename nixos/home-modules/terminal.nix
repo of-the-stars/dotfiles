@@ -164,6 +164,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://www.sethdickinson.com/feed";
+        }
+        {
           url = "https://isabelroses.com/feed.xml";
         }
         {
