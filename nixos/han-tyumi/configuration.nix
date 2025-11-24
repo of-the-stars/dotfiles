@@ -187,6 +187,14 @@ in
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  # Security using yubikey
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
