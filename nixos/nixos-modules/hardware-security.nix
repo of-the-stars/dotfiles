@@ -25,7 +25,9 @@
     # Options for modules imported in "imports" can be set here.
 
     # Security using yubikey
-    services.udev.packages = [ pkgs.yubikey-personalization ];
+    services.udev.packages = [
+      pkgs.yubioath-flutter
+    ];
 
     programs.gnupg.agent = {
       enable = true;
@@ -33,9 +35,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      yubikey-manager
-      yubikey-manager-qt
-      yubikey-personalization-gui
+      yubioath-flutter
     ];
   };
 }

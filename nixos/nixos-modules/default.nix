@@ -13,7 +13,7 @@
     ./media-tools.nix
     ./networking-tools.nix
     ./virtual-machines.nix
-
+    ./hardware-security.nix
   ];
 
   options = {
@@ -33,7 +33,7 @@
     hyprland-config.enable = lib.mkDefault true;
     media-tools.enable = lib.mkDefault true;
     networking-tools.enable = lib.mkDefault true;
-
+    hardware-security.enable = lib.mkDefault true;
     virtual-machines.enable = lib.mkDefault false;
   };
 }
