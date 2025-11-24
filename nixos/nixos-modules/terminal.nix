@@ -74,7 +74,6 @@ in
       exiftool
       fastfetch # Fetch system details; `neofetch` replacement
       fd # Modern `find`
-      ffmpeg # Video format transcription
       figlet # Make ASCII art from text
       fortune-kind # `fortune` but kinder
       fselect # Find files with SQL-like syntax
@@ -108,6 +107,7 @@ in
       unzip
       whois # Domain registration lookup
       wl-clipboard # Manage system clipboard from the command line
+      zellij # Terminal multiplexer
     ];
   };
 }

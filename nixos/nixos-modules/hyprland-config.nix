@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -13,8 +14,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    hyprland-config.enable =
-      lib.mkEnableOption "Enables the hyprland window manager";
+    hyprland-config.enable = lib.mkEnableOption "Enables the hyprland window manager";
   };
 
   config = lib.mkIf config.hyprland-config.enable {
@@ -48,18 +48,17 @@
     environment.systemPackages = with pkgs; [
       dunst
       grim
-      hyprlock
-      hyprpaper
-      kdePackages.dolphin
+      hyprlock # Desktop lock manager
+      hyprpaper # Wallpaper manager
+      kdePackages.dolphin # File manager
       networkmanagerapplet
       playerctl
       slurp
-      waybar
+      waybar # Status bar
       wev
       wireplumber
       wl-clipboard
-      wofi
-      rofi-wayland
+      rofi-wayland # Pop up menus
       rofi-obsidian
       bluez
       brightnessctl

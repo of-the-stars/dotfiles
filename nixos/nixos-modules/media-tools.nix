@@ -40,22 +40,21 @@
     };
 
     environment.systemPackages = with pkgs; [
-      aseprite
-      audacity
+      aseprite # Sprite drawing program
+      audacity # Audio editor
       droidcam
-      dvgrab
-      ffmpeg
-      gimp
+      dvgrab # DV Camcorder Video Capture
+      ffmpeg # Video format transcription
+      gimp # Image editor
       handbrake
       inkscape
-      kdePackages.k3b
-      kdePackages.kdenlive
-      kid3
-      krita
-      v4l-utils
-      vcv-rack
-      vlc
-      yt-dlp
+      kdePackages.k3b # CD and DVD manager
+      kdePackages.kdenlive # Video editor
+      kid3 # Audio tagger
+      krita # Drawing program
+      vcv-rack # Modular synthesizers
+      vlc # Media player
+      yt-dlp # YouTube downloader
     ];
   };
 }
