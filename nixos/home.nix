@@ -41,7 +41,7 @@
     # ".zshrc".source = ./../.zshrc;
     ".bash_aliases".source = ./../.bash_aliases;
 
-    ".stow-global-ignora".source = ./../.stow-global-ignore;
+    ".stow-global-ignore".source = ./../.stow-global-ignore;
 
     "cleanup.sh".source = ./../cleanup.sh;
     "rebuild.sh".source = ./../rebuild.sh;

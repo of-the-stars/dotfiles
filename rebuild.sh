@@ -21,10 +21,6 @@ if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
 fi
 
-if git diff -P --cached --name-only ./../.config/rmpc/. | rg -q "."; then
-    sudo nix flake update rmpc
-fi
-
 # Opens up a menu with each system that can be built and switches to that system
 system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf \
     --color='border:blue' \
@@ -44,7 +40,7 @@ system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf 
     --input-label ' Input ' \
     )"
 echo "NixOS Rebuilding..."
-(sudo nixos-rebuild switch --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
+(sudo nixos-rebuild switch --show-trace --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
 pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 
