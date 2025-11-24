@@ -162,6 +162,10 @@
       enable = true;
       autoReload = true;
       urls = [
+        # TODO: Tag and make the urls pretty
+        {
+          url = "https://isabelroses.com/feed.xml";
+        }
         {
           url = "https://www.0atman.com/feed.xml";
         }

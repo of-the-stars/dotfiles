@@ -16,8 +16,6 @@ pushd "$HOME"/dotfiles/nixos/
 
     popd
 
-echo "NixOS Rebuilding..."
-
 # Checks if the nvim directory was changed, then updates the flake so that the changes are reflected
 if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
@@ -28,7 +26,24 @@ if git diff -P --cached --name-only ./../.config/rmpc/. | rg -q "."; then
 fi
 
 # Opens up a menu with each system that can be built and switches to that system
-system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf --tac)"
+system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf \
+    --color='border:blue' \
+    --color='label:white:bold' \
+    --color='list-bg:-1' \
+    --color='gutter:-1' \
+    --color='hl:blue:bold' \
+    --color='hl+:green:bold' \
+    --color='fg+:white' \
+    --color='info:white' \
+    --color='pointer:green' \
+    --tac \
+    --border \
+    --margin=10% \
+    --padding 5,5 \
+    --border-label ' Choose System Which To Rebuild ' \
+    --input-label ' Input ' \
+    )"
+echo "NixOS Rebuilding..."
 (sudo nixos-rebuild switch --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
 pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
