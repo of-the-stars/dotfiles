@@ -1,34 +1,43 @@
-# AstroNvim Template
+# internet_wizard's neovim configuration!
 
-**NOTE:** This is for AstroNvim v4+
+## Try it out!!
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
-
-## 🛠️ Installation
-
-#### Make a backup of your current nvim and shared folder
+If you have nix installed, with the experimental flakes feature enabled, you can try my neovim config just by running
 
 ```shell
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
+nix run 'github:internetwiz4rd/dotfiles?dir=.config/nvim'
 ```
 
-#### Create a new user repository from this template
+## About
 
-Press the "Use this template" button above to create a new repository to store your user configuration.
+About as close to a "ground up" neovim config. Before this I was using
+the AstroNvim distribution, which then broke on my NixOS machine.
 
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
+My general (neo)vim journey has looked like:
 
-#### Clone the repository
+```mermaid
+  stateDiagram-v2
+    s1 : Raw Vi Improved, fresh from Ubuntu's repos on my school's servers
+    s2 : AstroNvim on my own personal laptop running Ubuntu
+    s3 : That same AstroNvim config on my NixOS machine, which then broke
+    s4 : This current neovim config, 100% reproducible and built with both Nix AND Lua!
 
-```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+    s1 --> s2
+    s2 --> s3
+    s3 --> s4
 ```
 
-#### Start Neovim
+I liked the idea of being able to declare my nvim config, and then run it with Nix. But I hated the idea of writing Lua, an already
+unfamiliar language to me, in Nix strings without any formatting or LSP help. The [nixCats](https://github.com/BirdeeHub/nixCats-nvim)
+project seemed like the answer to my prayers, but I was still learning flakes as a feature so it took me forever to be able to
 
-```shell
-nvim
-```
+1. Get it up and running
+1. Actually adding it into my `configuration.nix` to run it and not have to enter an ephemral shell each time.
+
+Couldn't let go of lazy.nvim to manage my plugins, so I went ahead with the [kickstart.vim](https://github.com/nvim-lua/kickstart.nvim)
+template, which helped me better understand how to call plugin setups, write better lua for configs, and manage everything myself.
+It very much feels like starting up NixOS for the first time, although having the previous experience from an opinionated, well-liked
+distro like with Ubuntu or AstroNvim helped me figure out the workflow I wanted.
+
+I haven't really modified the template much beyond adding and removing plugins and keymaps, but I'm meaning to take better advantage
+of nixCat's eponymous categories to modularize my config.
