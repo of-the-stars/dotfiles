@@ -839,7 +839,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- C-k: Toggle signature help (if signature.enabled = true)
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      keymap = { preset = 'enter' },
+      keymap = { preset = 'super-tab' },
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -849,7 +849,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       -- (Default) Only show the documentation popup when manually triggered
       completion = {
-        documentation = { auto_show = false },
+        documentation = { auto_show = true },
 
         menu = {
           draw = {
