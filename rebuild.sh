@@ -13,6 +13,7 @@ pushd "$HOME"/dotfiles/nixos/
     nvim
      
     git -P diff -U0 .
+    git add --all
 
     popd
 
