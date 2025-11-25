@@ -18,7 +18,8 @@
 
   xdg.configFile = {
     "hypr".source = ./../.config/hypr;
-    # "nvim".source = ./../.config/nvim;
+    "nvim".source = ./../.config/nvim;
+    "zellij".source = ./../.config/zellij;
     "dunst".source = ./../.config/dunst;
     "halloy".source = ./../.config/halloy;
     "ncspot".source = ./../.config/ncspot;
