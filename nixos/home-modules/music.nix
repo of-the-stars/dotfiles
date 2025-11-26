@@ -33,7 +33,7 @@
     services.mpdris2.enable = true;
 
     services.mpd-discord-rpc = {
-      enable = false;
+      enable = true;
       /*
            settings = {
           id = 677226551607033903;

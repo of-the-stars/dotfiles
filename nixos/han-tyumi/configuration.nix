@@ -96,10 +96,6 @@ in
     };
   };
 
-  programs.steam = {
-    enable = true;
-  };
-
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -175,6 +171,8 @@ in
   };
 
   programs.zsh.enable = true;
+  programs.kdeconnect.enable = true;
+  programs.steam.enable = true;
 
   programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [
@@ -243,7 +241,6 @@ in
     element-desktop
     firefox
     halloy
-    kdePackages.kdeconnect-kde
     kdePackages.kdeconnect-kde
     kdePackages.marble
     kdePackages.okular
