@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
@@ -13,8 +14,7 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    music.enable =
-      lib.mkEnableOption "Enables music";
+    music.enable = lib.mkEnableOption "Enables music";
   };
 
   config = lib.mkIf config.music.enable {
@@ -30,24 +30,26 @@
       mpd-discord-rpc
     ];
 
+    services.mpdris2.enable = true;
+
     services.mpd-discord-rpc = {
       enable = false;
       /*
-         settings = {
-        id = 677226551607033903;
-        hosts = ["localhost:6600"];
+           settings = {
+          id = 677226551607033903;
+          hosts = ["localhost:6600"];
 
-        format = {
-          details = "$title";
-          state = "$artist / $album / $disc";
-          timestamp = "both";
-          large_image = "notes";
-          small_image = "notes";
-          large_text = "";
-          small_text = "";
-          display_type = "name";
+          format = {
+            details = "$title";
+            state = "$artist / $album / $disc";
+            timestamp = "both";
+            large_image = "notes";
+            small_image = "notes";
+            large_text = "";
+            small_text = "";
+            display_type = "name";
+          };
         };
-      };
       */
     };
 
