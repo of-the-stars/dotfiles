@@ -8,9 +8,6 @@
     ./home-modules
   ];
 
-  home.username = "internet_wizard";
-  home.homeDirectory = "/home/internet_wizard";
-
   home.packages = with pkgs; [
     bat
   ];

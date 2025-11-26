@@ -28,6 +28,7 @@
       ...
     }@inputs:
     let
+      username = "internet_wizard";
     in
     {
       nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
@@ -38,6 +39,7 @@
             nixpkgs-unstable
             home-manager
             home-manager-unstable
+            username
             ;
         };
         modules = [
@@ -48,7 +50,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.internet_wizard = {
+            home-manager.users.${username} = {
+              home.username = "${username}";
+              home.homeDirectory = "/home/${username}";
+
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
@@ -72,7 +77,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.internet_wizard = {
+            home-manager.users.${username} = {
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
