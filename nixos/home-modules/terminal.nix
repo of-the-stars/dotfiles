@@ -24,13 +24,6 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    programs.tmux = {
-      enable = true;
-      clock24 = true;
-      shell = "${pkgs.zsh}/bin/zsh";
-      plugins = with pkgs; [ ];
-    };
-
     programs.zsh = {
       enable = true;
       enableCompletion = true;

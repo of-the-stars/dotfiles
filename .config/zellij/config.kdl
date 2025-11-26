@@ -433,6 +433,8 @@ themes {
 //
 theme "spiced-mocha"
 
+show_startup_tips false
+
 // The name of the default layout to load on startup
 // Default: "default"
 // (Requires restart)
