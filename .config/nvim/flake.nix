@@ -194,9 +194,12 @@
           sharedLibraries = {
             general = with pkgs; [
               # libgit2
+            ];
+            strudel = with pkgs; [
               glib
               nss
               nspr
+              dlib
             ];
           };
 
