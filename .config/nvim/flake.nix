@@ -202,6 +202,7 @@
               dlib
               dbus
               atk
+              cups
             ];
           };
 
