@@ -195,6 +195,7 @@
             general = with pkgs; [
               # libgit2
               glib
+              nss
             ];
           };
 
