@@ -194,6 +194,7 @@
           sharedLibraries = {
             general = with pkgs; [
               # libgit2
+              glib
             ];
           };
 
