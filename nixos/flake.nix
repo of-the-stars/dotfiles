@@ -71,7 +71,7 @@
         specialArgs = { inherit inputs nixpkgs nixpkgs-unstable; };
         modules = [
           ./cyboogie/configuration.nix
-          ./han-tyumi/hardware-configuration.nix
+          ./cyboogie/hardware-configuration.nix
 
           home-manager.nixosModules.home-manager
           {
