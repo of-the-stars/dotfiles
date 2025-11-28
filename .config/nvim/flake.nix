@@ -196,6 +196,7 @@
               # libgit2
               glib
               nss
+              nspr
             ];
           };
 
