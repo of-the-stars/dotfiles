@@ -200,6 +200,7 @@
               nss
               nspr
               dlib
+              dbus
             ];
           };
 
