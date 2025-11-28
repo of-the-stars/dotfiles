@@ -201,6 +201,7 @@
               nspr
               dlib
               dbus
+              atk
             ];
           };
 
