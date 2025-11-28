@@ -268,48 +268,11 @@
               # but we can still send the info from nix to lua that we want it!
               kickstart-gitsigns = true;
 
+              strudel = true;
+
               # we can pass whatever we want actually.
             };
 
-            strudel =
-              {
-                pkgs,
-                name,
-                ...
-              }:
-              {
-                # they contain a settings set defined above
-                # see :help nixCats.flake.outputs.settings
-                settings = {
-                  suffix-path = true;
-                  suffix-LD = true;
-                  wrapRc = true;
-                  # IMPORTANT:
-                  # your alias may not conflict with your other packages.
-                  # aliases = [ "vim" ];
-                  # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
-                  hosts.python3.enable = true;
-                  hosts.node.enable = true;
-                };
-                # and a set of categories that you want
-                # (and other information to pass to lua)
-                categories = {
-                  general = true;
-
-                  kickstart-neo-tree = true;
-                  kickstart-debug = true;
-                  kickstart-lint = true;
-                  kickstart-indent_line = true;
-
-                  # this kickstart extra didnt require any extra plugins
-                  # so it doesnt have a category above.
-                  # but we can still send the info from nix to lua that we want it!
-                  kickstart-gitsigns = true;
-
-                  # we can pass whatever we want actually.
-                  strudel = true;
-                };
-              };
           };
       };
       # In this section, the main thing you will need to do is change the default package name
