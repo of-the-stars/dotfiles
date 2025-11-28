@@ -10,7 +10,7 @@ pushd "$HOME"/dotfiles/nixos/
 
     pushd "$HOME"/dotfiles/
 
-    nvim
+    $EDITOR
      
     git -P diff -U0 .
     git add --all

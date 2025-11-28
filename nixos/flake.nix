@@ -44,7 +44,7 @@
         };
         modules = [
           ./han-tyumi/configuration.nix
-          /etc/nixos/hardware-configuration.nix
+          ./han-tyumi/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -71,7 +71,7 @@
         specialArgs = { inherit inputs nixpkgs nixpkgs-unstable; };
         modules = [
           ./cyboogie/configuration.nix
-          /etc/nixos/hardware-configuration.nix
+          ./han-tyumi/hardware-configuration.nix
 
           home-manager.nixosModules.home-manager
           {
