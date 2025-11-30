@@ -244,7 +244,6 @@ in
     kdePackages.kdeconnect-kde
     kdePackages.marble
     kdePackages.okular
-    kdePackages.xwaylandvideobridge
     nwg-look
     obsidian
     openssl

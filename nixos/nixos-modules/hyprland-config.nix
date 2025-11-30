@@ -58,7 +58,7 @@
       wev
       wireplumber
       wl-clipboard
-      rofi-wayland # Pop up menus
+      rofi # Pop up menus
       rofi-obsidian
       bluez
       brightnessctl

@@ -29,6 +29,8 @@
       pkgs.yubioath-flutter
     ];
 
+    programs.yubikey-manager.enable = true;
+
     programs.gnupg.agent = {
       enable = true;
       enableSSHSupport = true;

@@ -2,14 +2,13 @@
   description = "internet_wizard's system flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs"; # Ensure Home Manager uses the same Nixpkgs as the system
     };
-    home-manager-unstable.url = "github:nix-community/home-manager";
 
     catppuccin.url = "github:catppuccin/nix";
     timr-tui.url = "github:sectore/timr-tui";
@@ -24,7 +23,6 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
-      home-manager-unstable,
       ...
     }@inputs:
     let
@@ -38,7 +36,6 @@
             inputs
             nixpkgs-unstable
             home-manager
-            home-manager-unstable
             username
             ;
         };
@@ -57,7 +54,6 @@
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
-                (home-manager-unstable + "/modules/programs/vivid.nix")
               ];
             };
           }
@@ -81,7 +77,6 @@
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
-                (home-manager-unstable)
               ];
             };
           }
