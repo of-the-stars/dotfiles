@@ -26,6 +26,7 @@
     "sc-im".source = ./../.config/sc-im;
     "tmux".source = ./../.config/tmux;
     "presenterm".source = ./../.config/presenterm;
+    "bat".source = ./../.config/bat;
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 

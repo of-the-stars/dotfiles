@@ -25,7 +25,7 @@
     # Options for modules imported in "imports" can be set here.
 
     programs.bat = {
-      enable = true;
+      # enable = true;
       # settings = {
       #   italic-text = "always";
       #   pager = "less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse";
