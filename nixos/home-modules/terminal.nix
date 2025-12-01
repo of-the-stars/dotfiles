@@ -24,15 +24,7 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    programs.bat = {
-      # enable = true;
-      # settings = {
-      #   italic-text = "always";
-      #   pager = "less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse";
-      #   paging = "never";
-      #   theme = "";
-      # };
-    };
+    programs.bat.enable = true;
 
     programs.zsh = {
       enable = true;
