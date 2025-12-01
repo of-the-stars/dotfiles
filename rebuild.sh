@@ -50,7 +50,8 @@ pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 # git commit -a -m "$gen"
 
 # Uncomment this line if you'd like to write the commit message yourself
-nixos-rebuild list-generations | rg current | git commit -aveF -
+nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5 | git commit -aveF -
+
 
 popd
 

@@ -231,8 +231,8 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix-search wget
   environment.systemPackages = with pkgs; [
-    inputs.nvim.packages.${system}.nvim
-    inputs.timr-tui.packages.${system}.default
+    inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
+    inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
     # inputs.rmpc.packages.${system}.rmpc
 
     bind
