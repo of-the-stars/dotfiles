@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: alpha(@crust, 1);
+  background: alpha(@crust, 0.75);
   color: @text;
   font-family:
     RobtoMono Nerd Font,
@@ -18,10 +18,10 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: alpha(@crust, 0.7);
+  background: alpha(@mantle, 0.7);
   margin: 5px 10px;
   padding: 0 5px;
-  border-radius: 1px;
+  border-radius: 15px;
 }
 .modules-left {
   padding: 0;
@@ -49,7 +49,7 @@ window#waybar {
 #language,
 #mpd {
   padding: 0 10px;
-  border-radius: 1px;
+  border-radius: 15px;
 }
 
 #clock:hover,
@@ -82,7 +82,7 @@ window#waybar {
   font-size: 13pt;
   color: @text;
   border: none;
-  border-radius: 1px;
+  border-radius: 15px;
 }
 
 #workspaces button.active {
@@ -102,5 +102,5 @@ window#waybar {
   transition: color 0.5s;
 }
 #custom-nix:hover {
-  color: @sapphireAlpha;
+  color: alpha(@sapphire, 1);
 }
