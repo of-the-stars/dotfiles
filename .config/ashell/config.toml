@@ -1,6 +1,7 @@
 [appearance]
 font_name = "RobotoMono Nerd Font"
 style = "Solid"
+opacity = 0.9
 
 success_color = "#a6e3a1"
 text_color = "#cdd6f4"
