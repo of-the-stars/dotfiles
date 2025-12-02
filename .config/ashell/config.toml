@@ -5,10 +5,10 @@ style = "Solid"
 success_color = "#a6e3a1"
 text_color = "#cdd6f4"
 
-workspace_colors = ["#fab387", "#b4befe", "#cba6f7"]
+workspace_colors = ["#89b4fa", "#11111b", "#cdd6f4"]
 
 [appearance.primary_color]
-base = "#fab387"
+base = "#89b4fa"
 text = "#1e1e2e"
 
 [appearance.danger_color]
