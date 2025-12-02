@@ -46,24 +46,24 @@
     ];
 
     environment.systemPackages = with pkgs; [
+      ashell # Status bar
+      bluez
+      brightnessctl
       dunst
       grim
       hyprlock # Desktop lock manager
       hyprpaper # Wallpaper manager
       kdePackages.dolphin # File manager
+      libnotify
       networkmanagerapplet
+      pipewire
       playerctl
+      rofi # Pop up menus
+      rofi-obsidian
       slurp
-      waybar # Status bar
       wev
       wireplumber
       wl-clipboard
-      rofi # Pop up menus
-      rofi-obsidian
-      bluez
-      brightnessctl
-      libnotify
-      pipewire
     ];
   };
 }

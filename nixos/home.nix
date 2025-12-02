@@ -12,21 +12,21 @@
   ];
 
   xdg.configFile = {
-    "hypr".source = ./../.config/hypr;
-    "nvim".source = ./../.config/nvim;
-    "zellij".source = ./../.config/zellij;
+    "ashell".source = ./../.config/ashell;
+    "bat".source = ./../.config/bat;
     "dunst".source = ./../.config/dunst;
     "halloy".source = ./../.config/halloy;
-    "ncspot".source = ./../.config/ncspot;
-    "tiny".source = ./../.config/tiny;
+    "hypr".source = ./../.config/hypr;
     "kitty".source = ./../.config/kitty;
-    "waybar".source = ./../.config/waybar;
-    "rofi".source = ./../.config/rofi;
-    "yazi".source = ./../.config/yazi;
-    "sc-im".source = ./../.config/sc-im;
-    "tmux".source = ./../.config/tmux;
+    "ncspot".source = ./../.config/ncspot;
+    "nvim".source = ./../.config/nvim;
     "presenterm".source = ./../.config/presenterm;
-    "bat".source = ./../.config/bat;
+    "rofi".source = ./../.config/rofi;
+    "sc-im".source = ./../.config/sc-im;
+    "tiny".source = ./../.config/tiny;
+    "tmux".source = ./../.config/tmux;
+    "yazi".source = ./../.config/yazi;
+    "zellij".source = ./../.config/zellij;
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 
