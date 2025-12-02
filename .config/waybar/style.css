@@ -21,7 +21,7 @@ window#waybar {
   background: alpha(@mantle, 0.7);
   margin: 5px 10px;
   padding: 0 5px;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 .modules-left {
   padding: 0;
@@ -49,7 +49,7 @@ window#waybar {
 #language,
 #mpd {
   padding: 0 10px;
-  border-radius: 15px;
+  border-radius: 0px;
 }
 
 #clock:hover,
@@ -82,7 +82,7 @@ window#waybar {
   font-size: 13pt;
   color: @text;
   border: none;
-  border-radius: 15px;
+  border-radius: 0px;
 }
 
 #workspaces button.active {
