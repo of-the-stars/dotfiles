@@ -2,8 +2,15 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
+let
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in
 {
   imports = [
     # Paths to other modules.
@@ -52,7 +59,7 @@
       kdePackages.kdenlive # Video editor
       kid3 # Audio tagger
       krita # Drawing program
-      vcv-rack # Modular synthesizers
+      pkgsUnstable.vcv-rack # Modular synthesizers
       vlc # Media player
       yt-dlp # YouTube downloader
     ];

@@ -40,6 +40,7 @@ system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf 
     --border-label ' Choose System Which To Rebuild ' \
     --input-label ' Input ' \
     )"
+
 echo "NixOS Rebuilding..."
 (sudo nixos-rebuild switch --show-trace --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
