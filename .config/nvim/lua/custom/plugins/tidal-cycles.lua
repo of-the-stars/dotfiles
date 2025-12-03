@@ -24,7 +24,7 @@ return {
       -- })
       local superdirt = vim.api.nvim_create_augroup('SuperDirt', { clear = true })
       vim.api.nvim_create_autocmd('BufEnter', {
-        command = 'superdirt-start',
+        command = 'echo we outside!!!',
         group = superdirt,
         pattern = { 'tidal' },
         once = true,
