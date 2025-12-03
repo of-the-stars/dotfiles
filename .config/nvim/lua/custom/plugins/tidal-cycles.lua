@@ -2,13 +2,14 @@ return {
   {
     'tidalcycles/vim-tidal',
     enabled = require('nixCatsUtils').enableForCategory 'tidal-cycles',
-    --vim.api.nvim_create_autocmd('VimEnter', {
+    -- vim.api.nvim_create_autocmd('VimEnter', {
     --  group = vim.api.nvim_create_augroup('autocom', { clear = true }),
     --  pattern = '*.tidal',
     --  callback = function()
     --    vim.fn.system 'superdirt-start'
     --  end,
-    --}),
+    -- }),
+
     config = function()
       -- vim.keymap.set({ 'n', 'v' }, '<leader>ms', '<cmd>TidalSend<cr>', {
       --   desc = '[S]end line(s) to Tidal',
@@ -21,6 +22,13 @@ return {
       -- vim.keymap.set({ 'n', 'v' }, '<CTRL><CR>', '<cmd>TidalHush<cr>', {
       --   desc = '[H]ush Tidal',
       -- })
+      local superdirt = vim.api.nvim_create_augroup('SuperDirt', { clear = true })
+      vim.api.nvim_create_autocmd('BufEnter', {
+        command = 'superdirt-start',
+        group = superdirt,
+        pattern = { 'tidal' },
+        once = true,
+      })
     end,
   },
 }
