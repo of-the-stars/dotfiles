@@ -105,6 +105,7 @@
               rust-analyzer
               rustfmt
               sqls
+              ghc
               stdenv.cc.cc
               stylelint
               stylua
