@@ -255,7 +255,10 @@
               wrapRc = true;
               # IMPORTANT:
               # your alias may not conflict with your other packages.
-              aliases = [ "vim" ];
+              aliases = [
+                "vim"
+                "v"
+              ];
               # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
               hosts.python3.enable = true;
               hosts.node.enable = true;
@@ -295,6 +298,7 @@
               suffix-path = true;
               suffix-LD = true;
               wrapRc = true;
+              aliases = [ "t" ];
               hosts.python3.enable = true;
               hosts.node.enable = true;
             };
@@ -304,15 +308,15 @@
             categories = {
               general = true;
 
-              kickstart-neo-tree = true;
-              kickstart-debug = true;
-              kickstart-lint = true;
+              kickstart-neo-tree = false;
+              kickstart-debug = false;
+              kickstart-lint = false;
               kickstart-indent_line = true;
 
               # this kickstart extra didnt require any extra plugins
               # so it doesnt have a category above.
               # but we can still send the info from nix to lua that we want it!
-              kickstart-gitsigns = true;
+              kickstart-gitsigns = false;
 
               tidal-cycles = true;
 

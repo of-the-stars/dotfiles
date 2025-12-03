@@ -159,6 +159,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://stephango.com/feed.xml";
+        }
+        {
           url = "https://xeiaso.net/blog.rss";
         }
         {
