@@ -9,7 +9,7 @@ return {
     --    vim.fn.system 'superdirt-start'
     --  end,
     -- }),
-
+    event = 'VimEnter',
     config = function()
       -- vim.keymap.set({ 'n', 'v' }, '<leader>ms', '<cmd>TidalSend<cr>', {
       --   desc = '[S]end line(s) to Tidal',
@@ -22,13 +22,12 @@ return {
       -- vim.keymap.set({ 'n', 'v' }, '<CTRL><CR>', '<cmd>TidalHush<cr>', {
       --   desc = '[H]ush Tidal',
       -- })
-      local superdirt = vim.api.nvim_create_augroup('SuperDirt', { clear = true })
       vim.api.nvim_create_autocmd('BufEnter', {
-        group = superdirt,
-        pattern = { 'tidal' },
+        group = vim.api.nvim_create_augroup('SuperDirt', { clear = true }),
+        pattern = { '*.tidal' },
         once = true,
         callback = function()
-          os.execute 'superdirt-start'
+          vim.fn.jobstart({ 'superdirt-start' }, {})
         end,
       })
     end,
