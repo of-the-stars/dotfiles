@@ -112,6 +112,7 @@
               tombi
               universal-ctags
               yaml-language-server
+              haskell-language-server
             ];
             kickstart-debug = [
               delve
@@ -122,8 +123,8 @@
             ];
 
             tidal-cycles = [
-              inputs.tidalcycles-nix.packages.${pkgs.system}.tidal
-              inputs.tidalcycles-nix.packages.${pkgs.system}.superdirt-start
+              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.tidal
+              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.superdirt-start
             ];
           };
 
@@ -190,7 +191,7 @@
             ];
 
             tidal-cycles = [
-              inputs.tidalcycles-nix.packages.${pkgs.system}.vim-tidal
+              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.vim-tidal
             ];
           };
 
@@ -254,7 +255,7 @@
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
-              # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
               hosts.python3.enable = true;
               hosts.node.enable = true;
             };
@@ -273,13 +274,14 @@
               # but we can still send the info from nix to lua that we want it!
               kickstart-gitsigns = true;
 
-              tidal-cycles = false;
+              tidal-cycles = true;
 
               # we can pass whatever we want actually.
             };
 
           };
 
+        # TODO: Make this package more "custom built" for just doing music in tidal. Make it pretty too.
         tidal =
           {
             pkgs,

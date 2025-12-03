@@ -653,6 +653,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.clangd = {}
       servers.sqls = {}
       servers.yamlls = {}
+      servers.hls = {}
 
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
