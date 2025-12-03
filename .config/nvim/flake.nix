@@ -122,8 +122,8 @@
             ];
 
             tidal-cycles = [
-              inputs.tidalcycles-nix.${stdenv.hostPlatform.system}.tidal
-              inputs.tidalcycles-nix.${stdenv.hostPlatform.system}.superdirt-start
+              inputs.tidalcycles-nix.packages.${pkgs.system}.tidal
+              inputs.tidalcycles-nix.packages.${pkgs.system}.superdirt-start
             ];
           };
 
@@ -190,7 +190,7 @@
             ];
 
             tidal-cycles = [
-              inputs.tidalcycles-nix.${stdenv.hostPlatform.system}.vim-tidal
+              inputs.tidalcycles-nix.packages.${pkgs.system}.vim-tidal
             ];
           };
 
@@ -273,48 +273,48 @@
               # but we can still send the info from nix to lua that we want it!
               kickstart-gitsigns = true;
 
-              tidal-cycles = false;
-
-              # we can pass whatever we want actually.
-            };
-
-          };
-
-        tidal =
-          {
-            pkgs,
-            name,
-          }:
-          {
-            # see :help nixCats.flake.outputs.settings
-            settings = {
-              suffix-path = true;
-              suffix-LD = true;
-              wrapRc = true;
-              hosts.python3.enable = true;
-              hosts.node.enable = true;
-            };
-
-            # and a set of categories that you want
-            # (and other information to pass to lua)
-            categories = {
-              general = true;
-
-              kickstart-neo-tree = true;
-              kickstart-debug = true;
-              kickstart-lint = true;
-              kickstart-indent_line = true;
-
-              # this kickstart extra didnt require any extra plugins
-              # so it doesnt have a category above.
-              # but we can still send the info from nix to lua that we want it!
-              kickstart-gitsigns = true;
-
               tidal-cycles = true;
 
               # we can pass whatever we want actually.
             };
+
           };
+
+        # tidal =
+        #   {
+        #     pkgs,
+        #     name,
+        #   }:
+        #   {
+        #     # see :help nixCats.flake.outputs.settings
+        #     settings = {
+        #       suffix-path = true;
+        #       suffix-LD = true;
+        #       wrapRc = true;
+        #       hosts.python3.enable = true;
+        #       hosts.node.enable = true;
+        #     };
+        #
+        #     # and a set of categories that you want
+        #     # (and other information to pass to lua)
+        #     categories = {
+        #       general = true;
+        #
+        #       kickstart-neo-tree = true;
+        #       kickstart-debug = true;
+        #       kickstart-lint = true;
+        #       kickstart-indent_line = true;
+        #
+        #       # this kickstart extra didnt require any extra plugins
+        #       # so it doesnt have a category above.
+        #       # but we can still send the info from nix to lua that we want it!
+        #       kickstart-gitsigns = true;
+        #
+        #       tidal-cycles = true;
+        #
+        #       # we can pass whatever we want actually.
+        #     };
+        #   };
       };
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.

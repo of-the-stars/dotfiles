@@ -159,6 +159,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://xeiaso.net/blog.rss";
+        }
+        {
           url = "https://www.sethdickinson.com/feed";
         }
         {
