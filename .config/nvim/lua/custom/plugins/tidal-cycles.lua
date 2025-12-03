@@ -10,6 +10,13 @@ return {
     --  end,
     -- }),
     event = 'VimEnter',
+    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufReadPost' }, {
+      group = vim.api.nvim_create_augroup('SuperDirt', { clear = true }),
+      pattern = { '*.tidal' },
+      callback = function()
+        vim.fn.jobstart({ 'superdirt-start' }, {})
+      end,
+    }),
     config = function()
       -- vim.keymap.set({ 'n', 'v' }, '<leader>ms', '<cmd>TidalSend<cr>', {
       --   desc = '[S]end line(s) to Tidal',
@@ -22,14 +29,6 @@ return {
       -- vim.keymap.set({ 'n', 'v' }, '<CTRL><CR>', '<cmd>TidalHush<cr>', {
       --   desc = '[H]ush Tidal',
       -- })
-      vim.api.nvim_create_autocmd('BufEnter', {
-        group = vim.api.nvim_create_augroup('SuperDirt', { clear = true }),
-        pattern = { '*.tidal' },
-        once = true,
-        callback = function()
-          vim.fn.jobstart({ 'superdirt-start' }, {})
-        end,
-      })
     end,
   },
 }
