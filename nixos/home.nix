@@ -25,8 +25,10 @@
     "sc-im".source = ./../.config/sc-im;
     "tiny".source = ./../.config/tiny;
     "tmux".source = ./../.config/tmux;
+    "waybar".source = ./../.config/waybar;
     "yazi".source = ./../.config/yazi;
     "zellij".source = ./../.config/zellij;
+
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
 
