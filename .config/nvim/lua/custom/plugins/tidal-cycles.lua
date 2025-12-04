@@ -23,13 +23,13 @@ return {
       --   desc = '[H]ush Tidal',
       -- })
 
-    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufReadPost' }, {
-      group = vim.api.nvim_create_augroup('SuperDirt', { clear = true }),
-      pattern = { '*.tidal' },
-      callback = function()
+    -- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufReadPost' }, {
+    --   group = vim.api.nvim_create_augroup('SuperDirt', { clear = true }),
+    --   pattern = { '*.tidal' },
+    --   callback = function()
         vim.fn.jobstart({ 'superdirt-start' }, {})
-      end,
-    }),
+    --   end,
+    -- })
     end,
   },
 }
