@@ -245,7 +245,7 @@ in
     bind
     bitwarden-desktop
     discord
-    element-desktop
+    fractal
     firefox
     halloy
     kdePackages.kdeconnect-kde

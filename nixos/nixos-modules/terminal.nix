@@ -54,11 +54,6 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-      # avrdude
-      # avrlibc
-      # pkgsCross.avr.buildPackages.binutils
-      # pkgsCross.avr.buildPackages.gcc
-      # ravedude
 
       pkgsUnstable.presenterm
 
