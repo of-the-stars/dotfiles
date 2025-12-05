@@ -14,6 +14,8 @@ return {
         detach = false,
       }, on_exit)
       print('Superdirt Started; PID: ' .. superdirt.pid)
+
+      vim.keymap.set({ 'n' }, '<leader>w', '<cmd>w<cr>vip<cmd>TidalSend<cr>')
     end,
   },
 }
