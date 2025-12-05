@@ -7,19 +7,18 @@
 }
 
 window#waybar {
-  background: alpha(@crust, 0.9);
+  /* background: alpha(@crust, 0.9); */
   color: @text;
   font-family:
     RobtoMono Nerd Font,
     feather;
   transition: background-color 0.5s;
-  margin: 5px 10px;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  /* background: alpha(@crust, 0.7); */
+  background: alpha(@crust, 0.94);
   margin: 5px 10px;
   padding: 0 5px;
   border-radius: 0px;
