@@ -13,6 +13,7 @@ window#waybar {
     RobtoMono Nerd Font,
     feather;
   transition: background-color 0.5s;
+  margin: 5px 10px;
 }
 
 .modules-left,
@@ -74,7 +75,7 @@ window#waybar {
 }
 
 #workspaces button {
-  background: alpha(@mantle, 0.5);
+  /* background: alpha(@mantle, 0.5); */
   font-family:
     RobotoMono Nerd Font,
     feather;
