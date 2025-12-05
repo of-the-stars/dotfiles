@@ -20,7 +20,7 @@
   urgent-background:           @background;
   selected-normal-foreground:  @lightbg;
   active-foreground:           @blue;
-  background:                  @base;
+  background:                  @crust;
   selected-active-background:  @blue;
   active-background:           @background;
   selected-normal-background:  @lightfg;

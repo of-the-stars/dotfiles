@@ -25,6 +25,12 @@ in
     "flakes"
   ];
 
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "blue";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -149,8 +155,6 @@ in
   #     "bluez5.roles" = ["hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag"];
   #   };
   # };
-
-  catppuccin.enable = true;
 
   # Fonts
   fonts.packages = with pkgs; [

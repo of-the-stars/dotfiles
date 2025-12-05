@@ -42,6 +42,7 @@
         modules = [
           ./han-tyumi/configuration.nix
           ./han-tyumi/hardware-configuration.nix
+          inputs.catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -50,15 +51,12 @@
             home-manager.users.${username} = {
               home.username = "${username}";
               home.homeDirectory = "/home/${username}";
-
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
               ];
             };
           }
-
-          inputs.catppuccin.nixosModules.catppuccin
         ];
       };
 
