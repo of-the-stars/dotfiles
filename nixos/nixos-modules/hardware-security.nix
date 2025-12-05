@@ -36,6 +36,12 @@
       enableSSHSupport = true;
     };
 
+    # services.yubikey-agent.enable = true;
+    # security.pam.yubico = {
+    #   enable = true;
+    #   id = "1050:0402";
+    # };
+
     environment.systemPackages = with pkgs; [
       yubioath-flutter
     ];
