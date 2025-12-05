@@ -278,7 +278,7 @@
               # but we can still send the info from nix to lua that we want it!
               kickstart-gitsigns = true;
 
-              tidal-cycles = true;
+              tidal-cycles = false;
 
               # we can pass whatever we want actually.
             };
