@@ -1,11 +1,4 @@
 {
-    "custom/nix": {
-        "format": "",
-        "tooltip": true,
-        "tooltip-format": "btw"
-    },
-
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -83,10 +76,6 @@
         "format-plugged": "  {capacity}%",
         "format-alt": "{time}  {icon}",
         "format-icons": ["", "", "", "", ""]
-    },
-
-    "battery#bat2": {
-        "bat": "BAT2"
     },
 
     "clock": {

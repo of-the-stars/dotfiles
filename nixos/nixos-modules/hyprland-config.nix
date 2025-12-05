@@ -65,6 +65,7 @@
       wev
       wireplumber
       wl-clipboard
+      pavucontrol
     ];
   };
 }
