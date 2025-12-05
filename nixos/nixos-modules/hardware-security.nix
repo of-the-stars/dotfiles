@@ -39,5 +39,7 @@
     environment.systemPackages = with pkgs; [
       yubioath-flutter
     ];
+
+    services.gnome.gnome-keyring.enable = true;
   };
 }
