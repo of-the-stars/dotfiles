@@ -14,10 +14,10 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    hardware-security.enable = lib.mkEnableOption "Enable rigorous authentication";
+    security.enable = lib.mkEnableOption "Enable rigorous authentication";
   };
 
-  config = lib.mkIf config.hardware-security.enable {
+  config = lib.mkIf config.security.enable {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
@@ -44,8 +44,10 @@
 
     environment.systemPackages = with pkgs; [
       yubioath-flutter
+      seahorse
     ];
 
     services.gnome.gnome-keyring.enable = true;
+
   };
 }
