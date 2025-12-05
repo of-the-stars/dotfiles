@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: alpha(@crust, 0.75);
+  background: alpha(@crust, 0.9);
   color: @text;
   font-family:
     RobtoMono Nerd Font,
@@ -18,7 +18,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: alpha(@mantle, 0.7);
+  /* background: alpha(@crust, 0.7); */
   margin: 5px 10px;
   padding: 0 5px;
   border-radius: 0px;
