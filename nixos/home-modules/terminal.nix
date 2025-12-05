@@ -178,6 +178,12 @@
           title = "kglw.net";
           tags = [
             "music"
+          ];
+        }
+        {
+          url = "https://kglw.net/blog/feed";
+          tags = [
+            "music"
             "writing"
           ];
         }
