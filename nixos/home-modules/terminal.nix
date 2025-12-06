@@ -165,6 +165,9 @@
           url = "https://xeiaso.net/blog.rss";
         }
         {
+          url = "https://artemis.sh/feed.xml";
+        }
+        {
           url = "https://www.sethdickinson.com/feed";
         }
         {
