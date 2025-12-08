@@ -22,6 +22,8 @@ if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
 fi
 
+echo "NixOS Rebuilding..."
+
 # Opens up a menu with each system that can be built and switches to that system
 system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf \
     --color='border:blue' \
@@ -41,10 +43,9 @@ system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf 
     --input-label ' Input ' \
     )"
 
-echo "NixOS Rebuilding..."
 (sudo nixos-rebuild switch --show-trace --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
-pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
+pw-play --volume=0.5 "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 
 # Uncomment these two lines if you'd like to have the commit message just be the generation details
 # gen=$(nixos-rebuild list-generations | rg current) 
@@ -52,7 +53,6 @@ pw-play "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 
 # Uncomment this line if you'd like to write the commit message yourself
 nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5 | git commit -aveF -
-
 
 popd
 
