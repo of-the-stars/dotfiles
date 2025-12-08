@@ -12,6 +12,7 @@
 
     catppuccin.url = "github:catppuccin/nix";
     timr-tui.url = "github:sectore/timr-tui";
+    izrss.url = "github:isabelroses/izrss";
 
     # custom neovim configuration flake
     nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
@@ -54,6 +55,17 @@
               imports = [
                 ./home.nix
                 inputs.catppuccin.homeModules.catppuccin
+                inputs.izrss.homeManagerModules.default
+                {
+                  programs.izrss = {
+                    enable = true;
+                    settings.urls = [
+                      "https://uncenter.dev/feed.xml"
+                      "https://stephango.com/feed.xml"
+                      "https://isabelroses.com/feed.xml"
+                    ];
+                  };
+                }
               ];
             };
           }
