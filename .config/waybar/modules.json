@@ -39,6 +39,16 @@
     },
 
     "network": {
+        "format-wifi": " ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+	    "on-click": "nm-connection-editor"
+    },
+
+
+    "network.bak": {
         "format-wifi": "   {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
