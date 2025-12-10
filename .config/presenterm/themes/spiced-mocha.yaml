@@ -145,8 +145,8 @@ mermaid:
 d2:
   theme: 200
 
-layout_grid:
-  color: palette:blue
+# layout_grid:
+#   color: palette:blue
 
 palette:
   colors:
