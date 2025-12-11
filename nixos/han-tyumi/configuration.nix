@@ -172,6 +172,7 @@ in
       "video"
       "jackaudio"
       "audio"
+      "cdrom"
     ];
     shell = pkgs.zsh;
   };
