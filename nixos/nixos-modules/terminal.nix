@@ -80,6 +80,7 @@ in
       jq # Print and parse `.json`
       lazygit # TUI for `git`
       mat2 # Metadata removal tool
+      mdbook # Create markdown books
       mprocs # Run multiple commands in parallel
       nix-search-cli # Search nixpkgs
       nmap # Map the network
