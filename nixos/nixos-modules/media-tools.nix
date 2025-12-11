@@ -55,7 +55,7 @@ in
       gimp # Image editor
       handbrake
       inkscape
-      kdePackages.k3b # CD and DVD manager
+      pkgsUnstable.kdePackages.k3b # CD and DVD manager
       kdePackages.kdenlive # Video editor
       kid3 # Audio tagger
       krita # Drawing program
