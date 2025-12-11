@@ -763,7 +763,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         lua = { 'stylua' },
         nix = { 'nixfmt' },
         rust = { 'rustfmt', 'leptosfmt' },
-        markdown = { 'prettierd' },
+        -- markdown = { 'prettierd' },
         toml = { 'taplo' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
