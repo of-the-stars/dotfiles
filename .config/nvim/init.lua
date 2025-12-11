@@ -1047,17 +1047,17 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
     lazy = false,
     dependencies = {
-      {
-        'OXY2DEV/markview.nvim',
-        opts = {
-          preview = {
-            icon_provider = 'mini',
-            linewise_hybrid_mode = true,
-            modes = { 'i', 'n', 'no', 'c' },
-            hybrid_modes = { 'i' },
-          },
-        },
-      },
+      -- {
+      --   'OXY2DEV/markview.nvim',
+      --   opts = {
+      --     preview = {
+      --       icon_provider = 'mini',
+      --       linewise_hybrid_mode = true,
+      --       modes = { 'i', 'n', 'no', 'c' },
+      --       hybrid_modes = { 'i' },
+      --     },
+      --   },
+      -- },
     },
     opts = {
       -- NOTE: nixCats: use lazyAdd to only set these 2 options if nix wasnt involved.
