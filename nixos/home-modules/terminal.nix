@@ -159,6 +159,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://casualcompute.com/";
+        }
+        {
           url = "https://uncenter.dev/feed.xml";
         }
         {
