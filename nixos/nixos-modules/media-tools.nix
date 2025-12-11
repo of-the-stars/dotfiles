@@ -62,6 +62,25 @@ in
       pkgsUnstable.vcv-rack # Modular synthesizers
       vlc # Media player
       yt-dlp # YouTube downloader
+      cdrdao
+      cdrtools
     ];
+
+    security.wrappers = {
+      cdrdao = {
+        setuid = true;
+        owner = "root";
+        group = "cdrom";
+        permissions = "u+wrx,g+x";
+        source = "${pkgs.cdrdao}/bin/cdrdao";
+      };
+      cdrecord = {
+        setuid = true;
+        owner = "root";
+        group = "cdrom";
+        permissions = "u+wrx,g+x";
+        source = "${pkgs.cdrtools}/bin/cdrecord";
+      };
+    };
   };
 }
