@@ -89,13 +89,18 @@
               curl
               fd
               fzf
+              ghc
+              haskell-language-server
               just-formatter
+              just-formatter
+              just-lsp
               leptosfmt
               lua-language-server
               markdown-oxide
               marksman
               matlab-language-server
               mdformat
+              mdsf
               nix-doc
               nixd
               nixfmt
@@ -105,7 +110,6 @@
               rust-analyzer
               rustfmt
               sqls
-              ghc
               stdenv.cc.cc
               stylelint
               stylua
@@ -113,7 +117,6 @@
               tombi
               universal-ctags
               yaml-language-server
-              haskell-language-server
             ];
             kickstart-debug = [
               delve

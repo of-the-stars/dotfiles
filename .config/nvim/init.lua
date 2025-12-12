@@ -654,6 +654,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.sqls = {}
       servers.yamlls = {}
       servers.hls = {}
+      servers.just = {}
 
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
@@ -759,12 +760,13 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       formatters_by_ft = {
         cpp = { 'clang-format' },
         css = { 'prettierd' },
-        -- just = { 'just' },
         lua = { 'stylua' },
         nix = { 'nixfmt' },
         rust = { 'rustfmt', 'leptosfmt' },
         -- markdown = { 'prettierd' },
         toml = { 'taplo' },
+        just = { 'just-formatter' },
+        markdown = { 'mdsf' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
