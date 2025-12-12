@@ -159,6 +159,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://drewdevault.com/blog/index.xml";
+        }
+        {
           url = "https://casualcompute.com/";
         }
         {
