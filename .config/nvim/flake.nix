@@ -113,7 +113,6 @@
               stdenv.cc.cc
               stylelint
               stylua
-              taplo
               tombi
               universal-ctags
               yaml-language-server
