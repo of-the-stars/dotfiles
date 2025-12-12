@@ -229,14 +229,6 @@
           tags = [ "music" ];
         }
         {
-          url = "https://awesomekling.github.io/feed.xml";
-          title = "Andreas Kling";
-          tags = [
-            "programming"
-            "cpp"
-          ];
-        }
-        {
           url = "https://scientificcomputing.rs/monthly/rss.xml";
           title = "Scientific Computing in Rust";
           tags = [
