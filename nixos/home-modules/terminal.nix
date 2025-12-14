@@ -159,6 +159,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://jvns.ca/atom.xml";
+        }
+        {
           url = "https://drewdevault.com/blog/index.xml";
         }
         {
