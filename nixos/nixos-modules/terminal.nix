@@ -104,6 +104,7 @@ in
       whois # Domain registration lookup
       wl-clipboard # Manage system clipboard from the command line
       zellij # Terminal multiplexer
+      esp-generate # Generate #[no_std] ESP32 Rust projects
     ];
   };
 }
