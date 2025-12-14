@@ -631,10 +631,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
             diagnostics = {
               enable = true,
             },
-            checkOnSave = {
-              command = 'clippy',
-              extraArgs = {},
-            },
             -- procMacro = {
             --   ignored = {
             --     leptos_macro = {
