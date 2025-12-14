@@ -162,6 +162,9 @@
           url = "https://sgt.hootr.club/rss.xml";
         }
         {
+          url = "https://mabez.dev/rss.xml";
+        }
+        {
           url = "https://jvns.ca/atom.xml";
         }
         {
