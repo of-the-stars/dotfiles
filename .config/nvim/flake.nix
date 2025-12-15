@@ -82,6 +82,7 @@
           # this includes LSPs
           lspsAndRuntimeDeps = with pkgs; {
             general = [
+              djlint
               bacon
               bash-language-server
               clang-tools
