@@ -800,6 +800,12 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
             return args
           end,
         },
+        djlint = {
+          args = function()
+            local args = { '--indent 2' }
+            return args
+          end,
+        },
       },
     },
   },
