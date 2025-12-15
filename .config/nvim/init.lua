@@ -801,10 +801,10 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           end,
         },
         djlint = {
-          args = function()
-            local args = { '--indent', '2' }
-            return args
-          end,
+          -- args = function()
+          --   local args = { '--indent', '2' }
+          --   return args
+          -- end,
         },
       },
     },
