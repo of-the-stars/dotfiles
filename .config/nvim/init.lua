@@ -652,6 +652,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.hls = {}
       servers.just = {}
       servers.tombi = {}
+      servers.css_variables = {}
+      servers.html = {}
 
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
@@ -757,6 +759,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       formatters_by_ft = {
         cpp = { 'clang-format' },
         css = { 'prettierd' },
+        scss = { 'prettierd' },
+        html = { 'prettierd' },
         lua = { 'stylua' },
         nix = { 'nixfmt' },
         rust = { 'rustfmt', 'leptosfmt' },
