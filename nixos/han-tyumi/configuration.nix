@@ -299,6 +299,7 @@ in
     usbutils
     gnome-disk-utility
     wine
+    gnome-system-monitor
   ];
 
   # programs.firefox = {
