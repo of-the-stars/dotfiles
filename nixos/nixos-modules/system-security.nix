@@ -27,16 +27,17 @@
 
     programs.yubikey-manager.enable = true;
 
+    # services.gnome.gnome-keyring.enable = true;
+
     programs.gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
 
-    # services.yubikey-agent.enable = true;
-    # security.pam.yubico = {
-    #   enable = true;
-    #   id = "1050:0402";
-    # };
+    services = {
+      pcscd.enable = true; # Smartcard service
+      udev.packages = [ pkgs.yubikey-personalization ];
+    };
 
     security.pam.services = {
       login.u2fAuth = true;
@@ -49,8 +50,8 @@
     security.pam.u2f = {
       enable = true;
       settings = {
-        interactive = true;
-        cue = true;
+        interactive = false; # Tells user to insert their key
+        cue = false; # Tells user that they have to press the button
         origin = "pam://yubi";
         authfile = pkgs.writeText "u2f-mappings" (
           lib.concatStrings [
@@ -64,13 +65,5 @@
     environment.systemPackages = with pkgs; [
       seahorse
     ];
-
-    services = {
-      pcscd.enable = true;
-      udev.packages = [ pkgs.yubikey-personalization ];
-    };
-
-    # services.gnome.gnome-keyring.enable = true;
-
   };
 }
