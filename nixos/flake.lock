@@ -261,8 +261,8 @@
         "tidalcycles-nix": "tidalcycles-nix"
       },
       "locked": {
-        "lastModified": 1765939544,
-        "narHash": "sha256-dYjs5h5yluiBTC6L5X9UwtS7aUZz8hvbVNbKjq1UIpw=",
+        "lastModified": 1766022652,
+        "narHash": "sha256-cOPkb8tXq/eSnElF/DwQ8n6i1FuSuMiBhuwAbG+bJIU=",
         "path": "/home/internet_wizard/dotfiles/.config/nvim/",
         "type": "path"
       },
