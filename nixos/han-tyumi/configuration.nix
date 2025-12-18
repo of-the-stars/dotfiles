@@ -300,6 +300,7 @@ in
     gnome-disk-utility
     wine
     gnome-system-monitor
+    lm_sensors
   ];
 
   # programs.firefox = {
