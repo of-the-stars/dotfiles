@@ -64,6 +64,7 @@
 
     environment.systemPackages = with pkgs; [
       seahorse
+      yubioath-flutter
     ];
   };
 }
