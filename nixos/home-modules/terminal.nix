@@ -24,6 +24,15 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
+    # home.packages = [
+    #   pkgs.writeShellApplication
+    #   {
+    #     name = "rebuild";
+    #     runtimeInputs = with pkgs; [ ];
+    #     text = '''';
+    #   }
+    # ];
+
     programs.bat.enable = true;
 
     programs.zsh = {
