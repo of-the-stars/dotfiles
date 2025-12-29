@@ -168,6 +168,9 @@
       urls = [
         # TODO: Tag and make the urls pretty
         {
+          url = "https://pwy.io/posts/feed.xml";
+        }
+        {
           url = "https://sgt.hootr.club/rss.xml";
         }
         {
