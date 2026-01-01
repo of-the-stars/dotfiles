@@ -163,6 +163,31 @@ in
   #   variant = "";
   # };
 
+  systemd.timers."nye" = {
+    timerConfig = {
+      # OnBootSec = "5m";
+      # OnUnitActiveSec = "5m";
+      # Alternatively, if you prefer to specify an exact timestamp
+      # like one does in cron, you can use the `OnCalendar` option
+      # to specify a calendar event expression.
+      # Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
+      #OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
+      OnCalendar = "*-12-31 23:00:00 America/Chicago";
+      Unit = "nye.service";
+    };
+  };
+
+  systemd.services."nye" = {
+    script = ''
+      set -eu
+      ${pkgs.pipewire}/bin/pipewire "~/Music/Laminated Denim/King Gizzard & The Lizard Wizard - Laminated Denim - 01 The Land Before Timeland.flac"
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${username}";
+    };
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
