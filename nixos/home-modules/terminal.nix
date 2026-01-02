@@ -79,7 +79,11 @@
 
         # Some fun stuff :))
 
-        fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
+        # fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
+
+        # To remind myself what it's all about
+
+        bat ~/Log4Stell/02-Permanent/2026-01-02T0118\ 2026\ Resolutions.md
       '';
     };
 
