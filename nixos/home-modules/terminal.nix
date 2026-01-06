@@ -78,7 +78,7 @@
         }
 
         # Colorizes help pages with bat
-        alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+        # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain' # '-h' might not be an alias for help, so i'm disabling this by default
         alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
         # Some fun stuff :))
