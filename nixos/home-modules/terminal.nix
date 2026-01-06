@@ -77,6 +77,10 @@
             for a in *.zip; do unzip "$a" -d "''${a%.zip}"; done
         }
 
+        # Colorizes help pages with bat
+        alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+        alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+
         # Some fun stuff :))
 
         # fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
