@@ -47,23 +47,24 @@ in
     };
 
     environment.systemPackages = with pkgs; [
+      pkgsUnstable.kdePackages.k3b # CD and DVD manager
+
       aseprite # Sprite drawing program
       audacity # Audio editor
+      cdrdao
+      cdrtools
       droidcam
       dvgrab # DV Camcorder Video Capture
       ffmpeg # Video format transcription
       gimp # Image editor
       handbrake
       inkscape
-      pkgsUnstable.kdePackages.k3b # CD and DVD manager
       kdePackages.kdenlive # Video editor
       kid3 # Audio tagger
       krita # Drawing program
-      pkgsUnstable.vcv-rack # Modular synthesizers
+      vcv-rack # Modular synthesizers
       vlc # Media player
       yt-dlp # YouTube downloader
-      cdrdao
-      cdrtools
     ];
 
     security.wrappers = {

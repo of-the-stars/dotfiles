@@ -10,11 +10,13 @@
     # Paths to other modules.
     # Compose this module out of smaller ones.
     ./terminal.nix
-    ./hyprland-config.nix
     ./media-tools.nix
     ./networking-tools.nix
     ./virtual-machines.nix
     ./system-security.nix
+
+    ./hyprland-config.nix
+    ./kde-config.nix
   ];
 
   options = {
@@ -31,10 +33,13 @@
     # Options for modules imported in "imports" can be set here.
 
     terminal.enable = lib.mkDefault true;
-    hyprland-config.enable = lib.mkDefault true;
     media-tools.enable = lib.mkDefault true;
     networking-tools.enable = lib.mkDefault true;
     system-security.enable = lib.mkDefault true;
     virtual-machines.enable = lib.mkDefault false;
+
+    # Makes each host choose their desktop setup
+    hyprland-config.enable = lib.mkDefault false;
+    kde-config.enable = lib.mkDefault false;
   };
 }
