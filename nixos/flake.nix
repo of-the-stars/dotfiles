@@ -95,7 +95,7 @@
         ];
       };
 
-      nixosConfigurations.orca =
+      nixosConfigurations.matriarch =
         let
           gf_username = "syren";
         in
