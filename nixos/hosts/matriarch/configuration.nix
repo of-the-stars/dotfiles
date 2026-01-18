@@ -18,8 +18,7 @@ let
 in
 {
   imports = [
-    ./../nixos-modules
-    /etc/nixos/hardware-configuration.nix
+    ./../../nixos-modules
   ];
 
   kde-config.enable = true;
