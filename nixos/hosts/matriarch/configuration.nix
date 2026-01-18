@@ -19,6 +19,7 @@ in
 {
   imports = [
     ./../nixos-modules
+    /etc/nixos/hardware-configuration.nix
   ];
 
   kde-config.enable = true;
