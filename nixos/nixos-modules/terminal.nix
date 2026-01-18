@@ -21,7 +21,7 @@ in
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    terminal.enable = lib.mkEnableOption "Enables terminal";
+    terminal.enable = lib.mkEnableOption "Enables terminal emulator and terminal applications";
   };
 
   config = lib.mkIf config.terminal.enable {
@@ -54,18 +54,20 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-
       pkgsUnstable.presenterm
 
       asciinema # Record your terminal session
       bitwarden-cli
       bsdgames # NetBSD games!
+      btop
       cargo # The Rust package manager
       cargo-generate # Generate rust projects
       cargo-info # Get info on crates
+      cmatrix # Just a glitch
       cowsay # Moo!
       docker
       dust # Modern `du`
+      esp-generate # Generate #[no_std] ESP32 Rust projects
       exiftool
       fastfetch # Fetch system details; `neofetch` replacement
       fd # Modern `find`
@@ -91,7 +93,6 @@ in
       rename
       ripgrep # Modern `grep`
       ripgrep-all
-      rustc # Rust compiler
       rusty-man
       sc-im # Spreadsheet calculator, improved
       screen # Terminal multiplexer, although I just use it for serial ports
@@ -104,9 +105,6 @@ in
       whois # Domain registration lookup
       wl-clipboard # Manage system clipboard from the command line
       zellij # Terminal multiplexer
-      esp-generate # Generate #[no_std] ESP32 Rust projects
-      cmatrix
-      btop
     ];
   };
 }

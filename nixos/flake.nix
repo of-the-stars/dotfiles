@@ -41,8 +41,7 @@
             ;
         };
         modules = [
-          ./han-tyumi/configuration.nix
-          ./han-tyumi/hardware-configuration.nix
+          ./hosts/han-tyumi
           inputs.catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {
@@ -76,8 +75,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs nixpkgs nixpkgs-unstable; };
         modules = [
-          ./cyboogie/configuration.nix
-          ./cyboogie/hardware-configuration.nix
+          ./hosts/cyboogie
 
           home-manager.nixosModules.home-manager
           {
@@ -96,5 +94,40 @@
           "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
         ];
       };
+
+      nixosConfigurations.orca =
+        let
+          gf_username = "syren";
+        in
+        inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit
+              inputs
+              nixpkgs
+              nixpkgs-unstable
+              username
+              gf_username
+              ;
+          };
+          modules = [
+            ./hosts/matriarch
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users = {
+                ${username} = {
+                  imports = [
+                    ./home.nix
+                    inputs.catppuccin.homeModules.catppuccin
+                  ];
+                };
+                ${gf_username} = { };
+              };
+            }
+          ];
+        };
     };
 }
