@@ -25,37 +25,38 @@ in
     terminal.extra.enable = lib.mkEnableOption "Enables extra terminal applications";
   };
 
-  config =
-    lib.mkIf config.terminal.enable {
-      # Option definitions.
-      # Define what other settings, services and resources should be active.
-      # Usually these depend on whether a user of this module chose to "enable" it
-      # using the "option" above.
-      # Options for modules imported in "imports" can be set here.
+  config = lib.mkIf config.terminal.enable {
+    # Option definitions.
+    # Define what other settings, services and resources should be active.
+    # Usually these depend on whether a user of this module chose to "enable" it
+    # using the "option" above.
+    # Options for modules imported in "imports" can be set here.
 
-      xdg.terminal-exec = {
-        enable = true;
-        settings = {
-          default = [
-            "kitty.desktop"
-          ];
-        };
+    xdg.terminal-exec = {
+      enable = true;
+      settings = {
+        default = [
+          "kitty.desktop"
+        ];
       };
+    };
 
-      programs.starship = {
-        enable = true;
-      };
+    programs.starship = {
+      enable = true;
+    };
 
-      environment.variables = {
-        SUDO_EDITOR = "nvim";
-        EDITOR = "nvim";
-        VISUAL = "nvim";
-        SYSTEMD_EDITOR = "nvim";
-        TERM = "kitty";
-        PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-      };
+    environment.variables = {
+      SUDO_EDITOR = "nvim";
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      SYSTEMD_EDITOR = "nvim";
+      TERM = "kitty";
+      PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    };
 
-      environment.systemPackages = with pkgs; [
+    environment.systemPackages =
+      with pkgs;
+      [
         kitty
 
         pkgsUnstable.presenterm
@@ -80,10 +81,8 @@ in
         unzip
         whois # Domain registration lookup
         wl-clipboard # Manage system clipboard from the command line
-      ];
-    }
-    // lib.mkIf config.terminal.extra.enable {
-      environment.systemPackages = with pkgs; [
+      ]
+      ++ lib.optionals config.terminal.extra.enable [
         asciinema # Record your terminal session
         bitwarden-cli
         bsdgames # NetBSD games!
@@ -114,5 +113,5 @@ in
         tldr # Community-maintained manpage alternative with examples
         zellij # Terminal multiplexer
       ];
-    };
+  };
 }

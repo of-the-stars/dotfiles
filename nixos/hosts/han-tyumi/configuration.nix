@@ -5,7 +5,7 @@
   config,
   pkgs,
   inputs,
-  username,
+  stellae,
   hostname,
   lib,
   ...
@@ -192,7 +192,7 @@ in
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "${username}";
+      User = "${stellae}";
     };
   };
 
@@ -229,9 +229,9 @@ in
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
+  users.users.${stellae} = {
     isNormalUser = true;
-    description = "Stell";
+    description = "Stellae";
     extraGroups = [
       "networkmanager"
       "wheel"

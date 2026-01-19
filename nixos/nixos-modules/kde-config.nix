@@ -17,7 +17,7 @@
     kde-config.enable = lib.mkEnableOption "Enables KDE";
   };
 
-  config = lib.mkIf config.hyprland-config.enable {
+  config = lib.mkIf config.kde-config.enable {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it

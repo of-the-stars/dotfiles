@@ -22,6 +22,7 @@ in
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
     media-tools.enable = lib.mkEnableOption "Enable media tools";
+    media-tools.extra.enable = lib.mkEnableOption "Enables extra media tools";
   };
 
   config =
@@ -32,14 +33,30 @@ in
       # using the "option" above.
       # Options for modules imported in "imports" can be set here.
 
-      environment.systemPackages = with pkgs; [
-        audacity # Audio editor
-        ffmpeg # Video format transcription
-        gimp # Image editor
-        krita # Drawing program
-        vlc # Media player
-        yt-dlp # YouTube downloader
-      ];
+      environment.systemPackages =
+        with pkgs;
+        [
+          audacity # Audio editor
+          ffmpeg # Video format transcription
+          gimp # Image editor
+          krita # Drawing program
+          vlc # Media player
+          yt-dlp # YouTube downloader
+        ]
+        ++ lib.optionals config.media-tools.extra.enable [
+          pkgsUnstable.kdePackages.k3b # CD and DVD manager
+
+          aseprite # Sprite drawing program
+          cdrdao
+          cdrtools
+          droidcam
+          dvgrab # DV Camcorder Video Capture
+          handbrake
+          inkscape
+          kdePackages.kdenlive # Video editor
+          kid3 # Audio tagger
+          vcv-rack # Modular synthesizers
+        ];
     }
     // lib.mkIf config.media-tools.extra.enable {
       programs.obs-studio = {
@@ -56,21 +73,6 @@ in
           wlrobs
         ];
       };
-
-      environment.systemPackages = with pkgs; [
-        pkgsUnstable.kdePackages.k3b # CD and DVD manager
-
-        aseprite # Sprite drawing program
-        cdrdao
-        cdrtools
-        droidcam
-        dvgrab # DV Camcorder Video Capture
-        handbrake
-        inkscape
-        kdePackages.kdenlive # Video editor
-        kid3 # Audio tagger
-        vcv-rack # Modular synthesizers
-      ];
 
       security.wrappers = {
         cdrdao = {
