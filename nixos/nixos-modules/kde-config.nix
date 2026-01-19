@@ -26,23 +26,28 @@
 
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
-    services.xserver.enable = true;
+    services.xserver = {
+      enable = true;
+      # Configure keymap in X11
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
 
-    # Configure keymap in X11
-    services.xserver.xkb = {
-      layout = "us";
-      variant = "";
+      # videoDrivers = [ "modesetting" ];
     };
-
-    services.xserver.videoDrivers = [ "modesetting" ];
 
     # Enable KDE
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
+    services.displayManager = {
+      sddm = {
+        enable = true;
+        # wayland.enable = true;
+      };
+      autoLogin.enable = true;
+      # defaultSession = "plasmax11";
     };
+
     services.desktopManager.plasma6.enable = true;
-    services.displayManager.autoLogin.enable = true;
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [ ];
 
@@ -67,10 +72,9 @@
     systemd.services.flatpak-repo = {
       wantedBy = [ "multi-user.target" ];
       path = [ pkgs.flatpak ];
-      script = ''
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
+      # script = ''
+      #   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      # '';
     };
-
   };
 }
