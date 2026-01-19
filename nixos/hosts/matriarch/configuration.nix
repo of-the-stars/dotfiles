@@ -16,6 +16,17 @@ let
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
+  discoverWrapped = pkgs.symlinkJoin {
+    name = "discoverFlatpakBackend";
+    paths = [
+      pkgs.kdePackages.discover
+    ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/plasma-discover --add-flags "--backends flatpak"
+    '';
+  };
 in
 {
   imports = [
@@ -270,6 +281,8 @@ in
     # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
     # inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
     # inputs.rmpc.packages.${system}.rmpc
+
+    discoverWrapped
 
     bitwarden-desktop
     discord
