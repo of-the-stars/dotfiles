@@ -5,6 +5,8 @@
   config,
   pkgs,
   inputs,
+  stellae,
+  hostname,
   lib,
   ...
 }:
@@ -31,9 +33,12 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   nix.settings.auto-optimise-store = true;
 
-  networking.hostName = "cyboogie";
+  networking.hostName = "${hostname}";
 
   # Enable networking
   networking.networkmanager.enable = false;
@@ -86,9 +91,9 @@ in
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.internet_wizard = {
+  users.users.${stellae} = {
     isNormalUser = true;
-    description = "Stell";
+    description = "Stellae";
     extraGroups = [
       "networkmanager"
       "wheel"

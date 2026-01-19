@@ -6,6 +6,7 @@
   pkgs,
   inputs,
   username,
+  hostname,
   lib,
   ...
 }:
@@ -21,6 +22,8 @@ in
   ];
 
   hyprland-config.enable = true;
+  terminal.extra.enable = true;
+  media-tools.extra.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -36,6 +39,9 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enables auto upgrades
   system.autoUpgrade = {
@@ -65,7 +71,7 @@ in
     opentabletdriver.enable = true;
   };
 
-  networking.hostName = "han-tyumi"; # Define your hostname.
+  networking.hostName = "${hostname}"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

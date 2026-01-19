@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  username,
+  stellae,
   ...
 }:
 {
@@ -55,7 +55,7 @@
         origin = "pam://yubi";
         authfile = pkgs.writeText "u2f-mappings" (
           lib.concatStrings [
-            "${username}"
+            "${stellae}"
             ":3yeemgb2knfpfrl/DGz7elMGvG1BPnqoBG9ljfehDc/gy5uOPEuVMT2NxTwBSY/J8YN1c4QioxnPicy9/uY35w==,W0FTw53ADEn7KNtPvdDEQ5D44ZQcF65NT+Xomht5JmbJpK+3aPkvZsTx846hVcb6TJP1PGUCD5xyk6llAKX6uA==,es256,+presence"
           ]
         );

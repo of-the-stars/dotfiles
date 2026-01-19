@@ -5,8 +5,9 @@
   config,
   pkgs,
   inputs,
-  username,
-  gf_username,
+  stellae,
+  syren,
+  hostname,
   lib,
   ...
 }:
@@ -28,15 +29,12 @@ in
     "flakes"
   ];
 
-  # catppuccin = {
-  #   enable = true;
-  #   flavor = "mocha";
-  #   accent = "blue";
-  # };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enables auto upgrades
   system.autoUpgrade = {
@@ -66,7 +64,7 @@ in
     opentabletdriver.enable = true;
   };
 
-  networking.hostName = "han-tyumi"; # Define your hostname.
+  networking.hostName = "${hostname}"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -119,25 +117,25 @@ in
   powerManagement.enable = true;
 
   # Enable tlp for laptop power management
-  services.tlp = {
-    enable = true;
-    settings = {
-      #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      #
-      #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      #   CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
-      #
-      #   CPU_MIN_PERF_ON_AC = 0;
-      #   CPU_MAX_PERF_ON_AC = 100;
-      #   CPU_MIN_PERF_ON_BAT = 0;
-      #   CPU_MAX_PERF_ON_BAT = 20;
-
-      # Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 55; # and below it starts to charge
-      STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
-    };
-  };
+  # services.tlp = {
+  #   enable = true;
+  #   settings = {
+  #     #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
+  #     #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  #     #
+  #     #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+  #     #   CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
+  #     #
+  #     #   CPU_MIN_PERF_ON_AC = 0;
+  #     #   CPU_MAX_PERF_ON_AC = 100;
+  #     #   CPU_MIN_PERF_ON_BAT = 0;
+  #     #   CPU_MAX_PERF_ON_BAT = 20;
+  #
+  #     # Optional helps save long term battery health
+  #     START_CHARGE_THRESH_BAT0 = 55; # and below it starts to charge
+  #     STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
+  #   };
+  # };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -193,9 +191,9 @@ in
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
+  users.users.${stellae} = {
     isNormalUser = true;
-    description = "Stell";
+    description = "Stellae";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -208,7 +206,7 @@ in
     shell = pkgs.zsh;
   };
 
-  users.users.${gf_username} = {
+  users.users.${syren} = {
     isNormalUser = true;
     description = "Syren";
     extraGroups = [
@@ -221,6 +219,8 @@ in
       "cdrom"
     ];
     shell = pkgs.zsh;
+
+    # initialHashedPassword = "";
   };
 
   programs.zsh.enable = true;
@@ -294,6 +294,7 @@ in
     gnome-disk-utility
     gnome-system-monitor
     lm_sensors
+    kdePackages.kate
   ];
 
   # This value determines the NixOS release from which the default

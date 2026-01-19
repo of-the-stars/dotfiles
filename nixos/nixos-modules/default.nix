@@ -33,7 +33,11 @@
     # Options for modules imported in "imports" can be set here.
 
     terminal.enable = lib.mkDefault true;
+    terminal.extra.enable = lib.mkDefault false;
+
     media-tools.enable = lib.mkDefault true;
+    media-tools.extra.enable = lib.mkDefault false;
+
     networking-tools.enable = lib.mkDefault true;
     system-security.enable = lib.mkDefault true;
     virtual-machines.enable = lib.mkDefault false;

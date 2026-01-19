@@ -26,78 +26,58 @@
       home-manager,
       ...
     }@inputs:
-    let
-      username = "internet_wizard";
-    in
     {
-      nixosConfigurations.han-tyumi = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit
-            inputs
-            nixpkgs-unstable
-            home-manager
-            username
-            ;
-        };
-        modules = [
-          ./hosts/han-tyumi
-          inputs.catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.${username} = {
-              home.username = "${username}";
-              home.homeDirectory = "/home/${username}";
-              imports = [
-                ./home.nix
-                inputs.catppuccin.homeModules.catppuccin
-                inputs.izrss.homeManagerModules.default
-                {
-                  programs.izrss = {
-                    enable = true;
-                    settings.urls = [
-                      "https://uncenter.dev/feed.xml"
-                      "https://stephango.com/feed.xml"
-                      "https://isabelroses.com/feed.xml"
-                    ];
-                  };
-                }
-              ];
-            };
-          }
-        ];
-      };
-
-      nixosConfigurations.cyboogie = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs nixpkgs nixpkgs-unstable; };
-        modules = [
-          ./hosts/cyboogie
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = {
-              imports = [
-                ./home.nix
-                inputs.catppuccin.homeModules.catppuccin
-              ];
-            };
-          }
-
-          inputs.catppuccin.nixosModules.catppuccin
-
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-        ];
-      };
-
-      nixosConfigurations.matriarch =
+      nixosConfigurations.han-tyumi =
         let
-          gf_username = "syren";
+          stellae = "internet_wizard";
+          hostname = "han-tyumi";
+        in
+        inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit
+              inputs
+              nixpkgs-unstable
+              home-manager
+              stellae
+              hostname
+              ;
+          };
+          modules = [
+            ./hosts/${hostname}
+            inputs.catppuccin.nixosModules.catppuccin
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.${stellae} = {
+                home.username = "${stellae}";
+                home.homeDirectory = "/home/${stellae}";
+                imports = [
+                  ./home.nix
+                  inputs.catppuccin.homeModules.catppuccin
+                  inputs.izrss.homeManagerModules.default
+                  {
+                    programs.izrss = {
+                      enable = true;
+                      settings.urls = [
+                        "https://uncenter.dev/feed.xml"
+                        "https://stephango.com/feed.xml"
+                        "https://isabelroses.com/feed.xml"
+                      ];
+                    };
+                  }
+                ];
+              };
+            }
+          ];
+        };
+
+      nixosConfigurations.cyboogie =
+        let
+          stellae = "internet_wizard";
+          hostname = "cyboogie";
         in
         inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -106,28 +86,70 @@
               inputs
               nixpkgs
               nixpkgs-unstable
-              username
-              gf_username
+              stellae
+              hostname
               ;
           };
           modules = [
-            ./hosts/matriarch
+            ./hosts/${hostname}
 
-            # home-manager.nixosModules.home-manager
-            # {
-            #   home-manager.useGlobalPkgs = true;
-            #   home-manager.useUserPackages = true;
-            #   home-manager.users = {
-            #     ${username} = {
-            #       # imports = [
-            #       #   ./home.nix
-            #       #   inputs.catppuccin.homeModules.catppuccin
-            #       # ];
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.${stellae} = {
+                home.username = "${stellae}";
+                home.homeDirectory = "/home/${stellae}";
+                imports = [
+                  ./home.nix
+                  inputs.catppuccin.homeModules.catppuccin
+                ];
+              };
+            }
 
-            #     };
-            #     ${gf_username} = { };
-            #   };
-            # }
+            inputs.catppuccin.nixosModules.catppuccin
+
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          ];
+        };
+
+      nixosConfigurations.matriarch =
+        let
+          stellae = "internet_wizard";
+          syren = "syren";
+          hostname = "matriarch";
+        in
+        inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit
+              inputs
+              nixpkgs
+              nixpkgs-unstable
+              stellae
+              syren
+              ;
+          };
+          modules = [
+            ./hosts/${hostname}
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users = {
+                ${stellae} = {
+                  home.username = "${stellae}";
+                  home.homeDirectory = "/home/${stellae}";
+                  imports = [
+                    ./home.nix
+                    inputs.catppuccin.homeModules.catppuccin
+                  ];
+                };
+
+                # ${syren} = {};
+              };
+            }
           ];
         };
     };
