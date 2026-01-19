@@ -261,15 +261,14 @@
         "tidalcycles-nix": "tidalcycles-nix"
       },
       "locked": {
-        "lastModified": 1767733808,
-        "narHash": "sha256-ADt8ouFore3P7QwbXfLYLbmp/ckH2KCc5SaAduJH07I=",
-        "path": "/home/internet_wizard/dotfiles/.config/nvim/",
+        "path": "./../.config/nvim/",
         "type": "path"
       },
       "original": {
-        "path": "/home/internet_wizard/dotfiles/.config/nvim/",
+        "path": "./../.config/nvim/",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "root": {
       "inputs": {

@@ -15,7 +15,7 @@
     izrss.url = "github:isabelroses/izrss";
 
     # custom neovim configuration flake
-    nvim.url = "path:/home/internet_wizard/dotfiles/.config/nvim/";
+    nvim.url = "path:./../.config/nvim/";
   };
 
   outputs =
@@ -95,7 +95,7 @@
         ];
       };
 
-      nixosConfigurations.orca =
+      nixosConfigurations.matriarch =
         let
           gf_username = "syren";
         in
@@ -113,20 +113,21 @@
           modules = [
             ./hosts/matriarch
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users = {
-                ${username} = {
-                  imports = [
-                    ./home.nix
-                    inputs.catppuccin.homeModules.catppuccin
-                  ];
-                };
-                ${gf_username} = { };
-              };
-            }
+            # home-manager.nixosModules.home-manager
+            # {
+            #   home-manager.useGlobalPkgs = true;
+            #   home-manager.useUserPackages = true;
+            #   home-manager.users = {
+            #     ${username} = {
+            #       # imports = [
+            #       #   ./home.nix
+            #       #   inputs.catppuccin.homeModules.catppuccin
+            #       # ];
+
+            #     };
+            #     ${gf_username} = { };
+            #   };
+            # }
           ];
         };
     };

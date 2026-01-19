@@ -18,8 +18,7 @@ let
 in
 {
   imports = [
-    ./../nixos-modules
-    /etc/nixos/hardware-configuration.nix
+    ./../../nixos-modules
   ];
 
   kde-config.enable = true;
@@ -29,11 +28,11 @@ in
     "flakes"
   ];
 
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "blue";
-  };
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  #   accent = "blue";
+  # };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

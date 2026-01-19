@@ -17,7 +17,7 @@ let
 in
 {
   imports = [
-    ./../nixos-modules
+    ./../../nixos-modules
   ];
 
   hyprland-config.enable = true;
