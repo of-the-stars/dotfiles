@@ -224,6 +224,8 @@ in
     # initialHashedPassword = "";
   };
 
+  services.displayManager.autoLogin.user = "${syren}";
+
   programs.zsh.enable = true;
   programs.kdeconnect.enable = true;
   programs.steam.enable = true;

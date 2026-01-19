@@ -25,8 +25,11 @@
     # Options for modules imported in "imports" can be set here.
 
     # Enable KDE
-    services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.wayland.enable = true;
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      autoLogin.enable = true;
+    };
     services.desktopManager.plasma6.enable = true;
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [ ];
