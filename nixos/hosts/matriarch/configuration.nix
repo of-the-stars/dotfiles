@@ -33,9 +33,6 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Enables auto upgrades
   system.autoUpgrade = {
     enable = true;
@@ -91,53 +88,6 @@ in
 
   # services.blueman.enable = true;
 
-  # services.auto-cpufreq.enable = true;
-
-  # This is to fix frequent Bluetooth audio dropouts.
-  # boot.extraModprobeConfig = ''
-  #   # Keep Bluetooth coexistence disabled for better BT audio stability
-  #   options iwlwifi bt_coex_active=0
-  #
-  #   # Enable software crypto (helps BT coexistence sometimes)
-  #   options iwlwifi swcrypto=1
-  #
-  #   # Disable power saving on Wi-Fi module to reduce radio state changes that might disrupt BT
-  #   options iwlwifi power_save=0
-  #
-  #   # Disable Unscheduled Automatic Power Save Delivery (U-APSD) to improve BT audio stability
-  #   options iwlwifi uapsd_disable=1
-  #
-  #   # Disable D0i3 power state to avoid problematic power transitions
-  #   options iwlwifi d0i3_disable=1
-  #
-  #   # Set power scheme for performance (iwlmvm)
-  #   options iwlmvm power_scheme=1
-  # '';
-  #
-  # # Enable system power management
-  # powerManagement.enable = true;
-
-  # Enable tlp for laptop power management
-  # services.tlp = {
-  #   enable = true;
-  #   settings = {
-  #     #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
-  #     #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-  #     #
-  #     #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-  #     #   CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
-  #     #
-  #     #   CPU_MIN_PERF_ON_AC = 0;
-  #     #   CPU_MAX_PERF_ON_AC = 100;
-  #     #   CPU_MIN_PERF_ON_BAT = 0;
-  #     #   CPU_MAX_PERF_ON_BAT = 20;
-  #
-  #     # Optional helps save long term battery health
-  #     START_CHARGE_THRESH_BAT0 = 55; # and below it starts to charge
-  #     STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
-  #   };
-  # };
-
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -177,15 +127,6 @@ in
     # };
   };
 
-  # services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
-  #   "monitor.bluez.properties" = {
-  #     "bluez5.enable-sbc-xq" = true;
-  #     "bluez5.enable-msbc" = true;
-  #     "bluez5.enable-hw-volume" = true;
-  #     "bluez5.roles" = ["hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag"];
-  #   };
-  # };
-
   # Fonts
   fonts.packages = with pkgs; [
     nerd-fonts.roboto-mono
@@ -220,6 +161,10 @@ in
       "cdrom"
     ];
     shell = pkgs.zsh;
+    packages = with pkgs; [
+      kdePackages.kate
+      #  thunderbird
+    ];
 
     # initialHashedPassword = "";
   };

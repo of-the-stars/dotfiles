@@ -128,6 +128,7 @@
               nixpkgs-unstable
               stellae
               syren
+              hostname
               ;
           };
           modules = [

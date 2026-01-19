@@ -24,13 +24,23 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
+    # Enable the X11 windowing system.
+    # You can disable this if you're only using the Wayland session.
+    services.xserver.enable = true;
+
+    # Configure keymap in X11
+    services.xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+
     # Enable KDE
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      autoLogin.enable = true;
     };
     services.desktopManager.plasma6.enable = true;
+    services.displayManager.autoLogin.enable = true;
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [ ];
 
