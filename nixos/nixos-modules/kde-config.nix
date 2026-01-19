@@ -34,6 +34,8 @@
       variant = "";
     };
 
+    services.xserver.videoDrivers = [ "modesetting" ];
+
     # Enable KDE
     services.displayManager.sddm = {
       enable = true;
