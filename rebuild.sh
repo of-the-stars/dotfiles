@@ -57,4 +57,4 @@ nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5 | git c
 popd
 
 # Reloads hyprland
-hyprctl reload > /dev/null
+# hyprctl reload > /dev/null

@@ -182,6 +182,34 @@ in
     ];
   };
 
+  # Auto-sync dotfiles for Syren
+  systemd.timers."dotfiles" = {
+    timerConfig = {
+      # OnBootSec = "5m";
+      # OnUnitActiveSec = "5m";
+      # Alternatively, if you prefer to specify an exact timestamp
+      # like one does in cron, you can use the `OnCalendar` option
+      # to specify a calendar event expression.
+      # Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
+      #OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
+      OnCalendar = "Mon *-*-* 04:00:00 America/Chicago";
+      Unit = "dotfiles.service";
+    };
+  };
+
+  systemd.services."dotfiles" = {
+    script = ''
+      set -eu
+      pushd /home/${syren}/dotfiles
+      ${pkgs.git}/bin/git pull --all
+      popd
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${syren}";
+    };
+  };
+
   # services.displayManager.autoLogin.user = "${syren}";
 
   programs.zsh.enable = true;
