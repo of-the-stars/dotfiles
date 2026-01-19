@@ -223,6 +223,7 @@ in
 
   # services.displayManager.autoLogin.user = "${syren}";
 
+  services.flatpak.enable = true;
   programs.zsh.enable = true;
   # programs.kdeconnect.enable = true;
   # programs.steam.enable = true;
