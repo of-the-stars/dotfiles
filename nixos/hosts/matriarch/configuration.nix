@@ -70,7 +70,7 @@ in
   #     upper = "05:00";
   #   };
   # };
-  #
+
   # nix.gc = {
   #   automatic = true;
   #   dates = "weekly";
@@ -196,14 +196,14 @@ in
   # Auto-sync dotfiles for Syren
   systemd.timers."dotfiles" = {
     timerConfig = {
-      # OnBootSec = "5m";
+      OnBootSec = "5m";
       # OnUnitActiveSec = "5m";
       # Alternatively, if you prefer to specify an exact timestamp
       # like one does in cron, you can use the `OnCalendar` option
       # to specify a calendar event expression.
       # Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
       #OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
-      OnCalendar = "Mon *-*-* 04:00:00 America/Chicago";
+      # OnCalendar = "Mon *-*-* 04:00:00 America/Chicago";
       Unit = "dotfiles.service";
     };
   };
@@ -211,8 +211,10 @@ in
   systemd.services."dotfiles" = {
     script = ''
       set -eu
-      pushd /home/${syren}/dotfiles
-      ${pkgs.git}/bin/git pull --all
+      pushd $HOME/dotfiles
+      ${pkgs.git}/bin/git fetch --all
+      ${pkgs.git}/bin/git rebase origin/master
+      ${pkgs.git}/bin/git pull origin master --all
       popd
     '';
     serviceConfig = {
@@ -294,11 +296,6 @@ in
     prismlauncher
     signal-desktop
     vscodium
-    # stellarium
-    # usbutils
-    # gnome-disk-utility
-    # gnome-system-monitor
-    # lm_sensors
   ];
 
   # This value determines the NixOS release from which the default
