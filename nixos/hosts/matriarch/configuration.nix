@@ -19,50 +19,65 @@ let
 in
 {
   imports = [
-    ./../../nixos-modules
+    ./../../nixos-modules/terminal.nix
   ];
 
-  kde-config.enable = true;
+  # kde-config.enable = true;
+  terminal.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
+  # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enables auto upgrades
-  system.autoUpgrade = {
-    enable = true;
-    flake = "path:./../flake.nix";
-    dates = "weekly";
-    allowReboot = true;
-    rebootWindow = {
-      lower = "01:00";
-      upper = "05:00";
-    };
-  };
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
-  };
+  # # Enables auto upgrades
+  # system.autoUpgrade = {
+  #   enable = true;
+  #   flake = "path:./../flake.nix";
+  #   dates = "weekly";
+  #   allowReboot = true;
+  #   rebootWindow = {
+  #     lower = "01:00";
+  #     upper = "05:00";
+  #   };
+  # };
+  #
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 14d";
+  # };
 
   nix.settings.auto-optimise-store = true;
 
-  hardware = {
-    # # OpenGL
-    # graphics.enable = true;
-    # Most wayland compositors need this
-    # nvidia.modesetting.enable = true;
-    opentabletdriver.enable = true;
-  };
+  # hardware = {
+  #   # # OpenGL
+  #   # graphics.enable = true;
+  #   # Most wayland compositors need this
+  #   # nvidia.modesetting.enable = true;
+  #   opentabletdriver.enable = true;
+  # };
 
   networking.hostName = "${hostname}"; # Define your hostname.
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -72,19 +87,19 @@ in
   networking.networkmanager.enable = true;
 
   # Enable bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-        FastConnectable = true;
-      };
-      Policy = {
-        AutoEnable = true;
-      };
-    };
-  };
+  # hardware.bluetooth = {
+  #   enable = true;
+  #   powerOnBoot = true;
+  #   settings = {
+  #     General = {
+  #       Experimental = true;
+  #       FastConnectable = true;
+  #     };
+  #     Policy = {
+  #       AutoEnable = true;
+  #     };
+  #   };
+  # };
 
   # services.blueman.enable = true;
 
@@ -167,13 +182,41 @@ in
     ];
   };
 
-  services.displayManager.autoLogin.user = "${syren}";
+  # Auto-sync dotfiles for Syren
+  systemd.timers."dotfiles" = {
+    timerConfig = {
+      # OnBootSec = "5m";
+      # OnUnitActiveSec = "5m";
+      # Alternatively, if you prefer to specify an exact timestamp
+      # like one does in cron, you can use the `OnCalendar` option
+      # to specify a calendar event expression.
+      # Run every Monday at 10:00 AM in the Asia/Kolkata timezone.
+      #OnCalendar = "Mon *-*-* 10:00:00 Asia/Kolkata";
+      OnCalendar = "Mon *-*-* 04:00:00 America/Chicago";
+      Unit = "dotfiles.service";
+    };
+  };
+
+  systemd.services."dotfiles" = {
+    script = ''
+      set -eu
+      pushd /home/${syren}/dotfiles
+      ${pkgs.git}/bin/git pull --all
+      popd
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${syren}";
+    };
+  };
+
+  # services.displayManager.autoLogin.user = "${syren}";
 
   programs.zsh.enable = true;
-  programs.kdeconnect.enable = true;
-  programs.steam.enable = true;
+  # programs.kdeconnect.enable = true;
+  # programs.steam.enable = true;
 
-  programs.nix-ld.enable = true;
+  # programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [
   #   # Add missing dynamic libraries for unpackaged programs here
   # ];
@@ -225,7 +268,7 @@ in
   environment.systemPackages = with pkgs; [
     inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
     # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-    inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
+    # inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
     # inputs.rmpc.packages.${system}.rmpc
 
     bitwarden-desktop
@@ -235,12 +278,11 @@ in
     openssl
     prismlauncher
     signal-desktop
-    stellarium
-    usbutils
-    gnome-disk-utility
-    gnome-system-monitor
-    lm_sensors
-    kdePackages.kate
+    # stellarium
+    # usbutils
+    # gnome-disk-utility
+    # gnome-system-monitor
+    # lm_sensors
   ];
 
   # This value determines the NixOS release from which the default
@@ -249,5 +291,5 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

@@ -67,6 +67,7 @@ in
         dust # Modern `du`
         fastfetch # Fetch system details; `neofetch` replacement
         fd # Modern `find`
+        fzf
         gcc # GNU Compiler Collection
         git # The distributed VCS
         gping # `ping` but with a graph
