@@ -16,6 +16,17 @@ let
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
+  discoverWrapped = pkgs.symlinkJoin {
+    name = "discoverFlatpakBackend";
+    paths = [
+      pkgs.kdePackages.discover
+    ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/plasma-discover --add-flags "--backends flatpak"
+    '';
+  };
 in
 {
   imports = [
@@ -212,6 +223,7 @@ in
 
   # services.displayManager.autoLogin.user = "${syren}";
 
+  services.flatpak.enable = true;
   programs.zsh.enable = true;
   # programs.kdeconnect.enable = true;
   # programs.steam.enable = true;
@@ -271,6 +283,8 @@ in
     # inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
     # inputs.rmpc.packages.${system}.rmpc
 
+    discoverWrapped
+
     bitwarden-desktop
     discord
     firefox
@@ -278,6 +292,7 @@ in
     openssl
     prismlauncher
     signal-desktop
+    vscodium
     # stellarium
     # usbutils
     # gnome-disk-utility
