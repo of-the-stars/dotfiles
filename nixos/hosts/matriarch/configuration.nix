@@ -292,6 +292,7 @@ in
     openssl
     prismlauncher
     signal-desktop
+    vscodium
     # stellarium
     # usbutils
     # gnome-disk-utility
