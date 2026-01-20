@@ -21,12 +21,12 @@ in
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    media-tools.enable = lib.mkEnableOption "Enable media tools";
-    media-tools.extra.enable = lib.mkEnableOption "Enables extra media tools";
+    modules.media-tools.enable = lib.mkEnableOption "Enable media tools";
+    modules.media-tools.extra.enable = lib.mkEnableOption "Enables extra media tools";
   };
 
   config =
-    lib.mkIf config.media-tools.enable {
+    lib.mkIf config.modules.media-tools.enable {
       # Option definitions.
       # Define what other settings, services and resources should be active.
       # Usually these depend on whether a user of this module chose to "enable" it
@@ -43,7 +43,7 @@ in
           vlc # Media player
           yt-dlp # YouTube downloader
         ]
-        ++ lib.optionals config.media-tools.extra.enable [
+        ++ lib.optionals config.modules.media-tools.extra.enable [
           pkgsUnstable.kdePackages.k3b # CD and DVD manager
 
           aseprite # Sprite drawing program
@@ -58,7 +58,7 @@ in
           vcv-rack # Modular synthesizers
         ];
     }
-    // lib.mkIf config.media-tools.extra.enable {
+    // lib.mkIf config.modules.media-tools.extra.enable {
       programs.obs-studio = {
         enable = true;
         enableVirtualCamera = true;

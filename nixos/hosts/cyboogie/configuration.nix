@@ -21,8 +21,8 @@ in
     ./../../nixos-modules
   ];
 
-  hyprland-config.enable = false;
-  media-tools.enable = false;
+  modules.hyprland-config.enable = false;
+  modules.media-tools.enable = false;
 
   nix.settings.experimental-features = [
     "nix-command"

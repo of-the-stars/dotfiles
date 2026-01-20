@@ -15,10 +15,10 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    system-security.enable = lib.mkEnableOption "Enable rigorous authentication";
+    modules.system-security.enable = lib.mkEnableOption "Enable rigorous authentication";
   };
 
-  config = lib.mkIf config.system-security.enable {
+  config = lib.mkIf config.modules.system-security.enable {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it

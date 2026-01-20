@@ -134,23 +134,49 @@
           modules = [
             ./hosts/${hostname}
 
-            # home-manager.nixosModules.home-manager
-            # {
-            #   home-manager.useGlobalPkgs = true;
-            #   home-manager.useUserPackages = true;
-            #   home-manager.users = {
-            #     ${stellae} = {
-            #       home.username = "${stellae}";
-            #       home.homeDirectory = "/home/${stellae}";
-            #       imports = [
-            #         ./home.nix
-            #         inputs.catppuccin.homeModules.catppuccin
-            #       ];
-            #     };
-            #
-            #     # ${syren} = {};
-            #   };
-            # }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users = {
+                ${stellae} = {
+                  home.username = "${stellae}";
+                  home.homeDirectory = "/home/${stellae}";
+                  imports = [
+                    ./home.nix
+                    inputs.catppuccin.homeModules.catppuccin
+                  ];
+                };
+
+                ${syren} = {
+                  imports = [
+                    ./home-modules/terminal.nix
+                  ];
+
+                  home.username = "${syren}";
+                  home.homeDirectory = "/home/${syren}";
+                  xdg.configfile = {
+                    "bat".source = ./../.config/bat;
+                    "dunst".source = ./../.config/dunst;
+                    "kitty".source = ./../.config/kitty;
+                    "nvim".source = ./../.config/nvim;
+                    "presenterm".source = ./../.config/presenterm;
+                    "rofi".source = ./../.config/rofi;
+                    "yazi".source = ./../.config/yazi;
+                    # "kdeglobals".source = ./../.config/kdeglobals;
+                  };
+                  home.file = {
+                    ".secrets".source = ./../.secrets;
+                    ".bashrc".source = ./../.bashrc;
+                    # ".zshrc".source = ./../.zshrc;
+                    ".bash_aliases".source = ./../.bash_aliases;
+
+                    "cleanup.sh".source = ./../cleanup.sh;
+                    "rebuild.sh".source = ./../rebuild.sh;
+                  };
+                };
+              };
+            }
           ];
         };
     };

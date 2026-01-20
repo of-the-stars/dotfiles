@@ -21,11 +21,11 @@ in
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    terminal.enable = lib.mkEnableOption "Enables terminal emulator and terminal applications";
-    terminal.extra.enable = lib.mkEnableOption "Enables extra terminal applications";
+    modules.terminal.enable = lib.mkEnableOption "Enables terminal emulator and terminal applications";
+    modules.terminal.extra.enable = lib.mkEnableOption "Enables extra terminal applications";
   };
 
-  config = lib.mkIf config.terminal.enable {
+  config = lib.mkIf config.modules.terminal.enable {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
@@ -82,8 +82,9 @@ in
         unzip
         whois # Domain registration lookup
         wl-clipboard # Manage system clipboard from the command line
+        zoxide
       ]
-      ++ lib.optionals config.terminal.extra.enable [
+      ++ lib.optionals config.modules.terminal.extra.enable [
         asciinema # Record your terminal session
         bitwarden-cli
         bsdgames # NetBSD games!

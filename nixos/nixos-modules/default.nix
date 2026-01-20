@@ -32,18 +32,18 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    terminal.enable = lib.mkDefault true;
-    terminal.extra.enable = lib.mkDefault false;
+    modules.terminal.enable = lib.mkDefault true;
+    modules.terminal.extra.enable = lib.mkDefault false;
 
-    media-tools.enable = lib.mkDefault true;
-    media-tools.extra.enable = lib.mkDefault false;
+    modules.media-tools.enable = lib.mkDefault true;
+    modules.media-tools.extra.enable = lib.mkDefault false;
 
-    networking-tools.enable = lib.mkDefault true;
-    system-security.enable = lib.mkDefault true;
-    virtual-machines.enable = lib.mkDefault false;
+    modules.networking-tools.enable = lib.mkDefault true;
+    modules.system-security.enable = lib.mkDefault true;
+    modules.virtual-machines.enable = lib.mkDefault false;
 
     # Makes each host choose their desktop setup
-    hyprland-config.enable = lib.mkDefault false;
-    kde-config.enable = lib.mkDefault false;
+    modules.hyprland-config.enable = lib.mkDefault false;
+    modules.kde-config.enable = lib.mkDefault false;
   };
 }

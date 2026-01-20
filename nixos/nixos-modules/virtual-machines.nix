@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  stellae,
   ...
 }:
 {
@@ -14,10 +15,10 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    virtual-machines.enable = lib.mkEnableOption "Enable virtual machine tools";
+    modules.virtual-machines.enable = lib.mkEnableOption "Enable virtual machine tools";
   };
 
-  config = lib.mkIf config.virtual-machines.enable {
+  config = lib.mkIf config.modules.virtual-machines.enable {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
@@ -25,10 +26,10 @@
     # Options for modules imported in "imports" can be set here.
 
     virtualisation.virtualbox.host.enable = true;
-    users.extraGroups.vboxusers.members = [ "internet_wizard" ];
+    users.extraGroups.vboxusers.members = [ "${stellae}" ];
 
     programs.virt-manager.enable = true;
-    users.groups.libvirtd.members = [ "internet_wizard" ];
+    users.groups.libvirtd.members = [ "${stellae}" ];
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
   };

@@ -14,10 +14,10 @@
     # Option declarations.
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
-    hyprland-config.enable = lib.mkEnableOption "Enables the hyprland window manager";
+    modules.hyprland-config.enable = lib.mkEnableOption "Enables the hyprland window manager";
   };
 
-  config = lib.mkIf config.hyprland-config.enable {
+  config = lib.mkIf config.modules.hyprland-config.enable {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
