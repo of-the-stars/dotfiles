@@ -285,6 +285,7 @@ in
 
     discoverWrapped
 
+    aseprite
     bitwarden-desktop
     discord
     firefox
