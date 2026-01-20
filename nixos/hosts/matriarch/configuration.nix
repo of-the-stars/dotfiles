@@ -297,7 +297,7 @@ in
     openssl
     prismlauncher
     signal-desktop
-    vscodium
+    vscodium-fhs
   ];
 
   # This value determines the NixOS release from which the default
