@@ -43,7 +43,7 @@
         enable = true;
         # wayland.enable = true;
       };
-      autoLogin.enable = true;
+      # autoLogin.enable = true;
       # defaultSession = "plasmax11";
     };
 
@@ -51,14 +51,14 @@
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [ ];
 
-    environment.sessionVariables = {
-      # If your cursor becomes invisible
-      # WLR_NO_HARDWARE_CURSORS = "1";
-      # Hint electron apps to use wayland
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      WAYLAND_DISPLAY = "1";
-      NIXOS_OZONE_WL = 1;
-    };
+    # environment.sessionVariables = {
+    #   # If your cursor becomes invisible
+    #   # WLR_NO_HARDWARE_CURSORS = "1";
+    #   # Hint electron apps to use wayland
+    #   ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    #   WAYLAND_DISPLAY = "1";
+    #   NIXOS_OZONE_WL = 1;
+    # };
 
     # Fonts
     fonts.packages = with pkgs; [
@@ -69,12 +69,12 @@
     ];
 
     services.flatpak.enable = true;
-    systemd.services.flatpak-repo = {
-      wantedBy = [ "multi-user.target" ];
-      path = [ pkgs.flatpak ];
-      # script = ''
-      #   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      # '';
-    };
+    # systemd.services.flatpak-repo = {
+    #   wantedBy = [ "multi-user.target" ];
+    #   path = [ pkgs.flatpak ];
+    #   # script = ''
+    #   #   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    #   # '';
+    # };
   };
 }
