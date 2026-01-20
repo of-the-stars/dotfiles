@@ -175,7 +175,19 @@
                     "cleanup.sh".source = ./../cleanup.sh;
                     "rebuild.sh".source = ./../rebuild.sh;
                   };
-
+                  programs.vscode =
+                    let
+                      pkgs = import nixpkgs {
+                        system = "x86_64-linux";
+                      };
+                    in
+                    {
+                      enable = true;
+                      package = pkgs.vscodium;
+                      extensions = with pkgs.vscode-extensions; [
+                        ms-vscode.live-server
+                      ];
+                    };
                   home.stateVersion = "25.05"; # Please read the comment before changing.
                 };
               };
