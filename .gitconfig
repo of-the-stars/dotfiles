@@ -6,8 +6,8 @@
 	tool = nvimdiff
 
 [merge]
-	ff = no
-	commit = no
+	; ff = no
+	; commit = no
 	tool = nvimdiff
 	conflictstyle = diff3
 
