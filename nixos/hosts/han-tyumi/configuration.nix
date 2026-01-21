@@ -336,6 +336,7 @@ in
     wine
     gnome-system-monitor
     lm_sensors
+    zathura
   ];
 
   # programs.firefox = {

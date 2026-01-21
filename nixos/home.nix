@@ -28,6 +28,7 @@
     "waybar".source = ./../.config/waybar;
     "yazi".source = ./../.config/yazi;
     "zellij".source = ./../.config/zellij;
+    "zathura".source = ./../.config/zathura;
 
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
