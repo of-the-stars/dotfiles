@@ -17,6 +17,16 @@ let
     inherit (config.nixpkgs) config;
   };
 
+  discoverWrapped = pkgs.symlinkJoin {
+    name = "discoverFlatpakBackend";
+    paths = [
+      pkgs.kdePackages.discover
+    ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/plasma-discover --add-flags "--backends flatpak"
+    '';
+  };
 in
 {
   imports = [
@@ -26,7 +36,21 @@ in
 
   # kde-config.enable = true;
   modules.terminal.enable = true;
-  modules.kde-config.enable = true;
+  # modules.kde-config.enable = true;
+
+  # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   nix.settings.experimental-features = [
     "nix-command"

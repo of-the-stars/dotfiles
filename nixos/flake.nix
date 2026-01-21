@@ -50,7 +50,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+              home-manager.backupFileExtension = "bak";
               home-manager.users.${stellae} = {
                 home.username = "${stellae}";
                 home.homeDirectory = "/home/${stellae}";
@@ -136,6 +136,7 @@
 
             home-manager.nixosModules.home-manager
             {
+              home-manager.backupFileExtension = "bak";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users = {
@@ -155,7 +156,7 @@
 
                   home.username = "${syren}";
                   home.homeDirectory = "/home/${syren}";
-                  xdg.configfile = {
+                  xdg.configFile = {
                     "bat".source = ./../.config/bat;
                     "dunst".source = ./../.config/dunst;
                     "kitty".source = ./../.config/kitty;
@@ -174,6 +175,20 @@
                     "cleanup.sh".source = ./../cleanup.sh;
                     "rebuild.sh".source = ./../rebuild.sh;
                   };
+                  programs.vscode =
+                    let
+                      pkgs = import nixpkgs {
+                        system = "x86_64-linux";
+                      };
+                    in
+                    {
+                      enable = true;
+                      package = pkgs.vscodium;
+                      extensions = with pkgs.vscode-extensions; [
+                        ms-vscode.live-server
+                      ];
+                    };
+                  home.stateVersion = "25.05"; # Please read the comment before changing.
                 };
               };
             }
