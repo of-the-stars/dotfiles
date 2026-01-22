@@ -327,7 +327,6 @@ in
       halloy
       kdePackages.kdeconnect-kde
       kdePackages.marble
-      kdePackages.okular
       krita # Drawing program
       lm_sensors
       nwg-look
@@ -346,7 +345,7 @@ in
       vlc # Media player
       wine
       yt-dlp # YouTube downloader
-      zathura
+      zathura # Document viewer
     ];
 
   # programs.firefox = {
