@@ -3,12 +3,40 @@
   pkgs,
   ...
 }:
+let
+  open-file = pkgs.writeShellApplication {
+    name = "open-file";
+    text = builtins.readFile ./../open-file.sh;
+    runtimeInputs = with pkgs; [
+      eza
+      xdg-utils
+      rofi
+    ];
+  };
+
+  rebuild = pkgs.writeShellApplication {
+    name = "rebuild";
+    text = builtins.readFile ./../rebuild.sh;
+    runtimeInputs = with pkgs; [
+      git
+      ripgrep
+      nix
+      jq
+      fzf
+      pipewire
+      coreutils
+      hyprland
+    ];
+  };
+in
 {
   imports = [
     ./home-modules
   ];
 
   home.packages = with pkgs; [
+    open-file
+    rebuild
   ];
 
   xdg.configFile = {
@@ -43,8 +71,8 @@
 
     ".stow-global-ignore".source = ./../.stow-global-ignore;
 
-    "cleanup.sh".source = ./../cleanup.sh;
-    "rebuild.sh".source = ./../rebuild.sh;
+    # "cleanup.sh".source = ./../cleanup.sh;
+    # "rebuild.sh".source = ./../rebuild.sh;
   };
 
   # This value determines the Home Manager release that your configuration is
