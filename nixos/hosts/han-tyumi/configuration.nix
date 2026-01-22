@@ -305,40 +305,49 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix-search wget
-  environment.systemPackages = with pkgs; [
-    inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
-    inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-    inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
-    # inputs.rmpc.packages.${system}.rmpc
-
-    bind
-    bitwarden-desktop
-    discord
-    fractal
-    firefox
-    halloy
-    kdePackages.kdeconnect-kde
-    kdePackages.marble
-    kdePackages.okular
-    nwg-look
-    obsidian
-    openssl
-    organicmaps
-    prismlauncher
-    qgis
-    qimgv
-    qjackctl
-    signal-desktop
-    signal-export
-    stellarium
-    tor
-    usbutils
-    gnome-disk-utility
-    wine
-    gnome-system-monitor
-    lm_sensors
-    zathura
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
+      inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
+      inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
+      # inputs.rmpc.packages.${system}.rmpc
+    ]
+    ++ [
+      audacity # Audio editor
+      bind
+      bitwarden-desktop
+      discord
+      ffmpeg # Video format transcription
+      firefox
+      fractal
+      gimp # Image editor
+      gnome-disk-utility
+      gnome-system-monitor
+      halloy
+      kdePackages.kdeconnect-kde
+      kdePackages.marble
+      kdePackages.okular
+      krita # Drawing program
+      lm_sensors
+      nwg-look
+      obsidian
+      openssl
+      organicmaps
+      prismlauncher
+      qgis
+      qimgv
+      qjackctl
+      signal-desktop
+      signal-export
+      stellarium
+      tor
+      usbutils
+      vlc # Media player
+      wine
+      yt-dlp # YouTube downloader
+      zathura
+    ];
 
   # programs.firefox = {
   #   enable = true;
