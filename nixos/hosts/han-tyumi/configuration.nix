@@ -23,6 +23,7 @@ in
 
   modules.hyprland-config.enable = true;
   modules.terminal.extra.enable = true;
+  modules.media-tools.enable = true;
   modules.media-tools.extra.enable = true;
 
   nix.settings.experimental-features = [
