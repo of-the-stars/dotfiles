@@ -82,12 +82,12 @@
           # this includes LSPs
           lspsAndRuntimeDeps = with pkgs; {
             general = [
-              djlint
               bacon
               bash-language-server
               clang-tools
               clippy
               curl
+              djlint
               fd
               fzf
               ghc
@@ -114,9 +114,12 @@
               stdenv.cc.cc
               stylelint
               stylua
+              tinymist
               tombi
+              typstyle
               universal-ctags
               yaml-language-server
+              zathura
             ];
             kickstart-debug = [
               delve
@@ -127,8 +130,8 @@
             ];
 
             tidal-cycles = [
-              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.tidal
               inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.superdirt-start
+              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.tidal
             ];
           };
 

@@ -174,6 +174,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Auto preview typst documents
+
 -- NOTE: nixCats: You might want to move the lazy-lock.json file
 local function getlockfilepath()
   if require('nixCatsUtils').isNixCats and type(nixCats.settings.unwrappedCfgPath) == 'string' then
@@ -658,6 +660,13 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.tombi = {}
       servers.css_variables = {}
       servers.html = {}
+      servers.tinymist = {
+        settings = {
+          formatterMode = 'typstyle',
+          exportPdf = 'onType',
+          semanticTokens = 'disable',
+        },
+      }
 
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
