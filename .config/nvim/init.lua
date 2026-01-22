@@ -668,8 +668,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.hls = {}
       servers.just = {}
       servers.tombi = {}
-      servers.css_variables = {}
-      servers.html = {}
+      -- servers.css_variables = {}
+      -- servers.html = {}
       servers.tinymist = {
         settings = {
           formatterMode = 'typstyle',
