@@ -673,7 +673,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.tinymist = {
         settings = {
           formatterMode = 'typstyle',
-          exportPdf = 'onType',
+          exportPdf = 'onSave',
           semanticTokens = 'disable',
         },
       }
