@@ -176,13 +176,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Auto preview typst documents
 vim.api.nvim_create_user_command('OpenPdf', function()
-  group = vim.api.nvim_create_augroup('typst-preview', {})
+  -- group = vim.api.nvim_create_augroup('typst-preview', {})
   local filepath = vim.api.nvim_buf_get_name(0)
 
   if filepath:match '%.typ$' then
     local pdf_path = filepath:gsub('%.typ$', '.pdf')
 
-    vim.system { 'zathura', pdf_path }
+    vim.system { 'zathura-sandbox', '--fork', pdf_path }
   end
 end, {})
 
