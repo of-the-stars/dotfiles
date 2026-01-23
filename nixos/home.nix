@@ -29,13 +29,18 @@ let
     ];
   };
 
-  xterm = pkgs.writeShellApplication {
-    name = "xterm";
-    text = ''
-      $TERM "$@"
-    '';
-    runtimeInputs = [ pkgs.kitty ];
-  };
+  xterm =
+    let
+      terminal = pkgs.kitty;
+      binName = "kitty";
+    in
+    pkgs.writeShellApplication {
+      name = "xterm";
+      text = ''
+        ${terminal}/bin/${binName} "$@"
+      '';
+      runtimeInputs = [ pkgs.kitty ];
+    };
 in
 {
   imports = [
