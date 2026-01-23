@@ -28,6 +28,14 @@ let
       hyprland
     ];
   };
+
+  xterm = pkgs.writeShellApplication {
+    name = "xterm";
+    text = ''
+      $TERM "$@"
+    '';
+    runtimeInputs = [ pkgs.kitty ];
+  };
 in
 {
   imports = [
@@ -37,6 +45,7 @@ in
   home.packages = with pkgs; [
     open-file
     rebuild
+    xterm
   ];
 
   xdg.configFile = {
