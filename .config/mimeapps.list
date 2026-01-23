@@ -1,0 +1,6 @@
+[Default Applications]
+text/markdown=nvim.desktop
+text/plain=nvim.desktop
+application/pdf=zathura.desktop
+application/epub+zip=zathura.desktop
+

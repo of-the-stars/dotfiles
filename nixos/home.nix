@@ -57,6 +57,7 @@ in
     "yazi".source = ./../.config/yazi;
     "zellij".source = ./../.config/zellij;
     "zathura".source = ./../.config/zathura;
+    "mimeapps.list".source = ./../.config/mimeapps.list;
 
     # "kdeglobals".source = ./../.config/kdeglobals;
   };
