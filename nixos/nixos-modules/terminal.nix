@@ -32,15 +32,6 @@ in
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    xdg.terminal-exec = {
-      enable = true;
-      settings = {
-        default = [
-          "kitty.desktop"
-        ];
-      };
-    };
-
     programs.starship = {
       enable = true;
     };
@@ -55,13 +46,15 @@ in
       PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     };
 
-    environment.systemPackages =
+    environment.systemPackages = [
+      pkgs.kitty # Terminal Emulator
+    ]
+    ++ (with pkgsUnstable; [
+      presenterm
+    ])
+    ++ (
       with pkgs;
       [
-        kitty
-
-        pkgsUnstable.presenterm
-
         cargo # The Rust package manager
         cargo-generate # Generate rust projects
         cargo-info # Get info on crates
@@ -82,6 +75,7 @@ in
         tree
         unzip
         whois # Domain registration lookup
+        handlr
         wl-clipboard # Manage system clipboard from the command line
         zoxide
       ]
@@ -115,6 +109,7 @@ in
         tiny # TUI IRC client
         tldr # Community-maintained manpage alternative with examples
         zellij # Terminal multiplexer
-      ];
+      ]
+    );
   };
 }

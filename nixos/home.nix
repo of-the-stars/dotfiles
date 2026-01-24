@@ -29,28 +29,15 @@ let
     ];
   };
 
-  xterm =
-    let
-      terminal = pkgs.kitty;
-      binName = "kitty";
-    in
-    pkgs.writeShellApplication {
-      name = "xterm";
-      text = ''
-        ${terminal}/bin/${binName} "$@"
-      '';
-      runtimeInputs = [ pkgs.kitty ];
-    };
 in
 {
   imports = [
     ./home-modules
   ];
 
-  home.packages = with pkgs; [
+  home.packages = [
     open-file
     rebuild
-    xterm
   ];
 
   xdg.configFile = {
