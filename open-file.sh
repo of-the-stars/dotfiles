@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-FILE=$(eza -1 --absolute=follow -R --no-quotes -D | rofi -i -dmenu -p "Choose Folder") 
+FILE=$(eza -1 --sort=accessed ---no-quotes -absolute=follow -R -D | rofi -i -dmenu -p "Choose Folder") 
 echo "$FILE"
-FILE+=/$(eza -1 -f --sort=accessed --no-quotes "$FILE" | rofi -i -dmenu -p "Choose File")
+FILE+=/$(eza -1 --sort=accessed --no-quotes -f "$FILE" | rofi -i -dmenu -p "Choose File")
 echo "$FILE"
-handlr "${FILE}"
+handlr open "${FILE}"
