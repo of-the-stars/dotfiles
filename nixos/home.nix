@@ -29,6 +29,13 @@ let
     ];
   };
 
+  start = pkgs.writeShellApplication {
+    name = "start";
+    text = ''
+      hyprland
+    '';
+  };
+
 in
 {
   imports = [
@@ -38,6 +45,7 @@ in
   home.packages = [
     open-file
     rebuild
+    start
   ];
 
   xdg.configFile = {
