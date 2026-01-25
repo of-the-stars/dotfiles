@@ -10,6 +10,7 @@ let
     runtimeInputs = with pkgs; [
       eza
       rofi
+      fd
       handlr
     ];
   };
