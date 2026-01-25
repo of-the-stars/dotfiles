@@ -9,8 +9,8 @@ let
     text = builtins.readFile ./../open-file.sh;
     runtimeInputs = with pkgs; [
       eza
-      xdg-utils
       rofi
+      handlr
     ];
   };
 
@@ -25,7 +25,6 @@ let
       fzf
       pipewire
       coreutils
-      hyprland
     ];
   };
 

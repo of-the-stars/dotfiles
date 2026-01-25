@@ -4,4 +4,4 @@ FILE=$(eza -1 --absolute=follow -R --no-quotes -D | rofi -i -dmenu -p "Choose Fo
 echo "$FILE"
 FILE+=/$(eza -1 -f --sort=accessed --no-quotes "$FILE" | rofi -i -dmenu -p "Choose File")
 echo "$FILE"
-xdg-open "${FILE}"
+handlr "${FILE}"
