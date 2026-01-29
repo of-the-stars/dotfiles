@@ -41,7 +41,7 @@ in
           gimp # Image editor
           krita # Drawing program
           vlc # Media player
-          yt-dlp # YouTube downloader
+          # yt-dlp # YouTube downloader
         ]
         ++ lib.optionals config.modules.media-tools.extra.enable [
           pkgsUnstable.kdePackages.k3b # CD and DVD manager

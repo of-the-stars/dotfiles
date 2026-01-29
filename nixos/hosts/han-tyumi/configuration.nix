@@ -313,6 +313,9 @@ in
       inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
       # inputs.rmpc.packages.${system}.rmpc
     ]
+    ++ (with pkgsUnstable; [
+      yt-dlp # YouTube downloader
+    ])
     ++ [
       audacity # Audio editor
       bind
@@ -344,7 +347,6 @@ in
       usbutils
       vlc # Media player
       wine
-      yt-dlp # YouTube downloader
       zathura # Document viewer
     ];
 
