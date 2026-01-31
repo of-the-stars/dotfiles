@@ -1,6 +1,7 @@
 [Default Applications]
 text/markdown=nvim.desktop
 text/plain=nvim.desktop
+application/toml=nvim.desktop
 application/x-shellscript=nvim.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
