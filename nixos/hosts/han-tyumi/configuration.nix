@@ -332,6 +332,7 @@ in
       kdePackages.marble
       krita # Drawing program
       lm_sensors
+      musescore
       nwg-look
       obsidian
       openssl
