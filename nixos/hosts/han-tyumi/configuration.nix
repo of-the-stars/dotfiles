@@ -349,6 +349,7 @@ in
       vlc # Media player
       wine
       zathura # Document viewer
+      nautilus
     ];
 
   # programs.firefox = {
