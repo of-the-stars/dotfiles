@@ -54,6 +54,7 @@
       hyprlock # Desktop lock manager
       hyprpaper # Wallpaper manager
       kdePackages.dolphin # File manager
+      nautilus-open-any-terminal
       waybar
       libnotify
       networkmanagerapplet
