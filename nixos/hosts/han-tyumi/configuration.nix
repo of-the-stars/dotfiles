@@ -333,6 +333,7 @@ in
       krita # Drawing program
       lm_sensors
       musescore
+      nautilus
       nwg-look
       obsidian
       openssl
@@ -345,11 +346,11 @@ in
       signal-export
       stellarium
       tor
+      typst
       usbutils
       vlc # Media player
       wine
       zathura # Document viewer
-      nautilus
     ];
 
   # programs.firefox = {
