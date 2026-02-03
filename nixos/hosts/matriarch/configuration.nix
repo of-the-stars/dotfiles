@@ -81,13 +81,13 @@ in
 
   nix.settings.auto-optimise-store = true;
 
-  # hardware = {
-  #   # # OpenGL
-  #   # graphics.enable = true;
-  #   # Most wayland compositors need this
-  #   # nvidia.modesetting.enable = true;
-  #   opentabletdriver.enable = true;
-  # };
+  hardware = {
+    #   # # OpenGL
+    #   # graphics.enable = true;
+    #   # Most wayland compositors need this
+    #   # nvidia.modesetting.enable = true;
+    opentabletdriver.enable = true;
+  };
 
   networking.hostName = "${hostname}"; # Define your hostname.
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
