@@ -346,7 +346,6 @@ in
       signal-export
       stellarium
       tor
-      typst
       usbutils
       vlc # Media player
       wine
