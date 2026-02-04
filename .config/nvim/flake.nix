@@ -158,7 +158,6 @@
               lazy-nvim
               lazydev-nvim
               luasnip
-              markview-nvim
               mini-nvim
               nvim-lspconfig
               nvim-treesitter.withAllGrammars
