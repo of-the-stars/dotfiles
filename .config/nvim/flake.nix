@@ -118,6 +118,7 @@
               tombi
               typstyle
               universal-ctags
+              ghostscript
               yaml-language-server
               zathura
             ];
