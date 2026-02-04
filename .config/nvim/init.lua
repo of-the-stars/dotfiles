@@ -175,16 +175,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Auto preview typst documents
-vim.api.nvim_create_user_command('OpenPdf', function()
-  -- group = vim.api.nvim_create_augroup('typst-preview', {})
-  local filepath = vim.api.nvim_buf_get_name(0)
-
-  if filepath:match '%.typ$' then
-    local pdf_path = filepath:gsub('%.typ$', '.pdf')
-
-    vim.system { 'zathura-sandbox', '--fork', pdf_path }
-  end
-end, {})
+-- vim.api.nvim_create_user_command('OpenPdf', function()
+--   -- group = vim.api.nvim_create_augroup('typst-preview', {})
+--   local filepath = vim.api.nvim_buf_get_name(0)
+--
+--   if filepath:match '%.typ$' then
+--     local pdf_path = filepath:gsub('%.typ$', '.pdf')
+--
+--     vim.system { 'zathura-sandbox', '--fork', pdf_path }
+--   end
+-- end, {})
 
 -- NOTE: nixCats: You might want to move the lazy-lock.json file
 local function getlockfilepath()
