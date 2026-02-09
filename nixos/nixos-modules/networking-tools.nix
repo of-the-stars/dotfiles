@@ -28,6 +28,7 @@
       wireshark
       protonvpn-gui
       qbittorrent
+      nmap
     ];
   };
 }
