@@ -269,6 +269,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "hyprpaper"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -362,10 +363,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "alacritty"; }
-    Mod+O hotkey-overlay-title="Open an Application" { spawn "rofi -modes \"drun\" -show drun"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+O hotkey-overlay-title="Open an Application" { spawn-sh "rofi -modes \"drun\" -show drun"; }
     Mod+Shift+O hotkey-overlay-title="Open a File" { spawn "open-file"; }
-    Mod+R hotkey-overlay-title="Run Program" { spawn "rofi -modes \"run,ssh\" -show run";}
+    Mod+R hotkey-overlay-title="Run Program" { spawn-sh "rofi -modes \"run,ssh\" -show run"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
