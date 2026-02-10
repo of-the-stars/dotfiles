@@ -28,6 +28,7 @@
     programs.yubikey-manager.enable = true;
 
     services.gnome.gnome-keyring.enable = true;
+    services.passSecretService.enable = true;
 
     programs.gnupg.agent = {
       enable = true;
@@ -39,26 +40,31 @@
       udev.packages = [ pkgs.yubikey-personalization ];
     };
 
-    security.pam.services = {
-      login.u2fAuth = true;
-      sudo = {
-        u2fAuth = true;
-        sshAgentAuth = true;
+    security.pam = {
+      services = {
+        login = {
+          u2fAuth = true;
+          enableGnomeKeyring = true;
+        };
+        sudo = {
+          u2fAuth = true;
+          sshAgentAuth = true;
+        };
       };
-    };
 
-    security.pam.u2f = {
-      enable = true;
-      settings = {
-        interactive = false; # Tells user to insert their key
-        cue = false; # Tells user that they have to press the button
-        origin = "pam://yubi";
-        authfile = pkgs.writeText "u2f-mappings" (
-          lib.concatStrings [
-            "${stellae}"
-            ":3yeemgb2knfpfrl/DGz7elMGvG1BPnqoBG9ljfehDc/gy5uOPEuVMT2NxTwBSY/J8YN1c4QioxnPicy9/uY35w==,W0FTw53ADEn7KNtPvdDEQ5D44ZQcF65NT+Xomht5JmbJpK+3aPkvZsTx846hVcb6TJP1PGUCD5xyk6llAKX6uA==,es256,+presence"
-          ]
-        );
+      u2f = {
+        enable = true;
+        settings = {
+          interactive = false; # Tells user to insert their key
+          cue = false; # Tells user that they have to press the button
+          origin = "pam://yubi";
+          authfile = pkgs.writeText "u2f-mappings" (
+            lib.concatStrings [
+              "${stellae}"
+              ":3yeemgb2knfpfrl/DGz7elMGvG1BPnqoBG9ljfehDc/gy5uOPEuVMT2NxTwBSY/J8YN1c4QioxnPicy9/uY35w==,W0FTw53ADEn7KNtPvdDEQ5D44ZQcF65NT+Xomht5JmbJpK+3aPkvZsTx846hVcb6TJP1PGUCD5xyk6llAKX6uA==,es256,+presence"
+            ]
+          );
+        };
       };
     };
 
