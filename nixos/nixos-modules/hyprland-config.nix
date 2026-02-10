@@ -2,8 +2,17 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
+let
+  init-desktop = pkgs.writeShellApplication {
+    name = "init-desktop";
+    text = ''
+      hyprland
+    '';
+  };
+in
 {
   imports = [
     # Paths to other modules.
@@ -46,7 +55,10 @@
       nerd-fonts.roboto-mono
     ];
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = [
+      init-desktop
+    ]
+    ++ (with pkgs; [
       brightnessctl
       dunst # Notification daemon
       grim
@@ -66,6 +78,6 @@
       wireplumber
       wl-clipboard
       pavucontrol
-    ];
+    ]);
   };
 }

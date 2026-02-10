@@ -5,6 +5,14 @@
   inputs,
   ...
 }:
+let
+  init-desktop = pkgs.writeShellApplication {
+    name = "init-desktop";
+    text = ''
+      niri-session
+    '';
+  };
+in
 {
   imports = [
     # Paths to other modules.
@@ -42,13 +50,16 @@
       nerd-fonts.roboto-mono
     ];
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = [
+      init-desktop
+    ]
+    ++ (with pkgs; [
       brightnessctl
       dunst # Notification daemon
       pavucontrol # Pipewire sound control
       rofi # Pop up menus
       waybar # Status bar
       wl-clipboard # Manage clipboard on wayland
-    ];
+    ]);
   };
 }
