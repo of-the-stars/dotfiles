@@ -22,6 +22,8 @@ in
   ];
 
   modules.hyprland-config.enable = true;
+  modules.niri-config.enable = true;
+
   modules.terminal.extra.enable = true;
   modules.media-tools.enable = true;
   modules.media-tools.extra.enable = true;
@@ -308,48 +310,47 @@ in
   environment.systemPackages =
     with pkgs;
     [
-      inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
-      inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-      inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
-      # inputs.rmpc.packages.${system}.rmpc
+      # bind
+      # gnome-disk-utility
+      # gnome-system-monitor
+      # kdePackages.marble
+      # musescore
+      # nautilus
+      # organicmaps
+      # qgis
+      # qjackctl
+      # signal-export
+      # wine
+      audacity # Audio editor
+      discord
+      ffmpeg # Video format transcription
+      firefox # Web browser
+      fractal # Matrix chat app
+      gimp # Image editor
+      halloy
+      kdePackages.kdeconnect-kde
+      krita # Drawing program
+      lm_sensors
+      nwg-look
+      obsidian
+      openssl
+      prismlauncher
+      qimgv
+      signal-desktop
+      stellarium
+      tor
+      usbutils
+      vlc # Media player
+      zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
     ])
     ++ [
-      audacity # Audio editor
-      bind
-      bitwarden-desktop
-      discord
-      ffmpeg # Video format transcription
-      firefox
-      fractal
-      gimp # Image editor
-      gnome-disk-utility
-      gnome-system-monitor
-      halloy
-      kdePackages.kdeconnect-kde
-      kdePackages.marble
-      krita # Drawing program
-      lm_sensors
-      musescore
-      nautilus
-      nwg-look
-      obsidian
-      openssl
-      organicmaps
-      prismlauncher
-      qgis
-      qimgv
-      qjackctl
-      signal-desktop
-      signal-export
-      stellarium
-      tor
-      usbutils
-      vlc # Media player
-      wine
-      zathura # Document viewer
+      inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
+      inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
+      inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
+      # inputs.rmpc.packages.${system}.rmpc
     ];
 
   # programs.firefox = {

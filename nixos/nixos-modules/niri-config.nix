@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -15,22 +16,17 @@
     # Declare what settings a user of this module can set.
     # Usually this includes a global "enable" option which defaults to false.
 
-    modules.hyprland-config.enable = lib.mkEnableOption "Enables the hyprland window manager";
+    modules.niri-config.enable = lib.mkEnableOption "Enables the niri window manager";
   };
 
-  config = lib.mkIf config.modules.hyprland-config.enable {
+  config = {
     # Option definitions.
     # Define what other settings, services and resources should be active.
     # Usually these depend on whether a user of this module chose to "enable" it
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    # Enable the Hyprland window manager
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      withUWSM = true;
-    };
+    programs.niri.enable = true;
 
     environment.sessionVariables = {
       # If your cursor becomes invisible
@@ -49,23 +45,10 @@
     environment.systemPackages = with pkgs; [
       brightnessctl
       dunst # Notification daemon
-      grim
-      hyprlock # Desktop lock manager
-      hyprpaper # Wallpaper manager
-      kdePackages.dolphin # File manager
-      nautilus-open-any-terminal
-      waybar
-      libnotify
-      networkmanagerapplet
-      pipewire
-      playerctl
+      pavucontrol # Pipewire sound control
       rofi # Pop up menus
-      rofi-obsidian
-      slurp
-      wev
-      wireplumber
-      wl-clipboard
-      pavucontrol
+      waybar # Status bar
+      wl-clipboard # Manage clipboard on wayland
     ];
   };
 }

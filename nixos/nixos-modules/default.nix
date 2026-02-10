@@ -6,17 +6,20 @@
   ...
 }:
 {
+  # Paths to other modules.
+  # Compose this module out of smaller ones.
   imports = [
-    # Paths to other modules.
-    # Compose this module out of smaller ones.
     ./terminal.nix
     ./media-tools.nix
     ./networking-tools.nix
     ./virtual-machines.nix
     ./system-security.nix
-
+  ]
+  # Desktop configs
+  ++ [
     ./hyprland-config.nix
     ./kde-config.nix
+    ./niri-config.nix
   ];
 
   options = {
@@ -45,5 +48,6 @@
     # Makes each host choose their desktop setup
     modules.hyprland-config.enable = lib.mkDefault false;
     modules.kde-config.enable = lib.mkDefault false;
+    modules.niri-config.enable = lib.mkDefault false;
   };
 }
