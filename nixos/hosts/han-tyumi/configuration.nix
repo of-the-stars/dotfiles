@@ -326,7 +326,6 @@ in
       fractal
       gimp # Image editor
       gnome-disk-utility
-      gnome-keyring
       gnome-system-monitor
       halloy
       kdePackages.kdeconnect-kde
