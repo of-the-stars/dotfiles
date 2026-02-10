@@ -88,7 +88,7 @@ output "eDP-1" {
     mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 2
+    scale 1
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -111,7 +111,7 @@ output "eDP-1" {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 5
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -138,9 +138,9 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    // default-column-width { proportion 0.66667; }
+    default-column-width { proportion 0.66667; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width {}
+    // default-column-width {}
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
@@ -284,7 +284,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -316,7 +316,7 @@ window-rule {
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"kitty$"#
-    default-column-width {}
+    // default-column-width {}
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -553,11 +553,11 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    // Mod+R { switch-preset-column-width; }
+    Mod+T { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    // Mod+Shift+R { switch-preset-window-height; }
+    // Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
