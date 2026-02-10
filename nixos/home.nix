@@ -55,7 +55,9 @@ in
     "halloy".source = ./../.config/halloy;
     "hypr".source = ./../.config/hypr;
     "kitty".source = ./../.config/kitty;
+    "mimeapps.list".source = ./../.config/mimeapps.list;
     "ncspot".source = ./../.config/ncspot;
+    "niri".source = ./../.config/niri;
     "nvim".source = ./../.config/nvim;
     "presenterm".source = ./../.config/presenterm;
     "rofi".source = ./../.config/rofi;
@@ -64,11 +66,8 @@ in
     "tmux".source = ./../.config/tmux;
     "waybar".source = ./../.config/waybar;
     "yazi".source = ./../.config/yazi;
-    "zellij".source = ./../.config/zellij;
     "zathura".source = ./../.config/zathura;
-    "mimeapps.list".source = ./../.config/mimeapps.list;
-
-    # "kdeglobals".source = ./../.config/kdeglobals;
+    "zellij".source = ./../.config/zellij;
   };
 
   home.file = {
