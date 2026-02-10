@@ -21,7 +21,6 @@ in
     ./../../nixos-modules
   ];
 
-  modules.hyprland-config.enable = true;
   modules.niri-config.enable = true;
 
   modules.terminal.extra.enable = true;

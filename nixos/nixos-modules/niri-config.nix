@@ -60,6 +60,7 @@ in
       rofi # Pop up menus
       waybar # Status bar
       wl-clipboard # Manage clipboard on wayland
+      hyprpaper
     ]);
   };
 }
