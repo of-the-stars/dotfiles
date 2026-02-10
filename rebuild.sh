@@ -34,7 +34,7 @@ system="$(nix flake show . --json | jq -r ".nixosConfigurations | keys[]" | fzf 
     --padding 5,5 \
     --border-label ' Choose System Which To Rebuild ' \
     --input-label ' Input ' \
-    || true
+    # || true
     )"
 
 echo "NixOS Rebuilding..."
