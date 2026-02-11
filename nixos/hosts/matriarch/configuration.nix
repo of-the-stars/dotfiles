@@ -305,6 +305,10 @@ in
       signal-desktop
       unzip
       vscodium-fhs
+      git
+      ripgrep
+      jq
+      fzf
     ];
 
   # This value determines the NixOS release from which the default
