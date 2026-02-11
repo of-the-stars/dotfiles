@@ -144,9 +144,29 @@
                   home.username = "${stellae}";
                   home.homeDirectory = "/home/${stellae}";
                   imports = [
-                    ./home.nix
-                    inputs.catppuccin.homeModules.catppuccin
+                    # ./home.nix
+                    # inputs.catppuccin.homeModules.catppuccin
                   ];
+                  xdg.configFile = {
+                    "bat".source = ./../.config/bat;
+                    "dunst".source = ./../.config/dunst;
+                    "kitty".source = ./../.config/kitty;
+                    "nvim".source = ./../.config/nvim;
+                    "presenterm".source = ./../.config/presenterm;
+                    "rofi".source = ./../.config/rofi;
+                    "yazi".source = ./../.config/yazi;
+                    # "kdeglobals".source = ./../.config/kdeglobals;
+                  };
+                  home.file = {
+                    ".secrets".source = ./../.secrets;
+                    ".bashrc".source = ./../.bashrc;
+                    # ".zshrc".source = ./../.zshrc;
+                    ".bash_aliases".source = ./../.bash_aliases;
+
+                    "cleanup.sh".source = ./../cleanup.sh;
+                    "rebuild.sh".source = ./../rebuild.sh;
+                  };
+                  home.stateVersion = "25.05"; # Please read the comment before changing.
                 };
 
                 ${syren} = {
