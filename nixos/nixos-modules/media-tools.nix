@@ -39,7 +39,7 @@ in
           audacity # Audio editor
           ffmpeg # Video format transcription
           gimp # Image editor
-          krita # Drawing program
+          # krita # Drawing program
           vlc # Media player
           # yt-dlp # YouTube downloader
         ]

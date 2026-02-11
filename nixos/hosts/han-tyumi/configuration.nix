@@ -328,7 +328,6 @@ in
       gimp # Image editor
       halloy
       kdePackages.kdeconnect-kde
-      krita # Drawing program
       lm_sensors
       nwg-look
       obsidian
@@ -344,6 +343,7 @@ in
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
+      krita # Drawing program
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
