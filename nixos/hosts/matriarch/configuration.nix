@@ -30,12 +30,12 @@ let
 in
 {
   imports = [
-    ./../../nixos-modules/terminal.nix
-    ./../../nixos-modules/system-security.nix
+    # ./../../nixos-modules/terminal.nix
+    # ./../../nixos-modules/system-security.nix
   ];
 
   # kde-config.enable = true;
-  modules.terminal.enable = true;
+  # modules.terminal.enable = true;
   # modules.kde-config.enable = true;
 
   # Enable the X11 windowing system.
@@ -281,24 +281,31 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix-search wget
-  environment.systemPackages = with pkgs; [
-    inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
-    # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-    # inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
-    # inputs.rmpc.packages.${system}.rmpc
-
-    discoverWrapped
-
-    aseprite
-    bitwarden-desktop
-    discord
-    firefox
-    obsidian
-    openssl
-    prismlauncher
-    signal-desktop
-    vscodium-fhs
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
+      # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
+      # inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
+      # inputs.rmpc.packages.${system}.rmpc
+    ]
+    ++ [
+      discoverWrapped
+    ]
+    ++ [
+      aseprite
+      bitwarden-desktop
+      discord
+      dust # Modern `du`
+      firefox
+      lazygit # TUI for `git`
+      obsidian
+      openssl
+      prismlauncher
+      signal-desktop
+      unzip
+      vscodium-fhs
+    ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
