@@ -343,7 +343,10 @@ in
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
-      krita # Drawing program
+      (krita.overrideAttrs (oldAttrs: {
+        dontWrapQtApps = false;
+        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ kdePackages.wrapQtAppsHook ];
+      }))
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
