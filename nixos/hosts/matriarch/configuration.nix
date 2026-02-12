@@ -46,6 +46,15 @@ in
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.elisa
+    kdePackages.konsole
+    kdePackages.kwrite
+    kdePackages.kate
+    xterm
+    kdePackages.ktexteditor
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -73,11 +82,11 @@ in
   #   };
   # };
 
-  # nix.gc = {
-  #   automatic = true;
-  #   dates = "weekly";
-  #   options = "--delete-older-than 14d";
-  # };
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 5d";
+  };
 
   nix.settings.auto-optimise-store = true;
 
@@ -114,7 +123,7 @@ in
     };
   };
 
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -189,10 +198,8 @@ in
       "cdrom"
     ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
-    ];
+    # packages = with pkgs; [
+    # ];
   };
 
   # Auto-sync dotfiles for Syren
@@ -301,7 +308,7 @@ in
       lazygit # TUI for `git`
       obsidian
       openssl
-      prismlauncher
+      # prismlauncher
       signal-desktop
       unzip
       vscodium-fhs
@@ -309,6 +316,11 @@ in
       ripgrep
       jq
       fzf
+      kitty
+    ]
+    ++ [
+      # steam
+      # krita
     ];
 
   # This value determines the NixOS release from which the default
