@@ -58,6 +58,7 @@ in
       dunst # Notification daemon
       hyprlock # Wayland lock screen
       hyprpaper # Wayland wallpaper manager
+      libnotify # Send desktop notifications
       networkmanagerapplet
       pavucontrol # Pipewire sound control
       pipewire
