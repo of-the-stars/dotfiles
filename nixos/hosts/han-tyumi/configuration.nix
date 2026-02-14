@@ -338,7 +338,6 @@ in
       stellarium
       tor
       usbutils
-      vlc # Media player
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [

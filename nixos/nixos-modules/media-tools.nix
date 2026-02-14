@@ -40,7 +40,7 @@ in
           ffmpeg # Video format transcription
           gimp # Image editor
           # krita # Drawing program
-          vlc # Media player
+          # vlc # Media player
           # yt-dlp # YouTube downloader
         ]
         ++ lib.optionals config.modules.media-tools.extra.enable [
