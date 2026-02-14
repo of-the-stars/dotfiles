@@ -6,7 +6,7 @@
   ...
 }:
 let
-  init-desktop = pkgs.writeShellApplication {
+  init-desktop = pkgs.writeShellScriptBin {
     name = "init-desktop";
     text = ''
       hyprland

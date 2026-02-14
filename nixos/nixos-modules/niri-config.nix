@@ -6,7 +6,7 @@
   ...
 }:
 let
-  init-desktop = pkgs.writeShellApplication {
+  init-desktop = pkgs.writeShellScriptBin {
     name = "init-desktop";
     text = ''
       niri-session
@@ -50,22 +50,22 @@ in
       nerd-fonts.roboto-mono
     ];
 
-    environment.systemPackages = [
-      init-desktop
-    ]
-    ++ (with pkgs; [
-      brightnessctl
-      dunst # Notification daemon
-      hyprlock # Wayland lock screen
-      hyprpaper # Wayland wallpaper manager
-      libnotify # Send desktop notifications
-      networkmanagerapplet
-      pavucontrol # Pipewire sound control
-      pipewire
-      playerctl
-      rofi # Pop up menus
-      waybar # Status bar
-      wl-clipboard # Manage clipboard on wayland
-    ]);
+    environment.systemPackages = (
+      with pkgs;
+      [
+        brightnessctl
+        dunst # Notification daemon
+        hyprlock # Wayland lock screen
+        hyprpaper # Wayland wallpaper manager
+        libnotify # Send desktop notifications
+        networkmanagerapplet
+        pavucontrol # Pipewire sound control
+        pipewire
+        playerctl
+        rofi # Pop up menus
+        waybar # Status bar
+        wl-clipboard # Manage clipboard on wayland
+      ]
+    );
   };
 }
