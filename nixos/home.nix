@@ -74,6 +74,7 @@ in
 
     # "cleanup.sh".source = ./../cleanup.sh;
     # "rebuild.sh".source = ./../rebuild.sh;
+    "init.sh".source = ./../init.sh;
   };
 
   # This value determines the Home Manager release that your configuration is
