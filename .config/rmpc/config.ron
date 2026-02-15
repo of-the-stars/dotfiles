@@ -168,8 +168,8 @@
                     (size: "40%", pane: Split(
                         direction: Vertical, 
                         panes: [
-                            (size: "30%", pane: Pane(AlbumArt)),
-                            (size: "70%", pane: Pane(Lyrics)),
+                            (size: "70%", pane: Pane(AlbumArt)),
+                            (size: "30%", pane: Pane(Lyrics)),
                             ],
                         ),
                     ),
