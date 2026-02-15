@@ -26,20 +26,24 @@
         vertical_align: Center,
         horizontal_align: Center,
     ),
+    artists: (
+        album_display_mode: SplitByDate,
+        album_sort_by: Date,
+    ),
     song_table_format: [
         (
             prop: (kind: Property(Title),
                 default: (kind: Text("Unknown"))
             ),
             label_prop: (kind: Text("Title")),
-            width: "35%",
+            width: "40%",
         ),
         (
             prop: (kind: Property(Album), style: (fg: "white"),
                 default: (kind: Text("Unknown Album"), style: (fg: "white"))
             ),
             label_prop: (kind: Text("Album")),
-            width: "30%",
+            width: "25%",
         ),
         (
             prop: (kind: Property(Artist),
@@ -142,10 +146,6 @@
             // (value: "filename",    label: "Filename"),
             // (value: "genre",       label: "Genre"),
         ],
-    ),
-    artists: (
-        album_display_mode: SplitByDate,
-        album_sort_by: Date,
     ),
     cava: (
         input: (
