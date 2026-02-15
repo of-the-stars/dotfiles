@@ -66,6 +66,7 @@ in
   home.file = {
     ".secrets".source = ./../.secrets;
     ".gitconfig".source = ./../.gitconfig;
+    ".lyrics".source = ./../.lyrics;
 
     ".bashrc".source = ./../.bashrc;
     # ".zshrc".source = ./../.zshrc;

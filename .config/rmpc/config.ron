@@ -2,19 +2,18 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-	enable_config_hot_reload: true,
     address: "127.0.0.1:6600",
     cache_dir: None,
     center_current_song_on_change: true,
     duration_format: "%M:%S",
+    enable_config_hot_reload: true,
     enable_lyrics_index: true,
     enable_mouse: true,
-    lyrics_dir: "~/.lyrics",
+    // lyrics_dir: "~/.lyrics",
     max_fps: 30,
     on_song_change: ["~/.config/rmpc/notify.sh"],
     password: None,
     scrolloff: 0,
-    select_current_song_on_change: true,
     select_current_song_on_change: true,
     status_update_interval_ms: 1000,
     theme: None, // "catppuccin",
@@ -27,6 +26,37 @@
         vertical_align: Center,
         horizontal_align: Center,
     ),
+    song_table_format: [
+        (
+            prop: (kind: Property(Title),
+                default: (kind: Text("Unknown"))
+            ),
+            label_prop: (kind: Text("Title")),
+            width: "35%",
+        ),
+        (
+            prop: (kind: Property(Album), style: (fg: "white"),
+                default: (kind: Text("Unknown Album"), style: (fg: "white"))
+            ),
+            label_prop: (kind: Text("Album")),
+            width: "30%",
+        ),
+        (
+            prop: (kind: Property(Artist),
+                default: (kind: Text("Unknown"))
+            ),
+            label_prop: (kind: Text("Artist")),
+            width: "20%",
+        ),
+        (
+            prop: (kind: Property(Duration),
+                default: (kind: Text("-"))
+            ),
+            label_prop: (kind: Text("Duration")),
+            width: "15%",
+            alignment: Right,
+        ),
+    ],
     keybinds: (
         global: {
             ":":       CommandMode,
