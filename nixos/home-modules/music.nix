@@ -31,7 +31,8 @@
       mpd-discord-rpc
     ];
 
-    services.mpdris2.enable = true;
+    # services.mpdris2.enable = true;
+    services.mpd-mpris.enable = true;
 
     services.mpd-discord-rpc = {
       enable = true;
