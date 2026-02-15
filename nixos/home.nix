@@ -52,6 +52,7 @@ in
     "niri".source = ./../.config/niri;
     "nvim".source = ./../.config/nvim;
     "presenterm".source = ./../.config/presenterm;
+    "rmpc".source = ./../.config/rmpc;
     "rofi".source = ./../.config/rofi;
     "sc-im".source = ./../.config/sc-im;
     "tiny".source = ./../.config/tiny;

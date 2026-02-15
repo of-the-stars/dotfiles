@@ -2,22 +2,27 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
+	enable_config_hot_reload: true,
     address: "127.0.0.1:6600",
-    password: None,
-    theme: None, // "catppuccin",
     cache_dir: None,
-    lyrics_dir: Some("~/.lyrics"),
-    on_song_change: Some(["~/.config/rmpc/notify.sh"]),
-    volume_step: 5,
-    max_fps: 30,
-    scrolloff: 0,
-    wrap_navigation: false,
+    center_current_song_on_change: true,
+    duration_format: "%M:%S",
+    enable_lyrics_index: true,
     enable_mouse: true,
-    status_update_interval_ms: 1000,
+    lyrics_dir: "~/.lyrics",
+    max_fps: 30,
+    on_song_change: ["~/.config/rmpc/notify.sh"],
+    password: None,
+    scrolloff: 0,
     select_current_song_on_change: true,
+    select_current_song_on_change: true,
+    status_update_interval_ms: 1000,
+    theme: None, // "catppuccin",
+    volume_step: 5,
+    wrap_navigation: false,
     album_art: (
         method: Auto,
-        max_size_px: (width: 1200, height: 1200),
+        max_size_px: (width: 1000, height: 1000),
         disabled_protocols: ["http://", "https://"],
         vertical_align: Center,
         horizontal_align: Center,
@@ -30,13 +35,13 @@
             ".":       VolumeUp,
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
-            "1":       SwitchToTab("Queue"),
+            "1":       SwitchToTab("Now Playing"),
             "2":       SwitchToTab("Albums"),
             "3":       SwitchToTab("Search"),
             "4":       SwitchToTab("Playlists"),
-            "5":       SwitchToTab("Artists"),
-            "6":       SwitchToTab("Album Artists"),
-            "7":       SwitchToTab("Directories"),
+            // "5":       SwitchToTab("Artists"),
+            // "6":       SwitchToTab("Album Artists"),
+            // "7":       SwitchToTab("Directories"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -100,12 +105,12 @@
         mode: Contains,
         tags: [
             (value: "any",         label: "Any Tag"),
+            (value: "title",       label: "Title"),
             (value: "artist",      label: "Artist"),
             (value: "album",       label: "Album"),
-            (value: "albumartist", label: "Album Artist"),
-            (value: "title",       label: "Title"),
-            (value: "filename",    label: "Filename"),
-            (value: "genre",       label: "Genre"),
+            // (value: "albumartist", label: "Album Artist"),
+            // (value: "filename",    label: "Filename"),
+            // (value: "genre",       label: "Genre"),
         ],
     ),
     artists: (
@@ -126,19 +131,25 @@
     ),
     tabs: [
         (
-            name: "Queue",
+            name: "Now Playing",
             pane: Split(
-                direction: Vertical,
+                direction: Horizontal,
                 panes: [
-                    (size: "50%", pane: Split(
-                        direction: Horizontal, 
+                    (size: "40%", pane: Split(
+                        direction: Vertical, 
                         panes: [
                             (size: "30%", pane: Pane(AlbumArt)),
                             (size: "70%", pane: Pane(Lyrics)),
                             ],
                         ),
                     ),
-                    (size: "50%", pane: Pane(Queue)),
+                    (size: "60%", pane: Split(
+                        direction: Vertical,
+                        panes: [
+                            (size: "100%", pane: Pane(Queue)),
+                            (size: 1, pane: Pane(ProgressBar)),
+                        ],
+                    ))
                 ],
             ),
         ),
@@ -158,14 +169,18 @@
             name: "Artists",
             pane: Pane(Artists),
         ),
+        /*
         (
             name: "Album Artists",
             pane: Pane(AlbumArtists),
         ),
+        */
+        /*
         (
             name: "Directories",
             pane: Pane(Directories),
         ),
+        */
     ],
 )
 
