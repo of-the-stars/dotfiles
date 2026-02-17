@@ -161,6 +161,7 @@
               mini-nvim
               nvim-lspconfig
               nvim-treesitter.withAllGrammars
+              nvim-treesitter-context
               nvim-web-devicons
               plenary-nvim
               remote-nvim-nvim
