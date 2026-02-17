@@ -15,7 +15,10 @@
     izrss.url = "github:isabelroses/izrss";
 
     # custom neovim configuration flake
-    nvim.url = "path:./../.config/nvim/";
+    nvim = {
+      url = "path:./../.config/nvim/";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =

@@ -1077,6 +1077,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
     lazy = false,
     opts = {
@@ -1107,6 +1108,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+      package.loaded['nvim-treesitter'] = nil
+      package.loaded['nvim-treesitter.configs'] = nil
+      -- require 'myluamodule' -- Read and execute the module again from disk
 
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true

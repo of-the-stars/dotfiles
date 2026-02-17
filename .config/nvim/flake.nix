@@ -152,7 +152,7 @@
               flatten-nvim
               friendly-snippets
               fzf-vim
-              fzfWrapper
+              fzf-wrapper
               gitsigns-nvim
               heirline-nvim
               lazy-nvim
@@ -366,7 +366,7 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            shellHook = "";
           };
         };
       }
