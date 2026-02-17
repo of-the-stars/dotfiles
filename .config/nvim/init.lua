@@ -1108,14 +1108,14 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-      package.loaded['nvim-treesitter'] = nil
-      package.loaded['nvim-treesitter.configs'] = nil
+      -- package.loaded['nvim-treesitter'] = nil
+      -- package.loaded['nvim-treesitter.config'] = nil
       -- require 'myluamodule' -- Read and execute the module again from disk
 
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      require('nvim-treesitter.config').setup(opts)
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
