@@ -16,7 +16,7 @@
     in
     {
       packages.${system} = {
-        rmpc = pkgs.rmpc.overrideAttrs (
+        rmpc-wrapped = pkgs.rmpc.overrideAttrs (
           finalAttrs: prevAttrs: {
             nativeBuildInputs = [
               pkgs.makeWrapper
@@ -30,6 +30,6 @@
         );
       };
 
-      # packages.${system}.default = self.packages.${system}.rmpc;
+      packages.${system}.default = self.packages.${system}.rmpc;
     };
 }
