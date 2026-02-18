@@ -91,7 +91,7 @@ in
       };
       sound = {
         enabled = false;
-        system_beep = false; # Use system beep instead of sound files
+        system_beep = true; # Use system beep instead of sound files
         use_embedded = true; # Use embedded sound files
         volume = 0.5; # Volume level (0.0 to 1.0)
         # Optional: Custom sound files (will override embedded sounds)
