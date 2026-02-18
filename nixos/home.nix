@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -29,6 +30,10 @@ let
     ];
   };
 
+  # pkgsUnstable = import inputs.nixpkgs-unstable {
+  #   inherit (pkgs.stdenv.hostPlatform) system;
+  #   inherit (config.nixpkgs) config;
+  # };
 in
 {
   imports = [
@@ -90,9 +95,7 @@ in
         auto_advance = "none"; # Auto-advance mode: "none", "all", "to-break", "to-work"
       };
       sound = {
-        enabled = false;
-        system_beep = true; # Use system beep instead of sound files
-        use_embedded = true; # Use embedded sound files
+        mode = "none";
         volume = 0.5; # Volume level (0.0 to 1.0)
         # Optional: Custom sound files (will override embedded sounds)
         # work_to_break = "/path/to/custom/work-to-break.wav";
@@ -101,7 +104,7 @@ in
       };
       notification = {
         icon = "theme"; # Icon mode: "auto" (embedded), "theme" (system), or "/path/to/icon.png"
-        urgency = "normal";
+        urgency = "low";
         timeout = 10000; # Notification timeout in milliseconds
         work_message = "Break time! Step away from the screen.";
         break_message = "Back to work! Let's get things done.";
@@ -110,6 +113,7 @@ in
       display = {
         text_format = "{state} {phase}: {time}";
       };
+      # package = pkgsUnstable.tomat;
     };
   };
 

@@ -54,6 +54,11 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
+              # home-manager.extraSpecialArgs = {
+              #   inherit
+              #     inputs
+              #     ;
+              # };
               home-manager.users.${stellae} = {
                 home.username = "${stellae}";
                 home.homeDirectory = "/home/${stellae}";
@@ -77,44 +82,44 @@
           ];
         };
 
-      nixosConfigurations.cyboogie =
-        let
-          stellae = "internet_wizard";
-          hostname = "cyboogie";
-        in
-        inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit
-              inputs
-              nixpkgs
-              nixpkgs-unstable
-              stellae
-              hostname
-              ;
-          };
-          modules = [
-            ./hosts/${hostname}
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.${stellae} = {
-                home.username = "${stellae}";
-                home.homeDirectory = "/home/${stellae}";
-                imports = [
-                  ./home.nix
-                  inputs.catppuccin.homeModules.catppuccin
-                ];
-              };
-            }
-
-            inputs.catppuccin.nixosModules.catppuccin
-
-            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-          ];
-        };
+      # nixosConfigurations.cyboogie =
+      #   let
+      #     stellae = "internet_wizard";
+      #     hostname = "cyboogie";
+      #   in
+      #   inputs.nixpkgs.lib.nixosSystem {
+      #     system = "x86_64-linux";
+      #     specialArgs = {
+      #       inherit
+      #         inputs
+      #         nixpkgs
+      #         nixpkgs-unstable
+      #         stellae
+      #         hostname
+      #         ;
+      #     };
+      #     modules = [
+      #       ./hosts/${hostname}
+      #
+      #       home-manager.nixosModules.home-manager
+      #       {
+      #         home-manager.useGlobalPkgs = true;
+      #         home-manager.useUserPackages = true;
+      #         home-manager.users.${stellae} = {
+      #           home.username = "${stellae}";
+      #           home.homeDirectory = "/home/${stellae}";
+      #           imports = [
+      #             ./home.nix
+      #             inputs.catppuccin.homeModules.catppuccin
+      #           ];
+      #         };
+      #       }
+      #
+      #       inputs.catppuccin.nixosModules.catppuccin
+      #
+      #       "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+      #     ];
+      #   };
 
       nixosConfigurations.matriarch =
         let
