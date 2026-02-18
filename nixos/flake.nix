@@ -34,9 +34,10 @@
         let
           stellae = "internet_wizard";
           hostname = "han-tyumi";
+          system = "x86_64-linux";
         in
         inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             inherit
               inputs
@@ -57,6 +58,7 @@
               home-manager.extraSpecialArgs = {
                 inherit
                   inputs
+                  system
                   ;
               };
               home-manager.users.${stellae} = {

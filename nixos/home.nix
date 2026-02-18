@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  system,
   ...
 }:
 let
@@ -30,10 +31,7 @@ let
     ];
   };
 
-  pkgsUnstable = import inputs.nixpkgs-unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
+  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in
 {
   imports = [
@@ -86,6 +84,7 @@ in
 
   services.tomat = {
     enable = true;
+    package = pkgsUnstable.tomat;
     settings = {
       timer = {
         work = 25;
@@ -113,7 +112,6 @@ in
       display = {
         text_format = "{state} {phase}: {time}";
       };
-      # package = pkgsUnstable.tomat;
     };
   };
 
