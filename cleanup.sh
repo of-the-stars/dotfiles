@@ -4,4 +4,4 @@
 
 sudo rm /nix/var/nix/gcroots/auto/*
 sudo nix-collect-garbage -d
-./rebuild.sh
+./dotfiles/rebuild.sh
