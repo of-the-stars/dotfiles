@@ -101,7 +101,7 @@
       "format": "{}",
       "on-click": "tomat toggle",
       "on-click-right": "tomat skip"
-    }
+    },
 
     "tray": {
         "icon-size": 20,
