@@ -350,7 +350,6 @@ in
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
       inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-      inputs.timr-tui.packages.${stdenv.hostPlatform.system}.default
       # inputs.rmpc.packages.${system}.rmpc
     ];
 

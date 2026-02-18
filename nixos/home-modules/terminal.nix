@@ -109,10 +109,6 @@
         notify-send --urgency=high -i "$([ $? = 0 ] && echo terminal || echo error)"
       '';
 
-      pomodoro = ''
-        timr-tui --log -w '25:00' -p '5:00' -m pomodoro --blink on --notification on
-      '';
-
       # This was part of the above command, idk how to add it in again
       # TODO: Fix this and incorporate it back into the previous command
 

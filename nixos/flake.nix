@@ -11,7 +11,7 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-    timr-tui.url = "github:sectore/timr-tui";
+    # timr-tui.url = "github:sectore/timr-tui";
     izrss.url = "github:isabelroses/izrss";
 
     # custom neovim configuration flake
