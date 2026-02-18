@@ -85,6 +85,17 @@ in
       timer = {
         work = 25;
         break = 5;
+        auto_advance = false;
+      };
+      display = {
+        text_format = "{phase}: {time} {state}";
+      };
+      notification = {
+        icon = "theme";
+        urgency = "low";
+        work_message = "Break time! Step away from the screen.";
+        break_message = "Back to work! Let's get things done.";
+        long_break_message = "Long break! You've earned it.";
       };
     };
   };

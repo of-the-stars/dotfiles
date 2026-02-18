@@ -94,6 +94,15 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
 
+    "custom/tomat": {
+      "exec": "tomat status",
+      "interval": 1,
+      "return-type": "json",
+      "format": "{}",
+      "on-click": "tomat toggle",
+      "on-click-right": "tomat skip"
+    }
+
     "tray": {
         "icon-size": 20,
     },

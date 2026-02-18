@@ -101,6 +101,26 @@ window#waybar {
   font-size: 25px;
   transition: color 0.5s;
 }
+
 #custom-nix:hover {
   color: alpha(@sapphire, 1);
+}
+
+#custom-tomat.work {
+  background-color: alpha(@crust, 0.94);
+}
+#custom-tomat.work-paused {
+  background-color: alpha(@crust, 0.94);
+}
+#custom-tomat.break {
+  background-color: alpha(@crust, 0.94);
+}
+#custom-tomat.break-paused {
+  background-color: alpha(@crust, 0.94);
+}
+#custom-tomat.long-break {
+  background-color: alpha(@crust, 0.94);
+}
+#custom-tomat.long-break-paused {
+  background-color: alpha(@crust, 0.94);
 }
