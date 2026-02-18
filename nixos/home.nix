@@ -30,10 +30,10 @@ let
     ];
   };
 
-  # pkgsUnstable = import inputs.nixpkgs-unstable {
-  #   inherit (pkgs.stdenv.hostPlatform) system;
-  #   inherit (config.nixpkgs) config;
-  # };
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
 in
 {
   imports = [
