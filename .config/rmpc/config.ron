@@ -165,7 +165,7 @@
             pane: Split(
                 direction: Horizontal,
                 panes: [
-                    (size: "40%", pane: Split(
+                    (size: "33%", pane: Split(
                         direction: Vertical, 
                         panes: [
                             (size: "70%", pane: Pane(AlbumArt)),
@@ -173,7 +173,7 @@
                             ],
                         ),
                     ),
-                    (size: "60%", pane: Split(
+                    (size: "67%", pane: Split(
                         direction: Vertical,
                         panes: [
                             (size: "100%", pane: Pane(Queue)),
