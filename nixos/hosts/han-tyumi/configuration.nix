@@ -332,7 +332,6 @@ in
       kid3 # Audio tagger
       lm_sensors
       nwg-look
-      obsidian
       openssl
       prismlauncher
       qimgv
@@ -344,10 +343,8 @@ in
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
-      (krita.overrideAttrs (oldAttrs: {
-        dontWrapQtApps = false;
-        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ kdePackages.wrapQtAppsHook ];
-      }))
+      obsidian
+      krita
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
