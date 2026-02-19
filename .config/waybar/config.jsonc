@@ -10,8 +10,8 @@
         "niri/workspaces",
         "niri/window",
     ],
-    "modules-center": [
-    ],
+    // "modules-center": [
+    // ],
     "modules-right": [
         // "idle_inhibitor",
         // "cpu",

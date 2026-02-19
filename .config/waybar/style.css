@@ -1,7 +1,7 @@
 @import "./mocha.css";
 * {
   /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-  font-family: "RobotoMono Nerd Font", sans-serif;
+  font-family: "RobotoMono Nerd Font", sans-serif, monospace;
   font-size: 15px;
   transition: background-color 0.3s ease-out;
 }
@@ -20,15 +20,15 @@ window#waybar {
 .modules-right {
   background: alpha(@crust, 0.94);
   margin: 5px 10px;
-  padding: 0 5px;
+  padding: 0 10px;
   border-radius: 0px;
 }
-.modules-left {
-  padding: 0;
-}
-.modules-center {
-  padding: 0 10px;
-}
+/* .modules-left { */
+/*   padding: 0 10px; */
+/* } */
+/* .modules-center { */
+/*   padding: 0 10px; */
+/* } */
 
 #clock,
 #battery,
@@ -47,6 +47,9 @@ window#waybar {
 #scratchpad,
 #power-profiles-daemon,
 #language,
+#custom-tomat,
+#niri-window,
+#niri-workspaces,
 #mpd {
   padding: 0 10px;
   border-radius: 0px;
@@ -69,6 +72,7 @@ window#waybar {
 #scratchpad:hover,
 #power-profiles-daemon:hover,
 #language:hover,
+#custom-tomat:hover,
 #mpd:hover {
   background: alpha(@blue, 0.9);
 }
@@ -83,6 +87,7 @@ window#waybar {
   color: @text;
   border: none;
   border-radius: 0px;
+  min-width: 20px;
 }
 
 #workspaces button.active {
