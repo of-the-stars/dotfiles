@@ -339,6 +339,7 @@ in
       tor
       usbutils
       zathura # Document viewer
+      # globalprotect-openconnect
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
