@@ -1095,6 +1095,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         'rust',
         'vim',
         'vimdoc',
+        'ron',
       },
       auto_install = require('nixCatsUtils').lazyAdd(true, false),
 
