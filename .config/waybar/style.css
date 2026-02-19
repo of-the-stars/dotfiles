@@ -55,9 +55,9 @@ window#waybar {
   border-radius: 0px;
 }
 
-#tray {
-  reverse-direction: true;
-}
+/* #tray { */
+/*   reverse-direction: true; */
+/* } */
 
 #clock:hover,
 #battery:hover,
