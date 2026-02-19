@@ -310,6 +310,7 @@ in
     with pkgs;
     [
       # bind
+      # globalprotect-openconnect
       # gnome-disk-utility
       # gnome-system-monitor
       # kdePackages.marble
@@ -328,6 +329,7 @@ in
       gimp # Image editor
       halloy
       kdePackages.kdeconnect-kde
+      kid3 # Audio tagger
       lm_sensors
       nwg-look
       obsidian
@@ -339,7 +341,6 @@ in
       tor
       usbutils
       zathura # Document viewer
-      # globalprotect-openconnect
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
