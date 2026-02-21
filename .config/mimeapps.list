@@ -2,6 +2,8 @@
 text/markdown=nvim.desktop
 text/plain=nvim.desktop
 text/x-typst=nvim.desktop
+text/x-latex=nvim.desktop
+text/x-bibtex=nvim.desktop
 application/toml=nvim.desktop
 application/x-shellscript=nvim.desktop
 application/pdf=org.pwmt.zathura.desktop
