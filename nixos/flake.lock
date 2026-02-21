@@ -34,6 +34,26 @@
         "type": "github"
       }
     },
+    "handy": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771602168,
+        "narHash": "sha256-PH/pS57F6xxoDnOk/qfn1WPnJSMvRelFgYGp9fDsTic=",
+        "owner": "cjpais",
+        "repo": "handy",
+        "rev": "a5c3f88acea26e140854ec8e02d834f852663f79",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjpais",
+        "repo": "handy",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -188,6 +208,7 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
+        "handy": "handy",
         "home-manager": "home-manager",
         "izrss": "izrss",
         "nixpkgs": "nixpkgs_3",

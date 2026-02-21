@@ -19,6 +19,11 @@
       url = "path:./../.config/nvim/";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    handy = {
+      url = "github:cjpais/handy";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
