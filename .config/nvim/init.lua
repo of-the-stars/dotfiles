@@ -792,6 +792,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         toml = { 'tombi' },
         just = { 'just-formatter' },
         markdown = { 'mdsf' },
+        typst = { 'typstyle' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
