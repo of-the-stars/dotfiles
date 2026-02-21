@@ -60,10 +60,6 @@
       # "discord-rpc".source = ./../../.config/discord-rpc;
     };
 
-    home.file = {
-      ".lyrics".source = ./../../.lyrics;
-    };
-
     # Enable the music player damon
     services.mpd = {
       enable = true;
