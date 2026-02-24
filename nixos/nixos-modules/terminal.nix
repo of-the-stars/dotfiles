@@ -65,6 +65,7 @@ in
         gcc # GNU Compiler Collection
         git # The distributed VCS
         gping # `ping` but with a graph
+        handlr
         htop-vim # Interactive process viewer with vim bindings
         jq # Print and parse `.json`
         lazygit # TUI for `git`
@@ -72,14 +73,15 @@ in
         openconnect # Connect to VPNs
         rename
         ripgrep # Modern `grep`
+        sd # sed alternative
         tree
         unzip
         whois # Domain registration lookup
-        handlr
         wl-clipboard # Manage system clipboard from the command line
         zoxide
       ]
       ++ lib.optionals config.modules.terminal.extra.enable [
+        # stow # Manage symlinks
         asciinema # Record your terminal session
         bitwarden-cli
         bsdgames # NetBSD games!
@@ -105,7 +107,6 @@ in
         sc-im # Spreadsheet calculator, improved
         screen # Terminal multiplexer, although I just use it for serial ports
         sl # Steam locomotive
-        # stow # Manage symlinks
         tiny # TUI IRC client
         tldr # Community-maintained manpage alternative with examples
         zellij # Terminal multiplexer
