@@ -75,6 +75,7 @@ in
     ".bash_aliases".source = ./../.bash_aliases;
 
     ".stow-global-ignore".source = ./../.stow-global-ignore;
+    "quickhacks".source = ./../quickhacks;
 
     # "cleanup.sh".source = ./../cleanup.sh;
     # "rebuild.sh".source = ./../rebuild.sh;

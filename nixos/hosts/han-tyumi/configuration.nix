@@ -328,6 +328,7 @@ in
       fractal # Matrix chat app
       gimp # Image editor
       halloy
+      kdePackages.dolphin # File manager
       kdePackages.kdeconnect-kde
       kid3 # Audio tagger
       lm_sensors
