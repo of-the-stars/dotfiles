@@ -235,13 +235,14 @@ in
     isNormalUser = true;
     description = "Stellae";
     extraGroups = [
-      "networkmanager"
-      "wheel"
-      "dialout"
-      "video"
-      "jackaudio"
       "audio"
       "cdrom"
+      "dialout"
+      "jackaudio"
+      "networkmanager"
+      "plugdev"
+      "video"
+      "wheel"
     ];
     shell = pkgs.zsh;
   };
