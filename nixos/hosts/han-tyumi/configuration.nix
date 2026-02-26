@@ -343,6 +343,7 @@ in
       tor
       usbutils
       zathura # Document viewer
+      nautilus-open-any-terminal # GNOME file explorer
       mtpfs
     ]
     ++ (with pkgsUnstable; [
