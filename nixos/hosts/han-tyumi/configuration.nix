@@ -345,7 +345,7 @@ in
       zathura # Document viewer
       nautilus-open-any-terminal # GNOME file explorer
       mtpfs
-      libreoffice-fresh-unwrapped
+      libreoffice-fresh
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
