@@ -63,6 +63,7 @@ in
         fd # Modern `find`
         fzf
         gcc # GNU Compiler Collection
+        gh # Github CLI
         git # The distributed VCS
         gping # `ping` but with a graph
         handlr
