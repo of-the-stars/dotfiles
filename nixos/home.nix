@@ -6,6 +6,7 @@
   ...
 }:
 let
+  # Creates executable scripts under the `spellbook` attrset from my ./../spellbook/
   spellbook = {
     knock-knock = pkgs.writeShellApplication {
       name = "knock-knock";
@@ -60,37 +61,42 @@ in
     ./home-modules
   ];
 
-  home.packages = [
-    # spellbook.knock-knock
-    # spellbook.open-file
-    # spellbook.rebuild
-    # spellbook.ux-up
-    # spellbook.whos-there
-  ]
-  ++ (map (spell: spellbook.${spell}) (builtins.attrNames spellbook));
+  # Adds each spell to PATH for me :]
+  home.packages = (map (spell: spellbook.${spell}) (builtins.attrNames spellbook));
 
-  xdg.configFile = {
-    "ashell".source = ./../.config/ashell;
-    "bat".source = ./../.config/bat;
-    "dunst".source = ./../.config/dunst;
-    "halloy".source = ./../.config/halloy;
-    "hypr".source = ./../.config/hypr;
-    "kitty".source = ./../.config/kitty;
-    "mimeapps.list".source = ./../.config/mimeapps.list;
-    "ncspot".source = ./../.config/ncspot;
-    "niri".source = ./../.config/niri;
-    "nvim".source = ./../.config/nvim;
-    "presenterm".source = ./../.config/presenterm;
-    "rmpc".source = ./../.config/rmpc;
-    "rofi".source = ./../.config/rofi;
-    "sc-im".source = ./../.config/sc-im;
-    "tiny".source = ./../.config/tiny;
-    "tmux".source = ./../.config/tmux;
-    "waybar".source = ./../.config/waybar;
-    "yazi".source = ./../.config/yazi;
-    "zathura".source = ./../.config/zathura;
-    "zellij".source = ./../.config/zellij;
-  };
+  # Iterates through the ".config" directory in the root of the repo and lets home manager make symlinks to them
+  xdg.configFile =
+    let
+      configPath = ./../.config;
+    in
+    pkgs.lib.mapAttrs (name: value: { source = configPath + ("/" + name); }) (
+      pkgs.lib.filterAttrs (name: type: (type == "directory") && !(pkgs.lib.hasSuffix ".bak" name)) (
+        builtins.readDir configPath
+      )
+    );
+
+  # xdg.configFile = {
+  #   "ashell".source = ./../.config/ashell;
+  #   "bat".source = ./../.config/bat;
+  #   "dunst".source = ./../.config/dunst;
+  #   "halloy".source = ./../.config/halloy;
+  #   "hypr".source = ./../.config/hypr;
+  #   "kitty".source = ./../.config/kitty;
+  #   "mimeapps.list".source = ./../.config/mimeapps.list;
+  #   "ncspot".source = ./../.config/ncspot;
+  #   "niri".source = ./../.config/niri;
+  #   "nvim".source = ./../.config/nvim;
+  #   "presenterm".source = ./../.config/presenterm;
+  #   "rmpc".source = ./../.config/rmpc;
+  #   "rofi".source = ./../.config/rofi;
+  #   "sc-im".source = ./../.config/sc-im;
+  #   "tiny".source = ./../.config/tiny;
+  #   "tmux".source = ./../.config/tmux;
+  #   "waybar".source = ./../.config/waybar;
+  #   "yazi".source = ./../.config/yazi;
+  #   "zathura".source = ./../.config/zathura;
+  #   "zellij".source = ./../.config/zellij;
+  # };
 
   home.file = {
     ".secrets".source = ./../.secrets;
