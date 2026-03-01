@@ -70,9 +70,7 @@ in
       configPath = ./../.config;
     in
     pkgs.lib.mapAttrs (name: value: { source = configPath + ("/" + name); }) (
-      pkgs.lib.filterAttrs (name: type: (type == "directory") && !(pkgs.lib.hasSuffix ".bak" name)) (
-        builtins.readDir configPath
-      )
+      pkgs.lib.filterAttrs (name: type: !(pkgs.lib.hasSuffix ".bak" name)) (builtins.readDir configPath)
     );
 
   # xdg.configFile = {
@@ -82,7 +80,7 @@ in
   #   "halloy".source = ./../.config/halloy;
   #   "hypr".source = ./../.config/hypr;
   #   "kitty".source = ./../.config/kitty;
-  #   "mimeapps.list".source = ./../.config/mimeapps.list;
+  # "mimeapps.list".source = ./../.config/mimeapps.list;
   #   "ncspot".source = ./../.config/ncspot;
   #   "niri".source = ./../.config/niri;
   #   "nvim".source = ./../.config/nvim;
