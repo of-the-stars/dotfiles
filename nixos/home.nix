@@ -50,7 +50,7 @@ let
       runtimeInputs = with pkgs; [ ];
     };
 
-    ui-up = pkgs.writeShellScriptBin "ui-up" (builtins.readFile ./../spellbook/ui-up.sh);
+    ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
   };
 
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
@@ -64,7 +64,7 @@ in
     spellbook.knock-knock
     spellbook.open-file
     spellbook.rebuild
-    spellbook.ui-up
+    spellbook.ux-up
     spellbook.whos-there
   ];
 
