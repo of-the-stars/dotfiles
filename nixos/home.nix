@@ -43,6 +43,12 @@ let
         ripgrep
       ];
     };
+
+    whos-there = pkgs.writeShellApplication {
+      name = "rebuild";
+      text = builtins.readFile ./../spellbook/whos-there.sh;
+      runtimeInputs = with pkgs; [ ];
+    };
   };
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in
