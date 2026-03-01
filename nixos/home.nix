@@ -45,11 +45,14 @@ let
     };
 
     whos-there = pkgs.writeShellApplication {
-      name = "rebuild";
+      name = "whos-there";
       text = builtins.readFile ./../spellbook/whos-there.sh;
       runtimeInputs = with pkgs; [ ];
     };
+
+    ui-up = pkgs.writeShellScriptBin "ui-up" (builtins.readFile ./../spellbook/ui-up.sh);
   };
+
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in
 {
@@ -61,6 +64,8 @@ in
     spellbook.knock-knock
     spellbook.open-file
     spellbook.rebuild
+    spellbook.ui-up
+    spellbook.whos-there
   ];
 
   xdg.configFile = {
