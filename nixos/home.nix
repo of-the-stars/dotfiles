@@ -44,13 +44,13 @@ let
       ];
     };
 
+    ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
+
     whos-there = pkgs.writeShellApplication {
       name = "whos-there";
       text = builtins.readFile ./../spellbook/whos-there.sh;
       runtimeInputs = with pkgs; [ ];
     };
-
-    ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
   };
 
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
@@ -61,12 +61,13 @@ in
   ];
 
   home.packages = [
-    spellbook.knock-knock
-    spellbook.open-file
-    spellbook.rebuild
-    spellbook.ux-up
-    spellbook.whos-there
-  ];
+    # spellbook.knock-knock
+    # spellbook.open-file
+    # spellbook.rebuild
+    # spellbook.ux-up
+    # spellbook.whos-there
+  ]
+  ++ (map (spell: spellbook.${spell}) (builtins.attrNames spellbook));
 
   xdg.configFile = {
     "ashell".source = ./../.config/ashell;
