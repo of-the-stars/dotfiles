@@ -6,31 +6,44 @@
   ...
 }:
 let
-  open-file = pkgs.writeShellApplication {
-    name = "open-file";
-    text = builtins.readFile ./../open-file.sh;
-    runtimeInputs = with pkgs; [
-      eza
-      rofi
-      fd
-      handlr
-    ];
-  };
+  spellbook = {
+    knock-knock = pkgs.writeShellApplication {
+      name = "knock-knock";
+      text = builtins.readFile ./../spellbook/knock-knock.sh;
+      runtimeInputs = with pkgs; [
+        bat
+        busybox
+        mktemp
+        nmap
+        ripgrep
+      ];
+    };
 
-  rebuild = pkgs.writeShellApplication {
-    name = "rebuild";
-    text = builtins.readFile ./../rebuild.sh;
-    runtimeInputs = with pkgs; [
-      git
-      ripgrep
-      nix
-      jq
-      fzf
-      pipewire
-      coreutils
-    ];
-  };
+    open-file = pkgs.writeShellApplication {
+      name = "open-file";
+      text = builtins.readFile ./../spellbook/open-file.sh;
+      runtimeInputs = with pkgs; [
+        eza
+        fd
+        handlr
+        rofi
+      ];
+    };
 
+    rebuild = pkgs.writeShellApplication {
+      name = "rebuild";
+      text = builtins.readFile ./../spellbook/rebuild.sh;
+      runtimeInputs = with pkgs; [
+        coreutils
+        fzf
+        git
+        jq
+        nix
+        pipewire
+        ripgrep
+      ];
+    };
+  };
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in
 {
@@ -39,8 +52,9 @@ in
   ];
 
   home.packages = [
-    open-file
-    rebuild
+    spellbook.knock-knock
+    spellbook.open-file
+    spellbook.rebuild
   ];
 
   xdg.configFile = {

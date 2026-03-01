@@ -2,6 +2,6 @@
 
 # Stolen and modified from the 11th nix pill by Lethalman
 
-sudo rm /nix/var/nix/gcroots/auto/*
+# sudo rm /nix/var/nix/gcroots/auto/*
 sudo nix-collect-garbage -d
-./dotfiles/rebuild.sh
+./spellbook/rebuild.sh
