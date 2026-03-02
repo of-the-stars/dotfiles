@@ -170,20 +170,20 @@ in
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${stellae} = {
-    isNormalUser = true;
-    description = "Stellae";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "dialout"
-      "video"
-      "jackaudio"
-      "audio"
-      "cdrom"
-    ];
-    shell = pkgs.zsh;
-  };
+  # users.users.${stellae} = {
+  #   isNormalUser = true;
+  #   description = "Stellae";
+  #   extraGroups = [
+  #     "networkmanager"
+  #     "wheel"
+  #     "dialout"
+  #     "video"
+  #     "jackaudio"
+  #     "audio"
+  #     "cdrom"
+  #   ];
+  #   shell = pkgs.zsh;
+  # };
 
   users.users.${syren} = {
     isNormalUser = true;

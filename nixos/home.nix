@@ -73,29 +73,6 @@ in
       pkgs.lib.filterAttrs (name: type: !(pkgs.lib.hasSuffix ".bak" name)) (builtins.readDir configPath)
     );
 
-  # xdg.configFile = {
-  #   "ashell".source = ./../.config/ashell;
-  #   "bat".source = ./../.config/bat;
-  #   "dunst".source = ./../.config/dunst;
-  #   "halloy".source = ./../.config/halloy;
-  #   "hypr".source = ./../.config/hypr;
-  #   "kitty".source = ./../.config/kitty;
-  # "mimeapps.list".source = ./../.config/mimeapps.list;
-  #   "ncspot".source = ./../.config/ncspot;
-  #   "niri".source = ./../.config/niri;
-  #   "nvim".source = ./../.config/nvim;
-  #   "presenterm".source = ./../.config/presenterm;
-  #   "rmpc".source = ./../.config/rmpc;
-  #   "rofi".source = ./../.config/rofi;
-  #   "sc-im".source = ./../.config/sc-im;
-  #   "tiny".source = ./../.config/tiny;
-  #   "tmux".source = ./../.config/tmux;
-  #   "waybar".source = ./../.config/waybar;
-  #   "yazi".source = ./../.config/yazi;
-  #   "zathura".source = ./../.config/zathura;
-  #   "zellij".source = ./../.config/zellij;
-  # };
-
   home.file = {
     ".secrets".source = ./../.secrets;
     ".gitconfig".source = ./../.gitconfig;
@@ -106,10 +83,6 @@ in
 
     ".stow-global-ignore".source = ./../.stow-global-ignore;
     "spellbook".source = ./../spellbook;
-
-    # "cleanup.sh".source = ./../cleanup.sh;
-    # "rebuild.sh".source = ./../rebuild.sh;
-    # "init.sh".source = ./../init.sh;
   };
 
   services.tomat = {
@@ -152,5 +125,5 @@ in
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 }

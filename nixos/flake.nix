@@ -11,7 +11,6 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-    # timr-tui.url = "github:sectore/timr-tui";
     izrss.url = "github:isabelroses/izrss";
 
     # custom neovim configuration flake
@@ -155,76 +154,76 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users = {
-                ${stellae} = {
-                  home.username = "${stellae}";
-                  home.homeDirectory = "/home/${stellae}";
-                  imports = [
-                    # ./home.nix
-                    # inputs.catppuccin.homeModules.catppuccin
-                  ];
-                  xdg.configFile = {
-                    "bat".source = ./../.config/bat;
-                    "dunst".source = ./../.config/dunst;
-                    "kitty".source = ./../.config/kitty;
-                    "nvim".source = ./../.config/nvim;
-                    "presenterm".source = ./../.config/presenterm;
-                    "rofi".source = ./../.config/rofi;
-                    "yazi".source = ./../.config/yazi;
-                    # "kdeglobals".source = ./../.config/kdeglobals;
-                  };
-                  home.file = {
-                    ".secrets".source = ./../.secrets;
-                    ".bashrc".source = ./../.bashrc;
-                    # ".zshrc".source = ./../.zshrc;
-                    ".bash_aliases".source = ./../.bash_aliases;
+                ${syren} =
+                  let
+                    pkgs = import nixpkgs {
+                      system = "x86_64-linux";
+                    };
+                    # Creates executable scripts under the `spellbook` attrset from my ./../spellbook/
+                    spellbook = {
+                      open-file = pkgs.writeShellApplication {
+                        name = "open-file";
+                        text = builtins.readFile ./../spellbook/open-file.sh;
+                        runtimeInputs = with pkgs; [
+                          eza
+                          fd
+                          handlr
+                          rofi
+                        ];
+                      };
 
-                    "cleanup.sh".source = ./../cleanup.sh;
-                    "rebuild.sh".source = ./../rebuild.sh;
-                  };
-                  home.stateVersion = "25.05"; # Please read the comment before changing.
-                };
+                      rebuild = pkgs.writeShellApplication {
+                        name = "rebuild";
+                        text = builtins.readFile ./../spellbook/rebuild.sh;
+                        runtimeInputs = with pkgs; [
+                          coreutils
+                          fzf
+                          git
+                          jq
+                          nix
+                          pipewire
+                          ripgrep
+                        ];
+                      };
+                    };
+                  in
+                  {
+                    imports = [
+                      ./home-modules/terminal.nix
+                    ];
 
-                ${syren} = {
-                  imports = [
-                    ./home-modules/terminal.nix
-                  ];
-
-                  home.username = "${syren}";
-                  home.homeDirectory = "/home/${syren}";
-                  xdg.configFile = {
-                    "bat".source = ./../.config/bat;
-                    "dunst".source = ./../.config/dunst;
-                    "kitty".source = ./../.config/kitty;
-                    "nvim".source = ./../.config/nvim;
-                    "presenterm".source = ./../.config/presenterm;
-                    "rofi".source = ./../.config/rofi;
-                    "yazi".source = ./../.config/yazi;
-                    # "kdeglobals".source = ./../.config/kdeglobals;
+                    home.username = "${syren}";
+                    home.homeDirectory = "/home/${syren}";
+                    xdg.configFile = {
+                      "bat".source = ./../.config/bat;
+                      "dunst".source = ./../.config/dunst;
+                      "kitty".source = ./../.config/kitty;
+                      "nvim".source = ./../.config/nvim;
+                      "presenterm".source = ./../.config/presenterm;
+                      "rofi".source = ./../.config/rofi;
+                      "yazi".source = ./../.config/yazi;
+                      # "kdeglobals".source = ./../.config/kdeglobals;
+                    };
+                    home.file = {
+                      ".secrets".source = ./../.secrets;
+                      ".bashrc".source = ./../.bashrc;
+                      # ".zshrc".source = ./../.zshrc;
+                      ".bash_aliases".source = ./../.bash_aliases;
+                      "spellbook".source = ./../spellbook;
+                    };
+                    # programs.vscode =
+                    #   let
+                    #     pkgs = nixpkgs.legacyPackages."x86_64-linux";
+                    #   in
+                    #   {
+                    #     enable = true;
+                    #     package = pkgs.vscodium;
+                    #     extensions = with pkgs.vscode-extensions; [
+                    #       ms-vscode.live-server
+                    #     ];
+                    #   };
+                    home.stateVersion = "25.05"; # Please read the comment before changing.
                   };
-                  home.file = {
-                    ".secrets".source = ./../.secrets;
-                    ".bashrc".source = ./../.bashrc;
-                    # ".zshrc".source = ./../.zshrc;
-                    ".bash_aliases".source = ./../.bash_aliases;
-
-                    "cleanup.sh".source = ./../cleanup.sh;
-                    "rebuild.sh".source = ./../rebuild.sh;
-                  };
-                  # programs.vscode =
-                  #   let
-                  #     pkgs = import nixpkgs {
-                  #       system = "x86_64-linux";
-                  #     };
-                  #   in
-                  #   {
-                  #     enable = true;
-                  #     package = pkgs.vscodium;
-                  #     extensions = with pkgs.vscode-extensions; [
-                  #       ms-vscode.live-server
-                  #     ];
-                  #   };
-                  home.stateVersion = "25.05"; # Please read the comment before changing.
-                };
               };
             }
           ];
