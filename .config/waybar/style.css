@@ -19,13 +19,13 @@ window#waybar {
 /* .modules-center, */
 .modules-right {
   background: alpha(@crust, 0.94);
-  margin: 5px 5px;
-  padding-right: 10px;
+  margin: 5px 10px;
   border-radius: 0px;
 }
-/* .modules-left { */
-/*   padding: 0 10px; */
-/* } */
+.modules-left {
+  padding: 0px 10px 0px 0px;
+}
+
 /* .modules-center { */
 /*   padding: 0 10px; */
 /* } */
