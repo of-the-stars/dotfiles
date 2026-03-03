@@ -272,7 +272,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "signal-desktop"
-spawn-at-startup "obsidian"
+// spawn-at-startup "obsidian"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
