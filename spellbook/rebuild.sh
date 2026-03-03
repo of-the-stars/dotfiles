@@ -46,7 +46,7 @@ fi
 
 (sudo nixos-rebuild switch --show-trace --flake .#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
-pw-play --volume=0.5 "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
+# pw-play --volume=0.5 "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 
 # Grabs nixos generation info
 gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5) 
