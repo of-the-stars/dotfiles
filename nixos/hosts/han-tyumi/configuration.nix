@@ -343,7 +343,8 @@ in
       tor
       usbutils
       zathura # Document viewer
-      nautilus-open-any-terminal # GNOME file explorer
+      # nautilus-open-any-terminal # GNOME file explorer
+      nautilus
       mtpfs
       libreoffice-fresh
     ]
