@@ -47,6 +47,8 @@ let
 
     ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
 
+    cleanup = pkgs.writeShellScriptBin "cleanup" (builtins.readFile ./../spellbook/cleanup.sh);
+
     whos-there = pkgs.writeShellApplication {
       name = "whos-there";
       text = builtins.readFile ./../spellbook/whos-there.sh;

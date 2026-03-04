@@ -356,7 +356,7 @@ in
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
       inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-      inputs.handy.packages.${stdenv.hostPlatform.system}.handy
+      # inputs.handy.packages.${stdenv.hostPlatform.system}.handy
     ];
 
   # This value determines the NixOS release from which the default

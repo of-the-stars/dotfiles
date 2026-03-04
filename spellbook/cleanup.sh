@@ -4,4 +4,4 @@
 
 # sudo rm /nix/var/nix/gcroots/auto/*
 sudo nix-collect-garbage -d
-./spellbook/rebuild.sh
+./rebuild.sh

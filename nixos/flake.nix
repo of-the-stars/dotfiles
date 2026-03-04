@@ -10,7 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs"; # Ensure Home Manager uses the same Nixpkgs as the system
     };
 
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     izrss.url = "github:isabelroses/izrss";
 
     # custom neovim configuration flake
@@ -19,10 +23,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    handy = {
-      url = "github:cjpais/handy";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    # handy = {
+    #   url = "github:cjpais/handy";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
   };
 
   outputs =
