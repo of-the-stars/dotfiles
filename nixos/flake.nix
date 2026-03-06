@@ -22,11 +22,6 @@
       url = "path:./../.config/nvim/";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
-    # handy = {
-    #   url = "github:cjpais/handy";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # };
   };
 
   outputs =
@@ -49,8 +44,6 @@
           specialArgs = {
             inherit
               inputs
-              nixpkgs-unstable
-              home-manager
               stellae
               hostname
               ;
@@ -58,7 +51,7 @@
           modules = [
             ./hosts/${hostname}
             inputs.catppuccin.nixosModules.catppuccin
-            home-manager.nixosModules.home-manager
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

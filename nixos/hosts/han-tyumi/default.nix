@@ -3,6 +3,7 @@
   pkgs,
   lib,
   inputs,
+  hostname,
   ...
 }:
 {
@@ -12,4 +13,5 @@
     ./configuration.nix
     ./hardware-configuration.nix
   ];
+
 }
