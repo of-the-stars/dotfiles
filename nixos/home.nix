@@ -6,72 +6,6 @@
   ...
 }:
 let
-  # Creates executable scripts under the `spellbook` attrset from my ./../spellbook/
-  # spellbook = {
-  #   # knock-knock = pkgs.writeShellApplication {
-  #   #   name = "knock-knock";
-  #   #   text = builtins.readFile ./../spellbook/knock-knock.sh;
-  #   #   runtimeInputs = with pkgs; [
-  #   #     bat
-  #   #     busybox
-  #   #     mktemp
-  #   #     nmap
-  #   #     ripgrep
-  #   #   ];
-  #   # };
-  #   #
-  #   # open-file = pkgs.writeShellApplication {
-  #   #   name = "open-file";
-  #   #   text = builtins.readFile ./../spellbook/open-file.sh;
-  #   #   runtimeInputs = with pkgs; [
-  #   #     eza
-  #   #     fd
-  #   #     handlr
-  #   #     rofi
-  #   #   ];
-  #   # };
-  #
-  #   # rebuild = pkgs.writeShellApplication {
-  #   #   name = "rebuild";
-  #   #   text = builtins.readFile ./../spellbook/rebuild.sh;
-  #   #   runtimeInputs = with pkgs; [
-  #   #     coreutils
-  #   #     fzf
-  #   #     git
-  #   #     jq
-  #   #     nix
-  #   #     pipewire
-  #   #     ripgrep
-  #   #   ];
-  #   # };
-  #
-  #   open-file = pkgs.writeShellScriptBin "open-file" (builtins.readFile ./../spellbook/open-file.sh);
-  #   cleanup = pkgs.writeShellScriptBin "cleanup" (builtins.readFile ./../spellbook/cleanup.sh);
-  #   knock-knock = pkgs.writeShellScriptBin "knock-knock" (
-  #     builtins.readFile ./../spellbook/knock-knock.sh
-  #   );
-  #   rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./../spellbook/rebuild.sh);
-  #   ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
-  #   whos-there = pkgs.writeShellScriptBin "whos-there" (builtins.readFile ./../spellbook/whos-there.sh);
-  # };
-
-  spellbook =
-    let
-      spellbookPath = ./../spellbook;
-    in
-    pkgs.lib.mapAttrs'
-      (
-        name: value:
-        pkgs.lib.nameValuePair (pkgs.lib.toCamelCase (pkgs.lib.removeSuffix ".sh" name)) (
-          pkgs.writeShellScriptBin (pkgs.lib.removeSuffix ".sh" name) (
-            builtins.readFile (spellbookPath + ("/" + name))
-          )
-        )
-      )
-      (pkgs.lib.filterAttrs (name: type: pkgs.lib.hasSuffix ".sh" name) (builtins.readDir spellbookPath));
-
-  # map (name: pkgs.lib.toCamelCase (pkgs.lib.removeSuffix ".sh" name)) (builtins.attrNames scripts)
-
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in
 {
@@ -79,29 +13,56 @@ in
     ./home-modules
   ];
 
-  # Adds each spell to PATH for me :]
-  # home.packages = (map (spell: spellbook.${spell}) (builtins.attrNames spellbook));
-  home.packages = builtins.attrValues spellbook;
+  # Adds each spell in my spellbook to PATH as a derivation with a binary :]
+  # Gosh do I love the fact that Nix is a whole functional language too
+  # I love functional programming
+  home.packages = builtins.attrValues (
+    let
+      spellbookPath = ./../spellbook;
+    in
+    pkgs.lib.mapAttrs'
+      (
+        # Evaluates to a list of name and value pairs that then get passed to mapAttrs'
+        # to then get turned into an attribute set
+        name: value:
+        # Maps the name of the file to a camelCase version without the file suffix
+        pkgs.lib.nameValuePair (pkgs.lib.toCamelCase (pkgs.lib.removeSuffix ".sh" name))
+          # Returns a derivation with a binary that's the name of the script without the extension
+          # and the content is the script itself
+          (
+            pkgs.writeShellScriptBin (pkgs.lib.removeSuffix ".sh" name) (
+              builtins.readFile (spellbookPath + ("/" + name))
+            )
+          )
+      )
+      # Returns an attribute set with only the `.sh` files as the names of the values
+      (pkgs.lib.filterAttrs (name: type: pkgs.lib.hasSuffix ".sh" name) (builtins.readDir spellbookPath))
+  );
 
   # Iterates through the ".config" directory in the root of the repo and lets home manager make symlinks to them
   xdg.configFile =
     let
       configPath = ./../.config;
     in
-    pkgs.lib.mapAttrs (name: value: { source = configPath + ("/" + name); }) (
-      pkgs.lib.filterAttrs (name: type: !(pkgs.lib.hasSuffix ".bak" name)) (builtins.readDir configPath)
-    );
+    pkgs.lib.mapAttrs
+      (
+        # For each file name, it sets its value to the attribute set containing its source as being the
+        # configPath + the file's name
+        name: value: { source = configPath + ("/" + name); })
+      (
+        # Returns an attribute set with all non-backup files as the names and what kind of file they are as
+        # the value
+        pkgs.lib.filterAttrs (name: type: !(pkgs.lib.hasSuffix ".bak" name)) (builtins.readDir configPath)
+      );
 
   home.file = {
-    ".secrets".source = ./../.secrets;
     ".gitconfig".source = ./../.gitconfig;
-
-    ".bashrc".source = ./../.bashrc;
+    ".secrets".source = ./../.secrets;
+    # ".bash_aliases".source = ./../.bash_aliases;
+    # ".bashrc".source = ./../.bashrc;
+    # ".stow-global-ignore".source = ./../.stow-global-ignore;
     # ".zshrc".source = ./../.zshrc;
-    ".bash_aliases".source = ./../.bash_aliases;
-
-    ".stow-global-ignore".source = ./../.stow-global-ignore;
-    "spellbook".source = ./../spellbook;
+    # "spellbook".source = ./../spellbook;
   };
 
   services.tomat = {
