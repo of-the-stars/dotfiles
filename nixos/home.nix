@@ -7,54 +7,70 @@
 }:
 let
   # Creates executable scripts under the `spellbook` attrset from my ./../spellbook/
-  spellbook = {
-    knock-knock = pkgs.writeShellApplication {
-      name = "knock-knock";
-      text = builtins.readFile ./../spellbook/knock-knock.sh;
-      runtimeInputs = with pkgs; [
-        bat
-        busybox
-        mktemp
-        nmap
-        ripgrep
-      ];
-    };
+  # spellbook = {
+  #   # knock-knock = pkgs.writeShellApplication {
+  #   #   name = "knock-knock";
+  #   #   text = builtins.readFile ./../spellbook/knock-knock.sh;
+  #   #   runtimeInputs = with pkgs; [
+  #   #     bat
+  #   #     busybox
+  #   #     mktemp
+  #   #     nmap
+  #   #     ripgrep
+  #   #   ];
+  #   # };
+  #   #
+  #   # open-file = pkgs.writeShellApplication {
+  #   #   name = "open-file";
+  #   #   text = builtins.readFile ./../spellbook/open-file.sh;
+  #   #   runtimeInputs = with pkgs; [
+  #   #     eza
+  #   #     fd
+  #   #     handlr
+  #   #     rofi
+  #   #   ];
+  #   # };
+  #
+  #   # rebuild = pkgs.writeShellApplication {
+  #   #   name = "rebuild";
+  #   #   text = builtins.readFile ./../spellbook/rebuild.sh;
+  #   #   runtimeInputs = with pkgs; [
+  #   #     coreutils
+  #   #     fzf
+  #   #     git
+  #   #     jq
+  #   #     nix
+  #   #     pipewire
+  #   #     ripgrep
+  #   #   ];
+  #   # };
+  #
+  #   open-file = pkgs.writeShellScriptBin "open-file" (builtins.readFile ./../spellbook/open-file.sh);
+  #   cleanup = pkgs.writeShellScriptBin "cleanup" (builtins.readFile ./../spellbook/cleanup.sh);
+  #   knock-knock = pkgs.writeShellScriptBin "knock-knock" (
+  #     builtins.readFile ./../spellbook/knock-knock.sh
+  #   );
+  #   rebuild = pkgs.writeShellScriptBin "rebuild" (builtins.readFile ./../spellbook/rebuild.sh);
+  #   ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
+  #   whos-there = pkgs.writeShellScriptBin "whos-there" (builtins.readFile ./../spellbook/whos-there.sh);
+  # };
 
-    open-file = pkgs.writeShellApplication {
-      name = "open-file";
-      text = builtins.readFile ./../spellbook/open-file.sh;
-      runtimeInputs = with pkgs; [
-        eza
-        fd
-        handlr
-        rofi
-      ];
-    };
+  spellbook =
+    let
+      spellbookPath = ./../spellbook;
+    in
+    pkgs.lib.mapAttrs'
+      (
+        name: value:
+        pkgs.lib.nameValuePair (pkgs.lib.toCamelCase (pkgs.lib.removeSuffix ".sh" name)) (
+          pkgs.writeShellScriptBin (pkgs.lib.removeSuffix ".sh" name) (
+            builtins.readFile (spellbookPath + ("/" + name))
+          )
+        )
+      )
+      (pkgs.lib.filterAttrs (name: type: pkgs.lib.hasSuffix ".sh" name) (builtins.readDir spellbookPath));
 
-    rebuild = pkgs.writeShellApplication {
-      name = "rebuild";
-      text = builtins.readFile ./../spellbook/rebuild.sh;
-      runtimeInputs = with pkgs; [
-        coreutils
-        fzf
-        git
-        jq
-        nix
-        pipewire
-        ripgrep
-      ];
-    };
-
-    ux-up = pkgs.writeShellScriptBin "ux-up" (builtins.readFile ./../spellbook/ux-up.sh);
-
-    cleanup = pkgs.writeShellScriptBin "cleanup" (builtins.readFile ./../spellbook/cleanup.sh);
-
-    whos-there = pkgs.writeShellApplication {
-      name = "whos-there";
-      text = builtins.readFile ./../spellbook/whos-there.sh;
-      runtimeInputs = with pkgs; [ ];
-    };
-  };
+  # map (name: pkgs.lib.toCamelCase (pkgs.lib.removeSuffix ".sh" name)) (builtins.attrNames scripts)
 
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in
@@ -64,7 +80,8 @@ in
   ];
 
   # Adds each spell to PATH for me :]
-  home.packages = (map (spell: spellbook.${spell}) (builtins.attrNames spellbook));
+  # home.packages = (map (spell: spellbook.${spell}) (builtins.attrNames spellbook));
+  home.packages = builtins.attrValues spellbook;
 
   # Iterates through the ".config" directory in the root of the repo and lets home manager make symlinks to them
   xdg.configFile =
