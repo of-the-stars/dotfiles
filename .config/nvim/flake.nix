@@ -91,6 +91,7 @@
               fd
               fzf
               ghc
+              ghostscript
               haskell-language-server
               just-formatter
               just-formatter
@@ -102,6 +103,7 @@
               matlab-language-server
               mdformat
               mdsf
+              nil
               nix-doc
               nixd
               nixfmt
@@ -118,7 +120,6 @@
               tombi
               typstyle
               universal-ctags
-              ghostscript
               yaml-language-server
               zathura
             ];

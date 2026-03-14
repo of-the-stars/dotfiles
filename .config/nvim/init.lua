@@ -692,9 +692,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md
       if require('nixCatsUtils').isNixCats then
         servers.nixd = {}
-      else
-        servers.rnix = {}
         servers.nil_ls = {}
+      else
+        -- servers.rnix = {}
       end
       servers.lua_ls = {
         -- cmd = {...},
