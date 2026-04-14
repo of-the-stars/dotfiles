@@ -15,11 +15,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    izrss.url = "github:isabelroses/izrss";
+    izrss = {
+      url = "github:isabelroses/izrss";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     # custom neovim configuration flake
     nvim = {
       url = "path:./../.config/nvim/";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    awww = {
+      url = "git+https://codeberg.org/LGFae/awww";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
