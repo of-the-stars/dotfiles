@@ -316,12 +316,14 @@ in
       # gnome-system-monitor
       # kdePackages.marble
       # musescore
-      # nautilus
+      # nautilus-open-any-terminal # GNOME file explorer
       # organicmaps
       # qgis
       # qjackctl
       # signal-export
       # wine
+      android-file-transfer
+      android-tools
       audacity # Audio editor
       discord
       ffmpeg # Video format transcription
@@ -329,11 +331,14 @@ in
       fractal # Matrix chat app
       gimp # Image editor
       halloy
+      just
       kdePackages.kdeconnect-kde
-      android-file-transfer
-      android-tools
       kid3 # Audio tagger
+      libreoffice-fresh
       lm_sensors
+      mtpfs
+      nautilus
+      nautilus
       nwg-look
       openssl
       prismlauncher
@@ -343,10 +348,6 @@ in
       tor
       usbutils
       zathura # Document viewer
-      # nautilus-open-any-terminal # GNOME file explorer
-      nautilus
-      mtpfs
-      libreoffice-fresh
     ]
     ++ (with pkgsUnstable; [
       yt-dlp # YouTube downloader
