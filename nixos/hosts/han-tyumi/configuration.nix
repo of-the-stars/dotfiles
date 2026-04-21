@@ -346,6 +346,7 @@ in
       signal-desktop
       stellarium
       tor
+      typst
       usbutils
       zathura # Document viewer
     ]
