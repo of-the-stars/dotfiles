@@ -9,3 +9,6 @@ application/x-shellscript=nvim.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
 x-scheme-handler/terminal=kitty.desktop
+image/png=mpv.desktop
+image/jpg=mpv.desktop
+image/webp=mpv.desktop
