@@ -10,6 +10,6 @@ application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
 x-scheme-handler/terminal=kitty.desktop
 image/png=mpv.desktop
-image/jpg=mpv.desktop
+image/jpg=umpv.desktop
 image/jpeg=mpv.desktop
 image/webp=mpv.desktop
