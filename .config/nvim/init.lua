@@ -148,6 +148,7 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>n', '<cmd>e<cr> ', { desc = 'New file' })
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr> ', { desc = 'Open file explorer' })
+vim.keymap.set('n', '<leader>[', '<ESC>', {})
 
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
