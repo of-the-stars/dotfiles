@@ -57,32 +57,6 @@
 
         export MANPAGER="nvim +Man!"
 
-
-        # panasonic camcorder helper functions
-
-        panasonic-grab() {
-            # pulls video and splits recordings into .avi files from my Panasonic camcorder
-            dvgrab -V -input $1 --timestamp --size 0 --showstatus --autosplit --format dv2 dv-
-            panasonic-rename
-        }
-
-        panasonic-rename() {
-            # renames the videos grabbed by the panasonic-grab() function into ISO compliant filenames with the date and time
-            rename -v 's/dv-19([0-9]{2}).([0-9]{2}).([0-9]{2})_([0-9]{2})-([0-9]{2})-([0-9]{2})/20$1$2$3T$4$5$6/' *
-        }
-
-        # unzip-all
-
-        unzip-all() {
-            for a in *.zip; do unzip "$a" -d "''${a%.zip}"; done
-        }
-
-        # Colorizes help pages with bat
-        # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain' # '-h' might not be an alias for help, so i'm disabling this by default
-        # alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-
-        # Some fun stuff :))
-
         # fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
 
         # To remind myself what it's all about
