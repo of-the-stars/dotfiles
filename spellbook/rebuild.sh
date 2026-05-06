@@ -52,7 +52,7 @@ fi
 gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5) 
 
 # Commit the changes, with a pre-built message with the system name and the generation info
-echo "$system $gen" | git commit -aveF -
+echo "$gen" | git commit -aveF -
 
 popd
 
