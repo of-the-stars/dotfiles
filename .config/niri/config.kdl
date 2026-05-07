@@ -272,6 +272,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "signal-desktop"
+// spawn-at-startup "tlp-pd"
 // spawn-at-startup "obsidian"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
