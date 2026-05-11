@@ -38,12 +38,17 @@ in
     accent = "blue";
   };
 
+  console = {
+    font = "ter-u24n";
+    packages = [ pkgs.nerd-fonts.roboto-mono ];
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_testing;
+  boot.kernelPackages = pkgsUnstable.linuxPackages_latest;
 
   # Enables auto upgrades
   system.autoUpgrade = {
