@@ -40,7 +40,7 @@ in
 
   console = {
     font = "ter-u24n";
-    packages = [ pkgs.nerd-fonts.roboto-mono ];
+    packages = [ pkgs.terminus_font ];
   };
 
   # Bootloader.
