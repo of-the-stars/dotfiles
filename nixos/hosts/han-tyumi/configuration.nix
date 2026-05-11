@@ -40,8 +40,9 @@ in
 
   console = {
     earlySetup = true;
-    font = "ter-u24n";
     packages = [ pkgs.terminus_font ];
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
+    keyMap = "us";
   };
 
   # Bootloader.
