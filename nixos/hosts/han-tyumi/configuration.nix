@@ -38,12 +38,12 @@ in
     accent = "blue";
   };
 
-  console = {
-    earlySetup = true;
-    packages = [ pkgs.terminus_font ];
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
-    keyMap = "us";
-  };
+  # console = {
+  #   earlySetup = true;
+  #   packages = [ pkgs.terminus_font ];
+  #   font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
+  #   keyMap = "us";
+  # };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
