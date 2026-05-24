@@ -49,6 +49,12 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Better tty
+  services.kmscon = {
+    enable = true;
+    autologinUser = "internet_wizard";
+  };
+
   # Use latest kernel.
   boot.kernelPackages = pkgsUnstable.linuxPackages_latest;
 
