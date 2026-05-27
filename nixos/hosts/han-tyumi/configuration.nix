@@ -51,8 +51,14 @@ in
 
   # Better tty
   services.kmscon = {
-    enable = true;
-    autologinUser = "internet_wizard";
+    enable = false;
+    hwRender = true;
+    useXkbConfig = true;
+
+    extraConfig = ''
+      font-name=roboto-mono
+      font-size=16
+    '';
   };
 
   # Use latest kernel.
