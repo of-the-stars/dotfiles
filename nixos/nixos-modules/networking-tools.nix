@@ -26,7 +26,7 @@
     environment.systemPackages = with pkgs; [
       traceroute
       wireshark
-      protonvpn-gui
+      proton-vpn
       qbittorrent
       nmap
     ];
