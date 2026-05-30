@@ -7,7 +7,6 @@
   inputs,
   stellae,
   hostname,
-  lib,
   ...
 }:
 let
