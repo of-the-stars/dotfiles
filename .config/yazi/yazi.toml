@@ -1,2 +1,2 @@
-[open]
-prepend_rules = [{ name = "*.png", use = "qimgv" }]
+# [open]
+# prepend_rules = [{ name = "*.png", use = "qimgv" }]
