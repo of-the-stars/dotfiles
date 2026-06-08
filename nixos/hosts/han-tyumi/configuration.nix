@@ -383,7 +383,7 @@ in
       tor
       typst
       usbutils
-      wbg
+      wpaperd
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
