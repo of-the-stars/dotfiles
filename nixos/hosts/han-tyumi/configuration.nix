@@ -383,6 +383,7 @@ in
       tor
       typst
       usbutils
+      wbg
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
@@ -393,7 +394,6 @@ in
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
       inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-      inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
       # inputs.handy.packages.${stdenv.hostPlatform.system}.handy
     ];
 

@@ -270,8 +270,9 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "awww-daemon"
-spawn-sh-at-startup "awww img ~/dotfiles/assets/wallpaper.jpg"
+spawn-sh-at-startup "wbg ~/dotfiles/assets/wallpaper.jpeg"
+// spawn-at-startup "awww-daemon"
+// spawn-sh-at-startup "awww img ~/dotfiles/assets/wallpaper.jpg"
 // spawn-at-startup "signal-desktop"
 // spawn-at-startup "tlp-pd"
 // spawn-at-startup "obsidian"
