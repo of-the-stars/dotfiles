@@ -373,7 +373,6 @@ in
       lm_sensors
       mtpfs
       nautilus
-      nautilus
       nwg-look
       openssl
       prismlauncher
@@ -383,13 +382,13 @@ in
       tor
       typst
       usbutils
-      wpaperd
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
-      yt-dlp # YouTube downloader
-      obsidian
       krita
+      obsidian
+      wpaperd
+      yt-dlp # YouTube downloader
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim

@@ -1,3 +1,5 @@
 [default]
 mode = "center"
 path = "~/dotfiles/assets/"
+duration = "30s"
+exec = "./notify.sh"
