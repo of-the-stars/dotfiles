@@ -54,7 +54,8 @@ in
       with pkgs;
       [
         brightnessctl
-        dunst # Notification daemon
+        # dunst # Notification daemon
+        wired # Notification daemon written in Rust
         hyprlock # Wayland lock screen
         hyprpaper # Wayland wallpaper manager
         libnotify # Send desktop notifications
