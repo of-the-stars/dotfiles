@@ -26,10 +26,15 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    awww = {
-      url = "git+https://codeberg.org/LGFae/awww";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    wired = {
+      url = "github:Toqozz/wired-notify";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # awww = {
+    #   url = "git+https://codeberg.org/LGFae/awww";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
   };
 
   outputs =
@@ -86,6 +91,10 @@
                         "https://isabelroses.com/feed.xml"
                       ];
                     };
+                  }
+                  inputs.wired.homeManagerModules.default
+                  {
+                    services.wired.enable = true;
                   }
                 ];
               };
