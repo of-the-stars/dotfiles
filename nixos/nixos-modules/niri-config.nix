@@ -5,14 +5,14 @@
   inputs,
   ...
 }:
-let
-  init-desktop = pkgs.writeShellScriptBin {
-    name = "init-desktop";
-    text = ''
-      niri-session
-    '';
-  };
-in
+# let
+#   init-desktop = pkgs.writeShellScriptBin {
+#     name = "init-desktop";
+#     text = ''
+#       niri-session
+#     '';
+#   };
+# in
 {
   imports = [
     # Paths to other modules.
@@ -54,8 +54,7 @@ in
       with pkgs;
       [
         brightnessctl
-        # dunst # Notification daemon
-        wired # Notification daemon written in Rust
+        dunst # Notification daemon
         hyprlock # Wayland lock screen
         hyprpaper # Wayland wallpaper manager
         libnotify # Send desktop notifications
