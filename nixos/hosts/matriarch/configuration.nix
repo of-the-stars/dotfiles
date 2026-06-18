@@ -185,7 +185,7 @@ in
   #   shell = pkgs.zsh;
   # };
 
-  users.users.${syren} = {
+  users.users.${syren.username} = {
     isNormalUser = true;
     description = "Syren";
     extraGroups = [

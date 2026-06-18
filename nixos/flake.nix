@@ -1,5 +1,5 @@
 {
-  description = "internet_wizard's system flake";
+  description = "of-the-stars's system flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    veila = {
+      url = "github:naurissteins/Veila";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # custom neovim configuration flake
     nvim = {
       url = "path:./../.config/nvim/";
@@ -30,202 +35,27 @@
   outputs =
     {
       self,
-      nixpkgs,
-      nixpkgs-unstable,
-      home-manager,
       ...
     }@inputs:
+    let
+      userPath = ./users;
+      # hostPath = ./hosts;
+      users = inputs.nixpkgs.lib.mapAttrs' (
+        name: value:
+        inputs.nixpkgs.lib.nameValuePair (inputs.nixpkgs.lib.toCamelCase name) {
+          path = userPath + ("/" + name);
+        }
+      ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir userPath));
+      # TODO: Make this the default for creating host configs under the nixosConfigurations set
+      # hosts = inputs.nixpkgs.lib.mapAttrs' (
+      #   name: value:
+      #   inputs.nixpkgs.lib.nameValuePair (inputs.nixpkgs.lib.toCamelCase name) (hostPath + ("/" + name))
+      # ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
+    in
     {
-      nixosConfigurations.han-tyumi =
-        let
-          stellae = "internet_wizard";
-          hostname = "han-tyumi";
-          system = "x86_64-linux";
-        in
-        inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit
-              inputs
-              stellae
-              hostname
-              ;
-          };
-          modules = [
-            ./hosts/${hostname}
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = {
-                inherit
-                  inputs
-                  system
-                  ;
-              };
-              home-manager.users.${stellae} = {
-                home.username = "${stellae}";
-                home.homeDirectory = "/home/${stellae}";
-                imports = [
-                  ./home.nix
-                  inputs.catppuccin.homeModules.catppuccin
-                  inputs.izrss.homeManagerModules.default
-                  {
-                    programs.izrss = {
-                      enable = true;
-                      settings.urls = [
-                        "https://uncenter.dev/feed.xml"
-                        "https://stephango.com/feed.xml"
-                        "https://isabelroses.com/feed.xml"
-                      ];
-                    };
-                  }
-                ];
-              };
-            }
-          ];
-        };
-
-      # nixosConfigurations.cyboogie =
-      #   let
-      #     stellae = "internet_wizard";
-      #     hostname = "cyboogie";
-      #   in
-      #   inputs.nixpkgs.lib.nixosSystem {
-      #     system = "x86_64-linux";
-      #     specialArgs = {
-      #       inherit
-      #         inputs
-      #         nixpkgs
-      #         nixpkgs-unstable
-      #         stellae
-      #         hostname
-      #         ;
-      #     };
-      #     modules = [
-      #       ./hosts/${hostname}
-      #
-      #       home-manager.nixosModules.home-manager
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #         home-manager.users.${stellae} = {
-      #           home.username = "${stellae}";
-      #           home.homeDirectory = "/home/${stellae}";
-      #           imports = [
-      #             ./home.nix
-      #             inputs.catppuccin.homeModules.catppuccin
-      #           ];
-      #         };
-      #       }
-      #
-      #       inputs.catppuccin.nixosModules.catppuccin
-      #
-      #       "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-      #     ];
-      #   };
-
-      nixosConfigurations.matriarch =
-        let
-          stellae = "internet_wizard";
-          syren = "syren";
-          hostname = "matriarch";
-        in
-        inputs.nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              inputs
-              nixpkgs
-              nixpkgs-unstable
-              stellae
-              syren
-              hostname
-              ;
-          };
-          modules = [
-            ./hosts/${hostname}
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "bak";
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users = {
-                ${syren} =
-                  let
-                    pkgs = import nixpkgs {
-                      system = "x86_64-linux";
-                    };
-                    # Creates executable scripts under the `spellbook` attrset from my ./../spellbook/
-                    spellbook = {
-                      open-file = pkgs.writeShellApplication {
-                        name = "open-file";
-                        text = builtins.readFile ./../spellbook/open-file.sh;
-                        runtimeInputs = with pkgs; [
-                          eza
-                          fd
-                          handlr
-                          rofi
-                        ];
-                      };
-
-                      rebuild = pkgs.writeShellApplication {
-                        name = "rebuild";
-                        text = builtins.readFile ./../spellbook/rebuild.sh;
-                        runtimeInputs = with pkgs; [
-                          coreutils
-                          fzf
-                          git
-                          jq
-                          nix
-                          pipewire
-                          ripgrep
-                        ];
-                      };
-                    };
-                  in
-                  {
-                    imports = [
-                      ./home-modules/terminal.nix
-                    ];
-
-                    home.username = "${syren}";
-                    home.homeDirectory = "/home/${syren}";
-                    xdg.configFile = {
-                      "bat".source = ./../.config/bat;
-                      "dunst".source = ./../.config/dunst;
-                      "kitty".source = ./../.config/kitty;
-                      "nvim".source = ./../.config/nvim;
-                      "presenterm".source = ./../.config/presenterm;
-                      "rofi".source = ./../.config/rofi;
-                      "yazi".source = ./../.config/yazi;
-                      # "kdeglobals".source = ./../.config/kdeglobals;
-                    };
-                    home.file = {
-                      ".secrets".source = ./../.secrets;
-                      ".bashrc".source = ./../.bashrc;
-                      # ".zshrc".source = ./../.zshrc;
-                      ".bash_aliases".source = ./../.bash_aliases;
-                      "spellbook".source = ./../spellbook;
-                    };
-                    # programs.vscode =
-                    #   let
-                    #     pkgs = nixpkgs.legacyPackages."x86_64-linux";
-                    #   in
-                    #   {
-                    #     enable = true;
-                    #     package = pkgs.vscodium;
-                    #     extensions = with pkgs.vscode-extensions; [
-                    #       ms-vscode.live-server
-                    #     ];
-                    #   };
-                    home.stateVersion = "25.05"; # Please read the comment before changing.
-                  };
-              };
-            }
-          ];
-        };
+      nixosConfigurations = {
+        han-tyumi = inputs.nixpkgs.lib.nixosSystem (import ./hosts/han-tyumi { inherit inputs users; });
+        # matriarch = inputs.nixpkgs.lib.nixosSystem (import ./hosts/matriarch { inherit inputs users; });
+      };
     };
 }

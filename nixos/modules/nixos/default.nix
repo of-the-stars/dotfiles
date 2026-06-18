@@ -17,7 +17,6 @@
   ]
   # Desktop configs
   ++ [
-    ./hyprland-config.nix
     ./kde-config.nix
     ./niri-config.nix
   ];
@@ -46,7 +45,6 @@
     modules.virtual-machines.enable = lib.mkDefault false;
 
     # Makes each host choose their desktop setup
-    modules.hyprland-config.enable = lib.mkDefault false;
     modules.kde-config.enable = lib.mkDefault false;
     modules.niri-config.enable = lib.mkDefault false;
   };

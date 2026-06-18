@@ -3,8 +3,15 @@
   pkgs,
   lib,
   inputs,
+  users,
   ...
 }:
+let
+  hostname = "matriarch";
+  syren = users.syren // {
+    username = "syren";
+  };
+in
 {
   imports = [
     # Paths to other modules.

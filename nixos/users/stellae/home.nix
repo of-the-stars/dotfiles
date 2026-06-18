@@ -3,14 +3,28 @@
   pkgs,
   inputs,
   system,
+  stellae,
   ...
 }:
 let
-  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
+  username = stellae.username;
 in
 {
   imports = [
-    ./home-modules
+    ../../modules/home
+    inputs.izrss.homeManagerModules.default
+    {
+      programs.izrss = {
+        enable = true;
+        settings.urls = [
+          # "https://uncenter.dev/feed.xml"
+          # "https://stephango.com/feed.xml"
+          # "https://isabelroses.com/feed.xml"
+        ];
+      };
+    }
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   # Adds each spell in my spellbook to PATH as a derivation with a binary :]
@@ -18,7 +32,7 @@ in
   # I love functional programming
   home.packages = builtins.attrValues (
     let
-      spellbookPath = ./../spellbook;
+      spellbookPath = ./../../../spellbook;
     in
     pkgs.lib.mapAttrs'
       (
@@ -42,7 +56,7 @@ in
   # Iterates through the ".config" directory in the root of the repo and lets home manager make symlinks to them
   xdg.configFile =
     let
-      configPath = ./../.config;
+      configPath = ./../../../.config;
     in
     pkgs.lib.mapAttrs
       (
@@ -56,12 +70,12 @@ in
       );
 
   home.file = {
-    ".gitconfig".source = ./../.gitconfig;
-    ".secrets".source = ./../.secrets;
+    ".gitconfig".source = ./../../../.gitconfig;
+    ".secrets".source = ./../../../.secrets;
     # ".bash_aliases".source = ./../.bash_aliases;
     # ".bashrc".source = ./../.bashrc;
     # ".stow-global-ignore".source = ./../.stow-global-ignore;
-    # ".zshrc".source = ./../.zshrc;
+    # ".zshrc".source = ./../../../.zshrc;
     # "spellbook".source = ./../spellbook;
   };
 

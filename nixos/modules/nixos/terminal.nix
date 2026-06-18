@@ -32,9 +32,29 @@ in
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    programs.starship = {
-      enable = true;
-    };
+    # programs.starship = {
+    #   enable = true;
+    # };
+    #
+    # programs.zsh = {
+    #   enable = true;
+    #   enableCompletion = true;
+    #   autosuggestions.enable = true;
+    #   ohMyZsh.enable = true;
+    #   ohMyZsh.plugins = [ "git" ];
+    #   syntaxHighlighting.enable = true;
+    # };
+    #
+    # programs.direnv = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   nix-direnv.enable = true;
+    #   silent = true;
+    # };
+    #
+    # programs.yazi = {
+    #   enable = true;
+    # };
 
     environment.variables = {
       SUDO_EDITOR = "nvim";
@@ -58,7 +78,9 @@ in
         cargo # The Rust package manager
         cargo-generate # Generate rust projects
         cargo-info # Get info on crates
+        direnv
         dust # Modern `du`
+        eza # Modern `ls`
         fastfetch # Fetch system details; `neofetch` replacement
         fd # Modern `find`
         fzf
@@ -69,6 +91,7 @@ in
         handlr
         htop-vim # Interactive process viewer with vim bindings
         jq # Print and parse `.json`
+        just # Just a simple command runner
         lazygit # TUI for `git`
         nmap # Map the network
         openconnect # Connect to VPNs

@@ -165,7 +165,8 @@
         "izrss": "izrss",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "nvim": "nvim"
+        "nvim": "nvim",
+        "veila": "veila"
       }
     },
     "superdirt-src": {
@@ -221,6 +222,26 @@
       "original": {
         "owner": "mitchmindtree",
         "repo": "tidalcycles.nix",
+        "type": "github"
+      }
+    },
+    "veila": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781110853,
+        "narHash": "sha256-aGOshEoOmbsSfPnR8BOf2YDuWwwzGwHw+nvhkjJHGms=",
+        "owner": "naurissteins",
+        "repo": "Veila",
+        "rev": "e10503a37f41deb67f659cb5c671d0a14b373427",
+        "type": "github"
+      },
+      "original": {
+        "owner": "naurissteins",
+        "repo": "Veila",
         "type": "github"
       }
     },

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Based off of 0atman's rebuild script, the script will let you configure NixOS, then rebuild and `git commit` for you
-# If you update something that's pinned with a flake, you need to add logic to update just that flake input
+# If you update something that's pinned with a flake, you need to add logic to update just that flake input (GOTO Line 43)
 
 set -o pipefail
 set -e
@@ -55,6 +55,3 @@ gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5)
 echo "$gen" | git commit -aveF -
 
 popd
-
-# Reloads hyprland
-# hyprctl reload > /dev/null

@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  stellae,
+  username,
   ...
 }:
 {
@@ -55,11 +55,6 @@
       */
     };
 
-    xdg.configFile = {
-      "rmpc".source = ./../../.config/rmpc;
-      # "discord-rpc".source = ./../../.config/discord-rpc;
-    };
-
     # Enable the music player damon
     services.mpd = {
       enable = true;
@@ -86,7 +81,7 @@
       enable = true;
       endpoints."last.fm" = {
         username = "internet_wizard";
-        passwordFile = "/home/internet_wizard/.secrets/lastfm_password";
+        passwordFile = "home/internet_wizard/.secrets/lastfm_password";
       };
       journalInterval = 10;
     };

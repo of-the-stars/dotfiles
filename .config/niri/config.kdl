@@ -256,10 +256,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+        // left 5
+        // right 5
+        // top 5
+        // bottom 5
     }
 }
 
@@ -270,9 +270,8 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "veilad"
 spawn-sh-at-startup "wpaperd -d"
-// spawn-at-startup "awww-daemon"
-// spawn-sh-at-startup "awww img ~/dotfiles/assets/wallpaper.jpg"
 // spawn-at-startup "signal-desktop"
 // spawn-at-startup "tlp-pd"
 // spawn-at-startup "obsidian"
@@ -381,7 +380,7 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+R hotkey-overlay-title="Run Program" { spawn-sh "rofi -modes \"run,ssh\" -show run -matching fuzzy"; }
     Mod+Shift+O hotkey-overlay-title="Open a File" { spawn-sh "open-file"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
+    Mod+Shift+O hotkey-overlay-title="Open a File" { spawn-sh "open-file"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -420,10 +419,8 @@ binds {
 
     Mod+C repeat=false { close-window; }
 
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
+    Mod+Left  allow-when-locked=true { spawn "wpaperctl" "previous"; }
+    Mod+Right allow-when-locked=true { spawn "wpaperctl" "next"; }
     Mod+H     { focus-column-left; }
     // Mod+J     { focus-window-down; }
     // Mod+K     { focus-window-up; }

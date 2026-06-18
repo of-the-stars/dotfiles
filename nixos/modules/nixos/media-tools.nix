@@ -10,6 +10,8 @@ let
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
+  # cfg = config.modules.media-tools;
 in
 {
   imports = [
@@ -34,29 +36,35 @@ in
       # Options for modules imported in "imports" can be set here.
 
       environment.systemPackages =
-        with pkgs;
-        [
+        (with pkgs; [
           audacity # Audio editor
           ffmpeg # Video format transcription
+          qimgv # Qt6 image viewer
           gimp # Image editor
-          # krita # Drawing program
-          # vlc # Media player
-          # yt-dlp # YouTube downloader
-        ]
-        ++ lib.optionals config.modules.media-tools.extra.enable [
-          pkgsUnstable.kdePackages.k3b # CD and DVD manager
-
-          aseprite # Sprite drawing program
-          cdrdao
-          cdrtools
-          droidcam
-          dvgrab # DV Camcorder Video Capture
-          handbrake
-          inkscape
-          kdePackages.kdenlive # Video editor
-          kid3 # Audio tagger
-          vcv-rack # Modular synthesizers
-        ];
+        ])
+        ++ (with pkgsUnstable; [
+          yt-dlp # YouTube downloader
+          krita # Drawing program
+        ])
+        ++ lib.optionals config.modules.media-tools.extra.enable (
+          (with pkgs; [
+            blender
+            aseprite # Sprite drawing program
+            cdrdao
+            cdrtools
+            droidcam
+            dvgrab # DV Camcorder Video Capture
+            handbrake
+            inkscape
+            kdePackages.kdenlive # Video editor
+            kid3 # Audio tagger
+            vcv-rack # Modular synthesizers
+            musescore # Score writing tool
+          ])
+          ++ (with pkgsUnstable; [
+            kdePackages.k3b # CD and DVD manager
+          ])
+        );
     }
     // lib.mkIf config.modules.media-tools.extra.enable {
       programs.obs-studio = {

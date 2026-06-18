@@ -5,14 +5,19 @@
   inputs,
   ...
 }:
-# let
-#   init-desktop = pkgs.writeShellScriptBin {
-#     name = "init-desktop";
-#     text = ''
-#       niri-session
-#     '';
-#   };
-# in
+let
+  # init-desktop = pkgs.writeShellScriptBin {
+  #   name = "init-desktop";
+  #   text = ''
+  #     niri-session
+  #   '';
+  # };
+
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+in
 {
   imports = [
     # Paths to other modules.
@@ -36,6 +41,10 @@
 
     programs.niri.enable = true;
 
+    services.dunst = {
+      enable = true;
+    };
+
     environment.sessionVariables = {
       # If your cursor becomes invisible
       # WLR_NO_HARDWARE_CURSORS = "1";
@@ -50,13 +59,9 @@
       nerd-fonts.roboto-mono
     ];
 
-    environment.systemPackages = (
-      with pkgs;
-      [
+    environment.systemPackages =
+      (with pkgs; [
         brightnessctl
-        dunst # Notification daemon
-        hyprlock # Wayland lock screen
-        hyprpaper # Wayland wallpaper manager
         libnotify # Send desktop notifications
         networkmanagerapplet
         pavucontrol # Pipewire sound control
@@ -67,6 +72,13 @@
         wl-clipboard # Manage clipboard on wayland
         xwayland-satellite # Run X applications
       ]
-    );
+
+      )
+      ++ (with pkgsUnstable; [
+        wpaperd # Wallpaper daemon written in rust
+      ]);
+
+    # modules = [
+    # ];
   };
 }

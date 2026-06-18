@@ -5,8 +5,8 @@
   config,
   pkgs,
   inputs,
-  stellae,
   hostname,
+  stellae,
   ...
 }:
 let
@@ -17,8 +17,11 @@ let
 in
 {
   imports = [
-    ./../../nixos-modules
+    ./../../modules/nixos
+    inputs.catppuccin.nixosModules.catppuccin
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   modules.niri-config.enable = true;
 
@@ -168,21 +171,19 @@ in
   time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_DK.UTF-8";
-
-  # Allow unsupported systems
-  nixpkgs.config.allowUnsupportedSystem = true;
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_DK.UTF-8";
-    LC_IDENTIFICATION = "en_DK.UTF-8";
-    LC_MEASUREMENT = "en_DK.UTF-8";
-    LC_MONETARY = "en_DK.UTF-8";
-    LC_NAME = "en_DK.UTF-8";
-    LC_NUMERIC = "en_DK.UTF-8";
-    LC_PAPER = "en_DK.UTF-8";
-    LC_TELEPHONE = "en_DK.UTF-8";
-    LC_TIME = "en_DK.UTF-8";
+  i18n = {
+    defaultLocale = "en_DK.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_DK.UTF-8";
+      LC_IDENTIFICATION = "en_DK.UTF-8";
+      LC_MEASUREMENT = "en_DK.UTF-8";
+      LC_MONETARY = "en_DK.UTF-8";
+      LC_NAME = "en_DK.UTF-8";
+      LC_NUMERIC = "en_DK.UTF-8";
+      LC_PAPER = "en_DK.UTF-8";
+      LC_TELEPHONE = "en_DK.UTF-8";
+      LC_TIME = "en_DK.UTF-8";
+    };
   };
 
   # # Configure keymap in X11
@@ -212,7 +213,7 @@ in
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "${stellae}";
+      User = "root";
     };
   };
 
@@ -249,7 +250,7 @@ in
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${stellae} = {
+  users.users."${stellae.username}" = {
     isNormalUser = true;
     description = "Stellae";
     extraGroups = [
@@ -338,8 +339,6 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix-search wget
   environment.systemPackages =
@@ -352,21 +351,20 @@ in
       # kdePackages.marble
       # musescore
       # nautilus-open-any-terminal # GNOME file explorer
-      # organicmaps
+      # nautilus-open-any-terminal # GNOME file explorer
       # qgis
       # qjackctl
       # signal-export
       # wine
       android-file-transfer
       android-tools
-      audacity # Audio editor
       discord
       ffmpeg # Video format transcription
       firefox # Web browser
       fractal # Matrix chat app
       gimp # Image editor
       halloy
-      just
+      halloy
       kdePackages.kdeconnect-kde
       kid3 # Audio tagger
       libreoffice-fresh
@@ -375,8 +373,8 @@ in
       nautilus
       nwg-look
       openssl
+      organicmaps
       prismlauncher
-      qimgv
       signal-desktop
       stellarium
       tor
@@ -385,10 +383,7 @@ in
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
-      krita
       obsidian
-      wpaperd
-      yt-dlp # YouTube downloader
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim

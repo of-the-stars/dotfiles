@@ -19,12 +19,12 @@ window#waybar {
 /* .modules-center, */
 .modules-right {
   background: alpha(@crust, 0.94);
-  margin: 5px 10px;
-  padding: 0px 0px 0px 0px;
+  margin: 5px 5px;
+  padding: 1px 1px 1px 1px;
   border-radius: 0px;
 }
 .modules-left {
-  padding: 0px 10px 0px 0px;
+  padding: 1px 1px 1px 1px;
 }
 
 /* .modules-left { */
@@ -95,7 +95,7 @@ window#waybar {
   color: @text;
   border: none;
   border-radius: 0px;
-  min-width: 10px;
+  min-width: 5px;
 }
 
 #workspaces button.active {

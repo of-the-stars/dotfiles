@@ -24,15 +24,6 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    # home.packages = [
-    #   pkgs.writeShellApplication
-    #   {
-    #     name = "rebuild";
-    #     runtimeInputs = with pkgs; [ ];
-    #     text = '''';
-    #   }
-    # ];
-
     programs.bat.enable = true;
 
     programs.zsh = {
@@ -60,7 +51,6 @@
         # fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
 
         # To remind myself what it's all about
-
         # Snippet to use fd to find the file, in case I move the file
         # fd --base-directory=Log4Stell 2026\ Resolutions
 
@@ -68,11 +58,9 @@
       '';
     };
 
-    /*
-         home.shell = {
-        enableZshIntegration = true;
-      };
-    */
+    #    home.shell = {
+    #   enableZshIntegration = true;
+    # };
 
     home.shellAliases = {
       l = "eza -a --sort=type --group-directories-first";
@@ -122,13 +110,6 @@
       git = true;
       icons = "auto";
       colors = "auto";
-    };
-
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-      silent = true;
     };
 
     programs.kitty = {
