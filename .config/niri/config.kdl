@@ -380,6 +380,7 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+R hotkey-overlay-title="Run Program" { spawn-sh "rofi -modes \"run,ssh\" -show run -matching fuzzy"; }
     Mod+Shift+O hotkey-overlay-title="Open a File" { spawn-sh "open-file"; }
+    Mod+Alt+L hotkey-overlay-title="Lock screen" { spawn-sh "veila lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
