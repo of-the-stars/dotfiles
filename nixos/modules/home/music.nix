@@ -72,6 +72,17 @@
         }
       '';
 
+      # settings = {
+      #   audio_output = [
+      #     {
+      #       type = "pipewire";
+      #       name = "my pipewire";
+      #       mixer_device = "default";
+      #       mixer_control = "PCM";
+      #     }
+      #   ];
+      # };
+
       network.port = 6600;
 
       # Optional:
@@ -101,17 +112,6 @@
 
     programs.mpv = {
       enable = true;
-
-      # package = (
-      #   pkgs.mpv.override {
-      #     scripts = with pkgs.mpvScripts; [
-      #       uosc
-      #       sponsorblock
-      #     ];
-      #
-      #     waylandSupport = true;
-      #   }
-      # );
 
       config = {
         profile = "high-quality";
