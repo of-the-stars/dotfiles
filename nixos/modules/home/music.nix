@@ -3,8 +3,12 @@
   pkgs,
   lib,
   username,
+  inputs,
   ...
 }:
+let
+  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
+in
 {
   imports = [
     # Paths to other modules.
@@ -27,7 +31,7 @@
 
     programs.rmpc = {
       enable = true;
-      package = pkgs.rmpc.overrideAttrs { buildInputs = [ pkgs.cava ]; };
+      package = pkgsUnstable.rmpc.overrideAttrs { buildInputs = [ pkgs.cava ]; };
     };
 
     home.packages = with pkgs; [
