@@ -25,7 +25,10 @@
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    programs.rmpc.enable = true;
+    programs.rmpc = {
+      enable = true;
+      package = pkgs.rmpc.overrideAttrs { buildInputs = [ pkgs.cava ]; };
+    };
 
     home.packages = with pkgs; [
       mpd-discord-rpc
