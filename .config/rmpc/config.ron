@@ -165,23 +165,22 @@
         (
             name: "Now Playing",
             pane: Split(
-                direction: Horizontal,
+                direction: Vertical,
                 panes: [
-                    (size: "33%", pane: Split(
-                        direction: Vertical, 
-                        panes: [
-                            (size: "70%", pane: Pane(AlbumArt)),
-                            (size: "30%", pane: Pane(Cava)),
+                    (
+                        size: "70%",
+                        pane: Split(
+                            direction: Horizontal,
+                            panes: [
+                                (size: "33%", pane: Pane(AlbumArt)),
+                                (size: "67%", pane: Pane(Queue)),
                             ],
                         ),
                     ),
-                    (size: "67%", pane: Split(
-                        direction: Vertical,
-                        panes: [
-                            (size: "100%", pane: Pane(Queue)),
-                            // (size: "1", pane: Pane(ProgressBar)),
-                        ],
-                    ))
+                    (
+                        size: "30%",
+                        pane: Pane(Cava),
+                    ),
                 ],
             ),
         ),
