@@ -18,7 +18,7 @@ in
 {
   imports = [
     ./../../modules/nixos
-    inputs.catppuccin.nixosModules.catppuccin
+    # inputs.catppuccin.nixosModules.catppuccin
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -34,11 +34,11 @@ in
     "flakes"
   ];
 
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "blue";
-  };
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  #   accent = "blue";
+  # };
 
   # console = {
   #   earlySetup = true;
@@ -362,16 +362,15 @@ in
       ffmpeg # Video format transcription
       firefox # Web browser
       fractal # Matrix chat app
-      gimp # Image editor
       halloy
       halloy
       kdePackages.kdeconnect-kde
-      kid3 # Audio tagger
       libreoffice-fresh
       lm_sensors
       mtpfs
       nautilus
       nwg-look
+      # obsidian
       openssl
       organicmaps
       prismlauncher
@@ -383,11 +382,10 @@ in
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
-      obsidian
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
-      inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
+      # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
       # inputs.handy.packages.${stdenv.hostPlatform.system}.handy
     ];
 

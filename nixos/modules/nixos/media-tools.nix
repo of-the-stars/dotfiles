@@ -11,7 +11,6 @@ let
     inherit (config.nixpkgs) config;
   };
 
-  # cfg = config.modules.media-tools;
 in
 {
   imports = [
@@ -27,76 +26,88 @@ in
     modules.media-tools.extra.enable = lib.mkEnableOption "Enables extra media tools";
   };
 
-  config =
-    lib.mkIf config.modules.media-tools.enable {
-      # Option definitions.
-      # Define what other settings, services and resources should be active.
-      # Usually these depend on whether a user of this module chose to "enable" it
-      # using the "option" above.
-      # Options for modules imported in "imports" can be set here.
+  config = lib.mkIf config.modules.media-tools.enable {
+    # Option definitions.
+    # Define what other settings, services and resources should be active.
+    # Usually these depend on whether a user of this module chose to "enable" it
+    # using the "option" above.
+    # Options for modules imported in "imports" can be set here.
 
-      environment.systemPackages =
-        (with pkgs; [
-          audacity # Audio editor
-          ffmpeg # Video format transcription
-          qimgv # Qt6 image viewer
-          gimp # Image editor
-        ])
-        ++ (with pkgsUnstable; [
-          yt-dlp # YouTube downloader
-          krita # Drawing program
-        ])
-        ++ lib.optionals config.modules.media-tools.extra.enable (
-          (with pkgs; [
-            blender
-            aseprite # Sprite drawing program
-            cdrdao
-            cdrtools
-            droidcam
-            dvgrab # DV Camcorder Video Capture
-            handbrake
-            inkscape
-            kdePackages.kdenlive # Video editor
-            kid3 # Audio tagger
-            vcv-rack # Modular synthesizers
-            musescore # Score writing tool
-          ])
-          ++ (with pkgsUnstable; [
-            kdePackages.k3b # CD and DVD manager
-          ])
-        );
-    }
-    // lib.mkIf config.modules.media-tools.extra.enable {
-      programs.obs-studio = {
-        enable = true;
-        enableVirtualCamera = true;
+    environment.systemPackages =
+      (with pkgs; [
+        audacity # Audio editor
+        dvgrab # DV Camcorder Video Capture
+        kdePackages.kdenlive # Video editor
+        musescore # Score writing tool
+      ])
+      ++ (with pkgsUnstable; [
+        krita # Drawing program
+        # vcv-rack # Modular synthesizers
+        yt-dlp # YouTube downloader
+      ]);
 
-        plugins = with pkgs.obs-studio-plugins; [
-          droidcam-obs
-          obs-backgroundremoval
-          obs-gstreamer
-          obs-pipewire-audio-capture
-          obs-vaapi
-          obs-vkcapture
-          wlrobs
-        ];
-      };
-
-      security.wrappers = {
-        cdrdao = {
-          setuid = true;
-          owner = "root";
-          group = "cdrom";
-          permissions = "u+wrx,g+x";
-          source = "${pkgs.cdrdao}/bin/cdrdao";
-        };
-        cdrecord = {
-          setuid = true;
-          owner = "root";
-          group = "cdrom";
-          permissions = "u+wrx,g+x";
-          source = "${pkgs.cdrtools}/bin/cdrecord";
-        };
-      };
-    };
+    #   environment.systemPackages =
+    #     (with pkgs; [
+    #       audacity # Audio editor
+    #       ffmpeg # Video format transcription
+    #       qimgv # Qt6 image viewer
+    #       gimp # Image editor
+    #     ])
+    #     ++ (with pkgsUnstable; [
+    #       yt-dlp # YouTube downloader
+    #       krita # Drawing program
+    #     ])
+    #     ++ lib.optionals config.modules.media-tools.extra.enable (
+    #       (with pkgs; [
+    #         blender
+    #         aseprite # Sprite drawing program
+    #         cdrdao
+    #         cdrtools
+    #         droidcam
+    #         dvgrab # DV Camcorder Video Capture
+    #         handbrake
+    #         inkscape
+    #         kdePackages.kdenlive # Video editor
+    #         kid3 # Audio tagger
+    #         vcv-rack # Modular synthesizers
+    #         musescore # Score writing tool
+    #       ])
+    #       ++ (with pkgsUnstable; [
+    #         kdePackages.k3b # CD and DVD manager
+    #       ])
+    #     );
+    # }
+    # // lib.mkIf config.modules.media-tools.extra.enable {
+    #   programs.obs-studio = {
+    #     enable = true;
+    #     enableVirtualCamera = true;
+    #
+    #     plugins = with pkgs.obs-studio-plugins; [
+    #       droidcam-obs
+    #       obs-backgroundremoval
+    #       obs-gstreamer
+    #       obs-pipewire-audio-capture
+    #       obs-vaapi
+    #       obs-vkcapture
+    #       wlrobs
+    #     ];
+    #   };
+    #
+    #   security.wrappers = {
+    #     cdrdao = {
+    #       setuid = true;
+    #       owner = "root";
+    #       group = "cdrom";
+    #       permissions = "u+wrx,g+x";
+    #       source = "${pkgs.cdrdao}/bin/cdrdao";
+    #     };
+    #     cdrecord = {
+    #       setuid = true;
+    #       owner = "root";
+    #       group = "cdrom";
+    #       permissions = "u+wrx,g+x";
+    #       source = "${pkgs.cdrtools}/bin/cdrecord";
+    #     };
+    #   };
+  };
 }

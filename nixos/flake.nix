@@ -11,7 +11,7 @@
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix/release-26.05";
+      url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -39,23 +39,23 @@
     }@inputs:
     let
       userPath = ./users;
-      # hostPath = ./hosts;
+      hostPath = ./hosts;
+
       users = inputs.nixpkgs.lib.mapAttrs' (
         name: value:
         inputs.nixpkgs.lib.nameValuePair (inputs.nixpkgs.lib.toCamelCase name) {
           path = userPath + ("/" + name);
         }
       ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir userPath));
-      # TODO: Make this the default for creating host configs under the nixosConfigurations set
-      # hosts = inputs.nixpkgs.lib.mapAttrs' (
-      #   name: value:
-      #   inputs.nixpkgs.lib.nameValuePair (inputs.nixpkgs.lib.toCamelCase name) (hostPath + ("/" + name))
-      # ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
+
+      hosts = inputs.nixpkgs.lib.mapAttrs' (
+        name: value:
+        inputs.nixpkgs.lib.nameValuePair name (
+          inputs.nixpkgs.lib.nixosSystem (import (hostPath + ("/" + name)) { inherit inputs users; })
+        )
+      ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
     in
     {
-      nixosConfigurations = {
-        han-tyumi = inputs.nixpkgs.lib.nixosSystem (import ./hosts/han-tyumi { inherit inputs users; });
-        # matriarch = inputs.nixpkgs.lib.nixosSystem (import ./hosts/matriarch { inherit inputs users; });
-      };
+      nixosConfigurations = hosts;
     };
 }

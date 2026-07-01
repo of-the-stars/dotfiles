@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-    tidalcycles-nix.url = "github:mitchmindtree/tidalcycles.nix";
+    # tidalcycles-nix.url = "github:mitchmindtree/tidalcycles.nix";
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
@@ -131,10 +131,10 @@
               nix
             ];
 
-            tidal-cycles = [
-              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.superdirt-start
-              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.tidal
-            ];
+            # tidal-cycles = [
+            #   inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.superdirt-start
+            #   inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.tidal
+            # ];
           };
 
           # This is for plugins that will load at startup without using packadd:
@@ -199,9 +199,9 @@
               plenary-nvim
             ];
 
-            tidal-cycles = [
-              inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.vim-tidal
-            ];
+            # tidal-cycles = [
+            #   inputs.tidalcycles-nix.packages.${pkgs.stdenv.hostPlatform.system}.vim-tidal
+            # ];
           };
 
           # shared libraries to be added to LD_LIBRARY_PATH
@@ -286,7 +286,7 @@
               # but we can still send the info from nix to lua that we want it!
               kickstart-gitsigns = true;
 
-              tidal-cycles = false;
+              # tidal-cycles = false;
 
               # we can pass whatever we want actually.
             };
@@ -294,43 +294,43 @@
           };
 
         # TODO: Make this package more "custom built" for just doing music in tidal. Make it pretty too.
-        tidal =
-          {
-            pkgs,
-            name,
-            ...
-          }:
-          {
-            # see :help nixCats.flake.outputs.settings
-            settings = {
-              suffix-path = true;
-              suffix-LD = true;
-              wrapRc = true;
-              aliases = [ "t" ];
-              hosts.python3.enable = true;
-              hosts.node.enable = true;
-            };
-
-            # and a set of categories that you want
-            # (and other information to pass to lua)
-            categories = {
-              general = true;
-
-              kickstart-neo-tree = false;
-              kickstart-debug = false;
-              kickstart-lint = false;
-              kickstart-indent_line = true;
-
-              # this kickstart extra didnt require any extra plugins
-              # so it doesnt have a category above.
-              # but we can still send the info from nix to lua that we want it!
-              kickstart-gitsigns = false;
-
-              tidal-cycles = true;
-
-              # we can pass whatever we want actually.
-            };
-          };
+        # tidal =
+        #   {
+        #     pkgs,
+        #     name,
+        #     ...
+        #   }:
+        #   {
+        #     # see :help nixCats.flake.outputs.settings
+        #     settings = {
+        #       suffix-path = true;
+        #       suffix-LD = true;
+        #       wrapRc = true;
+        #       aliases = [ "t" ];
+        #       hosts.python3.enable = true;
+        #       hosts.node.enable = true;
+        #     };
+        #
+        #     # and a set of categories that you want
+        #     # (and other information to pass to lua)
+        #     categories = {
+        #       general = true;
+        #
+        #       kickstart-neo-tree = false;
+        #       kickstart-debug = false;
+        #       kickstart-lint = false;
+        #       kickstart-indent_line = true;
+        #
+        #       # this kickstart extra didnt require any extra plugins
+        #       # so it doesnt have a category above.
+        #       # but we can still send the info from nix to lua that we want it!
+        #       kickstart-gitsigns = false;
+        #
+        #       tidal-cycles = true;
+        #
+        #       # we can pass whatever we want actually.
+        #     };
+        #   };
       };
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.

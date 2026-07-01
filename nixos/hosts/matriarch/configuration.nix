@@ -5,7 +5,6 @@
   config,
   pkgs,
   inputs,
-  stellae,
   syren,
   hostname,
   lib,
@@ -49,7 +48,7 @@ in
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.elisa
     kdePackages.konsole
-    kdePackages.kwrite
+    # kdePackages.kwrite
     kdePackages.kate
     xterm
     kdePackages.ktexteditor
@@ -228,11 +227,11 @@ in
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "${syren}";
+      User = "${syren.username}";
     };
   };
 
-  # services.displayManager.autoLogin.user = "${syren}";
+  # services.displayManager.autoLogin.user = "${syren.username}";
 
   services.flatpak.enable = true;
   programs.zsh.enable = true;
@@ -301,7 +300,6 @@ in
     ]
     ++ [
       aseprite
-      bitwarden-desktop
       discord
       dust # Modern `du`
       firefox

@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
   inputs,
   users,
   ...
@@ -13,7 +10,14 @@ let
   };
 in
 {
-  imports = [
+  specialArgs = {
+    inherit
+      hostname
+      inputs
+      syren
+      ;
+  };
+  modules = [
     # Paths to other modules.
     # Compose this module out of smaller ones.
     ./configuration.nix
