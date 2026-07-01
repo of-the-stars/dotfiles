@@ -116,12 +116,13 @@
       enable = true;
       shellIntegration.enableZshIntegration = true;
       enableGitIntegration = true;
+    };
 
-      /*
-           extraConfig = ''
-          shell zsh
-        '';
-      */
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+      silent = true;
     };
 
     programs.newsboat = {

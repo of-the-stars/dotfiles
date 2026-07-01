@@ -45,12 +45,12 @@ in
     #   syntaxHighlighting.enable = true;
     # };
 
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-      silent = true;
-    };
+    # programs.direnv = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   nix-direnv.enable = true;
+    #   silent = true;
+    # };
 
     # programs.yazi = {
     #   enable = true;
