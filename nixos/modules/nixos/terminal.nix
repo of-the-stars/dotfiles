@@ -44,14 +44,14 @@ in
     #   ohMyZsh.plugins = [ "git" ];
     #   syntaxHighlighting.enable = true;
     # };
-    #
-    # programs.direnv = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   nix-direnv.enable = true;
-    #   silent = true;
-    # };
-    #
+
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+      silent = true;
+    };
+
     # programs.yazi = {
     #   enable = true;
     # };
@@ -78,7 +78,6 @@ in
         cargo # The Rust package manager
         cargo-generate # Generate rust projects
         cargo-info # Get info on crates
-        direnv
         dust # Modern `du`
         eza # Modern `ls`
         fastfetch # Fetch system details; `neofetch` replacement
