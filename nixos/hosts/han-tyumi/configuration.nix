@@ -18,7 +18,7 @@ in
 {
   imports = [
     ./../../modules/nixos
-    # inputs.catppuccin.nixosModules.catppuccin
+    inputs.catppuccin.nixosModules.catppuccin
   ];
 
   nixpkgs.config.allowUnfree = true;
