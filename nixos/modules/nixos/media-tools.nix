@@ -46,6 +46,21 @@ in
         yt-dlp # YouTube downloader
       ]);
 
+    programs.obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+
+      plugins = with pkgs.obs-studio-plugins; [
+        droidcam-obs
+        obs-backgroundremoval
+        obs-gstreamer
+        obs-pipewire-audio-capture
+        obs-vaapi
+        obs-vkcapture
+        wlrobs
+      ];
+    };
+
     #   environment.systemPackages =
     #     (with pkgs; [
     #       audacity # Audio editor
