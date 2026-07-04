@@ -322,7 +322,7 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"kitty$"#
     // default-column-width {}
-    opacity 0.94
+    opacity 0.90
 }
 
 // Open the Firefox picture-in-picture player as floating by default.

@@ -39,6 +39,7 @@ in
         dvgrab # DV Camcorder Video Capture
         kdePackages.kdenlive # Video editor
         musescore # Score writing tool
+        qimgv # Qt6 image viewer
       ])
       ++ (with pkgsUnstable; [
         krita # Drawing program
