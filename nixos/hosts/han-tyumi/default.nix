@@ -18,7 +18,6 @@ in
   modules = [
     ./configuration.nix
     ./hardware-configuration.nix
-    # TODO: Override kernel declaration in module
     # ({ pkgs, modulesPath, ... }: {
     #   imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix") ];
     # })

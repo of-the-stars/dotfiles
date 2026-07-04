@@ -7,6 +7,7 @@
   inputs,
   hostname,
   stellae,
+  lib,
   ...
 }:
 let
@@ -65,7 +66,7 @@ in
 
   # TODO: Make this compatible with building a live ISO image
   # Use latest kernel.
-  boot.kernelPackages = pkgsUnstable.linuxPackages_latest;
+  boot.kernelPackages = lib.mkForce pkgsUnstable.linuxPackages_latest;
 
   # Enables auto upgrades
   system.autoUpgrade = {
@@ -365,7 +366,7 @@ in
       fractal # Matrix chat app
       halloy
       halloy
-      kdePackages.kdeconnect-kde
+      onlyoffice-desktopeditors
       libreoffice-fresh
       lm_sensors
       mtpfs
