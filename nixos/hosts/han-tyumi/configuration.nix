@@ -63,6 +63,7 @@ in
     '';
   };
 
+  # TODO: Make this compatible with building a live ISO image
   # Use latest kernel.
   boot.kernelPackages = pkgsUnstable.linuxPackages_latest;
 

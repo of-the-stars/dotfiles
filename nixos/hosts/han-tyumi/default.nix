@@ -18,7 +18,10 @@ in
   modules = [
     ./configuration.nix
     ./hardware-configuration.nix
-    # ./../../modules/nixos/live-iso.nix
+    # TODO: Override kernel declaration in module
+    # ({ pkgs, modulesPath, ... }: {
+    #   imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix") ];
+    # })
     # Home manager
     inputs.home-manager.nixosModules.home-manager
     {
