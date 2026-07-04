@@ -1,13 +1,5 @@
 {
-  config,
-  pkgs,
-  inputs,
-  system,
-  stellae,
-  ...
-}:
-{
-  imports = [
-    ./home.nix
-  ];
+  username = "internet_wizard";
+  path = ./.;
+  home = ./home.nix;
 }

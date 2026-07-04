@@ -42,10 +42,7 @@
       hostPath = ./hosts;
 
       users = inputs.nixpkgs.lib.mapAttrs' (
-        name: value:
-        inputs.nixpkgs.lib.nameValuePair (inputs.nixpkgs.lib.toCamelCase name) {
-          path = userPath + ("/" + name);
-        }
+        name: value: inputs.nixpkgs.lib.nameValuePair name (import (userPath + ("/" + name)))
       ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir userPath));
 
       hosts = inputs.nixpkgs.lib.mapAttrs' (
@@ -56,6 +53,7 @@
       ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
     in
     {
+      inherit users;
       nixosConfigurations = hosts;
     };
 }

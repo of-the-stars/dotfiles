@@ -267,21 +267,21 @@ in
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.stellae = {
-    isNormalUser = true;
-    description = "Stellae";
-    extraGroups = [
-      "audio"
-      "cdrom"
-      "dialout"
-      "jackaudio"
-      "networkmanager"
-      "plugdev"
-      "video"
-      "wheel"
-    ];
-    shell = pkgs.zsh;
-  };
+  # users.users.stellae = {
+  #   isNormalUser = true;
+  #   description = "Stellae";
+  #   extraGroups = [
+  #     "audio"
+  #     "cdrom"
+  #     "dialout"
+  #     "jackaudio"
+  #     "networkmanager"
+  #     "plugdev"
+  #     "video"
+  #     "wheel"
+  #   ];
+  #   shell = pkgs.zsh;
+  # };
 
   programs.zsh.enable = true;
   programs.kdeconnect.enable = true;

@@ -5,9 +5,7 @@
 }:
 let
   hostname = "han-tyumi";
-  stellae = users.stellae // {
-    username = "internet_wizard";
-  };
+  stellae = users.stellae;
 in
 {
   specialArgs = {
@@ -34,7 +32,7 @@ in
       };
       home-manager.users.${stellae.username} = {
         imports = [
-          ../../users/stellae/home.nix
+          stellae.home
         ];
         home.username = "${stellae.username}";
         home.homeDirectory = "/home/${stellae.username}";
