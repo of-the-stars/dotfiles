@@ -18,6 +18,7 @@ in
   modules = [
     ./configuration.nix
     ./hardware-configuration.nix
+    # ./../../modules/nixos/live-iso.nix
     # Home manager
     inputs.home-manager.nixosModules.home-manager
     {

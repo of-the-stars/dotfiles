@@ -35,6 +35,7 @@
   outputs =
     {
       self,
+      nixpkgs,
       ...
     }@inputs:
     let
@@ -48,12 +49,11 @@
       hosts = inputs.nixpkgs.lib.mapAttrs' (
         name: value:
         inputs.nixpkgs.lib.nameValuePair name (
-          inputs.nixpkgs.lib.nixosSystem (import (hostPath + ("/" + name)) { inherit inputs users; })
+          inputs.nixpkgs.lib.nixosSystem (import (hostPath + ("/" + name)) { inherit inputs users nixpkgs; })
         )
       ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
     in
     {
-      inherit users;
       nixosConfigurations = hosts;
     };
 }

@@ -1,5 +1,5 @@
 {
-  username = "internet_wizard";
-  path = ./.;
   home = ./home.nix;
+  path = ./.;
+  username = "internet_wizard";
 }

@@ -1,10 +1,4 @@
 {
-  config,
-  pkgs,
-  inputs,
-  system,
-  syren,
-  ...
-}:
-{
+  path = ./.;
+  username = "syren";
 }
