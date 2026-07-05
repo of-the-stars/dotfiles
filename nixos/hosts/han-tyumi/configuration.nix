@@ -35,11 +35,12 @@ in
     "flakes"
   ];
 
-  # catppuccin = {
-  #   enable = true;
-  #   flavor = "mocha";
-  #   accent = "blue";
-  # };
+  catppuccin = {
+    enable = false;
+    autoEnable = false;
+    # flavor = "mocha";
+    # accent = "blue";
+  };
 
   # console = {
   #   earlySetup = true;
