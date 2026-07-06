@@ -19,7 +19,7 @@ in
     ./configuration.nix
     ./hardware-configuration.nix
     # ({ pkgs, modulesPath, ... }: {
-    #   imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix") ];
+    #   imports = [ (modulesPath + "/installer/cd-dvd/iso-image.nix") ];
     # })
     # Home manager
     inputs.home-manager.nixosModules.home-manager

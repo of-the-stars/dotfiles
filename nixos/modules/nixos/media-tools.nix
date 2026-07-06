@@ -37,6 +37,7 @@ in
       (with pkgs; [
         audacity # Audio editor
         dvgrab # DV Camcorder Video Capture
+        ffmpeg # Video format transcription
         kdePackages.kdenlive # Video editor
         musescore # Score writing tool
         qimgv # Qt6 image viewer
