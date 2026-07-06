@@ -373,7 +373,6 @@ in
       mtpfs
       nautilus
       nwg-look
-      # obsidian
       openssl
       organicmaps
       prismlauncher
@@ -385,6 +384,7 @@ in
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
+      obsidian
     ])
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
