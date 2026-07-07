@@ -26,38 +26,30 @@ in
     niri-config.enable = true;
 
     terminal.extra.enable = true;
-    media-tools.enable = true;
-    media-tools.extra.enable = true;
+    media-tools = {
+      enable = true;
+      extra.enable = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      auto-optimise-store = true;
-    };
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 14d";
     };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
   };
 
   boot = {
-    # Bootloader.
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-
-    # TODO: Make this compatible with building a live ISO image
-    # Use latest kernel.
-    kernelPackages = lib.mkForce pkgsUnstable.linuxPackages_latest;
-
     # This is to fix frequent Bluetooth audio dropouts.
     extraModprobeConfig = ''
       # Keep Bluetooth coexistence disabled for better BT audio stability
@@ -78,17 +70,19 @@ in
       # Set power scheme for performance (iwlmvm)
       options iwlmvm power_scheme=1
     '';
+
+    # TODO: Make this compatible with building a live ISO image
+    # Use latest kernel.
+    kernelPackages = lib.mkForce pkgsUnstable.linuxPackages_latest;
+
+    # Bootloader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   system = {
-    # This value determines the NixOS release from which the default
-    # settings for stateful data, like file locations and database versions
-    # on your system were taken. It‘s perfectly fine and recommended to leave
-    # this value at the release version of the first install of this system.
-    # Before changing this value read the documentation for this option
-    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    stateVersion = "26.05"; # Did you read the comment?
-
     # Enables auto upgrades
     autoUpgrade = {
       enable = true;
@@ -100,6 +94,14 @@ in
         upper = "05:00";
       };
     };
+
+    # This value determines the NixOS release from which the default
+    # settings for stateful data, like file locations and database versions
+    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # this value at the release version of the first install of this system.
+    # Before changing this value read the documentation for this option
+    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    stateVersion = "26.05"; # Did you read the comment?
   };
 
   hardware = {
@@ -120,27 +122,35 @@ in
 
     # OpenGL
     graphics.enable = true;
+
     # Most wayland compositors need this
     nvidia.modesetting.enable = true;
+
     opentabletdriver.enable = true;
   };
 
   networking = {
-    networkmanager.enable = true; # Enable networking
     hostName = "${hostname}"; # Define your hostname.
+    networkmanager.enable = true; # Enable networking
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    # proxy = {
+    #   default = "http://user:password@proxy:port/";
+    #   noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
   };
 
-  catppuccin = {
-    enable = false;
-    autoEnable = false;
-    # flavor = "mocha";
-    # accent = "blue";
-  };
+  catppuccin =
+    let
+      catppuccin-setting = false;
+    in
+    {
+      enable = catppuccin-setting;
+      autoEnable = catppuccin-setting;
+      # flavor = "mocha";
+      # accent = "blue";
+    };
 
   # console = {
   #   earlySetup = true;
@@ -154,6 +164,10 @@ in
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
 
+    auto-cpufreq.enable = true;
+
+    blueman.enable = true;
+
     # Better tty
     kmscon = {
       enable = false;
@@ -165,10 +179,6 @@ in
         font-size=16
       '';
     };
-
-    blueman.enable = true;
-
-    auto-cpufreq.enable = true;
 
     # Enable tlp for laptop power management
     tlp = {
@@ -197,21 +207,30 @@ in
     #   variant = "";
     # };
 
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
     pipewire = {
       enable = true;
       audio.enable = true;
-      wireplumber.enable = true;
-      pulse.enable = true;
       jack.enable = true;
+      pulse.enable = true;
       socketActivation = true;
+      wireplumber.enable = true;
       # alsa = {
       #   enable = true;
       #   support32Bit = true;
       # };
+
+      # wireplumber.extraConfig.bluetoothEnhancements = {
+      #   "monitor.bluez.properties" = {
+      #     "bluez5.enable-sbc-xq" = true;
+      #     "bluez5.enable-msbc" = true;
+      #     "bluez5.enable-hw-volume" = true;
+      #     "bluez5.roles" = ["hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag"];
+      #   };
+      # };
     };
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
 
     # File system management
     gvfs.enable = true;
@@ -268,15 +287,6 @@ in
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
-
-  # services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
-  #   "monitor.bluez.properties" = {
-  #     "bluez5.enable-sbc-xq" = true;
-  #     "bluez5.enable-msbc" = true;
-  #     "bluez5.enable-hw-volume" = true;
-  #     "bluez5.roles" = ["hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag"];
-  #   };
-  # };
 
   # Fonts
   fonts.packages = with pkgs; [ nerd-fonts.roboto-mono ];

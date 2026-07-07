@@ -16,11 +16,11 @@ in
       ;
   };
   modules = [
+    # ({ pkgs, modulesPath, ... }: {
+    #   imports = [ (modulesPath + "/installer/cd-dvd/iso-image.nix") ]; TODO: Fix the module so that it doesn't send me to emergency mode cuz it can't mount a partition
+    # })
     ./configuration.nix
     ./hardware-configuration.nix
-    # ({ pkgs, modulesPath, ... }: {
-    #   imports = [ (modulesPath + "/installer/cd-dvd/iso-image.nix") ];
-    # })
     # Home manager
     inputs.home-manager.nixosModules.home-manager
     {
