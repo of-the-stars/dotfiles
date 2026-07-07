@@ -360,29 +360,24 @@ in
   environment.systemPackages =
     with pkgs;
     [
-      # bind
       # globalprotect-openconnect
-      # gnome-disk-utility
-      # gnome-system-monitor
       # kdePackages.marble
-      # musescore
-      # nautilus-open-any-terminal # GNOME file explorer
       # qgis
       # qjackctl
       # signal-export
-      # wine
       android-file-transfer
       android-tools
       discord
       firefox # Web browser
       fractal # Matrix chat app
+      gnome-disk-utility # GNOME `udisk` frontend
       halloy
-      onlyoffice-desktopeditors
       libreoffice-fresh
       lm_sensors
       mtpfs
       nautilus
       nwg-look
+      onlyoffice-desktopeditors
       openssl
       organicmaps
       prismlauncher
