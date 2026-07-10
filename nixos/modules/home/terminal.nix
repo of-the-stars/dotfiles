@@ -32,6 +32,7 @@ in
 
     programs.zsh = {
       enable = true;
+      package = pkgsUnstable.zsh;
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
