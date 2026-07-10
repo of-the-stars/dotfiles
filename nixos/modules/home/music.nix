@@ -31,7 +31,12 @@ in
 
     programs.rmpc = {
       enable = true;
-      package = pkgsUnstable.rmpc.overrideAttrs { buildInputs = [ pkgs.cava ]; };
+      package = pkgsUnstable.rmpc.overrideAttrs {
+        buildInputs = with pkgsUnstable; [
+          cava
+          yt-dlp
+        ];
+      };
     };
 
     home.packages = with pkgs; [

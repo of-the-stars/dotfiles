@@ -21,7 +21,7 @@
     wrap_navigation: false,
     album_art: (
         method: Auto,
-        max_size_px: (width: 1000, height: 1000),
+        max_size_px: (width: 800, height: 800),
         disabled_protocols: ["http://", "https://"],
         vertical_align: Center,
         horizontal_align: Center,

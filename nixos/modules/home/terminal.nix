@@ -2,8 +2,12 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
+let
+  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
+in
 {
   imports = [
     # Paths to other modules.
@@ -134,7 +138,10 @@
     programs.direnv = {
       enable = true;
       enableZshIntegration = true;
-      nix-direnv.enable = true;
+      nix-direnv = {
+        enable = true;
+        package = pkgsUnstable.nix-direnv;
+      };
       silent = true;
     };
 
