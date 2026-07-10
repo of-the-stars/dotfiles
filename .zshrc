@@ -3,6 +3,8 @@
 # promptinit
 # compinit
 
+ZSH_THEME=""
+
 # enable starship
 eval "$(starship init zsh)"
 
@@ -31,12 +33,10 @@ bindkey -M vicmd ' ' edit-command-line
 
 export MANPAGER="nvim +Man!"
 
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	command rm -f -- "$tmp"
-}
+# fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
 
-alias l="eza -a --sort=type --group-directories-first"
+# To remind myself what it's all about
+# Snippet to use fd to find the file, in case I move the file
+# fd --base-directory=Log4Stell 2026\ Resolutions
+
+# sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ~/Log4Stell/02-Permanent/2026-01-02T0118\ 2026\ Resolutions.md | bat -l=md -p
