@@ -40,7 +40,7 @@ in
       dates = "weekly";
       options = "--delete-older-than 14d";
     };
-    package = pkgsUnstable.nix;
+    # package = pkgsUnstable.nix;
     settings = {
       auto-optimise-store = true;
       experimental-features = [
