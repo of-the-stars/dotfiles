@@ -13,26 +13,24 @@ pushd "$HOME"/dotfiles/nixos/
     $EDITOR
      
     # Opens up a menu with each system that can be built and switches to that system
-    # system="$(nix flake show ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
-    #     --color='border:blue' \
-    #     --color='label:white:bold' \
-    #     --color='list-bg:-1' \
-    #     --color='gutter:-1' \
-    #     --color='hl:blue:bold' \
-    #     --color='hl+:green:bold' \
-    #     --color='fg+:white' \
-    #     --color='info:white' \
-    #     --color='pointer:green' \
-    #     --tac \
-    #     --border \
-    #     --margin=10% \
-    #     --padding 5,5 \
-    #     --border-label ' Choose System Which To Rebuild ' \
-    #     --input-label ' Input ' \
-    #     # || true
-    #     )"
-
-    system="han-tyumi"
+    system="$(nix flake show ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
+        --color='border:blue' \
+        --color='label:white:bold' \
+        --color='list-bg:-1' \
+        --color='gutter:-1' \
+        --color='hl:blue:bold' \
+        --color='hl+:green:bold' \
+        --color='fg+:white' \
+        --color='info:white' \
+        --color='pointer:green' \
+        --tac \
+        --border \
+        --margin=10% \
+        --padding 5,5 \
+        --border-label ' Choose System Which To Rebuild ' \
+        --input-label ' Input ' \
+        # || true
+        )"
 
     git -P diff -U0 .
     git add --all
