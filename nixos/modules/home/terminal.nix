@@ -107,15 +107,15 @@ in
       enableGitIntegration = true;
     };
 
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv = {
-        enable = true;
-        package = pkgsUnstable.nix-direnv;
-      };
-      silent = true;
-    };
+    # programs.direnv = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   nix-direnv = {
+    #     enable = true;
+    #     package = pkgsUnstable.nix-direnv;
+    #   };
+    #   silent = true;
+    # };
 
     # programs.newsboat = {
     #   enable = true;
