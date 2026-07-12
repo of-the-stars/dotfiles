@@ -32,16 +32,16 @@ in
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    programs.direnv = {
-      enable = true;
-      # enableZshIntegration = true;
-      nix-direnv = {
-        enable = true;
-        package = pkgsUnstable.nix-direnv;
-      };
-      package = pkgsUnstable.direnv;
-      silent = true;
-    };
+    # programs.direnv = {
+    #   enable = true;
+    #   # enableZshIntegration = true;
+    #   nix-direnv = {
+    #     enable = true;
+    #     package = pkgsUnstable.nix-direnv;
+    #   };
+    #   package = pkgsUnstable.direnv;
+    #   silent = true;
+    # };
 
     environment.variables = {
       SUDO_EDITOR = "nvim";

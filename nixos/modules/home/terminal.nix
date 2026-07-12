@@ -47,9 +47,9 @@ in
       initContent = builtins.readFile ./../../../.zshrc;
     };
 
-    #    home.shell = {
-    #   enableZshIntegration = true;
-    # };
+    home.shell = {
+      enableZshIntegration = true;
+    };
 
     home.shellAliases = {
       l = "eza -a --sort=type --group-directories-first";
