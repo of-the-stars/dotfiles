@@ -32,29 +32,12 @@ in
     # using the "option" above.
     # Options for modules imported in "imports" can be set here.
 
-    # programs.starship = {
-    #   enable = true;
-    # };
-    #
-    # programs.zsh = {
-    #   enable = true;
-    #   enableCompletion = true;
-    #   autosuggestions.enable = true;
-    #   ohMyZsh.enable = true;
-    #   ohMyZsh.plugins = [ "git" ];
-    #   syntaxHighlighting.enable = true;
-    # };
-
-    # programs.direnv = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   nix-direnv.enable = true;
-    #   silent = true;
-    # };
-
-    # programs.yazi = {
-    #   enable = true;
-    # };
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+      silent = true;
+    };
 
     environment.variables = {
       SUDO_EDITOR = "nvim";
