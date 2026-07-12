@@ -16,7 +16,7 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
 # enable direnv
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

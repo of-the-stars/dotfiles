@@ -34,8 +34,12 @@ in
 
     programs.direnv = {
       enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
+      # enableZshIntegration = true;
+      nix-direnv = {
+        enable = true;
+        package = pkgsUnstable.nix-direnv;
+      };
+      package = pkgsUnstable.direnv;
       silent = true;
     };
 
