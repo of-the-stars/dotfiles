@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p jq fzf git rg
 
 # Based off of 0atman's rebuild script, the script will let you configure NixOS, then rebuild and `git commit` for you
 # If you update something that's pinned with a flake, you need to add logic to update just that flake input (GOTO Line 43)
