@@ -39,12 +39,13 @@ in
         dvgrab # DV Camcorder Video Capture
         ffmpeg # Video format transcription
         kdePackages.kdenlive # Video editor
+        kid3 # Audio tagger
         musescore # Score writing tool
         qimgv # Qt6 image viewer
       ])
       ++ (with pkgsUnstable; [
-        krita # Drawing program
         # vcv-rack # Modular synthesizers
+        krita # Drawing program
         yt-dlp # YouTube downloader
       ]);
 
@@ -85,7 +86,6 @@ in
     #         handbrake
     #         inkscape
     #         kdePackages.kdenlive # Video editor
-    #         kid3 # Audio tagger
     #         vcv-rack # Modular synthesizers
     #         musescore # Score writing tool
     #       ])
