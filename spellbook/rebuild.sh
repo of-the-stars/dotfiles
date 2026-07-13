@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p jq fzf git rg
+#! nix-shell -i bash -p jq fzf git ripgrep
 
 # Based off of 0atman's rebuild script, the script will let you configure NixOS, then rebuild and `git commit` for you
 # If you update something that's pinned with a flake, you need to add logic to update just that flake input (GOTO Line 43)
@@ -45,7 +45,7 @@ if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
     sudo nix flake update nvim
 fi
 
-(sudo nixos-rebuild switch --no-warn-dirty --show-trace --flake .\#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
+(sudo nixos-rebuild switch --show-trace --flake .\#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
 # pw-play --volume=0.5 "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
 

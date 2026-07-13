@@ -19,7 +19,7 @@ in
 {
   imports = [
     ./../../modules/nixos
-    inputs.catppuccin.nixosModules.catppuccin
+    # inputs.catppuccin.nixosModules.catppuccin
   ];
 
   modules = {
@@ -31,6 +31,17 @@ in
       extra.enable = true;
     };
   };
+
+  # catppuccin =
+  #   let
+  #     catppuccin-setting = false;
+  #   in
+  #   {
+  #     enable = catppuccin-setting;
+  #     autoEnable = catppuccin-setting;
+  #     # flavor = "mocha";
+  #     # accent = "blue";
+  #   };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -141,17 +152,6 @@ in
     #   noProxy = "127.0.0.1,localhost,internal.domain";
     # };
   };
-
-  catppuccin =
-    let
-      catppuccin-setting = false;
-    in
-    {
-      enable = catppuccin-setting;
-      autoEnable = catppuccin-setting;
-      # flavor = "mocha";
-      # accent = "blue";
-    };
 
   # console = {
   #   earlySetup = true;
