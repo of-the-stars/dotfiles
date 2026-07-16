@@ -40,12 +40,12 @@ in
         ffmpeg # Video format transcription
         kdePackages.kdenlive # Video editor
         kid3 # Audio tagger
+        krita # Drawing program
         musescore # Score writing tool
         qimgv # Qt6 image viewer
       ])
       ++ (with pkgsUnstable; [
         # vcv-rack # Modular synthesizers
-        krita # Drawing program
         yt-dlp # YouTube downloader
       ]);
 
