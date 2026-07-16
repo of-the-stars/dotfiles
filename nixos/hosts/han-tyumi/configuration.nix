@@ -55,7 +55,7 @@ in
     settings = {
       auto-optimise-store = true;
       experimental-features = [
-        "nix-command"
+        # "nix-command"
         "flakes"
       ];
     };
@@ -98,7 +98,7 @@ in
     # Enables auto upgrades
     autoUpgrade = {
       enable = true;
-      flake = "path:./../flake.nix";
+      flake = "path:./../../flake.nix";
       dates = "weekly";
       allowReboot = true;
       rebootWindow = {
