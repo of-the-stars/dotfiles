@@ -55,7 +55,7 @@ in
     settings = {
       auto-optimise-store = true;
       experimental-features = [
-        # "nix-command"
+        "nix-command"
         "flakes"
       ];
     };
@@ -91,6 +91,16 @@ in
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+    };
+  };
+
+  documentation = {
+    dev.enable = true;
+    doc.enable = true;
+    info.enable = true;
+    man = {
+      enable = true;
+      generateCaches = true;
     };
   };
 

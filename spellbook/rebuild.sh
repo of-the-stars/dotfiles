@@ -12,9 +12,9 @@ pushd "$HOME"/dotfiles/nixos/
     pushd "$HOME"/dotfiles/
 
     $EDITOR
-     
+
     # Opens up a menu with each system that can be built and switches to that system
-    system="$(nix flake show --no-warn-dirty ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
+    system="$(nix flake show --extra-experimental-features nix-command --no-warn-dirty ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
         --color='border:blue' \
         --color='label:white:bold' \
         --color='list-bg:-1' \
