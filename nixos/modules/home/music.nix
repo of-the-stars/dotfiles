@@ -2,8 +2,8 @@
   config,
   pkgs,
   lib,
-  username,
   inputs,
+  username,
   ...
 }:
 let

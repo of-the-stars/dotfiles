@@ -32,6 +32,7 @@ in
           inputs
           stellae
           ;
+        inherit (stellae) username;
       };
       home-manager.users.${stellae.username} = {
         imports = [

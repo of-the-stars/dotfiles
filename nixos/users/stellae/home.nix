@@ -3,12 +3,11 @@
   pkgs,
   inputs,
   system,
-  stellae,
+  username,
   ...
 }:
 let
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
-  username = stellae.username;
 in
 {
   imports = [
