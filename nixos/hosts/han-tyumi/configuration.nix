@@ -102,6 +102,9 @@ in
       enable = true;
       generateCaches = true;
     };
+    nixos = {
+      enable = true;
+    };
   };
 
   system = {
