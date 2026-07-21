@@ -7,7 +7,7 @@
   ...
 }:
 let
-  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
+  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."${pkgs.stdenv.system}";
 in
 {
   imports = [
