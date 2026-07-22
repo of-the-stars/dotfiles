@@ -19,7 +19,7 @@ in
 {
   imports = [
     ./../../modules/nixos
-    # inputs.catppuccin.nixosModules.catppuccin
+    inputs.catppuccin.nixosModules.catppuccin
   ];
 
   modules = {
@@ -32,16 +32,12 @@ in
     };
   };
 
-  # catppuccin =
-  #   let
-  #     catppuccin-setting = false;
-  #   in
-  #   {
-  #     enable = catppuccin-setting;
-  #     autoEnable = catppuccin-setting;
-  #     # flavor = "mocha";
-  #     # accent = "blue";
-  #   };
+  catppuccin = {
+    enable = true;
+    autoEnable = false;
+    flavor = "mocha";
+    accent = "blue";
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -188,7 +184,7 @@ in
 
       extraConfig = ''
         font-name=roboto-mono
-        font-size=16
+        font-size=18
       '';
     };
 
@@ -212,12 +208,6 @@ in
         STOP_CHARGE_THRESH_BAT0 = 90; # and above it stops charging
       };
     };
-
-    # # Configure keymap in X11
-    # services.xserver.xkb = {
-    #   layout = "us";
-    #   variant = "";
-    # };
 
     pipewire = {
       enable = true;
@@ -377,8 +367,6 @@ in
     # enable = false;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix-search wget
   environment.systemPackages =
     with pkgs;
     [
@@ -416,6 +404,5 @@ in
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
       # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
-      # inputs.handy.packages.${stdenv.hostPlatform.system}.handy
     ];
 }

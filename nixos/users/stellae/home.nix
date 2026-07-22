@@ -22,7 +22,7 @@ in
         ];
       };
     }
-    # inputs.catppuccin.homeModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   # Adds each spell in my spellbook to PATH as a derivation with a binary :]

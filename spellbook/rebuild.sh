@@ -11,48 +11,46 @@ pushd "$HOME"/dotfiles/nixos/
 
     pushd "$HOME"/dotfiles/
 
-    $EDITOR
+        $EDITOR
 
-    # Opens up a menu with each system that can be built and switches to that system
-    system="$(nix flake show --extra-experimental-features nix-command --no-warn-dirty ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
-        --color='border:blue' \
-        --color='label:white:bold' \
-        --color='list-bg:-1' \
-        --color='gutter:-1' \
-        --color='hl:blue:bold' \
-        --color='hl+:green:bold' \
-        --color='fg+:white' \
-        --color='info:white' \
-        --color='pointer:green' \
-        --tac \
-        --border \
-        --margin=10% \
-        --padding 5,5 \
-        --border-label ' Choose System Which To Rebuild ' \
-        --input-label ' Input ' \
-        # || true
-        )"
+        # Opens up a menu with each system that can be built and switches to that system
+        system="$(nix flake show --extra-experimental-features nix-command --no-warn-dirty ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
+            --color='border:blue' \
+            --color='label:white:bold' \
+            --color='list-bg:-1' \
+            --color='gutter:-1' \
+            --color='hl:blue:bold' \
+            --color='hl+:green:bold' \
+            --color='fg+:white' \
+            --color='info:white' \
+            --color='pointer:green' \
+            --tac \
+            --border \
+            --margin=10% \
+            --padding 5,5 \
+            --border-label ' Choose System Which To Rebuild ' \
+            --input-label ' Input ' \
+            # || true
+            )"
 
-    git -P diff -U0 .
-    git add --all
+        git -P diff -U0 .
+        git add --all
 
     popd
 
-echo "NixOS Rebuilding..."
+    echo "NixOS Rebuilding..."
 
-# Checks if the nvim directory was changed, then updates the flake so that the changes are reflected
-if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
-    sudo nix flake update nvim
-fi
+    # Checks if the nvim directory was changed, then updates the flake so that the changes are reflected
+    if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
+        sudo nix flake update nvim --no-warn-dirty
+    fi
 
-(sudo nixos-rebuild switch --show-trace --flake .\#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
+    (sudo nixos-rebuild switch --show-trace --flake .\#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
-# pw-play --volume=0.5 "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
+    # Grabs nixos generation info
+    gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5) 
 
-# Grabs nixos generation info
-gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5) 
-
-# Commit the changes, with a pre-built message with the system name and the generation info
-echo "$gen" | git commit -aveF -
+    # Commit the changes, with a pre-built message with the system name and the generation info
+    echo "$gen" | git commit -aveF -
 
 popd

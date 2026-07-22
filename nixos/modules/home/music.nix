@@ -10,25 +10,11 @@ let
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."${pkgs.stdenv.system}";
 in
 {
-  imports = [
-    # Paths to other modules.
-    # Compose this module out of smaller ones.
-  ];
-
   options = {
-    # Option declarations.
-    # Declare what settings a user of this module can set.
-    # Usually this includes a global "enable" option which defaults to false.
     music.enable = lib.mkEnableOption "Enables music";
   };
 
   config = lib.mkIf config.music.enable {
-    # Option definitions.
-    # Define what other settings, services and resources should be active.
-    # Usually these depend on whether a user of this module chose to "enable" it
-    # using the "option" above.
-    # Options for modules imported in "imports" can be set here.
-
     programs.rmpc = {
       enable = true;
       package = pkgsUnstable.rmpc.overrideAttrs {
@@ -70,8 +56,8 @@ in
     # Enable the music player damon
     services.mpd = {
       enable = true;
-      musicDirectory = "/home/internet_wizard/Music";
-      playlistDirectory = "/home/internet_wizard/Music/.playlists";
+      musicDirectory = "/home/${username}/Music";
+      playlistDirectory = "/home/${username}/Music/.playlists";
       extraConfig = ''
         audio_output {
           type "pipewire"
@@ -104,7 +90,7 @@ in
       enable = true;
       endpoints."last.fm" = {
         username = "internet_wizard";
-        passwordFile = "home/internet_wizard/.secrets/lastfm_password";
+        passwordFile = "home/${username}/.secrets/lastfm_password";
       };
       journalInterval = 10;
     };

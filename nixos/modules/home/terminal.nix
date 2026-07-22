@@ -9,25 +9,11 @@ let
   pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages."${pkgs.stdenv.system}";
 in
 {
-  imports = [
-    # Paths to other modules.
-    # Compose this module out of smaller ones.
-  ];
-
   options = {
-    # Option declarations.
-    # Declare what settings a user of this module can set.
-    # Usually this includes a global "enable" option which defaults to false.
     terminal.enable = lib.mkEnableOption "My terminal preferences";
   };
 
   config = lib.mkIf config.terminal.enable {
-    # Option definitions.
-    # Define what other settings, services and resources should be active.
-    # Usually these depend on whether a user of this module chose to "enable" it
-    # using the "option" above.
-    # Options for modules imported in "imports" can be set here.
-
     programs.bat.enable = true;
 
     programs.zsh = {
@@ -52,22 +38,9 @@ in
     };
 
     home.shellAliases = {
-      l = "eza -a --sort=type --group-directories-first";
-
-      # Add an "alert" alias for long running commands.  Use like so:
-      #   sleep 10; alert
-      alert = ''
-        notify-send --urgency=high -i "$([ $? = 0 ] && echo terminal || echo error)"
-      '';
-
-      # This was part of the above command, idk how to add it in again
-      # TODO: Fix this and incorporate it back into the previous command
-
-      # "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"
-
-      icat = "kitten icat";
-      cd = "z";
       c = "clear";
+      icat = "kitten icat";
+      l = "eza -a --sort=type --group-directories-first";
       ls = "eza";
       v = "nvim";
     };
@@ -107,15 +80,12 @@ in
       enableGitIntegration = true;
     };
 
-    # programs.direnv = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   nix-direnv = {
-    #     enable = true;
-    #     package = pkgsUnstable.nix-direnv;
-    #   };
-    #   silent = true;
-    # };
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+      silent = true;
+    };
 
     # programs.newsboat = {
     #   enable = true;

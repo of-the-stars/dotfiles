@@ -6,39 +6,17 @@
   ...
 }:
 let
-  # init-desktop = pkgs.writeShellScriptBin {
-  #   name = "init-desktop";
-  #   text = ''
-  #     niri-session
-  #   '';
-  # };
-
   pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
 in
 {
-  imports = [
-    # Paths to other modules.
-    # Compose this module out of smaller ones.
-  ];
-
   options = {
-    # Option declarations.
-    # Declare what settings a user of this module can set.
-    # Usually this includes a global "enable" option which defaults to false.
-
     modules.niri-config.enable = lib.mkEnableOption "Enables the niri window manager";
   };
 
   config = {
-    # Option definitions.
-    # Define what other settings, services and resources should be active.
-    # Usually these depend on whether a user of this module chose to "enable" it
-    # using the "option" above.
-    # Options for modules imported in "imports" can be set here.
-
     programs.niri.enable = true;
 
     services.dunst = {
@@ -62,6 +40,7 @@ in
     environment.systemPackages =
       (with pkgs; [
         brightnessctl
+        kitty # Terminal Emulator
         libnotify # Send desktop notifications
         networkmanagerapplet
         pavucontrol # Pipewire sound control
@@ -71,14 +50,9 @@ in
         waybar # Status bar
         wl-clipboard # Manage clipboard on wayland
         xwayland-satellite # Run X applications
-      ]
-
-      )
+      ])
       ++ (with pkgsUnstable; [
         wpaperd # Wallpaper daemon written in rust
       ]);
-
-    # modules = [
-    # ];
   };
 }
