@@ -1,7 +1,7 @@
 [user]
 	email = <stellae.incaelis@gmail.com>
 	name = of-the-stars
-	signingkey = /home/internet_wizard/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [diff]
 	tool = nvimdiff
