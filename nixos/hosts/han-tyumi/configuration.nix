@@ -380,7 +380,6 @@ in
       discord
       firefox # Web browser
       fractal # Matrix chat app
-      gnome-disk-utility # GNOME `udisk` frontend
       halloy
       libreoffice-fresh
       lm_sensors
@@ -404,5 +403,8 @@ in
     ++ [
       inputs.nvim.packages.${stdenv.hostPlatform.system}.nvim
       # inputs.nvim.packages.${stdenv.hostPlatform.system}.tidal
+      (pkgs.gnome-disk-utility.overrideAttrs (prev: {
+        buildInputs = prev.buildInputs ++ (with pkgs; [ exfatprogs ]);
+      }))
     ];
 }
