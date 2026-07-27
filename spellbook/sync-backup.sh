@@ -36,4 +36,4 @@ echo "$backupDirectory"
 
 printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ rsync --delete --human-readable --progress -av _ "$backupDirectory"
 
-sudo umount "$mountpoint"
+sudo umount "$mountpoint" && echo "Backup synced"
