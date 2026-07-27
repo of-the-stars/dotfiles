@@ -25,7 +25,7 @@ mountpoint="$(mktemp --directory)"
 
 sudo mount "$partition" "$mountpoint"
 
-backupDirectory="$(eza -1 -D --absolute=on "$mountpoint" | picker --border-label ' Choose which directory to back up into ' | sd '([^A-Za-z0-9/])' "$1")"
+backupDirectory="$(eza -1 -D --absolute=on "$mountpoint" | picker --border-label ' Choose which directory to back up into ' | sd '([^A-Za-z0-9/.])' "$1")"
 
 userToBackup="$(eza -1 -D --absolute=on /home | picker --border-label ' Choose which user to back up ')"
 
