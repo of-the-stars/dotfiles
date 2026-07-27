@@ -42,7 +42,7 @@ in
           # Returns a derivation with a binary that's the name of the script without the extension
           # and the content is the script itself
           (
-            pkgs.writeShellScriptBin (pkgs.lib.removeSuffix ".sh" name) (
+            pkgs.writeShellScriptBin ((pkgs.lib.removeSuffix ".sh" name) + "-spell") (
               builtins.readFile (spellbookPath + ("/" + name))
             )
           )
