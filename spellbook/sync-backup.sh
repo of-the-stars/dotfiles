@@ -34,4 +34,4 @@ echo "$mountpoint"
 echo "$userToBackup"
 echo "$backupDirectory"
 
-printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ rsync -av --dry-run --progress --verbose --human-readable _ "$backupDirectory"
+printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ rsync --delete --dry-run --human-readable --progress --verbose -av _ "$backupDirectory"
