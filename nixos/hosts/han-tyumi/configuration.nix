@@ -34,7 +34,7 @@ in
 
   catppuccin = {
     enable = true;
-    autoEnable = false;
+    autoEnable = true;
     flavor = "mocha";
     accent = "blue";
   };

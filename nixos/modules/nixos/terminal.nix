@@ -56,6 +56,7 @@ in
           openconnect # Connect to VPNs
           rename
           ripgrep # Modern `grep`
+          rsync # Sync drives
           sd # sed alternative
           tree
           unzip
