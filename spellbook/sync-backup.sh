@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -o pipefail
+set -e
+
 declare -a directories=("Audio" "Documents" "dotfiles" "Downloads" "Log4Stell" "Music" "Pictures" "Programs" "Videos")
 
 picker() {
@@ -29,11 +32,8 @@ backupDirectory="$(eza -1 -D --absolute=on "$mountpoint" | picker --border-label
 
 userToBackup="$(eza -1 -D --absolute=on /home | picker --border-label ' Choose which user to back up ')"
 
-echo "$partition" 
-echo "$mountpoint"
-echo "$userToBackup"
-echo "$backupDirectory"
-
-printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ rsync --delete --human-readable --progress -av _ "$backupDirectory"
+printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ sudo rsync --delete --human-readable --progress --modify-window=1 -rtvL _ "$backupDirectory"
 
 sudo umount "$mountpoint" && echo "Backup synced"
+
+printf "%s was backed up into %s on %s mounted on %s\n" "$userToBackup" "$backupDirectory" "$partition" "$mountpoint"
