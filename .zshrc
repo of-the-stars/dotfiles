@@ -18,6 +18,9 @@ eval "$(fzf --zsh)"
 # enable direnv
 eval "$(direnv hook zsh)"
 
+# enable jujutsu
+source <(jj util completion zsh)
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
