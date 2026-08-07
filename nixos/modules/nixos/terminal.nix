@@ -50,6 +50,7 @@ in
           handlr
           htop-vim # Interactive process viewer with vim bindings
           jq # Print and parse `.json`
+          jujutsu # Git-compatible VCS
           just # Just a simple command runner
           lazygit # TUI for `git`
           nmap # Map the network
