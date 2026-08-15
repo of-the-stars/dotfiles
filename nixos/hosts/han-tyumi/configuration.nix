@@ -5,7 +5,6 @@
   config,
   pkgs,
   inputs,
-  hostname,
   stellae,
   lib,
   ...
@@ -149,7 +148,7 @@ in
   };
 
   networking = {
-    hostName = "${hostname}"; # Define your hostname.
+    hostName = baseNameOf (toString ./.); # Define your hostname.
     networkmanager.enable = true; # Enable networking
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

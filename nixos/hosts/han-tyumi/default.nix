@@ -4,13 +4,11 @@
   ...
 }:
 let
-  hostname = "han-tyumi";
   stellae = users.stellae;
 in
 {
   specialArgs = {
     inherit
-      hostname
       inputs
       stellae
       ;

@@ -4,15 +4,11 @@
   ...
 }:
 let
-  hostname = "matriarch";
-  syren = users.syren // {
-    username = "syren";
-  };
+  syren = users.syren;
 in
 {
   specialArgs = {
     inherit
-      hostname
       inputs
       syren
       ;
