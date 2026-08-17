@@ -41,26 +41,6 @@
         "type": "github"
       }
     },
-    "izrss": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1782775767,
-        "narHash": "sha256-8eHUskfsdymVTYt5V/f75vKsvmuZz/CNGqbthSQrHow=",
-        "owner": "isabelroses",
-        "repo": "izrss",
-        "rev": "6c9e45d1fa2e67bed9182ae4e067bcab3633e8e5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "isabelroses",
-        "repo": "izrss",
-        "type": "github"
-      }
-    },
     "nixCats": {
       "locked": {
         "lastModified": 1777273601,
@@ -128,7 +108,6 @@
       "inputs": {
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
-        "izrss": "izrss",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvim": "nvim",

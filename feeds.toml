@@ -1,5 +1,5 @@
 [[feeds]]
-url = "https://pwy.io/posts/feed.xml"
+url = "https://pwy.io/feed.xml"
 
 [[feeds]]
 url = "https://sgt.hootr.club/rss.xml"
@@ -14,7 +14,7 @@ url = "https://jvns.ca/atom.xml"
 url = "https://drewdevault.com/blog/index.xml"
 
 [[feeds]]
-url = "https://casualcompute.com/"
+url = "https://casualcompute.com/posts/index.xml"
 
 [[feeds]]
 url = "https://uncenter.dev/feed.xml"
@@ -64,7 +64,7 @@ url = "https://readunderwire.com/feed"
 url = "https://blog.wesleyac.com/feed.xml"
 
 [[feeds]]
-url = "https://woile.dev/rss.xml"
+url = "https://woile.eu/feed.xml"
 
 [[feeds]]
 url = "https://www.65daysofstatic.com/rss"
@@ -77,7 +77,7 @@ title = "Scientific Computing in Rust"
 tags = ["programming", "science", "rust"]
 
 [[feeds]]
-url = "https://cafkafk.dev/index.xml"
+url = "https://point.free/rss.xml"
 title = "cafkafk"
 tags = [
   "programming",

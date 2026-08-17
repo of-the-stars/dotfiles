@@ -11,13 +11,6 @@ in
 {
   imports = [
     ../../modules/home
-    inputs.izrss.homeManagerModules.default
-    {
-      programs.izrss = {
-        enable = true;
-        settings.urls = map (feed: feed.url) (fromTOML (builtins.readFile ../../../feeds.toml)).feeds;
-      };
-    }
     inputs.catppuccin.homeModules.catppuccin
   ];
 

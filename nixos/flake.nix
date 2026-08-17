@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    izrss = {
-      url = "github:isabelroses/izrss";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     veila = {
       url = "github:naurissteins/Veila";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
