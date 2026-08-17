@@ -27,7 +27,7 @@
     modules.media-tools.extra.enable = lib.mkDefault false;
 
     modules.networking-tools.enable = lib.mkDefault true;
-    modules.system-security.enable = lib.mkDefault true;
+    modules.system-security.enable = lib.mkDefault false;
     modules.virtual-machines.enable = lib.mkDefault false;
 
     # Makes each host choose their desktop setup

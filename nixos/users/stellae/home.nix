@@ -15,11 +15,7 @@ in
     {
       programs.izrss = {
         enable = true;
-        settings.urls = [
-          # "https://uncenter.dev/feed.xml"
-          # "https://stephango.com/feed.xml"
-          # "https://isabelroses.com/feed.xml"
-        ];
+        settings.urls = map (feed: feed.url) (fromTOML (builtins.readFile ../../../feeds.toml)).feeds;
       };
     }
     inputs.catppuccin.homeModules.catppuccin
@@ -70,11 +66,6 @@ in
   home.file = {
     ".gitconfig".source = ./../../../.gitconfig;
     ".secrets".source = ./../../../.secrets;
-    # ".bash_aliases".source = ./../.bash_aliases;
-    # ".bashrc".source = ./../.bashrc;
-    # ".stow-global-ignore".source = ./../.stow-global-ignore;
-    # ".zshrc".source = ./../../../.zshrc;
-    # "spellbook".source = ./../spellbook;
   };
 
   services.tomat = {

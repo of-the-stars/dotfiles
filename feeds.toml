@@ -1,0 +1,112 @@
+[[feeds]]
+url = "https://pwy.io/posts/feed.xml"
+
+[[feeds]]
+url = "https://sgt.hootr.club/rss.xml"
+
+[[feeds]]
+url = "https://mabez.dev/rss.xml"
+
+[[feeds]]
+url = "https://jvns.ca/atom.xml"
+
+[[feeds]]
+url = "https://drewdevault.com/blog/index.xml"
+
+[[feeds]]
+url = "https://casualcompute.com/"
+
+[[feeds]]
+url = "https://uncenter.dev/feed.xml"
+
+[[feeds]]
+url = "https://stephango.com/feed.xml"
+
+[[feeds]]
+url = "https://xeiaso.net/blog.rss"
+
+[[feeds]]
+url = "https://artemis.sh/feed.xml"
+
+[[feeds]]
+url = "https://www.sethdickinson.com/feed"
+
+[[feeds]]
+url = "https://isabelroses.com/feed.xml"
+
+[[feeds]]
+url = "https://www.0atman.com/feed.xml"
+
+[[feeds]]
+url = "https://kglw.net/feed"
+title = "kglw.net"
+tags = ["music"]
+
+[[feeds]]
+url = "https://kglw.net/blog/feed"
+tags = ["music", "writing"]
+
+[[feeds]]
+url = "https://rosenzweig.io/feed.xml"
+
+[[feeds]]
+url = "https://rust-gcc.github.io/feed.xml"
+
+[[feeds]]
+url = "https://snowytrees.dev/blog/rss.xml"
+title = "Jordan Isaacs"
+tags = ["nix", "neovim", "programming"]
+
+[[feeds]]
+url = "https://readunderwire.com/feed"
+
+[[feeds]]
+url = "https://blog.wesleyac.com/feed.xml"
+
+[[feeds]]
+url = "https://woile.dev/rss.xml"
+
+[[feeds]]
+url = "https://www.65daysofstatic.com/rss"
+title = "65daysofstatic"
+tags = ["music"]
+
+[[feeds]]
+url = "https://scientificcomputing.rs/monthly/rss.xml"
+title = "Scientific Computing in Rust"
+tags = ["programming", "science", "rust"]
+
+[[feeds]]
+url = "https://cafkafk.dev/index.xml"
+title = "cafkafk"
+tags = [
+  "programming",
+  "rust",
+  "nix",
+  "personal",
+]
+
+[[feeds]]
+url = "http://www.aaronsw.com/weblog/index.xml"
+title = "Raw Thought"
+tags = ["programming", "activism"]
+
+[[feeds]]
+url = "https://lotsoflinks.substack.com//feed"
+title = "Lots of Links"
+tags = [
+  "personal",
+]
+
+[[feeds]]
+url = "https://etymology.substack.com//feed"
+title = "The Etymology Nerd"
+tags = ["linguistics", "personal"]
+
+[[feeds]]
+url = "https://matklad.github.io/feed.xml"
+title = "matklad"
+tags = [
+  "rust",
+  "nix",
+]

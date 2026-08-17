@@ -29,28 +29,25 @@ in
       mpd-discord-rpc
     ];
 
-    # services.mpdris2.enable = true;
     services.mpd-mpris.enable = true;
 
     services.mpd-discord-rpc = {
       enable = true;
-      /*
-           settings = {
-          id = 677226551607033903;
-          hosts = ["localhost:6600"];
-
-          format = {
-            details = "$title";
-            state = "$artist / $album / $disc";
-            timestamp = "both";
-            large_image = "notes";
-            small_image = "notes";
-            large_text = "";
-            small_text = "";
-            display_type = "name";
-          };
-        };
-      */
+      # settings = {
+      #   id = 677226551607033903;
+      #   hosts = [ "localhost:6600" ];
+      #
+      #   format = {
+      #     details = "$title";
+      #     state = "$artist / $album / $disc";
+      #     timestamp = "both";
+      #     large_image = "notes";
+      #     small_image = "notes";
+      #     large_text = "";
+      #     small_text = "";
+      #     display_type = "name";
+      #   };
+      # };
     };
 
     # Enable the music player damon
@@ -83,7 +80,6 @@ in
       # Optional:
       network.listenAddress = "any"; # if you want to allow non-localhost connections
       # network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-      # user = "internet_wizard";
     };
 
     services.mpdscribble = {

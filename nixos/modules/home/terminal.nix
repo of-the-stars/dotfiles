@@ -87,170 +87,36 @@ in
       silent = true;
     };
 
-    # programs.newsboat = {
-    #   enable = true;
-    #   autoReload = true;
-    #   urls = [
-    #     # TODO: Tag and make the urls pretty
-    #     {
-    #       url = "https://pwy.io/posts/feed.xml";
-    #     }
-    #     {
-    #       url = "https://sgt.hootr.club/rss.xml";
-    #     }
-    #     {
-    #       url = "https://mabez.dev/rss.xml";
-    #     }
-    #     {
-    #       url = "https://jvns.ca/atom.xml";
-    #     }
-    #     {
-    #       url = "https://drewdevault.com/blog/index.xml";
-    #     }
-    #     {
-    #       url = "https://casualcompute.com/";
-    #     }
-    #     {
-    #       url = "https://uncenter.dev/feed.xml";
-    #     }
-    #     {
-    #       url = "https://stephango.com/feed.xml";
-    #     }
-    #     {
-    #       url = "https://xeiaso.net/blog.rss";
-    #     }
-    #     {
-    #       url = "https://artemis.sh/feed.xml";
-    #     }
-    #     {
-    #       url = "https://www.sethdickinson.com/feed";
-    #     }
-    #     {
-    #       url = "https://isabelroses.com/feed.xml";
-    #     }
-    #     {
-    #       url = "https://www.0atman.com/feed.xml";
-    #     }
-    #     {
-    #       url = "https://kglw.net/feed";
-    #       title = "kglw.net";
-    #       tags = [
-    #         "music"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://kglw.net/blog/feed";
-    #       tags = [
-    #         "music"
-    #         "writing"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://rosenzweig.io/feed.xml";
-    #     }
-    #     {
-    #       url = "https://rust-gcc.github.io/feed.xml";
-    #     }
-    #     {
-    #       url = "https://snowytrees.dev/blog/rss.xml";
-    #       title = "Jordan Isaacs";
-    #       tags = [
-    #         "nix"
-    #         "neovim"
-    #         "programming"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://readunderwire.com/feed";
-    #     }
-    #     {
-    #       url = "https://blog.wesleyac.com/feed.xml";
-    #     }
-    #     {
-    #       url = "https://woile.dev/rss.xml";
-    #     }
-    #     {
-    #       url = "https://www.65daysofstatic.com/rss";
-    #       title = "65daysofstatic";
-    #       tags = [ "music" ];
-    #     }
-    #     {
-    #       url = "https://scientificcomputing.rs/monthly/rss.xml";
-    #       title = "Scientific Computing in Rust";
-    #       tags = [
-    #         "programming"
-    #         "science"
-    #         "rust"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://cafkafk.dev/index.xml";
-    #       title = "cafkafk";
-    #       tags = [
-    #         "programming"
-    #         "rust"
-    #         "nix"
-    #         "personal"
-    #       ];
-    #     }
-    #     {
-    #       url = "http://www.aaronsw.com/weblog/index.xml";
-    #       title = "Raw Thought";
-    #       tags = [
-    #         "programming"
-    #         "activism"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://lotsoflinks.substack.com//feed";
-    #       title = "Lots of Links";
-    #       tags = [
-    #         "personal"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://etymology.substack.com//feed";
-    #       title = "The Etymology Nerd";
-    #       tags = [
-    #         "linguistics"
-    #         "personal"
-    #       ];
-    #     }
-    #     {
-    #       url = "https://matklad.github.io/feed.xml";
-    #       title = "matklad";
-    #       tags = [
-    #         "rust"
-    #         "nix"
-    #       ];
-    #     }
-    #   ];
-    #
-    #   extraConfig = ''
-    #     unbind-key k
-    #     unbind-key j
-    #     # unbind-key l
-    #     # unbind-key h
-    #     # unbind-key <Enter>
-    #
-    #     bind k everywhere up
-    #     bind j everywhere down
-    #     # bind l open
-    #     # bind h quit
-    #
-    #     color background          white   default
-    #     color listnormal          white   default
-    #     color listfocus           black   white   bold
-    #     color listnormal_unread   white   default bold
-    #     color listfocus_unread    black   white   bold
-    #     color title               black   white   bold
-    #     color info                white   default bold
-    #     color hint-key            white   default bold
-    #     color hint-keys-delimiter white   default
-    #     color hint-separator      white   default bold
-    #     color hint-description    white   default
-    #     color article             white   default
-    #   '';
-    # };
+    programs.newsboat = {
+      enable = true;
+      autoReload = true;
+      urls = (fromTOML (builtins.readFile ./../../../feeds.toml)).feeds;
+
+      extraConfig = ''
+        unbind-key k
+        unbind-key j
+        # unbind-key l
+        # unbind-key h
+        # unbind-key <Enter>
+
+        bind k everywhere up
+        bind j everywhere down
+        # bind l open
+        # bind h quit
+
+        color background          white   default
+        color listnormal          white   default
+        color listfocus           black   white   bold
+        color listnormal_unread   white   default bold
+        color listfocus_unread    black   white   bold
+        color title               black   white   bold
+        color info                white   default bold
+        color hint-key            white   default bold
+        color hint-keys-delimiter white   default
+        color hint-separator      white   default bold
+        color hint-description    white   default
+        color article             white   default
+      '';
+    };
   };
 }
