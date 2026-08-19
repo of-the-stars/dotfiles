@@ -148,15 +148,38 @@ in
   };
 
   networking = {
-    hostName = baseNameOf (toString ./.); # Define your hostname.
+    firewall = {
+      # Open ports in the firewall.
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ ];
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+
+      # Or disable the firewall altogether.
+      # enable = false;
+    };
+
+    hostName = baseNameOf (toString ./.); # Defines the hostname based off of the name of the parent directory
+
     networkmanager.enable = true; # Enable networking
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
     # proxy = {
     #   default = "http://user:password@proxy:port/";
     #   noProxy = "127.0.0.1,localhost,internal.domain";
     # };
+
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   };
 
   # console = {
@@ -315,15 +338,14 @@ in
     kdeconnect.enable = true;
     steam.enable = true;
 
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-        # Add missing dynamic libraries for unpackaged programs here
-      ];
-    };
+    # # Forgot that this is for the weak
+    # nix-ld = {
+    #   enable = true;
+    #   libraries = with pkgs; [
+    #     # Add missing dynamic libraries for unpackaged programs here
+    #   ];
+    # };
   };
-
-  # environment.localBinInPath = true;
 
   xdg.portal = {
     enable = true;
@@ -338,33 +360,12 @@ in
   #   enableSSHSupport = true;
   # };
 
-  # VR shit
+  # # VR shit
   # services.monado.enable = true;
   # programs.alvr = {
   #   enable = true;
   #   openFirewall = true;
   # };
-
-  networking.firewall = {
-    # Open ports in the firewall.
-    allowedTCPPorts = [ ];
-    allowedUDPPorts = [ ];
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-
-    # Or disable the firewall altogether.
-    # enable = false;
-  };
 
   environment.systemPackages =
     with pkgs;

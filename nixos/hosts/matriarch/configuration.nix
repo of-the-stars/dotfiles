@@ -95,7 +95,7 @@ in
     opentabletdriver.enable = true;
   };
 
-  networking.hostName = baseNameOf (toString ./.); # Define your hostname.
+  hostName = baseNameOf (toString ./.); # Defines the hostname based off of the name of the parent directory
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
