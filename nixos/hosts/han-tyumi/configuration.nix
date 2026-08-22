@@ -395,6 +395,7 @@ in
       tor
       typst
       usbutils
+      vmware-workstation # Industry standard hypervisor
       zathura # Document viewer
     ]
     ++ (with pkgsUnstable; [
