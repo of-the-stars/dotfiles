@@ -80,7 +80,7 @@ in
 
     # TODO: Make this compatible with building a live ISO image
     # Use latest kernel.
-    kernelPackages = lib.mkForce pkgsUnstable.linuxPackages_latest;
+    # kernelPackages = lib.mkForce pkgsUnstable.linuxPackages_latest;
 
     # Bootloader.
     loader = {
