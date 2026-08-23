@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p jq fzf git ripgrep
+#! nix-shell -i bash -p fzf git ripgrep
 
 # Based off of 0atman's rebuild script, the script will let you configure NixOS, then rebuild and `git commit` for you
 # If you update something that's pinned with a flake, you need to add logic to update just that flake input (GOTO Line 43)
@@ -14,7 +14,7 @@ pushd "$HOME"/dotfiles/nixos/
         $EDITOR
 
         # Opens up a menu with each system that can be built and switches to that system
-        system="$(nix flake show --extra-experimental-features nix-command --no-warn-dirty ./nixos --json 2>/dev/null | jq -r ".nixosConfigurations | keys[]" | fzf \
+        system="$(find "$HOME"/dotfiles/nixos/hosts -maxdepth 1 -mindepth 1 -type d -printf '%f\n' | fzf \
             --color='border:blue' \
             --color='label:white:bold' \
             --color='list-bg:-1' \

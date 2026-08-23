@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p jq fzf git ripgrep
+#! nix-shell -i bash -p fzf git ripgrep
 
 # This script is supposed to help you bootstrap a NixOS configuration on a fresh minimal NixOS install
 

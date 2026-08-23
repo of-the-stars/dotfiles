@@ -92,14 +92,14 @@ title = "Raw Thought"
 tags = ["programming", "activism"]
 
 [[feeds]]
-url = "https://lotsoflinks.substack.com//feed"
+url = "https://lotsoflinks.substack.com/feed"
 title = "Lots of Links"
 tags = [
   "personal",
 ]
 
 [[feeds]]
-url = "https://etymology.substack.com//feed"
+url = "https://etymology.substack.com/feed"
 title = "The Etymology Nerd"
 tags = ["linguistics", "personal"]
 
@@ -110,3 +110,6 @@ tags = [
   "rust",
   "nix",
 ]
+
+[[feeds]]
+url = "https://annas-archive.gl/blog/rss.xml"
