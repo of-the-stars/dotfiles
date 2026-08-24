@@ -36,18 +36,19 @@ in
         with pkgs;
         [
           cargo # The Rust package manager
+          exif # Analyze and manipulate image metadata
           cargo-generate # Generate rust projects
           cargo-info # Get info on crates
           dust # Modern `du`
           eza # Modern `ls`
           fastfetch # Fetch system details; `neofetch` replacement
           fd # Modern `find`
-          fzf
+          fzf # Fast fuzzy finder
           gcc # GNU Compiler Collection
           gh # Github CLI
           git # The distributed VCS
           gping # `ping` but with a graph
-          handlr
+          handlr # xdg-open alternative
           htop-vim # Interactive process viewer with vim bindings
           jq # Print and parse `.json`
           jujutsu # Git-compatible VCS
@@ -55,7 +56,7 @@ in
           lazygit # TUI for `git`
           nmap # Map the network
           openconnect # Connect to VPNs
-          rename
+          rename # Perl rename
           ripgrep # Modern `grep`
           rsync # Sync drives
           sd # sed alternative
@@ -63,19 +64,16 @@ in
           unzip
           whois # Domain registration lookup
           wl-clipboard # Manage system clipboard from the command line
-          zoxide
+          zoxide # A better `cd`
         ]
         ++ lib.optionals config.modules.terminal.extra.enable [
           # stow # Manage symlinks
           asciinema # Record your terminal session
           bitwarden-cli
           bsdgames # NetBSD games!
-          btop
           cmatrix # Just a glitch
           cowsay # Moo!
-          docker
           esp-generate # Generate #[no_std] ESP32 Rust projects
-          exiftool
           figlet # Make ASCII art from text
           fortune-kind # `fortune` but kinder
           fselect # Find files with SQL-like syntax
@@ -88,8 +86,6 @@ in
           procs # Modern `ps`
           python3 # Python interpreter
           ripgrep-all
-          rusty-man
-          sc-im # Spreadsheet calculator, improved
           screen # Terminal multiplexer, although I just use it for serial ports
           sl # Steam locomotive
           tiny # TUI IRC client
