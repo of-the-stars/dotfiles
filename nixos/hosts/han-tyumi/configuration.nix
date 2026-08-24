@@ -36,6 +36,14 @@ in
     autoEnable = true;
     flavor = "mocha";
     accent = "blue";
+
+    gtk = {
+      icon = {
+        enable = true;
+        flavor = "mocha";
+        accent = "blue";
+      };
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
