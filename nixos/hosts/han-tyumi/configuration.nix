@@ -107,6 +107,8 @@ in
     };
     nixos = {
       enable = true;
+      includeAllModules = true;
+      options.splitBuild = true;
     };
   };
 
