@@ -24,6 +24,7 @@ in
         audacity # Audio editor
         dvgrab # DV Camcorder Video Capture
         ffmpeg # Video format transcription
+        gimp # Image editor
         kdePackages.kdenlive # Video editor
         kid3 # Audio tagger
         krita # Drawing program
