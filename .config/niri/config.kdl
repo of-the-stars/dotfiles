@@ -336,7 +336,7 @@ window-rule {
 
 window-rule {
     match is-active=false
-    opacity 0.94
+    opacity 0.90
 }
 
 // Example: block out two password managers from screen capture.

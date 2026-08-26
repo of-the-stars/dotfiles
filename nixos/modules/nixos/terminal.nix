@@ -56,6 +56,7 @@ in
           lazygit # TUI for `git`
           nmap # Map the network
           openconnect # Connect to VPNs
+          pandoc # Document converter
           rename # Perl rename
           ripgrep # Modern `grep`
           rsync # Sync drives
