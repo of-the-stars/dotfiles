@@ -412,6 +412,7 @@ in
       usbutils
       vmware-workstation # Industry standard hypervisor
       zathura # Document viewer
+      zotero # Citation aggregator
     ]
     ++ (with pkgsUnstable; [
       obsidian
