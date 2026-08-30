@@ -36,10 +36,10 @@ in
         with pkgs;
         [
           cargo # The Rust package manager
-          exif # Analyze and manipulate image metadata
           cargo-generate # Generate rust projects
           cargo-info # Get info on crates
           dust # Modern `du`
+          exif # Analyze and manipulate image metadata
           eza # Modern `ls`
           fastfetch # Fetch system details; `neofetch` replacement
           fd # Modern `find`
@@ -54,6 +54,8 @@ in
           jujutsu # Git-compatible VCS
           just # Just a simple command runner
           lazygit # TUI for `git`
+          man-pages
+          man-pages-posix
           nmap # Map the network
           openconnect # Connect to VPNs
           pandoc # Document converter
