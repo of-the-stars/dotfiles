@@ -34,19 +34,21 @@
       ...
     }@inputs:
     let
+      inherit (nixpkgs) lib;
+
       userPath = ./users;
       hostPath = ./hosts;
 
-      users = inputs.nixpkgs.lib.mapAttrs' (
-        name: value: inputs.nixpkgs.lib.nameValuePair name (import (userPath + ("/" + name)))
-      ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir userPath));
+      users = lib.mapAttrs' (name: value: lib.nameValuePair name (import (userPath + ("/" + name)))) (
+        lib.filterAttrs (name: type: type == "directory") (builtins.readDir userPath)
+      );
 
-      hosts = inputs.nixpkgs.lib.mapAttrs' (
+      hosts = lib.mapAttrs' (
         name: value:
-        inputs.nixpkgs.lib.nameValuePair name (
-          inputs.nixpkgs.lib.nixosSystem (import (hostPath + ("/" + name)) { inherit inputs users nixpkgs; })
+        lib.nameValuePair name (
+          lib.nixosSystem (import (hostPath + ("/" + name)) { inherit inputs users nixpkgs; })
         )
-      ) (inputs.nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
+      ) (lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
     in
     {
       nixosConfigurations = hosts;
