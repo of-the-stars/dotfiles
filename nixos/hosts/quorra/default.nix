@@ -1,10 +1,22 @@
+# This is the configuration import for my custom NixOS installer live ISO
+# It can be built with either
+# ```sh
+#   nix build \
+#     .#nixosConfigurations.quorra.config.system.build.isoImage
+# ```
+# OR
+# ```sh
+#   nix run nixpkgs#nixos-generators -- \
+#     --format iso --flake ./path/to/flake#quorra -o resultIso
+# ```
+
 {
   inputs,
   users,
   ...
 }:
 let
-  inherit (users) stellae;
+  inherit (users) nixos;
 
   makeHomeManagerConfig = user: {
     home-manager.useGlobalPkgs = true;
@@ -30,20 +42,13 @@ in
   specialArgs = {
     inherit
       inputs
-      stellae
+      nixos
       ;
   };
 
   modules = [
     ./configuration.nix
-    ./hardware-configuration.nix
-    # Home manager
     inputs.home-manager.nixosModules.home-manager
-    (makeHomeManagerConfig stellae)
-    # Veila
-    inputs.veila.nixosModules.default
-    {
-      programs.veila.enable = true;
-    }
+    (makeHomeManagerConfig nixos)
   ];
 }

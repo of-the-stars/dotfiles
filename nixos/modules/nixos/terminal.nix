@@ -28,6 +28,8 @@ in
       PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     };
 
+    programs.zsh.enable = true;
+
     environment.systemPackages =
       (with pkgsUnstable; [
         presenterm

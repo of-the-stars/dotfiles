@@ -2,6 +2,7 @@
 #! nix-shell -i bash -p fzf git ripgrep
 
 # This script is supposed to help you bootstrap a NixOS configuration on a fresh minimal NixOS install
+# Look into [disko](https://github.com/nix-community/disko)
 
 set -o pipefail
 set -e
@@ -28,7 +29,7 @@ pushd "$HOME"/dotfiles/nixos/
         # || true
         )"
 
-    $EDITOR
+    # $EDITOR
 
     cp /etc/nixos/hardware-configuration.nix ./hosts/"$system"/hardware-configuration.nix
 

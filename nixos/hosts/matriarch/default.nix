@@ -4,7 +4,7 @@
   ...
 }:
 let
-  syren = users.syren;
+  inherit (users) syren;
 in
 {
   specialArgs = {

@@ -6,7 +6,6 @@
   pkgs,
   inputs,
   stellae,
-  lib,
   ...
 }:
 let
@@ -344,7 +343,6 @@ in
   };
 
   programs = {
-    zsh.enable = true;
     kdeconnect.enable = true;
     steam.enable = true;
 
