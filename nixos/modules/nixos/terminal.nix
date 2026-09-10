@@ -65,6 +65,7 @@ in
           ripgrep # Modern `grep`
           rsync # Sync drives
           sd # sed alternative
+          sshfs
           tree
           unzip
           whois # Domain registration lookup
