@@ -172,13 +172,22 @@
                         pane: Split(
                             direction: Horizontal,
                             panes: [
-                                (size: "33%", pane: Pane(AlbumArt)),
-                                (size: "67%", pane: Pane(Queue)),
+                                (
+                                    size: "33%",
+                                    borders: "ALL",
+                                    pane: Pane(AlbumArt)
+                                ),
+                                (
+                                    size: "67%", 
+                                    borders: "ALL",
+                                    pane: Pane(Queue)
+                                ),
                             ],
                         ),
                     ),
                     (
                         size: "30%",
+                        borders: "ALL",
                         pane: Pane(Cava),
                     ),
                 ],
