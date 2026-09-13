@@ -13,10 +13,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ssh="kitty +kitten ssh"
 alias icat="kitten icat"
 alias cd="z"
 alias c="clear"
+
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 
 # unzip-all
 unzip-all() {
