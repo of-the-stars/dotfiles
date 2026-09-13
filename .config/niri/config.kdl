@@ -374,7 +374,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Ctrl+Shift+Delete hotkey-overlay-title="Power off" allow-when-locked=true { spawn-sh "shutdown now"; }
+    Ctrl+Shift+Delete hotkey-overlay-title="Power off" allow-when-locked=true { spawn-sh "poweroff"; }
     Mod+Alt+L hotkey-overlay-title="Lock screen" { spawn-sh "veila lock"; }
     Mod+Shift+B hotkey-overlay-title="Toggle Waybar" {spawn "toggle-waybar"; }
     Mod+E hotkey-overlay-title="Open file explorer" { spawn "nautilus"; }

@@ -89,9 +89,8 @@ in
 
       # newsboat = {
       #   enable = true;
-      #   autoReload = true;
-      #   urls = (fromTOML (builtins.readFile ./../../../feeds.toml)).feeds;
-      #   extraConfig = builtins.readFile ../../../.config/newsboat/config;
+      #   # autoReload = true;
+      #   urls = (fromTOML (builtins.readFile ../../../feeds.toml)).feeds;
       # };
     };
   };
