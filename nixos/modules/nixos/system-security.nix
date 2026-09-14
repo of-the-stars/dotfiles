@@ -10,19 +10,20 @@
   };
 
   config = lib.mkIf config.modules.system-security.enable {
-    programs.yubikey-manager.enable = true;
-
-    services.gnome.gnome-keyring.enable = true;
-    services.passSecretService.enable = true;
-
-    programs.gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
 
     services = {
+      gnome.gnome-keyring.enable = true;
+      passSecretService.enable = true;
       pcscd.enable = true; # Smartcard service
       udev.packages = [ pkgs.yubikey-personalization ];
+    };
+
+    programs = {
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+      };
+      yubikey-manager.enable = true;
     };
 
     security.pam = {
