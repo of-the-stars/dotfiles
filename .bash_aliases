@@ -16,7 +16,7 @@ alias l='ls -CF'
 alias icat="kitten icat"
 alias cd="z"
 alias c="clear"
-alias ssh="TERM=xterm-256color ssh"
+alias tssh="TERM=xterm-256color ssh"
 
 # unzip-all
 unzip-all() {
