@@ -1,5 +1,5 @@
 [default]
 mode = "center"
-path = "~/dotfiles/assets/"
-duration = "30m"
+path = "~/dotfiles/assets/wallpapers"
+duration = "5m"
 exec = "~/dotfiles/spellbook/wallpaper-notif.sh"
