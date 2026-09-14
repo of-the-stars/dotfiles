@@ -30,6 +30,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+alias ssh="TERM=xterm-256color ssh"
+
 bindkey -v
 bindkey '^E' autosuggest-accept
 bindkey -M vicmd ' ' edit-command-line
