@@ -39,7 +39,18 @@ in
       };
 
       systemPackages =
-        (with pkgs; [
+        let
+          dmenu = pkgs.writeShellScriptBin "dmenu" ''
+            exec ${pkgs.rofi}/bin/rofi -dmenu -- "$@"
+          '';
+        in
+        [
+          dmenu
+        ]
+        ++ (with pkgsUnstable; [
+          wpaperd # Wallpaper daemon written in rust
+        ])
+        ++ (with pkgs; [
           brightnessctl
           kitty # Terminal Emulator
           libnotify # Send desktop notifications
@@ -51,9 +62,6 @@ in
           waybar # Status bar
           wl-clipboard # Manage clipboard on wayland
           xwayland-satellite # Run X applications
-        ])
-        ++ (with pkgsUnstable; [
-          wpaperd # Wallpaper daemon written in rust
         ]);
     };
   };
