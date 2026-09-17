@@ -388,7 +388,7 @@ in
         })
       );
 
-      nvim = inputs.nvim.packages.${pkgs.hostPlatform.system}.nvim;
+      nvim = inputs.nvim.packages.${pkgs.hostPlatform.system}.default;
     in
     [
       gnome-disks-exfatprogs

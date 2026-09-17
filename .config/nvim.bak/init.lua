@@ -82,10 +82,12 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
+-- Controlls how much is scrolled
+vim.opt.scroll = 10
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -146,6 +148,7 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>n', '<cmd>e<cr> ', { desc = 'New file' })
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr> ', { desc = 'Open file explorer' })
+vim.keymap.set('n', '<leader>[', '<ESC>', {})
 
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
@@ -171,6 +174,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Auto preview typst documents
+-- vim.api.nvim_create_user_command('OpenPdf', function()
+--   -- group = vim.api.nvim_create_augroup('typst-preview', {})
+--   local filepath = vim.api.nvim_buf_get_name(0)
+--
+--   if filepath:match '%.typ$' then
+--     local pdf_path = filepath:gsub('%.typ$', '.pdf')
+--
+--     vim.system { 'zathura-sandbox', '--fork', pdf_path }
+--   end
+-- end, {})
 
 -- NOTE: nixCats: You might want to move the lazy-lock.json file
 local function getlockfilepath()
@@ -404,7 +419,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind in current [W]ord' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
-      vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>fr', function()
+        builtin.oldfiles { only_cwd = true }
+      end, { desc = '[F]ind [R]ecent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = '[F]ind in [T]reesitter' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
@@ -628,13 +645,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.rust_analyzer = {
         settings = {
           ['rust-analyzer'] = {
-            -- diagnostics = {
-            --   enable = true,
-            -- },
-            -- checkOnSave = {
-            --   command = 'clippy',
-            --   extraArgs = {},
-            -- },
+            diagnostics = {
+              enable = true,
+            },
             -- procMacro = {
             --   ignored = {
             --     leptos_macro = {
@@ -653,6 +666,18 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       servers.clangd = {}
       servers.sqls = {}
       servers.yamlls = {}
+      servers.hls = {}
+      servers.just = {}
+      servers.tombi = {}
+      -- servers.css_variables = {}
+      -- servers.html = {}
+      servers.tinymist = {
+        settings = {
+          formatterMode = 'typstyle',
+          exportPdf = 'onSave',
+          semanticTokens = 'disable',
+        },
+      }
 
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
@@ -668,9 +693,9 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md
       if require('nixCatsUtils').isNixCats then
         servers.nixd = {}
-      else
-        servers.rnix = {}
         servers.nil_ls = {}
+      else
+        -- servers.rnix = {}
       end
       servers.lua_ls = {
         -- cmd = {...},
@@ -758,12 +783,17 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       formatters_by_ft = {
         cpp = { 'clang-format' },
         css = { 'prettierd' },
-        -- just = { 'just' },
+        scss = { 'prettierd' },
+        html = { 'djlint' },
+        htmldjango = { 'djlint' },
         lua = { 'stylua' },
         nix = { 'nixfmt' },
         rust = { 'rustfmt', 'leptosfmt' },
-        markdown = { 'prettierd' },
-        toml = { 'taplo' },
+        -- markdown = { 'prettierd' },
+        toml = { 'tombi' },
+        just = { 'just-formatter' },
+        markdown = { 'mdsf' },
+        typst = { 'typstyle' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -796,6 +826,12 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
             return args
           end,
         },
+        djlint = {
+          -- args = function()
+          --   local args = { '--indent', '2' }
+          --   return args
+          -- end,
+        },
       },
     },
   },
@@ -818,11 +854,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     -- I'm testing my build script here
 
     -- use a release tag to download pre-built binaries
-    version = '1.*',
+    -- version = '1.*',
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
     -- build = 'cargo build --release',
     -- If you use nix, you can build from source using latest nightly rust with:
-    -- build = 'nix run .#build-plugin',
+    build = 'nix run .#build-plugin',
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -839,7 +875,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- C-k: Toggle signature help (if signature.enabled = true)
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      keymap = { preset = 'enter' },
+      keymap = { preset = 'default' },
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -849,7 +885,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 
       -- (Default) Only show the documentation popup when manually triggered
       completion = {
-        documentation = { auto_show = false },
+        documentation = { auto_show = true },
 
         menu = {
           draw = {
@@ -1033,31 +1069,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     end,
   },
 
-  -- {
-  --   'neo451/feed.nvim',
-  --   cmd = 'feed',
-  --   ---@module 'feed'
-  --   ---@type feed.config
-  --   opts = {},
-  -- },
-
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
     lazy = false,
-    dependencies = {
-      {
-        'OXY2DEV/markview.nvim',
-        opts = {
-          preview = {
-            icon_provider = 'mini',
-            linewise_hybrid_mode = true,
-            modes = { 'i', 'n', 'no', 'c' },
-            hybrid_modes = { 'i' },
-          },
-        },
-      },
-    },
     opts = {
       -- NOTE: nixCats: use lazyAdd to only set these 2 options if nix wasnt involved.
       -- because nix already ensured they were installed.
@@ -1069,9 +1085,11 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         'lua',
         'luadoc',
         'markdown',
+        'nix',
         'rust',
         'vim',
         'vimdoc',
+        'ron',
       },
       auto_install = require('nixCatsUtils').lazyAdd(true, false),
 
@@ -1090,7 +1108,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      require('nvim-treesitter.config').setup(opts)
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -1141,17 +1159,17 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   },
 
   -- lazy.nvim
-  {
-    'folke/snacks.nvim',
-    ---@type snacks.Config
-    opts = {
-      image = {
-        -- your image configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      },
-    },
-  },
+  -- {
+  --   'folke/snacks.nvim',
+  --   ---@type snacks.Config
+  --   opts = {
+  --     image = {
+  --       -- your image configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --     },
+  --   },
+  -- },
 
   {
     'goolord/alpha-nvim',
@@ -1169,7 +1187,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
         '         /☼★☆\\        ',
         '        /☆☼⚧★☽\\       ',
         '   -----------------   ',
-        '    %&/ _     _ \\@&    ',
+        '    %&Q ^     ^ 9@&    ',
         '    o8|   ov    |8o    ',
         '    Qo|     3   |9P    ',
         '    gB\\_________/cB    ',
@@ -1204,20 +1222,19 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   -- NOTE: nixCats: instead of uncommenting them, you can enable them
   -- from the categories set in your packageDefinitions in your flake or other template!
   -- This is because within them, we used nixCats to check if it should be loaded!
-  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-
-  require 'custom.plugins.tidal-cycles',
+  -- require 'custom.plugins.tidal-cycles',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  { import = 'custom.plugins' },
+  -- { import = 'custom.plugins' },
 }, lazyOptions)
 
 -- The line beneath this is called `modeline`. See `:help modeline`

@@ -1,0 +1,5 @@
+build:
+        nix build
+
+test:
+        ./result/bin/nvim init.lua
