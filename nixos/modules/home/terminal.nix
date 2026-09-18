@@ -18,14 +18,6 @@ in
       shell = {
         enableZshIntegration = true;
       };
-
-      shellAliases = {
-        c = "clear";
-        icat = "kitten icat";
-        l = "eza -a --sort=type --group-directories-first";
-        ls = "eza";
-        v = "nvim";
-      };
     };
 
     programs = {

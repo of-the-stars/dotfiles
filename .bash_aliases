@@ -9,15 +9,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias icat="kitten icat"
-alias cd="z"
 alias c="clear"
-
-# unzip-all
-unzip-all() {
-    for a in *.zip; do unzip "$a" -d "${a%.zip}"; done
-}
+alias icat="kitten icat"
+alias ls="eza";
+alias l="ls -a --sort=type --group-directories-first"
+alias la='ls -A'
+alias ll='ls -alF'
+alias v="nvim"
