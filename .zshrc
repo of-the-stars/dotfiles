@@ -37,11 +37,3 @@ bindkey '^E' autosuggest-accept
 bindkey -M vicmd ' ' edit-command-line
 
 export MANPAGER="nvim +Man!"
-
-# fortune-kind | tee ~/fortune.txt | cowsay -s -f bong | tee ~/cowsay.txt
-
-# To remind myself what it's all about
-# Snippet to use fd to find the file, in case I move the file
-# fd --base-directory=Log4Stell 2026\ Resolutions
-
-# sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ~/Log4Stell/02-Permanent/2026-01-02T0118\ 2026\ Resolutions.md | bat -l=md -p

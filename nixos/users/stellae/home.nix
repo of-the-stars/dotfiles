@@ -59,6 +59,7 @@ in
   home.file = {
     ".gitconfig".source = ./../../../.gitconfig;
     ".secrets".source = ./../../../.secrets;
+    ".bash_aliases".source = ../../../.bash_aliases;
   };
 
   services.tomat = {
