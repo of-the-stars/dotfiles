@@ -103,10 +103,6 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
 -- vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr> ", { desc = "Open file explorer" })
 vim.keymap.set('n', '<leader>[', '<ESC>', {})
 
-vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
-
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
@@ -264,7 +260,8 @@ require('which-key').add {
 install 'nvim-lua/plenary.nvim'
 
 install 'nvim-telescope/telescope.nvim'
-require('telescope').setup {
+local telescope = require 'telescope'
+telescope.setup {
   pickers = {
     live_grep = {
       additional_args = { '--hidden', '--ignore-vcs' },
@@ -276,38 +273,38 @@ require('telescope').setup {
     },
   },
 }
-pcall(require('telescope').load_extension, 'fzf')
-pcall(require('telescope').load_extension, 'ui-select')
-local builtin = require 'telescope.builtin'
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
-vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+pcall(telescope.load_extension, 'fzf')
+pcall(telescope.load_extension, 'ui-select')
+local telescope_builtin = require 'telescope.builtin'
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = '[F]ind [H]elp' })
+vim.keymap.set('n', '<leader>fk', telescope_builtin.keymaps, { desc = '[F]ind [K]eymaps' })
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fa', function()
-  builtin.find_files { hidden = true }
+  telescope_builtin.find_files { hidden = true }
 end, { desc = '[F]ind [A]ll files ' })
-vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
-vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind in current [W]ord' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
+vim.keymap.set('n', '<leader>fs', telescope_builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
+vim.keymap.set('n', '<leader>fw', telescope_builtin.grep_string, { desc = '[F]ind in current [W]ord' })
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = '[F]ind by [G]rep' })
+vim.keymap.set('n', '<leader>fd', telescope_builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
 vim.keymap.set('n', '<leader>fr', function()
-  builtin.oldfiles { only_cwd = true }
+  telescope_builtin.oldfiles { only_cwd = true }
 end, { desc = '[F]ind [R]ecent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = '[F]ind in [T]reesitter' })
-vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>ft', telescope_builtin.treesitter, { desc = '[F]ind in [T]reesitter' })
+vim.keymap.set('n', '<leader><leader>', telescope_builtin.buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
-  builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     winblend = 10,
     previewer = false,
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>f/', function()
-  builtin.live_grep {
+  telescope_builtin.live_grep {
     grep_open_files = true,
     prompt_title = 'Live Grep in Open Files',
   }
 end, { desc = '[F]ind [/] in Open Files' })
 vim.keymap.set('n', '<leader>fn', function()
-  builtin.find_files { cwd = vim.fn.stdpath 'config' }
+  telescope_builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[F]ind [N]eovim files' })
 
 install 'folke/todo-comments.nvim'
@@ -440,6 +437,16 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.treesitter.start()
   end,
 })
+
+vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
+vim.keymap.set('n', '<leader>cd', telescope_builtin.lsp_definitions, { desc = '[I]mplementation' })
+vim.keymap.set('n', '<leader>ct', telescope_builtin.lsp_type_definitions, { desc = 'Type [D]efinition' })
+vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_document_symbols, { desc = '[D]ocument [S]ymbols' })
+vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Workspace [C]ode [S]ymbols' })
+vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
 
 -- LSP!!!
 install 'neovim/nvim-lspconfig'
