@@ -95,7 +95,7 @@
               cp ${pkgs.writeShellScriptBin "nvim" ''
                 export PATH=${lib.strings.makeBinPath runtimePackages}:$PATH
                 export NIX_NVIM_RUNTIME_PATH="${rtp}"
-                exec ${pkgs.neovim-unwrapped}/bin/nvim -u ${configPath}/init.lua -- "$@"
+                exec ${pkgs.neovim-unwrapped}/bin/nvim -u ${configPath}/init.lua "$@"
               ''}/bin/nvim $out/bin/.
             '';
 

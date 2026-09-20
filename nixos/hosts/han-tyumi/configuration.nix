@@ -97,13 +97,14 @@ in
   };
 
   documentation = {
-    dev.enable = true;
-    doc.enable = true;
-    info.enable = true;
+    enable = true;
     man = {
       enable = true;
-      cache.enable = true;
+      # cache.enable = true;
     };
+    # dev.enable = true;
+    # doc.enable = true;
+    # info.enable = true;
     # nixos = {
     #   enable = true;
     #   includeAllModules = true;
