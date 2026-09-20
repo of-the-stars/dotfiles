@@ -62,6 +62,7 @@ in
           nmap # Map the network
           openconnect # Connect to VPNs
           pandoc # Document converter
+          pstree
           rename # Perl rename
           ripgrep # Modern `grep`
           rsync # Sync drives
