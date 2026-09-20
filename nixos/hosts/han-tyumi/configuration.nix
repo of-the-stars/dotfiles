@@ -104,11 +104,11 @@ in
       enable = true;
       cache.enable = true;
     };
-    nixos = {
-      enable = true;
-      includeAllModules = true;
-      options.splitBuild = true;
-    };
+    # nixos = {
+    #   enable = true;
+    #   includeAllModules = true;
+    #   options.splitBuild = true;
+    # };
   };
 
   system = {

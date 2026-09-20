@@ -50,7 +50,6 @@
           ];
 
           plugins = with pkgs.vimPlugins; [
-            # nvim-treesitter-context
             alpha-nvim
             blink-cmp
             catppuccin-nvim
@@ -65,6 +64,7 @@
             mini-tabline
             nvim-lspconfig
             nvim-treesitter.withAllGrammars
+            # nvim-treesitter-context
             plenary-nvim
             telescope-nvim
             todo-comments-nvim
