@@ -454,5 +454,11 @@ vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'nil_ls'
 vim.lsp.enable 'nixd'
 vim.lsp.enable 'rust-analyzer'
+vim.lsp.config['tinymist'] = {
+  settings = {
+    exportPdf = 'onSave',
+    semanticTokens = 'disable',
+  },
+}
 vim.lsp.enable 'tinymist'
 vim.lsp.enable 'clangd'
