@@ -43,6 +43,7 @@
             rust-analyzer
             stylua
             tinymist
+            clang-tools
             typst
             typstyle
             wl-clipboard
