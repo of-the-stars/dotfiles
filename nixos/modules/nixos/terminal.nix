@@ -49,6 +49,7 @@ in
           gcc # GNU Compiler Collection
           gh # Github CLI
           git # The distributed VCS
+          gnumake
           gping # `ping` but with a graph
           handlr # xdg-open alternative
           htop-vim # Interactive process viewer with vim bindings
