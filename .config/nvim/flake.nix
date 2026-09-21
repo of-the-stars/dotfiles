@@ -109,23 +109,11 @@
         in
         {
           package = neovim;
-
-          devShell = pkgs.mkShell {
-            inputsFrom = [ neovim ];
-
-            packages = [
-            ];
-          };
-
           formatter = pkgs.nixfmt-tree; # Nix flake formatter. Run `nix fmt` to use
         };
     in
     {
       formatter = iterOverSystems (system: (forSystem system).formatter);
-
-      devShells = iterOverSystems (system: {
-        default = (forSystem system).devShell;
-      });
 
       packages = iterOverSystems (system: {
         default = (forSystem system).package;
