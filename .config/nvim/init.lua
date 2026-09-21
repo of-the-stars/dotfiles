@@ -380,7 +380,8 @@ require('gitsigns').setup {
 }
 
 install 'stevearc/conform.nvim'
-require('conform').setup {
+conform = require 'conform'
+conform.setup {
   formatters_by_ft = {
     lua = { 'stylua' },
     nix = { 'nixfmt' },
@@ -393,12 +394,12 @@ require('conform').setup {
   },
 }
 vim.keymap.set('n', '<leade>bf', function()
-  require('conform').format { async = true, lsp_fallback = true }
+  conform.format { async = true, lsp_fallback = true }
 end, { desc = '[B]uffer [F]ormat' })
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function(args)
-    require('conform').format { bufnr = args.buf }
+    conform.format { bufnr = args.buf }
   end,
 })
 
