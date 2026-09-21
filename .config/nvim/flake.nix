@@ -68,7 +68,6 @@
             # nvim-treesitter-context
             plenary-nvim
             telescope-nvim
-            todo-comments-nvim
             toggleterm-nvim
             which-key-nvim
           ];

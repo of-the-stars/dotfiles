@@ -307,9 +307,6 @@ vim.keymap.set('n', '<leader>fn', function()
   telescope_builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[F]ind [N]eovim files' })
 
-install 'folke/todo-comments.nvim'
-require 'todo-comments'
-
 install 'saghen/blink.cmp'
 require('blink.cmp').setup {
   keymap = {
