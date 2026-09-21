@@ -75,7 +75,7 @@
 
           rtp = pkgs.symlinkJoin {
             name = "runtimePath";
-            paths = [ configPath ] ++ plugins;
+            paths = plugins;
           };
 
           neovim = pkgs.stdenv.mkDerivation (finalAttrs: {
@@ -88,13 +88,13 @@
             installPhase = ''
               mkdir -p $out/bin
               cp ${configPath}/init.lua $out/.
-              # cp -r ${configPath}/lsp $out/.
+              cp -r ${configPath}/lsp $out/.
               cp -r ${configPath}/lua $out/.
               cp -r ${configPath}/ftplugin $out/.
               cp -r ${configPath}/plugin $out/.
               cp ${pkgs.writeShellScriptBin "nvim" ''
                 export PATH=${lib.strings.makeBinPath runtimePackages}:$PATH
-                export NIX_NVIM_RUNTIME_PATH="${rtp}"
+                export NIX_NVIM_RUNTIME_PATH="${configPath},${rtp}"
                 exec ${pkgs.neovim-unwrapped}/bin/nvim -u ${configPath}/init.lua "$@"
               ''}/bin/nvim $out/bin/.
             '';
