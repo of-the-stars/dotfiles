@@ -451,7 +451,15 @@ install 'neovim/nvim-lspconfig'
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'nil_ls'
 vim.lsp.enable 'nixd'
-vim.lsp.config 'rust-analyzer'
+vim.lsp.config['rust-analyzer'] = {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = true,
+      },
+    },
+  },
+}
 vim.lsp.enable 'rust-analyzer'
 vim.lsp.config['tinymist'] = {
   settings = {
