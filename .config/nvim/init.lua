@@ -436,6 +436,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- LSP!!!
 vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
@@ -446,7 +447,6 @@ vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_dynamic_workspace_symbo
 vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
 
--- LSP!!!
 install 'neovim/nvim-lspconfig'
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'nil_ls'
