@@ -30,7 +30,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias ssh="TERM=xterm-256color ssh"
+alias ssh="kitten ssh"
 
 bindkey -v
 bindkey '^E' autosuggest-accept
