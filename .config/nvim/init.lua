@@ -446,7 +446,7 @@ vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_document_symbols, { des
 vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Workspace [C]ode [S]ymbols' })
 vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
-vim.keymap.set('n', '<leader>cl', '<cmd>vim.lsp enable<CR>', { desc = 'Enable [L]SP' })
+vim.keymap.set('n', '<leader>cl', '<cmd>lsp enable<CR>', { desc = 'Enable [L]SP' })
 
 install 'neovim/nvim-lspconfig'
 vim.lsp.enable 'lua_ls'
