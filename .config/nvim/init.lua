@@ -120,6 +120,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Custom lua files
+require 'netrw'
 
 -- Plugin config
 
