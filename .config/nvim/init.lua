@@ -119,89 +119,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Custom lua files
+
 -- Plugin config
 
 install 'catppuccin/nvim'
-require('catppuccin').setup {
-  flavour = 'mocha',
-  float = {
-    transparent = true,
-    solid = true,
-  },
-  color_overrides = {
-    mocha = {
-      base = '#11111b',
-    },
-  },
-}
-vim.cmd.colorscheme 'catppuccin-nvim'
+require 'catppuccin-config'
 
 install 'nvim-mini/mini.nvim'
-local mini_icons = require 'mini.icons'
-mini_icons.mock_nvim_web_devicons()
-local statusline = require 'mini.statusline'
-statusline.section_location = function()
-  return '%2l:%-2v'
-end
-statusline.section_fileinfo = function()
-  return string.format('%s%s[%s]', vim.bo.filetype .. ' ', vim.bo.fileencoding or vim.bo.encoding, vim.bo.fileformat)
-end
-statusline.setup {
-  use_icons = vim.g.have_nerd_font,
-  config = function()
-    local mode, mode_hl = statusline.section_mode { trunc_width = 120 }
-    local git = statusline.section_git { trunc_width = 40 }
-    local diff = statusline.section_diff { trunc_width = 75 }
-    local filename = statusline.section_filename { trunc_width = 140 }
-    local fileinfo = statusline.section_fileinfo
-    local location = statusline.section_location
-    local search = statusline.section_searchcount { trunc_width = 75 }
-
-    return statusline.combine_groups {
-      { hl = mode_hl, strings = { mode } },
-      { hl = 'MiniStatuslineDevinfo', strings = { git, diff } },
-      '%<', -- Mark general truncate point
-      { hl = 'MiniStatuslineFilename', strings = { filename } },
-      '%=', -- End left alignment
-      { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
-      { hl = mode_hl, strings = { search, location } },
-    }
-  end,
-}
-local mini_files = require 'mini.files'
-vim.keymap.set('n', '<leader>fe', '<cmd>lua MiniFiles.open()<cr>', { desc = 'Open Mini Files explorer' })
-mini_files.setup()
-require('mini.comment').setup()
-require('mini.tabline').setup()
+require 'mini-config'
 
 install 'goolord/alpha-nvim'
-local alpha = require 'alpha'
-local dashboard = require 'alpha.themes.dashboard'
-vim.keymap.set('n', '<leader>h', '<cmd>Alpha<cr>')
-dashboard.section.header.val = {
-  '           ^           ',
-  '          /☄\\         ',
-  '         /☼★☆\\        ',
-  '        /☆☼⚧★☽\\       ',
-  '   -----------------   ',
-  '    %&Q ^     ^ 9@&    ',
-  '    o8|   ov    |8o    ',
-  '    Qo|     3   |9P    ',
-  '    gB\\_________/cB    ',
-  '    q%            P%    ',
-  '                        ',
-}
-dashboard.section.buttons.val = {
-  dashboard.button('SPC n', '> New file'),
-  dashboard.button('SPC f e', '> Open file explorer'),
-  dashboard.button('SPC f f', '> Fuzzy find file'),
-  dashboard.button('SPC f r', '> Fuzzy find recent file'),
-  dashboard.button('SPC f g', '> Find word in working directory'),
-  dashboard.button('SPC z', '> Change directory with `zoxide`'),
-  dashboard.button('SPC h', '> Open this window again'),
-  dashboard.button('SPC q', '> Quit window'),
-}
-alpha.setup(dashboard.opts)
+require 'alpha-nvim-config'
 
 install 'akinsho/toggleterm.nvim'
 require('toggleterm').setup {
@@ -233,137 +162,15 @@ end
 vim.keymap.set('n', '<leader>gl', '<cmd>lua _lazygit_toggle()<cr>', { noremap = true, silent = true, desc = 'Open LazyGit' })
 
 install 'folke/which-key.nvim'
-require('which-key').setup()
-require('which-key').add {
-  { '<leader>c', group = '[C]ode' },
-  { '<leader>c_', hidden = true },
-  { '<leader>d', group = '[D]ocument' },
-  { '<leader>d_', hidden = true },
-  { '<leader>r', group = '[R]ename' },
-  { '<leader>r_', hidden = true },
-  { '<leader>f', group = '[F]ind' },
-  { '<leader>s_', hidden = true },
-  { '<leader>t', group = '[T]erminal' },
-  { '<leader>t_', hidden = true },
-  -- { '<leader>w', group = '[W]orkspace' },
-  -- { '<leader>w_', hidden = true },
-  { '<leader>g', group = '[G]it' },
-  { '<leader>g_', hidden = true },
-  {
-    mode = { 'v' },
-    { '<leader>g', group = '[G]it' },
-    { '<leader>g_', hidden = true },
-  },
-  vim.keymap.set('n', '<leader>?', '<cmd>WhichKey<cr>', { desc = 'Show keybinds with WhichKey' }),
-}
+require 'whichkey-config'
 
 install 'nvim-lua/plenary.nvim'
 
 install 'nvim-telescope/telescope.nvim'
-local telescope = require 'telescope'
-telescope.setup {
-  pickers = {
-    live_grep = {
-      additional_args = { '--hidden', '--ignore-vcs' },
-    },
-  },
-  extensions = {
-    ['ui-select'] = {
-      require('telescope.themes').get_dropdown(),
-    },
-  },
-}
-pcall(telescope.load_extension, 'fzf')
-pcall(telescope.load_extension, 'ui-select')
-local telescope_builtin = require 'telescope.builtin'
-vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = '[F]ind [H]elp' })
-vim.keymap.set('n', '<leader>fk', telescope_builtin.keymaps, { desc = '[F]ind [K]eymaps' })
-vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<leader>fa', function()
-  telescope_builtin.find_files { hidden = true }
-end, { desc = '[F]ind [A]ll files ' })
-vim.keymap.set('n', '<leader>fs', telescope_builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
-vim.keymap.set('n', '<leader>fw', telescope_builtin.grep_string, { desc = '[F]ind in current [W]ord' })
-vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<leader>fd', telescope_builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
-vim.keymap.set('n', '<leader>fr', function()
-  telescope_builtin.oldfiles { only_cwd = true }
-end, { desc = '[F]ind [R]ecent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader>ft', telescope_builtin.treesitter, { desc = '[F]ind in [T]reesitter' })
-vim.keymap.set('n', '<leader><leader>', telescope_builtin.buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-vim.keymap.set('n', '<leader>f/', function()
-  telescope_builtin.live_grep {
-    grep_open_files = true,
-    prompt_title = 'Live Grep in Open Files',
-  }
-end, { desc = '[F]ind [/] in Open Files' })
-vim.keymap.set('n', '<leader>fn', function()
-  telescope_builtin.find_files { cwd = vim.fn.stdpath 'config' }
-end, { desc = '[F]ind [N]eovim files' })
+require 'telescope-config'
 
 install 'saghen/blink.cmp'
-require('blink.cmp').setup {
-  keymap = {
-    ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-    ['<C-e>'] = { 'hide', 'fallback' },
-    ['<Enter>'] = { 'select_and_accept', 'fallback' },
-
-    ['<Up>'] = { 'select_prev', 'fallback' },
-    ['<Down>'] = { 'select_next', 'fallback' },
-    ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
-    ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-
-    ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-    ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
-    ['<Tab>'] = { 'snippet_forward', 'fallback' },
-    ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
-
-    ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
-  },
-  appearance = {
-    -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-    -- Adjusts spacing to ensure icons are aligned
-    nerd_font_variant = 'mono',
-  },
-  completion = {
-    documentation = { auto_show = true },
-    menu = {
-      draw = {
-        components = {
-          kind_icon = {
-            text = function(ctx)
-              local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
-              return kind_icon
-            end,
-            -- (optional) use highlights from mini.icons
-            highlight = function(ctx)
-              local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-              return hl
-            end,
-          },
-          kind = {
-            -- (optional) use highlights from mini.icons
-            highlight = function(ctx)
-              local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-              return hl
-            end,
-          },
-        },
-      },
-    },
-  },
-  sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
-  },
-  fuzzy = { implementation = 'prefer_rust_with_warning' },
-}
+require 'blink-cmp-config'
 
 install 'lewis6991/gitsigns.nvim'
 require('gitsigns').setup {
@@ -377,28 +184,7 @@ require('gitsigns').setup {
 }
 
 install 'stevearc/conform.nvim'
-conform = require 'conform'
-conform.setup {
-  formatters_by_ft = {
-    lua = { 'stylua' },
-    nix = { 'nixfmt' },
-    typst = { 'typstyle' },
-  },
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_format = 'fallback',
-  },
-}
-vim.keymap.set('n', '<leade>bf', function()
-  conform.format { async = true, lsp_fallback = true }
-end, { desc = '[B]uffer [F]ormat' })
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = function(args)
-    conform.format { bufnr = args.buf }
-  end,
-})
+require 'conform-config'
 
 install 'willothy/flatten.nvim'
 require('flatten').setup()
@@ -407,66 +193,8 @@ install 'folke/lazydev.nvim'
 require('lazydev').setup()
 
 install 'nvim-treesitter/nvim-treesitter'
-local treesitter = require 'nvim-treesitter'
-treesitter.install {
-  'bash',
-  'c',
-  'diff',
-  'html',
-  'lua',
-  'lua',
-  'luadoc',
-  'markdown',
-  'nix',
-  'ron',
-  'rust',
-  'typst',
-}
-treesitter.setup {
-  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
-  install_dir = vim.fn.stdpath 'data' .. '/site',
-  highlight = {
-    enable = true,
-  },
-}
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+require 'nvim-treesitter-config'
 
 -- LSP!!!
-vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
-vim.keymap.set('n', '<leader>cd', telescope_builtin.lsp_definitions, { desc = '[I]mplementation' })
-vim.keymap.set('n', '<leader>ct', telescope_builtin.lsp_type_definitions, { desc = 'Type [D]efinition' })
-vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_document_symbols, { desc = '[D]ocument [S]ymbols' })
-vim.keymap.set('n', '<leader>csw', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Workspace [C]ode [S]ymbols' })
-vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
-vim.keymap.set('n', '<leader>cl', '<cmd>lsp enable<CR>', { desc = 'Enable [L]SP' })
-
 install 'neovim/nvim-lspconfig'
-vim.lsp.enable 'lua_ls'
-vim.lsp.enable 'nil_ls'
-vim.lsp.enable 'nixd'
-vim.lsp.config['rust-analyzer'] = {
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = true,
-      },
-    },
-  },
-}
-vim.lsp.enable 'rust-analyzer'
-vim.lsp.config['tinymist'] = {
-  settings = {
-    exportPdf = 'onSave',
-    semanticTokens = 'disable',
-  },
-}
-vim.lsp.enable 'tinymist'
-vim.lsp.enable 'clangd'
+require 'lsp-config'
