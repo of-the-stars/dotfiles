@@ -105,6 +105,18 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
 -- vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr> ", { desc = "Open file explorer" })
 vim.keymap.set('n', '<leader>[', '<ESC>', {})
 
+vim.keymap.set('n', 'gf', function()
+  local file = vim.fn.expand '<cfile>'
+
+  local replaced_file = string.gsub(file, '%20', ' ')
+
+  local ok, _ = pcall(vim.cmd.edit, replaced_file)
+
+  if not ok then
+    vim.cmd 'normal! gf'
+  end
+end)
+
 -- Set whitespace rules
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
