@@ -108,7 +108,7 @@ vim.keymap.set('n', '<leader>[', '<ESC>', {})
 vim.keymap.set('n', 'gf', function()
   local file = vim.fn.expand '<cfile>'
 
-  local replaced_file = string.gsub(file, '%20', ' ')
+  local replaced_file = string.gsub(file, '%%20', ' ')
 
   local ok, _ = pcall(vim.cmd.edit, replaced_file)
 
