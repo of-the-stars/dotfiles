@@ -1,4 +1,4 @@
--- Check to see if it's running with nix
+-- Check to see if it's running with nixnvimini
 local nix_nvim_runtime_path = os.getenv 'NIX_NVIM_RUNTIME_PATH'
 
 -- Helper functions
@@ -70,6 +70,8 @@ vim.opt.scrolloff = 15
 
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+vim.opt.path:prepend(vim.fn.expand '%:p')
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
