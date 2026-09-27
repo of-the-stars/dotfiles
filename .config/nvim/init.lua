@@ -71,7 +71,7 @@ vim.opt.scrolloff = 15
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.opt.path:prepend(vim.fn.expand '%:p')
+vim.opt.path:prepend(vim.fn.expand '%:p:h')
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
