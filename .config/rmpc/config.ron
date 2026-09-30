@@ -9,7 +9,7 @@
     enable_config_hot_reload: true,
     enable_lyrics_index: true,
     enable_mouse: true,
-    lyrics_dir: "~/.lyrics",
+    lyrics_dir: "~/Music/",
     max_fps: 30,
     on_song_change: ["~/.config/rmpc/notify.sh"],
     password: None,
@@ -165,30 +165,43 @@
         (
             name: "Now Playing",
             pane: Split(
-                direction: Vertical,
+                direction: Horizontal,
                 panes: [
                     (
-                        size: "70%",
+                        size: "33%",
                         pane: Split(
-                            direction: Horizontal,
+                            direction: Vertical,
                             panes: [
                                 (
-                                    size: "33%",
+                                    size: "70%",
                                     borders: "ALL",
                                     pane: Pane(AlbumArt)
                                 ),
                                 (
-                                    size: "67%", 
+                                    size: "30%", 
                                     borders: "ALL",
-                                    pane: Pane(Queue)
+                                    pane: Pane(Cava)
                                 ),
                             ],
                         ),
                     ),
                     (
-                        size: "30%",
-                        borders: "ALL",
-                        pane: Pane(Cava),
+                        size: "66%",
+                        pane: Split(
+                            direction: Vertical,
+                            panes: [
+                                (
+                                    size: "70%",
+                                    borders: "ALL",
+                                    pane: Pane(Queue) 
+                                ),
+                                (
+                                    size: "30%",
+                                    borders: "ALL",
+                                    pane: Pane(Lyrics) 
+                                ),
+                            ],
+                        ),
                     ),
                 ],
             ),
