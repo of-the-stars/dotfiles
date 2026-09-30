@@ -86,11 +86,14 @@
 
             installPhase = ''
               mkdir -p $out/bin
+
               cp ${configPath}/init.lua $out/.
               cp -r ${configPath}/lsp $out/.
               cp -r ${configPath}/lua $out/.
               cp -r ${configPath}/ftplugin $out/.
               cp -r ${configPath}/plugin $out/.
+              cp -r ${pkgs.neovim-unwrapped}/share $out/.
+
               cp ${pkgs.writeShellScriptBin "nvim" ''
                 export PATH=${lib.strings.makeBinPath runtimePackages}:$PATH
                 export NIX_NVIM_RUNTIME_PATH="${configPath},${rtp}"
