@@ -28,6 +28,7 @@ in
         kid3 # Audio tagger
         krita # Drawing program
         musescore # Score writing tool
+        picard # Official MusicBrainz tagger
         qimgv # Qt6 image viewer
       ])
       ++ (with pkgsUnstable; [
