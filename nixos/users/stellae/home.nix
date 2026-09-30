@@ -11,7 +11,7 @@ in
 {
   imports = [
     ../../modules/home
-    inputs.catppuccin.homeModules.catppuccin
+    # inputs.catppuccin.homeModules.catppuccin
   ];
 
   # Adds each spell in my spellbook to PATH as a derivation with a binary :]
