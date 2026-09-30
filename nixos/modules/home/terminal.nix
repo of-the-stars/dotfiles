@@ -46,6 +46,12 @@ in
         enable = true;
         enableZshIntegration = true;
         shellWrapperName = "y";
+        # plugins = {
+        #   gvfs = {
+        #     package = pkgs.yaziPlugins.gvfs;
+        #     setup = true;
+        #   };
+        # };
       };
 
       zoxide = {

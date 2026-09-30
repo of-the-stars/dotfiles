@@ -26,14 +26,12 @@ end
 -- https://github.com/neovim/neovim/pull/40562
 -- It seems that this will be implemented in 0.13, so I'll work around it for now
 
+vim.g.have_nerd_font = using_nix()
+
 vim.loader.enable()
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
-vim.g.have_nerd_font = using_nix()
-
-vim.opt.showmode = false
 
 vim.g.editorconfig = true
 
@@ -102,11 +100,10 @@ vim.keymap.set('n', '<leader>Q', '<cmd>q!<cr>', { desc = 'Quit window without sa
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>nw', '<cmd>noa w<cr>', { desc = 'Write buffer with no autocommands' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = 'Delete buffer' })
--- vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr> ", { desc = "Open file explorer" })
 vim.keymap.set('n', '<leader>[', '<ESC>', {})
 
 vim.keymap.set('n', 'gf', function()
-  local file = vim.fn.expand '<cfile>'
+  local file = vim.bo.filetype == 'markdown' and vim.fn.expand '<cexpr>' or vim.fn.expand '<cfile>'
 
   local replaced_file = string.gsub(file, '%%20', ' ')
 
