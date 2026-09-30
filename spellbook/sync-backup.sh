@@ -33,7 +33,7 @@ backupDirectory="$(eza -1 -D --absolute=on "$mountpoint" | picker --border-label
 
 userToBackup="$(eza -1 -D --absolute=on /home | picker --border-label ' Choose which user to back up ')"
 
-printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ sudo rsync --delete --human-readable --progress --modify-window=1 --exclude='*/.direnv/' -rtvL _ "$backupDirectory"
+printf "$userToBackup/%s\0" "${directories[@]}" | xargs -0 -I _ sudo rsync --delete --human-readable --progress --modify-window=1 --filter=':- .gitignore' -rtvL _ "$backupDirectory"
 
 sudo umount "$mountpoint" && echo "Backup synced"
 
