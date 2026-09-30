@@ -27,6 +27,7 @@ in
         kdePackages.kdenlive # Video editor
         kid3 # Audio tagger
         krita # Drawing program
+        lrcget # Tool to grab lyrics`
         musescore # Score writing tool
         picard # Official MusicBrainz tagger
         qimgv # Qt6 image viewer
