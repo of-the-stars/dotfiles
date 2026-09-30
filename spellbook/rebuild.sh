@@ -45,7 +45,7 @@ pushd "$HOME"/dotfiles/nixos/
         sudo nix flake update nvim --no-warn-dirty
     fi
 
-    (sudo nixos-rebuild switch --verbose --show-trace --flake .\#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
+    (sudo nixos-rebuild switch --verbose --show-trace --flake .\#"$system" 2>&1 | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
     # Grabs nixos generation info
     gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5) 
