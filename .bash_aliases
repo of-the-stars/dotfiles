@@ -10,6 +10,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias c="clear"
+alias eza='eza --icons auto --color auto --git'
 alias icat="kitten icat"
 alias l="eza -a --sort=type --group-directories-first"
 alias la='eza -A'
