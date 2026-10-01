@@ -11,8 +11,7 @@ fi
 
 alias c="clear"
 alias icat="kitten icat"
-alias ls="eza";
-alias l="ls -a --sort=type --group-directories-first"
-alias la='ls -A'
-alias ll='ls -alF'
+alias l="eza -a --sort=type --group-directories-first"
+alias la='eza -A'
+alias ll='eza -alF'
 alias v="nvim"
