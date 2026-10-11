@@ -1,7 +1,6 @@
-# autoload -U compinit promptinit
-#
-# promptinit
-# compinit
+autoload -U compinit promptinit
+promptinit
+compinit
 
 ZSH_THEME=""
 
