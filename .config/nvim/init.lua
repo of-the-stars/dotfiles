@@ -83,6 +83,10 @@ vim.keymap.set({ 'n', 'v' }, 'gk', 'k')
 vim.keymap.set({ 'n', 'v' }, 'H', 'g^') -- Sets 'H' to go to the beginning of the visual line
 vim.keymap.set({ 'n', 'v' }, 'L', 'g$') -- Sets 'L' to go to the end of the visual line
 
+-- Digraphs
+vim.opt.digraph = true
+vim.keymap.del('i', '<C-K>')
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --

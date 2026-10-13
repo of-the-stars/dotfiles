@@ -37,7 +37,6 @@ in
       ++ (
         with pkgs;
         [
-          cargo # The Rust package manager
           cargo-generate # Generate rust projects
           cargo-info # Get info on crates
           dust # Modern `du`
@@ -66,6 +65,7 @@ in
           rename # Perl rename
           ripgrep # Modern `grep`
           rsync # Sync drives
+          rustup # Rust toolchain manager
           sd # sed alternative
           sshfs
           tree
