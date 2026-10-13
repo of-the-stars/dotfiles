@@ -85,7 +85,7 @@ vim.keymap.set({ 'n', 'v' }, 'L', 'g$') -- Sets 'L' to go to the end of the visu
 
 -- Digraphs
 vim.opt.digraph = true
-vim.keymap.del('i', '<C-K>')
+vim.keymap.del('i', '<C-k>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
