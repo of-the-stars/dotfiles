@@ -31,7 +31,13 @@ in
     programs.zsh.enable = true;
 
     environment.systemPackages =
-      (with pkgsUnstable; [
+      # let
+      #   doomsday = inputs.doomsday.packages.${pkgs.hostPlatform.system}.default;
+      # in
+      [
+        # doomsday
+      ]
+      ++ (with pkgsUnstable; [
         presenterm
       ])
       ++ (

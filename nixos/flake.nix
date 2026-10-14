@@ -25,6 +25,11 @@
       url = "path:./../.config/nvim/";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    doomsday = {
+      url = "github:of-the-stars/doomsday";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
