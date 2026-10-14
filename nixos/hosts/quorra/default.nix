@@ -18,25 +18,30 @@
 let
   inherit (users) nixos;
 
-  makeHomeManagerConfig = user: {
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.backupFileExtension = "bak";
-    home-manager.extraSpecialArgs = {
-      inherit
-        inputs
-        user
-        ;
+  makeHomeManagerConfig =
+    user:
+    let
       inherit (user) username;
+    in
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.backupFileExtension = "bak";
+      home-manager.extraSpecialArgs = {
+        inherit
+          inputs
+          user
+          username
+          ;
+      };
+      home-manager.users.${username} = {
+        imports = [
+          user.home
+        ];
+        home.username = "${username}";
+        home.homeDirectory = "/home/${username}";
+      };
     };
-    home-manager.users.${user.username} = {
-      imports = [
-        user.home
-      ];
-      home.username = "${user.username}";
-      home.homeDirectory = "/home/${user.username}";
-    };
-  };
 in
 {
   specialArgs = {
@@ -46,9 +51,15 @@ in
       ;
   };
 
-  modules = [
-    ./configuration.nix
-    inputs.home-manager.nixosModules.home-manager
-    (makeHomeManagerConfig nixos)
-  ];
+  modules =
+    # Modules from files
+    [
+      ./configuration.nix
+    ]
+    # Modules from flake inputs
+    ++ [
+      # Home manager
+      inputs.home-manager.nixosModules.home-manager
+      (makeHomeManagerConfig nixos)
+    ];
 }

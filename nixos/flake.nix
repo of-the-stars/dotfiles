@@ -48,7 +48,7 @@
         lib.filterAttrs (name: type: type == "directory") (builtins.readDir userPath)
       );
 
-      hosts = lib.mapAttrs' (
+      nixosConfigurations = lib.mapAttrs' (
         name: value:
         lib.nameValuePair name (
           lib.nixosSystem (import (hostPath + ("/" + name)) { inherit inputs users nixpkgs; })
@@ -56,6 +56,6 @@
       ) (lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostPath));
     in
     {
-      nixosConfigurations = hosts;
+      inherit nixosConfigurations;
     };
 }

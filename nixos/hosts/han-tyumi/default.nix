@@ -6,24 +6,33 @@
 let
   inherit (users) stellae;
 
-  makeHomeManagerConfig = user: {
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.backupFileExtension = "bak";
-    home-manager.extraSpecialArgs = {
-      inherit
-        inputs
-        user
-        ;
+  makeHomeManagerConfig =
+    user:
+    let
       inherit (user) username;
+    in
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.backupFileExtension = "bak";
+      home-manager.extraSpecialArgs = {
+        inherit
+          inputs
+          user
+          username
+          ;
+      };
+      home-manager.users.${username} = {
+        imports = [
+          user.home
+        ];
+        home.username = "${username}";
+        home.homeDirectory = "/home/${username}";
+      };
     };
-    home-manager.users.${user.username} = {
-      imports = [
-        user.home
-      ];
-      home.username = "${user.username}";
-      home.homeDirectory = "/home/${user.username}";
-    };
+
+  veilaConfig = {
+    programs.veila.enable = true;
   };
 in
 {
@@ -34,16 +43,19 @@ in
       ;
   };
 
-  modules = [
-    ./configuration.nix
-    ./hardware-configuration.nix
-    # Home manager
-    inputs.home-manager.nixosModules.home-manager
-    (makeHomeManagerConfig stellae)
-    # Veila
-    inputs.veila.nixosModules.default
-    {
-      programs.veila.enable = true;
-    }
-  ];
+  modules =
+    # Modules from files
+    [
+      ./configuration.nix
+      ./hardware-configuration.nix
+    ]
+    # Modules from flake inputs
+    ++ [
+      # Home manager
+      inputs.home-manager.nixosModules.home-manager
+      (makeHomeManagerConfig stellae)
+      # Veila
+      inputs.veila.nixosModules.default
+      veilaConfig
+    ];
 }
