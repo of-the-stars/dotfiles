@@ -31,11 +31,11 @@ in
     programs.zsh.enable = true;
 
     environment.systemPackages =
-      # let
-      #   doomsday = inputs.doomsday.packages.${pkgs.hostPlatform.system}.default;
-      # in
+      let
+        doomsday = inputs.doomsday.packages.${pkgs.hostPlatform.system}.default;
+      in
       [
-        # doomsday
+        doomsday
       ]
       ++ (with pkgsUnstable; [
         presenterm
