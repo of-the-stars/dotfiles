@@ -38,5 +38,5 @@ bindkey -M vicmd ' ' edit-command-line
 export MANPAGER="nvim +Man!"
 
 if [ "$(ps -p $PPID -o comm=)" = "login" ]; then
-    doomsday
+    doomsday 1
 fi

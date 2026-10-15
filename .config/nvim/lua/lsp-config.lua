@@ -14,6 +14,7 @@ vim.keymap.set('n', '<leader>cl', '<cmd>lsp enable<CR>', { desc = 'Enable [L]SP'
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'nil_ls'
 vim.lsp.enable 'nixd'
+
 vim.lsp.config['rust-analyzer'] = {
   settings = {
     ['rust-analyzer'] = {
@@ -24,6 +25,7 @@ vim.lsp.config['rust-analyzer'] = {
   },
 }
 vim.lsp.enable 'rust-analyzer'
+
 vim.lsp.config['tinymist'] = {
   settings = {
     exportPdf = 'onSave',
@@ -31,4 +33,5 @@ vim.lsp.config['tinymist'] = {
   },
 }
 vim.lsp.enable 'tinymist'
+
 vim.lsp.enable 'clangd'

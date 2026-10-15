@@ -1,1 +1,3 @@
 include wassail
+
+set selection-clipboard clipboard
