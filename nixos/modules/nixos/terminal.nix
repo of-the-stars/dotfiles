@@ -87,24 +87,17 @@ in
           bsdgames # NetBSD games!
           cmatrix # Just a glitch
           cowsay # Moo!
-          esp-generate # Generate #[no_std] ESP32 Rust projects
           figlet # Make ASCII art from text
           fortune-kind # `fortune` but kinder
-          fselect # Find files with SQL-like syntax
           gitleaks # Look for secrets in a git repo
           mat2 # Metadata removal tool
           mdbook # Create markdown books
-          mprocs # Run multiple commands in parallel
           nix-search-cli # Search nixpkgs
-          onefetch # Git repo summary
           procs # Modern `ps`
           python3 # Python interpreter
           ripgrep-all
           screen # Terminal multiplexer, although I just use it for serial ports
-          sl # Steam locomotive
-          tiny # TUI IRC client
           tldr # Community-maintained manpage alternative with examples
-          zellij # Terminal multiplexer
         ]
       );
   };
