@@ -17,7 +17,14 @@ in
   };
 
   config = {
-    programs.niri.enable = true;
+    programs.niri =
+      let
+        niriFromFlake = inputs.niri.packages.${pkgs.hostPlatform.system}.default;
+      in
+      {
+        enable = true;
+        package = niriFromFlake;
+      };
 
     services.dunst = {
       enable = true;

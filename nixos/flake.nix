@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    niri = {
+      url = "github:niri-wm/niri";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # custom neovim configuration flake
     nvim = {
       url = "path:./../.config/nvim/";
