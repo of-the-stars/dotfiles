@@ -2,9 +2,13 @@
   description = "of-the-stars's system flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-26.05";
+    };
 
-    nixpkgs-unstable.url = "github:nixos/nixpkgs";
+    nixpkgs-unstable = {
+      url = "github:nixos/nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -26,15 +30,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    # crane = {
-    #   url = "github:ipetkov/crane";
-    # };
-    #
-    # rust-overlay = {
-    #   url = "github:oxalica/rust-overlay";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     # custom neovim configuration flake
     nvim = {
       url = "path:./../.config/nvim/";
@@ -45,8 +40,6 @@
       url = "github:of-the-stars/doomsday";
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable";
-        # crane.follows = "crane";
-        # rust-overlay = "rust-overlay";
       };
     };
   };

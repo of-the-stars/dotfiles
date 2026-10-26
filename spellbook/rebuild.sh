@@ -30,7 +30,6 @@ pushd "$HOME"/dotfiles/nixos/
             --padding 5,5 \
             --border-label ' Choose System Which To Rebuild ' \
             --input-label ' Input ' \
-            # || true
             )"
 
         git -P diff -U0 .
@@ -44,6 +43,14 @@ pushd "$HOME"/dotfiles/nixos/
     if git diff -P --cached --name-only ./../.config/nvim/. | rg -q "."; then
         sudo nix flake update nvim --no-warn-dirty
     fi
+
+    # # Trying to generalize the above snippet
+    # for input in $(rg "^\s+url\s+\=\s+\"path:([A-Za-z0-9./-]+)\";" flake.nix -r '$1' -N | tr -d '[:blank:]')
+    # do
+    #     if git diff -P --cached --name-only "$input"/. | rg -q "."; then
+    #         sudo nix flake update nvim --no-warn-dirty
+    #     fi
+    # done
 
     (sudo nixos-rebuild switch --verbose --show-trace --flake .\#"$system" 2>&1 | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
