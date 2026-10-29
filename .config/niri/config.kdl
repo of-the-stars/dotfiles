@@ -270,7 +270,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "veilad"
+spawn-at-startup "veila daemon"
 spawn-sh-at-startup "wpaperd -d"
 // spawn-at-startup "signal-desktop"
 // spawn-at-startup "tlp-pd"
