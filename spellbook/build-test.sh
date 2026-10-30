@@ -46,13 +46,5 @@ fi
 
 (sudo nixos-rebuild test --show-trace --flake .\#"$system" | tee nixos-switch.log) || (cat nixos-switch.log | rg --color=always error && false)
 
-# pw-play --volume=0.5 "$HOME/dotfiles/assets/User Initialisation Sequence Complete.ogg" &
-
-# Grabs nixos generation info
-gen=$(nixos-rebuild list-generations | rg True | tr -s ' ' | cut -d ' ' -f 1-5) 
-
-# Commit the changes, with a pre-built message with the system name and the generation info
-echo "Test: $gen" | git commit -aveF -
-
 popd
 
