@@ -44,11 +44,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1792094093,
-        "narHash": "sha256-1Q+QWaLyDgrAfRCrEQep4J9Wk0QY9+XtnRW1Zz+yETY=",
+        "lastModified": 1793514585,
+        "narHash": "sha256-NbskgPD1iJ0T0j/8aK4NCxv0/D5lx1E+h9OCpU49HgQ=",
         "owner": "of-the-stars",
         "repo": "doomsday",
-        "rev": "86e6986e9d6f6a12bc593b2e816aee53ba18d44a",
+        "rev": "d8d940f0c6ae250a9b4510d02b6fb2d899d508cb",
         "type": "github"
       },
       "original": {

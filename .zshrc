@@ -38,5 +38,5 @@ bindkey -M vicmd ' ' edit-command-line
 export MANPAGER="nvim +Man!"
 
 if [ "$(ps -p $PPID -o comm=)" = "login" ]; then
-    doomsday 1
+    doomsday --loop-limit 1 --upper-year-limit 2400
 fi
